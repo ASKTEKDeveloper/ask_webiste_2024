@@ -371,7 +371,6 @@ const Hire_a_developer = () => {
                     </Link>{" "}
                   </h4>
 
-                  <h4>Cost Saving</h4>
                 </div>
                 <div className="bottom-part">
                   <p>

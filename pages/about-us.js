@@ -8,14 +8,12 @@ import Slider from "react-slick";
 import dynamic from "next/dynamic";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
 import {
   mainSliderActive,
   serviceThreeSlider,
   testimonialThreeSlider,
 } from "@/src/sliderProps";
 import { Container } from "@mui/material";
-
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });

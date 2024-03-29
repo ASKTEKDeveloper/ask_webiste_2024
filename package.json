@@ -19,6 +19,7 @@
     "axios": "^1.6.8",
     "isotope-layout": "^3.0.6",
     "lodash": "^4.17.21",
+    "mssql": "^10.0.2",
     "next": "13.1.2",
     "react": "18.2.0",
     "react-bootstrap": "^1.6.8",
