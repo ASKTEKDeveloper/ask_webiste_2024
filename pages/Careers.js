@@ -249,6 +249,7 @@ const Careers = () => {
                         onChange={handleChange}
                         error={errors.name ? true : false}
                         helperText={errors.name}
+                        size="small"
                         required
                       />
                     </Grid>
@@ -261,6 +262,7 @@ const Careers = () => {
                       </InputLabel>
                       <TextField
                         fullWidth
+                        size="small"
                         // label="Phone no"
                         variant="outlined"
                         name="phone_number"
@@ -280,6 +282,7 @@ const Careers = () => {
                       </InputLabel>
 
                       <TextField
+                       size="small"
                         fullWidth
                         // label="Email"
                         variant="outlined"
@@ -295,6 +298,7 @@ const Careers = () => {
                     <Grid item xs={6}>
                       <TextField
                         fullWidth
+                        size="small"
                         select
                         label="Gender"
                         variant="outlined"
@@ -313,6 +317,7 @@ const Careers = () => {
                     <Grid item xs={6}>
                       <TextField
                         fullWidth
+                        size="small"
                         label="Years of Experience"
                         variant="outlined"
                         type="number"
