@@ -267,6 +267,7 @@ const ProjectGrid = () => {
                 </div>
               </div>
             </div>
+            
             <div className="row justify-content-center">
               <div className="section-title text-center mb-10">
                 <Divider>
