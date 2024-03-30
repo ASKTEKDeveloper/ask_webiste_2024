@@ -46,34 +46,13 @@ export default class Hero4Slider extends Component {
             <div
               className="slider-image"
               style={{
-                backgroundImage: "url(assets/images/slider/slider3.jpg)",
+                backgroundImage: "url(assets/images/home/home3.jpg)",
+                backgroundSize:"cover",
+                backgroundRepeat:"no-repeat"
               }}
             />
           </div>
-          {/* <div className="slider-item-two">
-            <div className="container">
-              <div className="slide-content">
-                <span className="sub-title">IT Solution Comapny</span>
-                <h1>IT Services Agency</h1>
-                <Link legacyBehavior href="/about">
-                  <a className="theme-btn mt-15">
-                    Let’s Get Started <i className="fas fa-long-arrow-right" />
-                  </a>
-                </Link>
-                <Link legacyBehavior href="/contact">
-                  <a className="theme-btn style-two mt-15">
-                    Contact Us <i className="fas fa-long-arrow-right" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div
-              className="slider-image"
-              style={{
-                backgroundImage: "url(assets/images/slider/slider2.jpg)",
-              }}
-            />
-          </div> */}
+         
          
         </Slider>
         <div className="slider-arrows">

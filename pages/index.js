@@ -78,72 +78,7 @@ const Index = () => {
     <Layout header={2}>
       {/* Hero Section Start */}
       <Hero4Slider />
-      {/* <section className="hero-area px-3 bgc-gray rel z-1">
-        <Container>
-          <div className="">
-            <div className="row align-items-center">
-              <div className="col-lg-6 align-self-center mb-3">
-                <div className="hero-content pt-115 pb-125 rpb-0 wow fadeInUp delay-0-4s">
-                  <h1 style={{ fontFamily: "play" }}>
-                    WE BRING SUCCESS TO YOUR GREAT BUSINESS
-                  </h1>
-                  <p>
-                    Revolutionize your operations with Ask Technology's
-                    cutting-edge solutions. From ERP tailored for Textile &
-                    Garment Industries to Enterprise-level Goods Traders
-                    Management, our suite of products is designed for excellence
-                  </p>
-                  <Link legacyBehavior href="/about">
-                    <a className="theme-btn mt-20 wow fadeInUp delay-0-6s">
-                      Explore Our Solutions{" "}
-                      <i className="fas fa-long-arrow-right" />
-                    </a>
-                  </Link>
-                  <div className="hero-shapes">
-                    <img
-                      className="shape one"
-                      src="assets/images/shapes/dabble-plus.png"
-                      alt="Shape"
-                    />
-                    <img
-                      className="shape two"
-                      src="assets/images/shapes/dabble-plus.png"
-                      alt="Shape"
-                    />
-                    <img
-                      className="shape three"
-                      src="assets/images/shapes/plus.png"
-                      alt="Shape"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 align-self-end">
-                <div className="hero-images  wow fadeInLeft">
-                  <img
-                    src="assets/images/hero/hero-one.jpg"
-                    alt="Hero"
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="hero-shapes">
-            <img
-              className="shape bg-lines"
-              src="assets/images/shapes/hero-bg-line-shapes.png"
-              alt="Shape"
-            />
-            <img
-              className="shape right-shape wow fadeInRight delay-0-8s"
-              src="assets/images/shapes/hero-right-shape.png"
-              alt="Shape"
-            />
-          </div>
-        </Container>
-      </section> */}
-
+  
       {/* About Area start */}
       <section className="about-area px-3  pt-150  rpb-100 rel z-1">
         <Container>
@@ -169,15 +104,7 @@ const Index = () => {
                     <a className="theme-btn mt-15">
                       Learn More <i className="fas fa-long-arrow-right" />
                     </a>
-                  </Link>
-                  {/* <div className="hotline mt-15">
-                    <i className="fas fa-phone" />
-                    <div className="content">
-                      <span>Hotline</span>
-                      <br />
-                      <a href="callto:+000(123)45688">+000 (123) 456 88</a>
-                    </div>
-                  </div> */}
+                  </Link>                 
                 </div>
                 <div className="row no-gap for-active">
                   <div className="col-sm-6">

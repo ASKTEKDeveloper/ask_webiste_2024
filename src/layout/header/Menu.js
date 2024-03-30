@@ -111,25 +111,17 @@ const MobileMenu = () => {
               </a>
               <ul style={activeSubMenu("Project")}>
                 <li>
-                  <Link
-                    href="erp-for-textiles-and-garments"                    
-                  >
+                  <Link href="erp-for-textiles-and-garments">
                     ERP for Textile & Garment Industries{" "}
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="Target_SCM_Supply_Chain_Managements"
-                    
-                  >
+                  <Link href="Target_SCM_Supply_Chain_Managements">
                     Target SCM - Supply Chain Management.
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="Target_HRMS_HR_and_Payroll_Solutions"
-                    
-                  >
+                  <Link href="Target_HRMS_HR_and_Payroll_Solutions">
                     HRMS - Target HR & Payroll Solutions
                   </Link>
                 </li>
@@ -163,20 +155,9 @@ const MobileMenu = () => {
             </li>
 
             <li className="dropdown">
-              <a href="#" onClick={() => active("blog")}>
+              <a href="Careers" onClick={() => active("blog")}>
                 Careers
               </a>
-              <ul style={activeSubMenu("blog")}>
-                <li>
-                  <Link href="blog">blog standard</Link>
-                </li>
-                <li>
-                  <Link href="blog-details">blog details</Link>
-                </li>
-              </ul>
-              <div className="dropdown-btn" onClick={() => active("blog")}>
-                <span className="fas fa-chevron-down" />
-              </div>
             </li>
 
             <li className="dropdown">
@@ -212,6 +193,7 @@ const MobileMenu = () => {
                 <span className="fas fa-chevron-down" />
               </div>
             </li>
+
             <li className="dropdown">
               <a href="#" onClick={() => active("hire_a_developer")}>
                 Hire a Developer
@@ -221,10 +203,14 @@ const MobileMenu = () => {
                   <Link href="hire_a_developer">Hire a Developer</Link>
                 </li>
               </ul>
-              <div className="dropdown-btn" onClick={() => active("hire_a_developer")}>
+              <div
+                className="dropdown-btn"
+                onClick={() => active("hire_a_developer")}
+              >
                 <span className="fas fa-chevron-down" />
               </div>
             </li>
+            
           </ul>
         </Accordion.Collapse>
       </Accordion>
@@ -370,18 +356,7 @@ const DeskTopMenu = () => {
           </li>
 
           <li className="dropdown">
-            <a href="#">Careers</a>
-            <ul>
-              <li>
-                <Link href="blog">blog standard</Link>
-              </li>
-              <li>
-                <Link href="blog-details">blog details</Link>
-              </li>
-            </ul>
-            <div className="dropdown-btn">
-              <span className="fas fa-chevron-down" />
-            </div>
+            <a href="Careers">Careers</a>
           </li>
 
           <li className="dropdown">

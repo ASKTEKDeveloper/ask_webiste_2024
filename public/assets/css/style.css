@@ -9748,6 +9748,11 @@ blockquote .name:before {
 .comment-body .author-thumb img {
   border-radius: 50%;
 }
+
+.comment-body .content
+{
+  width: 100%;
+}
 .comment-body .content h5 {
   margin-bottom: 0;
   display: -webkit-box;
@@ -11470,6 +11475,14 @@ blockquote .name:before {
 
 .shadowbox-2
 {
+  border-radius: 20px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+
+.shadowbox-4
+{
+  padding: 20px;
   border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
