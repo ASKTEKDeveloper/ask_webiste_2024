@@ -155,9 +155,9 @@ const MobileMenu = () => {
             </li>
 
             <li className="dropdown">
-              <a href="Careers" onClick={() => active("blog")}>
+              <Link href="Careers" onClick={() => active("Careers")}>
                 Careers
-              </a>
+              </Link>
             </li>
 
             <li className="dropdown">
@@ -181,17 +181,9 @@ const MobileMenu = () => {
             </li>
 
             <li className="dropdown">
-              <a href="#" onClick={() => active("contact")}>
+              <Link href="contact" onClick={() => active("contact")}>
                 Contact Us
-              </a>
-              <ul style={activeSubMenu("contact")}>
-                <li>
-                  <Link href="contact">Contact Us</Link>
-                </li>
-              </ul>
-              <div className="dropdown-btn" onClick={() => active("contact")}>
-                <span className="fas fa-chevron-down" />
-              </div>
+              </Link>
             </li>
 
             <li className="dropdown">
@@ -210,7 +202,6 @@ const MobileMenu = () => {
                 <span className="fas fa-chevron-down" />
               </div>
             </li>
-            
           </ul>
         </Accordion.Collapse>
       </Accordion>
@@ -356,7 +347,7 @@ const DeskTopMenu = () => {
           </li>
 
           <li className="dropdown">
-            <a href="Careers">Careers</a>
+            <Link href="Careers">Careers</Link>
           </li>
 
           <li className="dropdown">
@@ -378,9 +369,7 @@ const DeskTopMenu = () => {
           </li>
 
           <li className="dropdown">
-            <a href="contact" style={{ whiteSpace: "nowrap" }}>
-              Contact US
-            </a>
+            <Link href="contact">Contact US</Link>
           </li>
         </ul>
       </div>
