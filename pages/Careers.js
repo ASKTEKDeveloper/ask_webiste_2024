@@ -61,7 +61,91 @@ const Careers = () => {
                 Current Openings
               </h4>
               <div className="row comments mx-0 ">
-                <div className="comment-body  d-flex flex-column flex-sm-row justify-content-between align-items-center gap-4 shadowbox-4 wow fadeInUp delay-0-2s">
+                <div className="comment-body my-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-4 shadowbox-4 wow fadeInUp delay-0-2s">
+                  <div
+                    className={
+                      matchesSmallScreen
+                        ? "d-flex flex-column  justify-content-center align-items-center gap-3"
+                        : "content"
+                    }
+                  >
+                    <h5 className="text-center my-2">Full Stack Developer</h5>
+                    <Typography variant="subtitle2" color="#51829B" mb={2}>
+                      FULL TIME | 3-5 Years | 5-9 LPA
+                    </Typography>
+                    <div className="tag-coulds p-0">
+                      <Link legacyBehavior href="#" className="tag">
+                        <a className="tag">REACT</a>
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        NODE js
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        MERN
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        SQL
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="d-flex flex-column  justify-content-end align-items-cente gal-2 ">
+                    <Button
+                      variant="contained"
+                      size="large"
+                      color="primary"
+                      endIcon={<i className="fas fa-angle-double-right" />}
+                      className="rounded-pill"
+                    >
+                      Apply
+                    </Button>
+                    <Button variant="text" color="info">
+                      Know More
+                    </Button>
+                  </div>
+                </div>{" "}
+                <div className="comment-body my-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-4 shadowbox-4 wow fadeInUp delay-0-2s">
+                  <div
+                    className={
+                      matchesSmallScreen
+                        ? "d-flex flex-column  justify-content-center align-items-center gap-3"
+                        : "content"
+                    }
+                  >
+                    <h5 className="text-center my-2">Full Stack Developer</h5>
+                    <Typography variant="subtitle2" color="#51829B" mb={2}>
+                      FULL TIME | 3-5 Years | 5-9 LPA
+                    </Typography>
+                    <div className="tag-coulds p-0">
+                      <Link legacyBehavior href="#" className="tag">
+                        <a className="tag">REACT</a>
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        NODE js
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        MERN
+                      </Link>
+                      <Link legacyBehavior href="#">
+                        SQL
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="d-flex flex-column  justify-content-end align-items-cente gal-2 ">
+                    <Button
+                      variant="contained"
+                      size="large"
+                      color="primary"
+                      endIcon={<i className="fas fa-angle-double-right" />}
+                      className="rounded-pill"
+                    >
+                      Apply
+                    </Button>
+                    <Button variant="text" color="info">
+                      Know More
+                    </Button>
+                  </div>
+                </div>{" "}
+                <div className="comment-body my-3  d-flex flex-column flex-sm-row justify-content-between align-items-center gap-4 shadowbox-4 wow fadeInUp delay-0-2s">
                   <div
                     className={
                       matchesSmallScreen
