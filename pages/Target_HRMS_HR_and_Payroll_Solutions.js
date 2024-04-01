@@ -3,13 +3,17 @@ import { Chip, Container, Divider, Grid } from "@mui/material";
 import Link from "next/link";
 import { Button, Dialog, DialogContent } from "@mui/material";
 import { TextField, MenuItem } from "@mui/material";
-import axios from "@/axios";
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
+  const [submitted, setsubmitted] = useState(false);
+  const router = useRouter();
 
   const handleButtonClick = () => {
     setOpen(true);
@@ -19,72 +23,27 @@ const ProjectGrid = () => {
     setOpen(false);
   };
 
-  const [tokent, settokent] = useState(
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJldmVudGxpc3QiOlt7IlVzZXJJRCI6IjEiLCJMb2dpbkNvZGUiOiIwMSIsIkxvZ2luTmFtZSI6IkFkbWluIiwiRW1haWxJZCI6ImFkbWluQGdtYWlsLmNvbSIsIlVzZXJUeXBlIjoiQURNSU4ifV0sImlhdCI6MTYzODM1NDczMX0.ZW6zEHIXTxfT-QWEzS6-GuY7bRupf2Jc_tp4fXIRabQ"
-  );
-
-  const sendMessage = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.instance.get("/GetAllUOM", {
-        headers: { Authorization: tokent, "Content-Type": "application/json" },
+      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
+      console.log("Form submitted successfully:", response.data);
+      setOpen(false);
+      Swal.fire({
+        title: "Thank you!",
+        text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
+        icon: "success",
+        confirmButtonText: "Back to Home",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          router.push("/");
+        }
       });
-
-      console.log("Response from backend:", response.data);
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error("Error submitting form:", error);
+      setError("Error submitting form. Please try again later.");
+    } finally {
+      setSubmitting(false);
     }
-  };
-
-  const [formData, setFormData] = useState({
-    name: "",
-    phone_number: "",
-    company_name: "",
-    email: "",
-    city: "",
-    product: "HRMS",
-    enquiry_details: "",
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Handle form submission here
-      console.log("Form submitted:", formData);
-    }
-  };
-
-  const validateForm = (e) => {
-    e.preventDefault();
-    let errors = {};
-    let formIsValid = true;
-
-    if (!formData.name) {
-      errors.name = "Please enter your name";
-      formIsValid = false;
-    }
-
-    if (!formData.phone_number) {
-      errors.phone_number = "Please enter your phone number";
-      formIsValid = false;
-    }
-
-    if (!formData.email) {
-      errors.email = "Please enter your email";
-      formIsValid = false;
-    }
-
-    setErrors(errors);
-    return formIsValid;
   };
 
   return (
@@ -125,7 +84,7 @@ const ProjectGrid = () => {
                     "should not exceed 200 characters."
                   ),
                 })}
-                onSubmit={sendMessage}
+                onSubmit={handleSubmit}
               >
                 <Form className="bg-white p-10 m-25">
                   <Grid container spacing={3}>
@@ -808,7 +767,7 @@ const ProjectGrid = () => {
                           "should not exceed 200 characters."
                         ),
                       })}
-                      onSubmit={sendMessage}
+                      onSubmit={handleSubmit}
                     >
                       <Form className="bg-white p-10 m-25">
                         <Grid container spacing={3}>

@@ -33,10 +33,24 @@ import {
   DialogActions,
 } from "@mui/material";
 import { Grid } from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
 
 import { TextField, MenuItem } from "@mui/material";
 
 import axios from "@/axios";
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const Careers = () => {
   const theme = useTheme();
@@ -274,7 +288,7 @@ const Careers = () => {
                       />
                     </Grid>
                     <Grid item xs={12} sm={12}>
-                    <InputLabel
+                      <InputLabel
                         htmlFor="resume-upload"
                         className="inputstextlabel"
                       >
@@ -282,7 +296,7 @@ const Careers = () => {
                       </InputLabel>
 
                       <TextField
-                       size="small"
+                        size="small"
                         fullWidth
                         // label="Email"
                         variant="outlined"
@@ -330,7 +344,21 @@ const Careers = () => {
                       />
                     </Grid>
                     <Grid item xs={12}>
-                      <InputLabel
+                      <Button
+                        fullWidth
+                        component="label"
+                        role={undefined}
+                        variant="outlined"
+                        tabIndex={-1}
+                        onChange={handleChange}
+                        inputProps={{ accept: ".pdf,.docx" }}
+                        startIcon={<CloudUploadIcon />}
+                      >
+                        Upload Resume (PDF, DOCX)
+                        <VisuallyHiddenInput type="file" />
+                      </Button>
+
+                      {/* <InputLabel
                         htmlFor="resume-upload"
                         className="inputstextlabel"
                       >
@@ -345,8 +373,8 @@ const Careers = () => {
                         onChange={handleChange}
                         inputProps={{ accept: ".pdf,.docx" }}
                         required
-                        sx={{ borderStyle:'dotted'}}
-                      />
+                        sx={{ borderStyle: "dotted" }}
+                      /> */}
                     </Grid>
 
                     <Grid item xs={12} justifyContent={"center"}>
