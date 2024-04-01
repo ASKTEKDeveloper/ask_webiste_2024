@@ -5,8 +5,6 @@ import { Button, Dialog, DialogContent } from "@mui/material";
 import { TextField, MenuItem } from "@mui/material";
 import axios from "@/axios";
 import { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
 
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
@@ -98,176 +96,118 @@ const ProjectGrid = () => {
                   Quick Enquiry
                 </h3>
               </div>
-              <Formik
-                initialValues={{
-                  name: "",
-                  phone_number: "",
-                  company_name: "",
-                  email: "",
-                  city: "",
-                  product: "HRMS",
-                  enquiry_details: "",
-                }}
-                validationSchema={Yup.object({
-                  name: Yup.string().required("Please provide your full name."),
-                  phone_number: Yup.string().required(
-                    "Please enter your phone number."
-                  ),
-                  email: Yup.string()
-                    .email("Please provide a valid email address.")
-                    .required("Email address is required."),
-                  city: Yup.string().required("Please specify your city."),
-                  company_name: Yup.string().required(
-                    "Please specify the name of your company."
-                  ),
-                  enquiry_details: Yup.string().max(
-                    200,
-                    "should not exceed 200 characters."
-                  ),
-                })}
-                onSubmit={sendMessage}
-              >
-                <Form className="bg-white p-10 m-25">
-                  <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="name">
-                        {({ field, form }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            label="Name"
-                            variant="standard"
-                            color="info"
-                            // required
-                            error={form.errors.name && form.touched.name}
-                            helperText={<ErrorMessage name="name" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="phone_number">
-                        {({ field, form }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            label="Phone no"
-                            variant="standard"
-                            // required
-                            error={
-                              form.errors.phone_number &&
-                              form.touched.phone_number
-                            }
-                            helperText={<ErrorMessage name="phone_number" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="company_name">
-                        {({ field, form }) => (
-                          <TextField
-                            // required
-                            {...field}
-                            fullWidth
-                            label="Your Company Name"
-                            variant="standard"
-                            error={
-                              form.errors.company_name &&
-                              form.touched.company_name
-                            }
-                            helperText={<ErrorMessage name="company_name" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="email">
-                        {({ field, form }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            // required
-                            label="Email"
-                            variant="standard"
-                            type="email"
-                            error={form.errors.email && form.touched.email}
-                            helperText={<ErrorMessage name="email" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="city">
-                        {({ field, form }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            label="City"
-                            // required
-                            variant="standard"
-                            error={form.errors.city && form.touched.city}
-                            helperText={<ErrorMessage name="city" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Field name="product">
-                        {({ field }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            select
-                            // required
-                            label="Products"
-                            variant="standard"
-                          >
-                            <MenuItem value="ERP" defaultChecked>
-                              ERP for Textile & Garment Industries
-                            </MenuItem>
-                            <MenuItem value="SCM">
-                              Target SCM - Supply Chain Management
-                            </MenuItem>
-                            <MenuItem value="HRMS">
-                              HRMS - Target HR & Payroll Solutions
-                            </MenuItem>
-                          </TextField>
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Field name="enquiry_details">
-                        {({ field, form }) => (
-                          <TextField
-                            {...field}
-                            fullWidth
-                            multiline
-                            rows={3}
-                            label="Remarks"
-                            variant="standard"
-                            error={
-                              form.errors.enquiry_details &&
-                              form.touched.enquiry_details
-                            }
-                            helperText={<ErrorMessage name="enquiry_details" />}
-                          />
-                        )}
-                      </Field>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={12}
-                      className="d-flex justify-content-center align-items-center gap-2"
-                    >
-                      <button type="submit" className="theme-btn style-four">
-                        Request Demo
-                        <i className="far fa-long-arrow-right" />
-                      </button>
-                    </Grid>
+              <form onSubmit={handleSubmit} className="bg-white p-10 m-25">
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Name"
+                      variant="standard"
+                      color="info"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      error={errors.name ? true : false}
+                      helperText={errors.name}
+                      // required
+                    />
                   </Grid>
-                </Form>
-              </Formik>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Phone no"
+                      variant="standard"
+                      name="phone_number"
+                      value={formData.phone_number}
+                      onChange={handleChange}
+                      error={errors.phone_number ? true : false}
+                      helperText={errors.phone_number}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Your Company Name"
+                      variant="standard"
+                      name="company_name"
+                      value={formData.company_name}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="Email"
+                      variant="standard"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      error={errors.email ? true : false}
+                      helperText={errors.email}
+                      required
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      label="City"
+                      variant="standard"
+                      name="city"
+                      value={formData.city}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      fullWidth
+                      select
+                      label="Products"
+                      variant="standard"
+                      name="product"
+                      value={formData.product}
+                      onChange={handleChange}
+                      required
+                    >
+                      <MenuItem value="ERP" defaultChecked>
+                        ERP for Textile & Garment Industries
+                      </MenuItem>
+                      <MenuItem value="SCM">
+                        Target SCM - Supply Chain Management
+                      </MenuItem>
+                      <MenuItem value="HRMS">
+                        HRMS - Target HR & Payroll Solutions
+                      </MenuItem>
+                    </TextField>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      multiline
+                      rows={3}
+                      label="Enquiry Details"
+                      variant="standard"
+                      name="enquiry_details"
+                      value={formData.enquiry_details}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <button type="submit" className="theme-btn style-four ">
+                      send message <i className="far fa-long-arrow-right" />
+                    </button>
+                    {/*                     
+                    <Button type="submit" variant="contained" color="primary">
+                      Submit
+                    </Button> */}
+                  </Grid>
+                </Grid>
+              </form>
             </div>
           </DialogContent>
         </Dialog>
@@ -767,8 +707,8 @@ const ProjectGrid = () => {
                     <div className="section-title mb-40">
                       <h2>Request a Demo Today</h2>
                       <span
-                        className="sub-title  mb-10 text-gradient-title2"
-                        // style={{ color: "#FA7070" }}
+                        className="sub-title  mb-10"
+                        style={{ color: "#FA7070" }}
                       >
                         Explore Our HR & Payroll Solutions
                       </span>
@@ -777,191 +717,123 @@ const ProjectGrid = () => {
                 </div>
                 <div className="col-lg-12 ">
                   <div className="contact-form shadowbox-2 bg-white p-50 rmb-55 wow fadeInRight delay-0-2s">
-                    <Formik
-                      initialValues={{
-                        name: "",
-                        phone_number: "",
-                        company_name: "",
-                        email: "",
-                        city: "",
-                        product: "HRMS",
-                        enquiry_details: "",
-                      }}
-                      validationSchema={Yup.object({
-                        name: Yup.string().required(
-                          "Please provide your full name."
-                        ),
-                        phone_number: Yup.string().required(
-                          "Please enter your phone number."
-                        ),
-                        email: Yup.string()
-                          .email("Please provide a valid email address.")
-                          .required("Email address is required."),
-                        city: Yup.string().required(
-                          "Please specify your city."
-                        ),
-                        company_name: Yup.string().required(
-                          "Please specify the name of your company."
-                        ),
-                        enquiry_details: Yup.string().max(
-                          200,
-                          "should not exceed 200 characters."
-                        ),
-                      })}
-                      onSubmit={sendMessage}
-                    >
-                      <Form className="bg-white p-10 m-25">
-                        <Grid container spacing={3}>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="name">
-                              {({ field, form }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  label="Name"
-                                  variant="standard"
-                                  color="info"
-                                  // required
-                                  error={form.errors.name && form.touched.name}
-                                  helperText={<ErrorMessage name="name" />}
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="phone_number">
-                              {({ field, form }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  label="Phone no"
-                                  variant="standard"
-                                  // required
-                                  error={
-                                    form.errors.phone_number &&
-                                    form.touched.phone_number
-                                  }
-                                  helperText={
-                                    <ErrorMessage name="phone_number" />
-                                  }
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="company_name">
-                              {({ field, form }) => (
-                                <TextField
-                                  // required
-                                  {...field}
-                                  fullWidth
-                                  label="Your Company Name"
-                                  variant="standard"
-                                  error={
-                                    form.errors.company_name &&
-                                    form.touched.company_name
-                                  }
-                                  helperText={
-                                    <ErrorMessage name="company_name" />
-                                  }
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="email">
-                              {({ field, form }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  // required
-                                  label="Email"
-                                  variant="standard"
-                                  type="email"
-                                  error={
-                                    form.errors.email && form.touched.email
-                                  }
-                                  helperText={<ErrorMessage name="email" />}
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="city">
-                              {({ field, form }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  label="City"
-                                  // required
-                                  variant="standard"
-                                  error={form.errors.city && form.touched.city}
-                                  helperText={<ErrorMessage name="city" />}
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12} sm={6}>
-                            <Field name="product">
-                              {({ field }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  select
-                                  // required
-                                  label="Products"
-                                  variant="standard"
-                                >
-                                  <MenuItem value="ERP" defaultChecked>
-                                    ERP for Textile & Garment Industries
-                                  </MenuItem>
-                                  <MenuItem value="SCM">
-                                    Target SCM - Supply Chain Management
-                                  </MenuItem>
-                                  <MenuItem value="HRMS">
-                                    HRMS - Target HR & Payroll Solutions
-                                  </MenuItem>
-                                </TextField>
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid item xs={12}>
-                            <Field name="enquiry_details">
-                              {({ field, form }) => (
-                                <TextField
-                                  {...field}
-                                  fullWidth
-                                  multiline
-                                  rows={3}
-                                  label="Remarks"
-                                  variant="standard"
-                                  error={
-                                    form.errors.enquiry_details &&
-                                    form.touched.enquiry_details
-                                  }
-                                  helperText={
-                                    <ErrorMessage name="enquiry_details" />
-                                  }
-                                />
-                              )}
-                            </Field>
-                          </Grid>
-                          <Grid
-                            item
-                            xs={12}
-                            className="d-flex justify-content-center align-items-center gap-2"
-                          >
-                            <button
-                              type="submit"
-                              className="theme-btn style-four"
-                            >
-                              Request Demo
-                              <i className="far fa-long-arrow-right" />
-                            </button>
-                          </Grid>
+                    <form onSubmit={handleSubmit} className=" bg-white">
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            label="Name"
+                            variant="standard"
+                            color="info"
+                            name="name"
+                            size="medium"
+                            value={formData.name}
+                            onChange={handleChange}
+                            error={errors.name ? true : false}
+                            helperText={errors.name}
+                            required
+                          />
                         </Grid>
-                      </Form>
-                    </Formik>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            label="Phone no"
+                            variant="standard"
+                            name="phone_number"
+                            value={formData.phone_number}
+                            onChange={handleChange}
+                            error={errors.phone_number ? true : false}
+                            helperText={errors.phone_number}
+                            required
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            label="Email"
+                            variant="standard"
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            error={errors.email ? true : false}
+                            helperText={errors.email}
+                            required
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            label="City"
+                            variant="standard"
+                            name="city"
+                            value={formData.city}
+                            onChange={handleChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            label="Your Company Name"
+                            variant="standard"
+                            name="company_name"
+                            value={formData.company_name}
+                            onChange={handleChange}
+                          />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                          <TextField
+                            fullWidth
+                            select
+                            label="Products"
+                            variant="standard"
+                            name="product"
+                            value={formData.product}
+                            onChange={handleChange}
+                            required
+                          >
+                            <MenuItem value="ERP" defaultChecked>
+                              ERP for Textile & Garment Industries
+                            </MenuItem>
+                            <MenuItem value="SCM">
+                              Target SCM - Supply Chain Management
+                            </MenuItem>
+                            <MenuItem value="HRMS">
+                              HRMS - Target HR & Payroll Solutions
+                            </MenuItem>
+                          </TextField>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <TextField
+                            fullWidth
+                            multiline
+                            rows={3}
+                            label="Enquiry Details"
+                            variant="standard"
+                            name="enquiry_details"
+                            value={formData.enquiry_details}
+                            onChange={handleChange}
+                          />
+                        </Grid>
+                        <Grid
+                          item
+                          xs={12}
+                          className="d-flex justify-content-center align-items-center gap-2"
+                        >
+                          <button
+                            type="submit"
+                            className="theme-btn style-two "
+                          >
+                            Get A Call Back{" "}
+                            <i className="far fa-long-arrow-right" />
+                          </button>
+                          {/*                     
+                    <Button type="submit" variant="contained" color="primary">
+                      Submit
+                    </Button> */}
+                        </Grid>
+                      </Grid>
+                    </form>
                   </div>
                 </div>
               </div>

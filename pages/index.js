@@ -1,6 +1,6 @@
 import Layout from "@/layout";
 import { TestimonialsSlider2 } from "@/src/components/slider/TestimonialsSlider";
-import { projectSliderActive } from "@/src/sliderProps";
+import { projectSliderActive, sliderTwoActive } from "@/src/sliderProps";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
@@ -13,7 +13,6 @@ import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { Nav, Tab } from "react-bootstrap";
-
 import {
   mainSliderActive,
   serviceThreeSlider,
@@ -21,6 +20,7 @@ import {
 } from "@/src/sliderProps";
 import { Container } from "@mui/material";
 import Hero4Slider from "@/src/components/slider/Hero4Slider";
+import { useRef, useState } from "react";
 
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
@@ -71,14 +71,72 @@ const PartnerIcon = ({ imageName }) => (
 );
 
 const Index = () => {
+  const sliderRef = useRef(null);
+  const [sliderIndex, setSliderIndex] = useState(0);
+
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Layout header={2}>
-      {/* Hero Section Start */}
-      <Hero4Slider />
-  
+      <Slider
+        {...sliderTwoActive}
+        ref={sliderRef}
+        className="slider-two-active"
+      >
+        <div className="slider-item-two">
+          <Container>
+            <div className="slide-content">
+              <span className="sub-title" style={{ color: "#3E54AC" }}>
+                Welcome to ASK Technology
+              </span>
+              <h2 style={{ textTransform: "capitalize", color: "#0079FF" }}>
+                WE BRING SUCCESS TO YOUR GREAT BUSINESS
+              </h2>
+              <p>
+                Revolutionize your operations with Ask Technology's cutting-edge
+                solutions. From ERP tailored for Textile & Garment Industries to
+                Enterprise-level Goods Traders Management, our suite of products
+                is designed for excellence
+              </p>
+
+              <Link href="#products_services" passHref>
+                <span className="theme-btn style-two mt-15">
+                  Explore Our Solutions{" "}
+                  <i className="fas fa-long-arrow-right" />
+                </span>
+              </Link>
+            </div>
+          </Container>
+          <div
+            className="slider-image"
+            style={{
+              backgroundImage: "url(assets/images/home/home3.jpg)",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+        </div>
+      </Slider>
+      <div className="slider-arrows">
+        <div className="container rel">
+          <button className="prev-slider slick-arrow" onClick={previous}>
+            <i className="fal fa-angle-left" />
+          </button>
+          <button className="next-slider slick-arrow" onClick={next}>
+            <i className="fal fa-angle-right" />
+          </button>
+        </div>
+      </div>
+      {/* <Hero4Slider /> */}
       {/* About Area start */}
       <section className="about-area px-3  pt-150  rpb-100 rel z-1">
         <Container>
@@ -104,7 +162,7 @@ const Index = () => {
                     <a className="theme-btn mt-15">
                       Learn More <i className="fas fa-long-arrow-right" />
                     </a>
-                  </Link>                 
+                  </Link>
                 </div>
                 <div className="row no-gap for-active">
                   <div className="col-sm-6">
@@ -186,7 +244,6 @@ const Index = () => {
         </Container>
       </section>
       {/* About Area end */}
-
       {/* Partners Area start */}
       <section className="partners-area px-3  pb-100 pt-150 rmt-30 rpb-70 rel z-1">
         <div>
@@ -246,11 +303,11 @@ const Index = () => {
         </div>
       </section>
       {/* Partners Area end */}
-
       {/* Project Area start */}
       <section
         className="project-area px-3   overflow-hidden bgc-lighter  rpt-100 rel z-1"
         style={{ paddingTop: 80 }}
+        id="products_services"
       >
         <Container>
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
@@ -617,7 +674,6 @@ const Index = () => {
         </div>
       </section>
       {/* Project Area end */}
-
       {/* Services Area start */}
       <section className="services-area px-3  bgc-gray text-white pt-75 pb-10 rel z-1">
         <Container>
@@ -842,7 +898,6 @@ const Index = () => {
           </div>
         </Container>
       </section>
-
       {/* Services Area end */}
       {/* Work Process Area start */}
       <section className="work-process-area px-3  pt-130 pb-100 rpt-100 rpb-70 rel z-1">
@@ -918,7 +973,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Techveel Area End */}
       {/* Techveel Area start */}
       <section className=" about-area-four px-3  pt-25 mb-5 rpt-0 rel z-2">
@@ -1071,7 +1125,6 @@ const Index = () => {
         </Container>
       </section>
       {/* Techveel Area end */}
-
       {/* Why Choose Us Area start */}
       <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
         <Container>
@@ -1406,7 +1459,6 @@ const Index = () => {
         </div>
       </section>
       {/* Why Choose Us Area end */}
-
       {/* Statistics Area start */}
       <section className="statistics-area-two px-3  rel z-2 mb-130 rmb-100">
         <Container>
@@ -1532,7 +1584,6 @@ const Index = () => {
         </Container>
       </section>
       {/* Statistics Area end */}
-
       {/* Skills Area start */}
       <section className="skills-area px-3 ">
         <Container>
@@ -1607,7 +1658,6 @@ const Index = () => {
         </Container>
       </section>
       {/* Skills Area end */}
-
       {/* Testimonials Area Three Start */}
       <section className="testimonials-three-area px-3  py-130 rpy-100">
         <Container>
@@ -1698,7 +1748,6 @@ const Index = () => {
         </Container>
       </section>
       {/* Testimonials Area Three End */}
-
       {/* Contact Form Section Start */}
       <section
         className="contact-form-area px-3  py-130 rpy-100  mb-4 bgs-cover"
@@ -1830,7 +1879,6 @@ const Index = () => {
         </Container>
       </section>
       {/* Contact Form Section End */}
-
       {/* Blog Area start */}
       <section className="blog-area pb-150 px-3  mb-30 mt-4 rmb-0 rel z-1">
         <Container style={{ marginTop: "150px" }}>
