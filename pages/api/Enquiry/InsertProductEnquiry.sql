@@ -4,7 +4,8 @@ INSERT INTO
         PhoneNumber,
         Email,
         City,
-        CompanyName,
+        CompanyName,        
+        TypeOfReq,
         Product,
         Remarks,
         CreatedDate
@@ -16,6 +17,7 @@ VALUES
         @Email,
         @City,
         @CompanyName,
+        @TypeOfReq,
         @Product,
         @Remarks,
         GETDATE()

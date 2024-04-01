@@ -1,8 +1,16 @@
 import Layout from "@/layout";
-import { Chip, Container, Divider, Grid } from "@mui/material";
 import Link from "next/link";
-import { Button, Dialog, DialogContent } from "@mui/material";
-import { TextField, MenuItem } from "@mui/material";
+import {
+  Chip,
+  Container,
+  Divider,
+  Grid,
+  Button,
+  Dialog,
+  DialogContent,
+  TextField,
+  MenuItem,
+} from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -23,7 +31,7 @@ const ProjectGrid = () => {
     setOpen(false);
   };
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
       console.log("Form submitted successfully:", response.data);
@@ -35,7 +43,7 @@ const ProjectGrid = () => {
         confirmButtonText: "Back to Home",
       }).then((result) => {
         if (result.isConfirmed) {
-          router.push("/");
+          resetForm();
         }
       });
     } catch (error) {
@@ -64,6 +72,7 @@ const ProjectGrid = () => {
                   company_name: "",
                   email: "",
                   city: "",
+                  TypeOfReq: "p",
                   product: "HRMS",
                   enquiry_details: "",
                 }}
@@ -743,6 +752,7 @@ const ProjectGrid = () => {
                         company_name: "",
                         email: "",
                         city: "",
+                        TypeOfReq: "p",
                         product: "HRMS",
                         enquiry_details: "",
                       }}

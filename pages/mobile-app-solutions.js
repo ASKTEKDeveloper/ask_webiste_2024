@@ -1,16 +1,76 @@
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
-import { Container } from "@mui/material";
 import Link from "next/link";
-
 import Marquee from "react-fast-marquee";
-
 import { Nav, Tab } from "react-bootstrap";
+import {
+  Chip,
+  Container,
+  Divider,
+  Grid,
+  Button,
+  Dialog,
+  DialogContent,
+  TextField,
+  MenuItem,
+} from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const Services = () => {
+  const [open, setOpen] = useState(false);
+  const [submitted, setsubmitted] = useState(false);
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSubmit = async (values, { setSubmitting,resetForm  }) => {
+    try {
+      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
+      console.log("Form submitted successfully:", response.data);
+      setOpen(false);
+      Swal.fire({
+        title: "Thank you!",
+        text: "Your service request has been submitted successfully. Our team will get back to you shortly.",
+        icon: "success",
+        confirmButtonText: "Done",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          resetForm(); 
+        }
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError("Error submitting form. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Layout>
       <PageBanner pageName={"Mobile App Solutions"} />
+
+      <div className="sticky-button-container">
+        <Button
+          onClick={handleButtonClick}
+          variant="contained"
+          color="warning"
+          className="sticky-button headShake "
+        >
+          Quick Enquiry
+        </Button>
+      </div>
 
       {/* mobile-services*/}
       <section className="about-area-two px-3  py-130 rpy-100 rel z-1">
@@ -997,148 +1057,409 @@ const Services = () => {
 
       {/* Contact Form Section Start */}
       <section
-        className="contact-form-area py-130 px-3  rpy-100  mb-4 bgs-cover"
+        className="contact-form-area py-50 pb-100 px-3  rpy-100  mb-4 bgs-cover"
         style={{
-          backgroundImage: "url(assets/images/background/contact-form-bg.jpg)",
+          backgroundImage: "url(assets/images/background/feature-bg.jpg)",
         }}
       >
         <Container>
           <div className="row gap-100 align-items-center">
-            <div className="col-lg-5">
-              <div className="contact-info-wrap wow fadeInLeft delay-0-2s">
-                <div className="section-title mb-40">
-                  <span className="sub-title mb-10">Require a Service?  ?</span>
-                  <h2>We Would Love To Hear From You.</h2>
+            <div className="col-lg-12 mb-40">
+              <div className="d-flex justify-content-center align-items-center gap-5 contact-info-wrap wow fadeInLeft delay-0-2s">
+                <div className="why-choose-image d-flex justify-content-center align-items-center gap-2 fadeInUp rmb-55">
+                  <img
+                    src="/assets/images/projects/erp/Calling-amico.png"
+                    alt="Why Choose"
+                    style={{ maxWidth: "200px" }}
+                  />
                 </div>
-                <div className="contact-info-part">
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-map-marked-alt" />
-                    </div>
-                    <div className="content">
-                      <span>Location</span>
-                      <h5>Kodambakkam, Chennai</h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-envelope-open-text" />
-                    </div>
-                    <div className="content">
-                      <span>Email Us</span>
-                      <h5>
-                        <a href="mailto:support@gmail.com">sales@asktek.net</a>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-phone" />
-                    </div>
-                    <div className="content">
-                      <span>Hotline</span>
-                      <h5>
-                        <a href="calto:+04445034080">+044 4503 4080</a>
-                      </h5>
-                    </div>
-                  </div>
+                <div className="section-title mb-40">
+                  <h2 className="text-gradient-title2">Request a Call Back Today</h2>
+                  <span className="sub-title  mb-10 text-gradient-title2">
+                    Explore Our Services
+                  </span>
                 </div>
               </div>
             </div>
-            <div className="col-lg-7">
-              <div className="contact-form bg-white p-80 rmb-55 wow fadeInRight delay-0-2s">
-                {/* <div className="section-title mb-30">
-                  <h3>Contact Us for your project estimation</h3>
-                </div> */}
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="form-style-one"
-                  action="#"
-                  name="contact-form"
+            <div className="col-lg-12 ">
+              <div className="contact-form shadowbox-2 bg-white p-50 rmb-55 wow fadeInRight delay-0-2s">
+                <Formik
+                  initialValues={{
+                    name: "",
+                    phone_number: "",
+                    company_name: "",
+                    email: "",
+                    city: "",
+                    TypeOfReq: "s",
+                    product: "MobileAppSolutions",
+                    enquiry_details: "",
+                  }}
+                  validationSchema={Yup.object({
+                    name: Yup.string().required(
+                      "Please provide your full name."
+                    ),
+                    phone_number: Yup.string().required(
+                      "Please enter your phone number."
+                    ),
+                    email: Yup.string()
+                      .email("Please provide a valid email address.")
+                      .required("Email address is required."),
+                    city: Yup.string().required("Please specify your city."),
+                    company_name: Yup.string().required(
+                      "Please specify the name of your company."
+                    ),
+                    enquiry_details: Yup.string().max(
+                      200,
+                      "should not exceed 200 characters."
+                    ),
+                  })}
+                  onSubmit={handleSubmit}
                 >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Full name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="emailid"
-                          name="email"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Email"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Organization"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={3}
-                          placeholder="Please share brief on your project requirements"
-                          required
-                          defaultValue={""}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-xl-12 p-20 m-10">
-                      <div className="form-group mb-0">
-                        <button
-                          type="submit"
-                          className="theme-btn style-two mt-15 w-100"
-                        >
-                          Get a Call Back <i className="far fa-long-arrow-right" />
+                  <Form className="bg-white p-10 m-25">
+                    <Grid container spacing={3}>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="name">
+                          {({ field, form }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              label="Name"
+                              variant="standard"
+                              color="info"
+                              // required
+                              error={form.errors.name && form.touched.name}
+                              helperText={<ErrorMessage name="name" />}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="phone_number">
+                          {({ field, form }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              label="Phone no"
+                              variant="standard"
+                              // required
+                              error={
+                                form.errors.phone_number &&
+                                form.touched.phone_number
+                              }
+                              helperText={<ErrorMessage name="phone_number" />}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="company_name">
+                          {({ field, form }) => (
+                            <TextField
+                              // required
+                              {...field}
+                              fullWidth
+                              label="Your Company Name"
+                              variant="standard"
+                              error={
+                                form.errors.company_name &&
+                                form.touched.company_name
+                              }
+                              helperText={<ErrorMessage name="company_name" />}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="email">
+                          {({ field, form }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              // required
+                              label="Email"
+                              variant="standard"
+                              type="email"
+                              error={form.errors.email && form.touched.email}
+                              helperText={<ErrorMessage name="email" />}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="city">
+                          {({ field, form }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              label="City"
+                              // required
+                              variant="standard"
+                              error={form.errors.city && form.touched.city}
+                              helperText={<ErrorMessage name="city" />}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <Field name="product">
+                          {({ field }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              select
+                              label="Products"
+                              variant="standard"
+                            >
+                              <MenuItem value="MobileAppSolutions">
+                                Mobile App Solutions
+                              </MenuItem>
+                              <MenuItem value="EnterpriseAppDevelopment">
+                                Enterprise Application Development
+                              </MenuItem>
+                              <MenuItem value="EcommerceAppDevelopment">
+                                Ecommerce Application Development
+                              </MenuItem>
+                              <MenuItem value="UIUX">UI/UX Strategy</MenuItem>
+                              <MenuItem value="DigitalMarketing">
+                                Digital Marketing
+                              </MenuItem>
+                              <MenuItem value="ERPDevelopment">
+                                ERP Software Development
+                              </MenuItem>
+                            </TextField>
+                          )}
+                        </Field>
+                      </Grid>
+
+                      <Grid item xs={12}>
+                        <Field name="enquiry_details">
+                          {({ field, form }) => (
+                            <TextField
+                              {...field}
+                              fullWidth
+                              multiline
+                              rows={3}
+                              label="Remarks"
+                              variant="standard"
+                              error={
+                                form.errors.enquiry_details &&
+                                form.touched.enquiry_details
+                              }
+                              helperText={
+                                <ErrorMessage name="enquiry_details" />
+                              }
+                            />
+                          )}
+                        </Field>
+                      </Grid>
+                      <Grid
+                        item
+                        xs={12}
+                        className="d-flex justify-content-center align-items-center gap-2"
+                      >
+                        <button type="submit" className="theme-btn style-four">
+                          Request Call Back
+                          <i className="far fa-long-arrow-right" />
                         </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                      </Grid>
+                    </Grid>
+                  </Form>
+                </Formik>
               </div>
             </div>
           </div>
         </Container>
       </section>
       {/* Contact Form Section End */}
+      <Dialog open={open} onClose={handleClose} maxWidth={"lg"}>
+        <DialogContent className="bg-white p-0 m-0 ">
+          <div className="form-style-two bg-white">
+            <div className="mb-25 pt-10 p-5 bg-info text-center">
+              <h3 style={{ color: "white", fontFamily: "oswald" }}>
+                Quick Enquiry
+              </h3>
+            </div>
+            <Formik
+              initialValues={{
+                name: "",
+                phone_number: "",
+                company_name: "",
+                email: "",
+                city: "",
+                TypeOfReq: "s",
+                product: "MobileAppSolutions",
+                enquiry_details: "",
+              }}
+              validationSchema={Yup.object({
+                name: Yup.string().required("Please provide your full name."),
+                phone_number: Yup.string().required(
+                  "Please enter your phone number."
+                ),
+                email: Yup.string()
+                  .email("Please provide a valid email address.")
+                  .required("Email address is required."),
+                city: Yup.string().required("Please specify your city."),
+                company_name: Yup.string().required(
+                  "Please specify the name of your company."
+                ),
+                enquiry_details: Yup.string().max(
+                  200,
+                  "should not exceed 200 characters."
+                ),
+              })}
+              onSubmit={handleSubmit}
+            >
+              <Form className="bg-white p-10 m-25">
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="name">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="Name"
+                          variant="standard"
+                          color="info"
+                          // required
+                          error={form.errors.name && form.touched.name}
+                          helperText={<ErrorMessage name="name" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="phone_number">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="Phone no"
+                          variant="standard"
+                          // required
+                          error={
+                            form.errors.phone_number &&
+                            form.touched.phone_number
+                          }
+                          helperText={<ErrorMessage name="phone_number" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="company_name">
+                      {({ field, form }) => (
+                        <TextField
+                          // required
+                          {...field}
+                          fullWidth
+                          label="Your Company Name"
+                          variant="standard"
+                          error={
+                            form.errors.company_name &&
+                            form.touched.company_name
+                          }
+                          helperText={<ErrorMessage name="company_name" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="email">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          // required
+                          label="Email"
+                          variant="standard"
+                          type="email"
+                          error={form.errors.email && form.touched.email}
+                          helperText={<ErrorMessage name="email" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="city">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="City"
+                          // required
+                          variant="standard"
+                          error={form.errors.city && form.touched.city}
+                          helperText={<ErrorMessage name="city" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="product">
+                      {({ field }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          select
+                          label="Products"
+                          variant="standard"
+                        >
+                          <MenuItem value="MobileAppSolutions">
+                            Mobile App Solutions
+                          </MenuItem>
+                          <MenuItem value="EnterpriseAppDevelopment">
+                            Enterprise Application Development
+                          </MenuItem>
+                          <MenuItem value="EcommerceAppDevelopment">
+                            Ecommerce Application Development
+                          </MenuItem>
+                          <MenuItem value="UIUX">UI/UX Strategy</MenuItem>
+                          <MenuItem value="DigitalMarketing">
+                            Digital Marketing
+                          </MenuItem>
+                          <MenuItem value="ERPDevelopment">
+                            ERP Software Development
+                          </MenuItem>
+                        </TextField>
+                      )}
+                    </Field>
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <Field name="enquiry_details">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          multiline
+                          rows={3}
+                          label="Remarks"
+                          variant="standard"
+                          error={
+                            form.errors.enquiry_details &&
+                            form.touched.enquiry_details
+                          }
+                          helperText={<ErrorMessage name="enquiry_details" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <button type="submit" className="theme-btn style-four">
+                      Request Call Back
+                      <i className="far fa-long-arrow-right" />
+                    </button>
+                  </Grid>
+                </Grid>
+              </Form>
+            </Formik>
+          </div>
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 };

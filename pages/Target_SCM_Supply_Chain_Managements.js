@@ -31,7 +31,7 @@ const ProjectGrid = () => {
     setOpen(false);
   };
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting,resetForm }) => {
     try {
       const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
       console.log("Form submitted successfully:", response.data);
@@ -43,7 +43,7 @@ const ProjectGrid = () => {
         confirmButtonText: "Back to Home",
       }).then((result) => {
         if (result.isConfirmed) {
-          router.push("/");
+         resetForm(); 
         }
       });
     } catch (error) {
@@ -71,7 +71,8 @@ const ProjectGrid = () => {
                   phone_number: "",
                   company_name: "",
                   email: "",
-                  city: "",
+                  city: "",                  
+                  TypeOfReq: "p",
                   product: "SCM",
                   enquiry_details: "",
                 }}
@@ -742,7 +743,8 @@ const ProjectGrid = () => {
                         phone_number: "",
                         company_name: "",
                         email: "",
-                        city: "",
+                        city: "",                        
+                        TypeOfReq: "p",
                         product: "SCM",
                         enquiry_details: "",
                       }}
