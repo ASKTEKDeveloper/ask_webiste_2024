@@ -31,24 +31,28 @@ const ProjectGrid = () => {
     setOpen(false);
   };
 
-  const handleSubmit = async (values, { setSubmitting,resetForm }) => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
-      console.log("Form submitted successfully:", response.data);
-      setOpen(false);
+      const response = await axios.post('/api/Enquiry/ProductEnquiry', values);
+      console.log('Form submitted successfully:', response.data);
       Swal.fire({
-        title: "Thank you!",
+        title: 'Thank you!',
         text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
-        icon: "success",
-        confirmButtonText: "Back to Home",
+        icon: 'success',
+        confirmButtonText: 'Done',
       }).then((result) => {
         if (result.isConfirmed) {
-         resetForm(); 
+          resetForm();
         }
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setError("Error submitting form. Please try again later.");
+      console.error('Error submitting form:', error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Error submitting form. Please try again later.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
     } finally {
       setSubmitting(false);
     }

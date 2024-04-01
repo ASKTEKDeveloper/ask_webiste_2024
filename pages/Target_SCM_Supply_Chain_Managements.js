@@ -40,7 +40,7 @@ const ProjectGrid = () => {
         title: "Thank you!",
         text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
         icon: "success",
-        confirmButtonText: "Back to Home",
+        confirmButtonText: "Done",
       }).then((result) => {
         if (result.isConfirmed) {
          resetForm(); 

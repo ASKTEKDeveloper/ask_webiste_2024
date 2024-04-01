@@ -7,6 +7,8 @@ import {
   Container,
   Divider,
   InputLabel,
+  Stack,
+  Box,
 } from "@mui/material";
 import Link from "next/link";
 import { CgWorkAlt } from "react-icons/cg";
@@ -26,6 +28,9 @@ import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
+import * as Yup from "yup";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
 import {
   Dialog,
   DialogTitle,
@@ -35,10 +40,16 @@ import {
 import { Grid } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
-
 import { TextField, MenuItem } from "@mui/material";
 
 import axios from "@/axios";
+import { useFormik } from "formik";
+import Swal from "sweetalert2";
+
+const StyledButton = styled(Button)({
+  whiteSpace: "nowrap",
+  width: "100%",
+});
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -52,9 +63,32 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
+const useStyles = styled((theme) => ({
+  fileInput: {
+    display: "none",
+  },
+  chooseFileButton: {
+    width: "100%",
+    marginRight: theme.spacing(2),
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    "&:hover": {
+      backgroundColor: theme.palette.primary.dark,
+    },
+  },
+}));
+
 const Careers = () => {
   const theme = useTheme();
+
+  const classes = useStyles();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const [selectedFilePhoto, setSelectedFilePhoto] = useState("");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFilePhoto(file);
+  };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -70,15 +104,6 @@ const Careers = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Handle form submission here
-      console.log("Form submitted:", formData);
-      setOpenSnackbar(true);
-    }
   };
 
   const validateForm = () => {
@@ -121,6 +146,33 @@ const Careers = () => {
     setOpenSnackbar(false);
   };
 
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
+      console.log("Form submitted successfully:", response.data);
+      Swal.fire({
+        title: "Thank you!",
+        text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
+        icon: "success",
+        confirmButtonText: "Done",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          resetForm();
+        }
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "Error submitting form. Please try again later.",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Layout>
       <img
@@ -141,19 +193,6 @@ const Careers = () => {
                   environment where your ideas are valued, and your growth is
                   supported
                 </h4>
-                {/* <div className="image my-50 wow fadeInUp delay-0-2s">
-                  <img
-                    src="/assets/images/projects/mockup-erp.png"
-                    alt="Service Details"
-                    style={{ objectFit: "contain", maxWidth: "60%" }}
-                  />
-                </div> */}
-                {/* <p>
-                  We're on the lookout for talented individuals like you to join
-                  our team! At ASK Technology, we offer a dynamic, innovative
-                  environment where your ideas are valued, and your growth is
-                  supported
-                </p> */}
               </div>
             </div>
           </div>
@@ -244,153 +283,235 @@ const Careers = () => {
             </div>
             <div className="col-lg-6">
               <div className="contact-form shadowbox-2 bg-white p-50">
-                <form onSubmit={handleSubmit} className="bg-white">
-                  <Grid container spacing={3}>
-                    <Grid item xs={12} sm={12}>
-                      <InputLabel
-                        htmlFor="resume-upload"
-                        className="inputstextlabel"
-                      >
-                        Name
-                      </InputLabel>
-                      <TextField
-                        fullWidth
-                        // label="Name"
-                        variant="outlined"
-                        name="name"
-                        style={{ fontFamily: "oswald" }}
-                        value={formData.name}
-                        onChange={handleChange}
-                        error={errors.name ? true : false}
-                        helperText={errors.name}
-                        size="small"
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={12}>
-                      <InputLabel
-                        htmlFor="resume-upload"
-                        className="inputstextlabel"
-                      >
-                        Phone no
-                      </InputLabel>
-                      <TextField
-                        fullWidth
-                        size="small"
-                        // label="Phone no"
-                        variant="outlined"
-                        name="phone_number"
-                        value={formData.phone_number}
-                        onChange={handleChange}
-                        error={errors.phone_number ? true : false}
-                        helperText={errors.phone_number}
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12} sm={12}>
-                      <InputLabel
-                        htmlFor="resume-upload"
-                        className="inputstextlabel"
-                      >
-                        Email
-                      </InputLabel>
+                <Formik
+                  initialValues={{
+                    name: "",
+                    phone_number: "",
+                    email: "",
+                    gender: "",
+                    years_of_experience: "",
+                    resume: "",
+                  }}
+                  validate={(values) => {
+                    const errors = {};
+                    if (!values.name) {
+                      errors.name = "Please enter your name";
+                    }
+                    if (!values.phone_number) {
+                      errors.phone_number = "Please enter your phone number";
+                    }
+                    if (!values.email) {
+                      errors.email = "Please enter your email";
+                    }
+                    if (!values.gender) {
+                      errors.gender = "Please select your gender";
+                    }
+                    if (!values.years_of_experience) {
+                      errors.years_of_experience =
+                        "Please enter your years of experience";
+                    }
+                    return errors;
+                  }}
+                  onSubmit={handleSubmit}
+                >
+                  {({ errors, touched }) => (
+                    <Form className="bg-white">
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} sm={12}>
+                          <InputLabel
+                            htmlFor="resume-upload"
+                            className="inputstextlabel"
+                          >
+                            Name
+                          </InputLabel>
+                          <Field name="name">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                error={form.errors.name && form.touched.name}
+                                helperText={
+                                  form.errors.name &&
+                                  form.touched.name &&
+                                  form.errors.name
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} sm={12}>
+                          <InputLabel
+                            htmlFor="resume-upload"
+                            className="inputstextlabel"
+                          >
+                            Phone no
+                          </InputLabel>
 
-                      <TextField
-                        size="small"
-                        fullWidth
-                        // label="Email"
-                        variant="outlined"
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        error={errors.email ? true : false}
-                        helperText={errors.email}
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField
-                        fullWidth
-                        size="small"
-                        select
-                        label="Gender"
-                        variant="outlined"
-                        name="gender"
-                        value={formData.gender}
-                        onChange={handleChange}
-                        error={errors.gender ? true : false}
-                        helperText={errors.gender}
-                        required
-                      >
-                        <MenuItem value="male">Male</MenuItem>
-                        <MenuItem value="female">Female</MenuItem>
-                        <MenuItem value="other">Other</MenuItem>
-                      </TextField>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <TextField
-                        fullWidth
-                        size="small"
-                        label="Years of Experience"
-                        variant="outlined"
-                        type="number"
-                        name="years_of_experience"
-                        value={formData.years_of_experience}
-                        onChange={handleChange}
-                        error={errors.years_of_experience ? true : false}
-                        helperText={errors.years_of_experience}
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Button
-                        fullWidth
-                        component="label"
-                        role={undefined}
-                        variant="outlined"
-                        tabIndex={-1}
-                        onChange={handleChange}
-                        inputProps={{ accept: ".pdf,.docx" }}
-                        startIcon={<CloudUploadIcon />}
-                      >
-                        Upload Resume (PDF, DOCX)
-                        <VisuallyHiddenInput type="file" />
-                      </Button>
+                          <Field name="phone_number">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                error={
+                                  form.errors.phone_number &&
+                                  form.touched.phone_number
+                                }
+                                helperText={
+                                  form.errors.phone_number &&
+                                  form.touched.phone_number &&
+                                  form.errors.phone_number
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} sm={12}>
+                          <InputLabel
+                            htmlFor="resume-upload"
+                            className="inputstextlabel"
+                          >
+                            Email
+                          </InputLabel>
 
-                      {/* <InputLabel
-                        htmlFor="resume-upload"
-                        className="inputstextlabel"
-                      >
-                        Upload Resume (PDF, DOCX)
-                      </InputLabel>
-                      <TextField
-                        fullWidth
-                        variant="outlined"
-                        type="file"
-                        id="resume-upload"
-                        name="resume"
-                        onChange={handleChange}
-                        inputProps={{ accept: ".pdf,.docx" }}
-                        required
-                        sx={{ borderStyle: "dotted" }}
-                      /> */}
-                    </Grid>
+                          <Field name="email">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                error={form.errors.email && form.touched.email}
+                                helperText={
+                                  form.errors.email &&
+                                  form.touched.email &&
+                                  form.errors.email
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <InputLabel
+                            htmlFor="resume-upload"
+                            className="inputstextlabel"
+                          >
+                            Gender
+                          </InputLabel>
+                          <Field name="gender">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                select
+                                variant="outlined"
+                                size="small"
+                                error={
+                                  form.errors.gender && form.touched.gender
+                                }
+                                helperText={
+                                  form.errors.gender &&
+                                  form.touched.gender &&
+                                  form.errors.gender
+                                }
+                              >
+                                <MenuItem value="male">Male</MenuItem>
+                                <MenuItem value="female">Female</MenuItem>
+                                <MenuItem value="other">Other</MenuItem>
+                              </TextField>
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <InputLabel
+                            htmlFor="resume-upload"
+                            className="inputstextlabel"
+                          >
+                            Yrs of Experience
+                          </InputLabel>
 
-                    <Grid item xs={12} justifyContent={"center"}>
-                      <Button
-                        variant="outlined"
-                        color="primary"
-                        size="large"
-                        fullWidth
-                        type="submit"
-                        endIcon={<i className="far fa-long-arrow-right" />}
-                      >
-                        Submit
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </form>
+                          <Field name="years_of_experience">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                variant="outlined"
+                                size="small"
+                                type="number"
+                                error={
+                                  form.errors.years_of_experience &&
+                                  form.touched.years_of_experience
+                                }
+                                helperText={
+                                  form.errors.years_of_experience &&
+                                  form.touched.years_of_experience &&
+                                  form.errors.years_of_experience
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} md={12}>
+                          <Box fullWidth>
+                            <label
+                              htmlFor="fileInput"
+                              style={{ width: "100%" }}
+                            >
+                              <Button
+                                fullWidth
+                                component="span"
+                                className={classes.chooseFileButton}
+                                variant="outlined"
+                                size="large"
+                                startIcon={<CloudUploadIcon />}
+                              >
+                                {selectedFilePhoto
+                                  ? "Change Attached"
+                                  : "Upload Resume (PDF, DOCX)"}
+                              </Button>
+                              <input
+                                className={classes.fileInput}
+                                id="fileInput"
+                                type="file"
+                                accept=".pdf,.doc,.docx"
+                                onChange={(event) => {
+                                  handleFileChange(event);
+                                }}
+                                style={{ display: "none" }}
+                              />
+                            </label>
+                          </Box>
+                          {selectedFilePhoto && (
+                            <Typography
+                              textTransform={"capitalize"}
+                              variant="caption"
+                              color="inherit"
+                            >
+                              {selectedFilePhoto
+                                ? selectedFilePhoto.name
+                                : "No file chosen"}
+                            </Typography>
+                          )}
+                        </Grid>
+                        <Grid item xs={12} justifyContent={"center"}>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            fullWidth
+                            type="submit"
+                            endIcon={<i className="far fa-long-arrow-right" />}
+                          >
+                            Submit
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Form>
+                  )}
+                </Formik>
               </div>
             </div>
             <p className="py-50">

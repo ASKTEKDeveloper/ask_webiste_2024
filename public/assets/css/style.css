@@ -958,16 +958,14 @@ a.theme-btn.style-four:not(:hover):after {
   opacity: 0.6;
 }
 
-
 .text-white .benefits-item2 .icon i {
   /* color: var(--primary-color); */
-  color: #9195F6;
+  color: #9195f6;
 }
 
 .text-white .benefits-item2 .content p {
   opacity: 0.6;
 }
-
 
 .text-white .service-two-item .icon i {
   color: var(--primary-color);
@@ -6253,8 +6251,8 @@ h6,
 .service-item.style-three .icon {
   line-height: 1;
   font-size: 85px;
-  margin-bottom: 20px;  
-  color: #219C90;
+  margin-bottom: 20px;
+  color: #219c90;
   /* color: var(--secondary-color); */
 }
 .service-item.style-three h4 {
@@ -6314,7 +6312,7 @@ h6,
 
 .benefits-item2:hover2 {
   color: black;
-  border-radius: 20px;  
+  border-radius: 20px;
   transition: all 0.2s;
   padding: 15px;
   cursor: pointer;
@@ -6357,7 +6355,6 @@ h6,
     display: flex;
   }
 
-  
   .benefits-item2 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6385,18 +6382,16 @@ h6,
   margin-bottom: 15px;
 }
 
-
 .benefits-item2 .icon {
   font-size: 40px;
   max-width: 100px;
   line-height: 1;
-  color:#9195F6;
+  color: #9195f6;
   /* color: var(--secondary-color); */
 }
 .benefits-item2 .content h4 {
   margin-bottom: 15px;
 }
-
 
 .mission-vision-item .icon {
   font-size: 40px;
@@ -6866,8 +6861,8 @@ h6,
   line-height: 1;
   font-size: 50px;
   margin-bottom: 22px;
-  display: inline-block;  
-  color: #219C90;
+  display: inline-block;
+  color: #219c90;
   /* color: var(--secondary-color); */
 }
 .service-item-six h4 {
@@ -7393,8 +7388,7 @@ h6,
   animation: down-up-one 4s infinite;
 }
 
-
-.down-up-animation {  
+.down-up-animation {
   animation: down-up-one 10s infinite;
 }
 .project-shapes .shape.two {
@@ -9749,8 +9743,7 @@ blockquote .name:before {
   border-radius: 50%;
 }
 
-.comment-body .content
-{
+.comment-body .content {
   width: 100%;
 }
 .comment-body .content h5 {
@@ -11425,7 +11418,7 @@ blockquote .name:before {
 
 .sticky-button-container {
   position: fixed;
-  top: 50%; 
+  top: 50%;
   right: -55px;
   transform: translateY(-50%) rotate(360deg); /* Rotate the button */
   z-index: 1000; /* Ensure it's above other content */
@@ -11433,7 +11426,7 @@ blockquote .name:before {
 
 .sticky-button {
   /* Your button styles */
-  background-color: #3E00FF;
+  background-color: #3e00ff;
   color: #ffffff;
   border: none;
   rotate: 360deg;
@@ -11446,14 +11439,11 @@ blockquote .name:before {
   border-radius: 20px;
 }
 
-
 .text-gradient-title {
   background: -webkit-linear-gradient(#10292b, #087e4f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 .text-gradient-title2 {
   background: -webkit-linear-gradient(#2c839e, #583bcb);
@@ -11467,58 +11457,60 @@ blockquote .name:before {
   -webkit-text-fill-color: transparent;
 }
 
-.shadowbox-1
-{
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+.shadowbox-1 {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-
-.shadowbox-2
-{
+.shadowbox-2 {
   border-radius: 20px;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
-
-.shadowbox-4
-{
+.shadowbox-4 {
   padding: 20px;
   border-radius: 20px;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
-.header-add
-{
+.header-add {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: #9195F6;
+  background-color: #9195f6;
 }
 
-.inputstextlabel
-{
+.inputstextlabel {
   font-weight: 800;
-  color: #5755FE !important;
+  color: #5755fe !important;
 }
 
 .custom-scrollbar {
-  scrollbar-width: thin !important; 
-  scrollbar-color: transparent transparent!important;
+  scrollbar-width: thin !important;
+  scrollbar-color: transparent transparent !important;
 }
 
-.custom-scrollbar::-webkit-scrollbar {  
-  width: 0!important;
-  visibility: hidden!important;
-  display: none!important;
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+  visibility: hidden !important;
+  display: none !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent!important;
-  visibility: hidden!important;
-  display: none!important;
+  background: transparent !important;
+  visibility: hidden !important;
+  display: none !important;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent!important;
-  visibility: hidden!important;
-  display: none!important;
+  background-color: transparent !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+* {
+  scroll-behavior: smooth !important;
 }
