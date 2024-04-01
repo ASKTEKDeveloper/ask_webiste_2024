@@ -218,14 +218,16 @@ const ProjectGrid = () => {
           </DialogContent>
         </Dialog>
         <>
-          <Button
-            onClick={handleButtonClick}
-            variant="contained"
-            color="warning"
-            className="sticky-button headShake sticky-button-container"
-          >
-            Quick Enquiry
-          </Button>
+          <div className="sticky-button-container">
+            <Button
+              onClick={handleButtonClick}
+              variant="contained"
+              color="warning"
+              className="sticky-button headShake "
+            >
+              Quick Enquiry
+            </Button>
+          </div>
           <section className="project-grid-area rel z-2 py-50 rpy-100">
             <div className="container">
               <div className="row justify-content-center">
