@@ -22,6 +22,12 @@ import { Container } from "@mui/material";
 import Hero4Slider from "@/src/components/slider/Hero4Slider";
 import { useRef, useState } from "react";
 
+import { TextField, Dialog, Grid, LinearProgress } from "@mui/material";
+import axios from "axios";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Swal from "sweetalert2";
+
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
@@ -84,6 +90,115 @@ const Index = () => {
 
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [openLoader, setOpenLoader] = useState(false);
+
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setOpenLoader(true);
+    try {
+      const response = await axios.post("/api/Contact/ContactUS", values);
+      console.log("Form submitted successfully:", response.data);
+      SendMail(values);
+      SendMail2(values);
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "Error submitting form. Please try again later.",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const SendMail = async (datas) => {
+    setOpenLoader(true);
+    const subjectLine = "New Contact Form Submission: " + datas.subject;
+    const bodyMessage = `
+        <p>Dear Team,</p>
+        <p>A new message has been received from the website contact form:</p>
+        <p><strong>Subject:</strong> ${datas.subject}</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p><strong>Message:</strong></p>
+        <p>${datas.message}</p>
+        <p>Please review the message and respond accordingly.</p>
+        <p>Best regards,</p>
+        <p>ASK TECHNOLOGY</p>
+    `;
+    const approvs = await axios
+      .post("http://103.73.189.37/EmailAPi/api/Mail", {
+        FromMailid: "hr@techveel.com",
+        ToMailid: "sathish.asktech@gmail.com",
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Rose@99559#",
+        Body: bodyMessage,
+        SmtpPort: 587,
+        Filepathattach: "",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          setOpen(false);
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
+
+  const SendMail2 = async (datas) => {
+    setOpenLoader(true);
+    const subjectLine = "Your Message has been Received";
+    const bodyMessageToUser = `
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for contacting us!</p>
+        <p>We have received your message and will get back to you as soon as possible.</p>
+        <p>Here are the details you provided:</p>
+        <p><strong>Subject:</strong> ${datas.subject}</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p><strong>Message:</strong></p>
+        <p>${datas.message}</p>
+        <p>Best regards,</p>
+        <p>Your Website</p>
+    `;
+    const approvs = await axios
+      .post("http://103.73.189.37/EmailAPi/api/Mail", {
+        FromMailid: "hr@techveel.com",
+        ToMailid: `${datas.email}`,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Rose@99559#",
+        Body: bodyMessageToUser,
+        SmtpPort: 587,
+        Filepathattach: "",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          setOpen(false);
+          Swal.fire({
+            title: "Thank you!",
+            text: "Your message has been successfully submitted. We'll review it and respond shortly.",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
 
   return (
     <Layout header={2}>
@@ -1748,139 +1863,8 @@ const Index = () => {
         </Container>
       </section>
       {/* Testimonials Area Three End */}
-      {/* Contact Form Section Start */}
-      <section
-        className="contact-form-area px-3  py-130 rpy-100  mb-4 bgs-cover"
-        style={{
-          backgroundImage: "url(assets/images/background/contact-form-bg.jpg)",
-        }}
-      >
-        <Container>
-          <div className="row gap-100 align-items-center">
-            <div className="col-lg-7">
-              <div className="contact-form bg-white p-80 rmb-55 wow fadeInRight delay-0-2s">
-                <div className="section-title mb-30">
-                  <h3>Get In Touch With Us</h3>
-                </div>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="form-style-one"
-                  action="#"
-                  name="contact-form"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Full name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="emailid"
-                          name="email"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Email"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={3}
-                          placeholder="Message"
-                          required
-                          defaultValue={""}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-xl-12">
-                      <div className="form-group mb-0">
-                        <button
-                          type="submit"
-                          className="theme-btn style-two mt-15 w-100"
-                        >
-                          send message <i className="far fa-long-arrow-right" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div className="col-lg-5">
-              <div className="contact-info-wrap wow fadeInLeft delay-0-2s">
-                <div className="section-title mb-40">
-                  <span className="sub-title mb-10">Need Consultations ?</span>
-                  <h2>Need A Project? We Would Love To Hear From You.</h2>
-                </div>
-                <div className="contact-info-part">
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-map-marked-alt" />
-                    </div>
-                    <div className="content">
-                      <span>Location</span>
-                      <h5>Kodambakkam, Chennai</h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-envelope-open-text" />
-                    </div>
-                    <div className="content">
-                      <span>Email Us</span>
-                      <h5>
-                        <a href="mailto:support@gmail.com">sales@asktek.net</a>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-phone" />
-                    </div>
-                    <div className="content">
-                      <span>Hotline</span>
-                      <h5>
-                        <a href="calto:+04445034080">+044 4503 4080</a>
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      {/* Contact Form Section End */}
       {/* Blog Area start */}
-      <section className="blog-area pb-150 px-3  mb-30 mt-4 rmb-0 rel z-1">
+      <section className="blog-area pb-50 px-3  mb-30 mt-4 rmb-0 rel z-1">
         <Container style={{ marginTop: "150px" }}>
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
             <span className="sub-title mb-15">Our Blog &amp; News</span>
@@ -2005,6 +1989,155 @@ const Index = () => {
         </Container>
       </section>
       {/* Blog Area end */}
+      {/* loader popup dialog box */}
+      {/* Contact Form Section Start */}
+      <section className="contact-page-form  rpb-100">
+        <div className="container">
+          <div className="contact-form-wrap form-style-two bg-white wow fadeInUp delay-0-2s">
+            <div className="row text-center mb-35 justify-content-center">
+              <div className="col-xl-9 col-lg-11">
+                <div className="section-title mb-25 wow fadeInUp delay-0-2s">
+                  <span className="sub-title mb-15">Get In Touch</span>
+                  <h2>We’re Here to Help You</h2>
+                </div>
+                <p>
+                  Got a project in mind? We’d love to hear about it. Take five
+                  minutes to fill out our project form so that we can get to
+                  know you and understand your project.
+                </p>
+              </div>
+            </div>
+            <Formik
+              initialValues={{
+                name: "",
+                phone_number: "",
+                email: "",
+                subject: "",
+                message: "",
+              }}
+              validationSchema={Yup.object({
+                name: Yup.string().required("Please provide your full name."),
+                subject: Yup.string().required(
+                  "Please provide a subject for your message."
+                ),
+                phone_number: Yup.string().required(
+                  "Please enter your phone number."
+                ),
+                email: Yup.string()
+                  .email("Please provide a valid email address.")
+                  .required("Email address is required."),
+                message: Yup.string()
+                  .max(200, "should not exceed 200 characters.")
+                  .required("Type here, whats on your mind"),
+              })}
+              onSubmit={handleSubmit}
+            >
+              <Form className=" p-10 m-25">
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="name">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="Name"
+                          variant="outlined"
+                          color="info"
+                          error={form.errors.name && form.touched.name}
+                          helperText={<ErrorMessage name="name" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="phone_number">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="Phone no"
+                          variant="outlined"
+                          error={
+                            form.errors.phone_number &&
+                            form.touched.phone_number
+                          }
+                          helperText={<ErrorMessage name="phone_number" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="email">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          // required
+                          label="Email"
+                          variant="outlined"
+                          type="email"
+                          error={form.errors.email && form.touched.email}
+                          helperText={<ErrorMessage name="email" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Field name="subject">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          label="Subject"
+                          variant="outlined"
+                          color="info"
+                          // required
+                          error={form.errors.subject && form.touched.subject}
+                          helperText={<ErrorMessage name="subject" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Field name="message">
+                      {({ field, form }) => (
+                        <TextField
+                          {...field}
+                          fullWidth
+                          multiline
+                          rows={3}
+                          label="Type Something..."
+                          variant="outlined"
+                          error={form.errors.message && form.touched.message}
+                          helperText={<ErrorMessage name="message" />}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    className="d-flex justify-content-center align-items-center gap-2"
+                  >
+                    <button type="submit" className="theme-btn style-two">
+                      send message <i className="far fa-long-arrow-right" />
+                    </button>
+                  </Grid>
+                </Grid>
+              </Form>
+            </Formik>
+          </div>
+        </div>
+      </section>
+      {/* Contact Form Section End */}
+      <Dialog
+        open={openLoader}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        fullWidth
+      >
+        <LinearProgress />
+      </Dialog>
     </Layout>
   );
 };

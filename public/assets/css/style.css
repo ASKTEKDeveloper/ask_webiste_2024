@@ -641,6 +641,7 @@ a.theme-btn.style-four:not(:hover):after {
 }
 .social-style-one a {
   color: white;
+  font-size: small;
   /* padding: 5px; */
   margin-left: 10px;
   margin-right: 10px;
@@ -6713,6 +6714,14 @@ h6,
   position: relative;
   margin-bottom: 30px;
 }
+.industries-grid {
+  /* width: auto; */
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+
 .service-item-five:before {
   content: "";
   position: absolute;
@@ -11513,4 +11522,23 @@ blockquote .name:before {
 
 * {
   scroll-behavior: smooth !important;
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.css-rp6sv4-MuiFormLabel-root-MuiInputLabel-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  font-family: "Poppins" !important;
+  border-radius: 15px;
+}
+
+input:focus {
+  font-family: "Poppins";
+}
+
+input {
+  border-radius: 13px;
+}
+input {
+  font-family: "Poppins" !important;
 }

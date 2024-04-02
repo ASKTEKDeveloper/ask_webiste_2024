@@ -1,6 +1,6 @@
 import ProductBanner from "@/components/ProductBanner";
 import Layout from "@/layout";
-import { Chip, Container, Divider, Grid } from "@mui/material";
+import { Chip, Container, Divider, Grid, LinearProgress } from "@mui/material";
 import Link from "next/link";
 import {
   Button,
@@ -21,6 +21,8 @@ import { useRouter } from "next/router";
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
   const [submitted, setsubmitted] = useState(false);
+
+  const [openLoader, setOpenLoader] = useState(false);
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -32,31 +34,69 @@ const ProjectGrid = () => {
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setOpenLoader(true);
     try {
-      const response = await axios.post('/api/Enquiry/ProductEnquiry', values);
-      console.log('Form submitted successfully:', response.data);
-      Swal.fire({
-        title: 'Thank you!',
-        text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
-        icon: 'success',
-        confirmButtonText: 'Done',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          resetForm();
-        }
-      });
+      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
+      console.log("Form submitted successfully:", response.data);
+      SendMail(values);
+      resetForm();
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
       Swal.fire({
-        title: 'Error!',
-        text: 'Error submitting form. Please try again later.',
-        icon: 'error',
-        confirmButtonText: 'Ok',
+        title: "Error!",
+        text: "Error submitting form. Please try again later.",
+        icon: "error",
+        confirmButtonText: "Ok",
       });
     } finally {
       setSubmitting(false);
     }
   };
+
+  const SendMail = async (datas) => {
+    setOpenLoader(true);
+    const approvs = await axios
+      .post("http://103.73.189.37/EmailAPi/api/Mail", {
+        FromMailid: "hr@techveel.com",
+        ToMailid: `${datas.email}`,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: "Your Certificate from Techveel",
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Rose@99559#",
+        Body: `
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for your interest in our product demo!</p>
+        <p>Your request has been received successfully. We're excited to assist you further.</p>
+        <p>Our team will review your request and get back to you shortly to schedule the demo.</p>
+        <p>If you have any immediate questions or concerns, please don't hesitate to contact us.</p>
+        <p>Best Regards,</p>
+        <p>Techveel Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@techveel.com</p>
+<p><a href="http://www.techveel.com">www.techveel.com</a></p>
+
+        `,
+        SmtpPort: 587,
+        Filepathattach:
+          "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          setOpen(false);
+          Swal.fire({
+            title: "Thank you!",
+            text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
+            icon: "success",
+            confirmButtonText: "Done",
+          })
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
+
   return (
     <>
       <Layout>
@@ -74,7 +114,7 @@ const ProjectGrid = () => {
                   phone_number: "",
                   company_name: "",
                   email: "",
-                  city: "",                  
+                  city: "",
                   TypeOfReq: "p",
                   product: "ERP",
                   enquiry_details: "",
@@ -768,7 +808,7 @@ const ProjectGrid = () => {
                         phone_number: "",
                         company_name: "",
                         email: "",
-                        city: "",                        
+                        city: "",
                         TypeOfReq: "p",
                         product: "ERP",
                         enquiry_details: "",
@@ -953,8 +993,18 @@ const ProjectGrid = () => {
               </div>
             </Container>
           </section>
+
           {/* Contact Form Section End */}
         </>
+        {/* loader popup dialog box */}
+        <Dialog
+          open={openLoader}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          fullWidth
+        >
+          <LinearProgress />
+        </Dialog>
       </Layout>
     </>
   );

@@ -1,7 +1,5 @@
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
-import path from "path";
-
 import {
   Chip,
   Typography,
@@ -44,9 +42,10 @@ import { Grid } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
 import { TextField, MenuItem } from "@mui/material";
+
+import axios from "@/axios";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 const StyledButton = styled(Button)({
   whiteSpace: "nowrap",
@@ -86,43 +85,30 @@ const Careers = () => {
   const classes = useStyles();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [selectedFilePhoto, setSelectedFilePhoto] = useState("");
-  const [selectedFileName, setSelectedFileName] = useState("");
-  const [selectedFilePath, setSelectedFilePath] = useState("");
 
-  const handleFileChange = async (event) => {
-    try {
-      const file = event.target.files[0];
-      setSelectedFilePhoto(file);
-      setSelectedFileName(file.name);
-
-      // Create FormData object to send the file to server
-      const formData = new FormData();
-      formData.append("file", file);
-
-      // Log the FormData object to verify file data
-      console.log("formData:", formData);
-
-      // Upload file to server
-      const response = await axios.post("/api/upload", formData);
-
-      // Assuming server returns the file path
-      const filePath = response.data.filePath;
-      setSelectedFilePath(filePath);
-      console.log("file path", filePath);
-    } catch (error) {
-      console.error("Error uploading file:", error);
-    }
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFileName(file.name); 
   };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone_number: "",
+    email: "",
+    gender: "",
+    years_of_experience: "",
+    resume: "",
+  });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);
     try {
-      const response = await axios.post("/api/Careers/CareersForm", values);
+      const response = await axios.post("/api/Careers/Careers", values);
       console.log("Form submitted successfully:", response.data);
-      SendMail(values);
+      SendMail(response.data);
       Swal.fire({
         title: "Thank you!",
-        text: "Your job application has been submitted successfully. We'll review your application and get back to you shortly",
+        text: "Your product demo request has been submitted successfully. We'll get back to you shortly to schedule the demo.",
         icon: "success",
         confirmButtonText: "Done",
       }).then((result) => {
@@ -144,6 +130,7 @@ const Careers = () => {
   };
 
   const SendMail = async (datas) => {
+    setOpenLoader(true);
     const approvs = await axios
       .post("http://103.73.189.37/EmailAPi/api/Mail", {
         FromMailid: "hr@techveel.com",
@@ -151,23 +138,24 @@ const Careers = () => {
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
-        Subject: "Application for Job Opportunity at ASK Technology",
+        Subject: "Your Certificate from Techveel",
         SmtpServer: "us2.smtp.mailhostbox.com",
         MailPassowrd: "Rose@99559#",
+
         Body: `
         <p>Dear ${datas.name},</p>
-        <p>Thank you for considering a career opportunity at ASK Technology.</p>
-        <p>We have received your application and appreciate your interest in joining our team.</p>
-        <p>Our hiring team will review your application thoroughly. If your qualifications match our requirements, we will contact you for further steps in the recruitment process.</p>
-        <p>If you have any questions or need further information, please feel free to reach out to us.</p>
+        <p>Thank you for your interest in our product demo!</p>
+        <p>Your request has been received successfully. We're excited to assist you further.</p>
+        <p>Our team will review your request and get back to you shortly to schedule the demo.</p>
+        <p>If you have any immediate questions or concerns, please don't hesitate to contact us.</p>
         <p>Best Regards,</p>
-        <p>ASK Technology HR Team</p>
-        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktechnology.com</p>
-        <p><a href="http://www.asktek.net">www.asktechnology.com</a></p>
+        <p>Techveel Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
         SmtpPort: 587,
-        Filepathattach: "",
-        // "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
+        Filepathattach:
+          "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -190,7 +178,7 @@ const Careers = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-10">
-              <div className="section-title text-center mb-50 wow  delay-0-2s">
+              <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
                 <h4 className="text-gradient-title2 ">
                   {" "}
                   We're on the lookout for talented individuals like you to join
@@ -295,7 +283,7 @@ const Careers = () => {
                     email: "",
                     gender: "",
                     years_of_experience: "",
-                    resume: null,
+                    resume: "",
                   }}
                   validate={(values) => {
                     const errors = {};
@@ -314,9 +302,6 @@ const Careers = () => {
                     if (!values.years_of_experience) {
                       errors.years_of_experience =
                         "Please enter your years of experience";
-                    }
-                    if (!values.resume) {
-                      errors.resume = "Please upload your resume";
                     }
                     return errors;
                   }}
@@ -426,9 +411,9 @@ const Careers = () => {
                                   form.errors.gender
                                 }
                               >
-                                <MenuItem value="m">Male</MenuItem>
-                                <MenuItem value="f">Female</MenuItem>
-                                <MenuItem value="o">Other</MenuItem>
+                                <MenuItem value="male">Male</MenuItem>
+                                <MenuItem value="female">Female</MenuItem>
+                                <MenuItem value="other">Other</MenuItem>
                               </TextField>
                             )}
                           </Field>
@@ -462,62 +447,47 @@ const Careers = () => {
                             )}
                           </Field>
                         </Grid>
-                        <Grid item xs={12}>
-                          <Field name="resume">
-                            {({ field, form }) => (
-                              <>
-                                <Box fullWidth>
-                                  <label
-                                    htmlFor="fileInput"
-                                    style={{ width: "100%" }}
-                                  >
-                                    <Button
-                                      fullWidth
-                                      component="span"
-                                      className={classes.chooseFileButton}
-                                      variant="outlined"
-                                      size="large"
-                                      startIcon={<CloudUploadIcon />}
-                                    >
-                                      {selectedFileName
-                                        ? "Change Attached"
-                                        : "Upload Resume (PDF, DOCX)"}
-                                    </Button>
-                                    <input
-                                      className={classes.fileInput}
-                                      id="fileInput"
-                                      type="file"
-                                      accept=".pdf,.doc,.docx"
-                                      onChange={(event) => {
-                                        handleFileChange(event);
-                                        form.setFieldValue(
-                                          "resume",
-                                          event.currentTarget.files[0]
-                                        );
-                                      }}
-                                      style={{ display: "none" }}
-                                    />
-                                  </label>
-                                </Box>
-                                {/* Display error message if resume field has error */}
-                                {form.errors.resume && form.touched.resume && (
-                                  <Typography color="error" variant="caption">
-                                    {form.errors.resume}
-                                  </Typography>
-                                )}
-                                {/* Display selected file name */}
-                                {selectedFileName && (
-                                  <Typography
-                                    textTransform={"capitalize"}
-                                    variant="caption"
-                                    color="inherit"
-                                  >
-                                    {selectedFileName}
-                                  </Typography>
-                                )}
-                              </>
-                            )}
-                          </Field>
+                        <Grid item xs={12} md={12}>
+                          <Box fullWidth>
+                            <label
+                              htmlFor="fileInput"
+                              style={{ width: "100%" }}
+                            >
+                              <Button
+                                fullWidth
+                                component="span"
+                                className={classes.chooseFileButton}
+                                variant="outlined"
+                                size="large"
+                                startIcon={<CloudUploadIcon />}
+                              >
+                                {selectedFilePhoto
+                                  ? "Change Attached"
+                                  : "Upload Resume (PDF, DOCX)"}
+                              </Button>
+                              <input
+                                className={classes.fileInput}
+                                id="fileInput"
+                                type="file"
+                                accept=".pdf,.doc,.docx"
+                                onChange={(event) => {
+                                  handleFileChange(event);
+                                }}
+                                style={{ display: "none" }}
+                              />
+                            </label>
+                          </Box>
+                          {selectedFilePhoto && (
+                            <Typography
+                              textTransform={"capitalize"}
+                              variant="caption"
+                              color="inherit"
+                            >
+                              {selectedFilePhoto
+                                ? selectedFilePhoto.name
+                                : "No file chosen"}
+                            </Typography>
+                          )}
                         </Grid>
                         <Grid item xs={12} justifyContent={"center"}>
                           <Button

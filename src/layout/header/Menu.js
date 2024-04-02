@@ -130,28 +130,13 @@ const MobileMenu = () => {
                 <span className="fas fa-chevron-down" />
               </div>
             </li>
-
             <li className="dropdown">
-              <a href="#" onClick={() => active("shop")}>
+              <Link
+                href="Industries_we_serve"
+                onClick={() => active("Careers")}
+              >
                 Industries
-              </a>
-              <ul style={activeSubMenu("shop")}>
-                <li>
-                  <Link href="shop">shop grid</Link>
-                </li>
-                <li>
-                  <Link href="product-details">product details</Link>
-                </li>
-                <li>
-                  <Link href="cart">cart page</Link>
-                </li>
-                <li>
-                  <Link href="checkout">checkout</Link>
-                </li>
-              </ul>
-              <div className="dropdown-btn" onClick={() => active("shop")}>
-                <span className="fas fa-chevron-down" />
-              </div>
+              </Link>
             </li>
 
             <li className="dropdown">
@@ -326,24 +311,7 @@ const DeskTopMenu = () => {
           </li>
 
           <li className="dropdown">
-            <a href="#">Industries</a>
-            <ul>
-              <li>
-                <Link href="shop">shop grid</Link>
-              </li>
-              <li>
-                <Link href="product-details">product details</Link>
-              </li>
-              <li>
-                <Link href="cart">cart page</Link>
-              </li>
-              <li>
-                <Link href="checkout">checkout</Link>
-              </li>
-            </ul>
-            <div className="dropdown-btn">
-              <span className="fas fa-chevron-down" />
-            </div>
+            <Link href="Industries_we_serve">Industries</Link>
           </li>
 
           <li className="dropdown">

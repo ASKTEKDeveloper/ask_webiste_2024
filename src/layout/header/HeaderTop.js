@@ -2,29 +2,38 @@ import Link from "next/link";
 
 const HeaderTop = () => {
   return (
-    <div className="header-top-wrap bgc-secondary">
+    <div className="header-top-wrap bg-primary">
       <div className="container-fluid">
         <div className="header-top">
-          <div className="container  p-1">
+          <div className="container">
             <div className="header-top">
               <ul>
                 <li>
                   <i className="far fa-envelope" />{" "}
-                  <a href="mailto:support@gmail.com" style={{ color: "white" }}>
+                  <a
+                    href="mailto:support@gmail.com"
+                    style={{ color: "white", fontSize: "small" }}
+                  >
                     sales@asktek.net
                   </a>
                 </li>
 
                 <li>
                   <i className="far fa-phone" />{" "}
-                  <a href="callto:+919840899559" style={{ color: "white" }}>
+                  <a
+                    href="callto:+919840899559"
+                    style={{ color: "white", fontSize: "small" }}
+                  >
                     +91 98408 99559
                   </a>
                 </li>
 
                 <li>
                   <i className="far fa-tty" />{" "}
-                  <a href="callto:04445034080" style={{ color: "white" }}>
+                  <a
+                    href="callto:04445034080"
+                    style={{ color: "white", fontSize: "small" }}
+                  >
                     044-45034080
                   </a>
                 </li>
@@ -35,7 +44,7 @@ const HeaderTop = () => {
                 </li> */}
                 <li>
                   <div className="social-style-one">
-                    <a href="#" >
+                    <a href="#">
                       <i className="fab fa-facebook-f" />
                     </a>
                     <a href="#">
@@ -47,7 +56,6 @@ const HeaderTop = () => {
                     <a href="#">
                       <i className="fab fa-linkedin-in" />
                     </a>
-                                                      
                   </div>
                 </li>
               </ul>
