@@ -27,10 +27,21 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
-
+import { LiaStreamSolid } from "react-icons/lia";
+import { TfiExport } from "react-icons/tfi";
+import { GrIntegration } from "react-icons/gr";
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
+import { FaBoxes } from "react-icons/fa";
+import { AiOutlineFileDone } from "react-icons/ai";
+import { FaUserTag } from "react-icons/fa";
+import { CiShop } from "react-icons/ci";
+import { MdOutlineMonitorHeart } from "react-icons/md";
+import { GrCompliance } from "react-icons/gr";
+import { MdOutlineWorkHistory } from "react-icons/md";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { LuMonitorDot } from "react-icons/lu";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -79,6 +90,9 @@ const PartnerIcon = ({ imageName }) => (
 const Index = () => {
   const sliderRef = useRef(null);
   const [sliderIndex, setSliderIndex] = useState(0);
+  const theme = useTheme();
+  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [openLoader, setOpenLoader] = useState(false);
 
   const next = () => {
     sliderRef.current.slickNext();
@@ -87,10 +101,6 @@ const Index = () => {
   const previous = () => {
     sliderRef.current.slickPrev();
   };
-
-  const theme = useTheme();
-  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const [openLoader, setOpenLoader] = useState(false);
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);
@@ -273,9 +283,9 @@ const Index = () => {
                   industry.
                 </p>
                 <div className="about-btns mb-45">
-                  <Link legacyBehavior href="/about">
-                    <a className="theme-btn mt-15">
-                      Learn More <i className="fas fa-long-arrow-right" />
+                  <Link legacyBehavior href="#contactus">
+                    <a className="theme-btn style-three mt-15">
+                      Connect With US <i className="fas fa-long-arrow-right" />
                     </a>
                   </Link>
                 </div>
@@ -288,11 +298,7 @@ const Index = () => {
                           alt="Icon"
                         />
                       </div>
-                      <h4>
-                        <Link legacyBehavior href="service-details">
-                          IT Consulting
-                        </Link>
-                      </h4>
+                      <h4>IT Consulting</h4>
                       <p>
                         Our IT consulting services encompass strategic planning
                         to align technology initiatives with business
@@ -310,11 +316,7 @@ const Index = () => {
                           alt="Icon"
                         />
                       </div>
-                      <h4>
-                        <Link legacyBehavior href="service-details">
-                          Business Growth
-                        </Link>
-                      </h4>
+                      <h4>Business Growth</h4>
                       <p>
                         Our ERP products, tailored for textile, garment, and
                         rental management industries, streamline operations and
@@ -331,14 +333,15 @@ const Index = () => {
                 <div className="top-part">
                   <img
                     className="wow fadeInRight delay-0-3s"
-                    src="assets/images/about/about1.jpg"
+                    src="assets/images/about/image2.jpg"
                     alt="About"
+                    style={{ borderRadius: 20 }}
                   />
                   <img
                     className="wow zoomIn delay-0-5s"
                     src="assets/images/about/about2.jpg"
                     alt="About"
-                    style={{ mixBlendMode: "multiply" }}
+                    style={{ mixBlendMode: "multiply", borderRadius: 20 }}
                   />
                 </div>
                 <div className="bottom-part">
@@ -349,8 +352,9 @@ const Index = () => {
                   />
                   <img
                     className="wow fadeInDown delay-0-3s"
-                    src="assets/images/about/mockup.png"
+                    src="assets/images/about/image22.jpg"
                     alt="About"
+                    style={{ borderRadius: 20 }}
                   />
                 </div>
               </div>
@@ -364,7 +368,7 @@ const Index = () => {
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
-            <h2 className="new-font-play">Our Partners</h2>
+            <h2 className="new-font-play text-gradient-title2">Our Partners</h2>
           </div>
           <div className="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 justify-content-center">
             <Marquee
@@ -459,53 +463,40 @@ const Index = () => {
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-networking" />
+                        <LiaStreamSolid />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Streamlined Production
-                        </Link>
-                      </h6>
+                      <h6>Streamlined Production</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-coding" />
+                        <FaBoxes />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Real-Time Inventory
-                        </Link>
-                      </h6>
+                      <h6>Real-Time Inventory</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-app-development" />
+                        <TfiExport />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Effortless Export
-                        </Link>
-                      </h6>
+                      <h6>Effortless Export</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-logo" />
+                        <GrIntegration />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Seamless Integration
-                        </Link>
-                      </h6>
+                      <h6>Seamless Integration</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer" }}
+                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
                     >
-                      <Link legacyBehavior href="/project-details">
+                      <Link
+                        legacyBehavior
+                        href="/erp-for-textiles-and-garments"
+                      >
                         <a className="theme-btn style-two ">
                           Read More <i className="fas fa-long-arrow-right" />
                         </a>
@@ -548,52 +539,39 @@ const Index = () => {
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-networking" />
+                        <FaBoxes />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Optimized Stock
-                        </Link>
-                      </h6>
+                      <h6>Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-coding" />
+                        <AiOutlineFileDone />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Efficient Order Fulfilment
-                        </Link>
-                      </h6>
+                      <h6>Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-app-development" />
+                        <CiShop />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Collaborative Vendor Sourcing
-                        </Link>
-                      </h6>
+                      <h6>Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-logo" />
+                        <MdOutlineMonitorHeart />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Live Monitoring
-                        </Link>
-                      </h6>
+                      <h6>Live Monitoring</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer" }}
+                      style={{ padding: 0, cursor: "pointer", zIndex:99 }}
                     >
-                      <Link legacyBehavior href="/project-details">
+                      <Link
+                        legacyBehavior
+                        href="/Target_SCM_Supply_Chain_Managements"
+                      >
                         <a className="theme-btn style-two ">
                           Read More <i className="fas fa-long-arrow-right" />
                         </a>
@@ -626,56 +604,41 @@ const Index = () => {
                     mobile-responsive dashboards, ensuring that your workforce
                     management is as dynamic as your business
                   </p>
+                 
 
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-networking" />
+                      <GrCompliance />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Regulatory Compliance
-                        </Link>
-                      </h6>
+                      <h6>Regulatory Compliance</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-coding" />
+                      <MdOutlineWorkHistory />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Automated Payroll
-                        </Link>
-                      </h6>
+                      <h6>Automated Payroll</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-app-development" />
+                      <IoPersonCircleOutline />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Self Service Portal
-                        </Link>
-                      </h6>
+                      <h6>Self Service Portal</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-logo" />
+                      <LuMonitorDot />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Book Free Demo
-                        </Link>
-                      </h6>
+                      <h6>Book Free Demo</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer" }}
+                      style={{ padding: 0, cursor: "pointer",zIndex:99 }}
                     >
-                      <Link legacyBehavior href="/project-details">
+                      <Link legacyBehavior href="/Target_HRMS_HR_and_Payroll_Solutions">
                         <a className="theme-btn style-two ">
                           Read More <i className="fas fa-long-arrow-right" />
                         </a>
@@ -718,52 +681,39 @@ const Index = () => {
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-networking" />
+                        <FaBoxes />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Optimized Stock
-                        </Link>
-                      </h6>
+                      <h6>Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-coding" />
+                        <AiOutlineFileDone />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Efficient Order Fulfilment
-                        </Link>
-                      </h6>
+                      <h6>Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-app-development" />
+                        <CiShop />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Collaborative Vendor Sourcing
-                        </Link>
-                      </h6>
+                      <h6>Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <i className="flaticon-logo" />
+                        <MdOutlineMonitorHeart />
                       </div>
-                      <h6>
-                        <Link legacyBehavior href="service-details">
-                          Live Monitoring
-                        </Link>
-                      </h6>
+                      <h6>Live Monitoring</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer" }}
+                      style={{ padding: 0, cursor: "pointer",zIndex:99 }}
                     >
-                      <Link legacyBehavior href="/project-details">
+                      <Link
+                        legacyBehavior
+                        href="/Target_SCM_Supply_Chain_Managements"
+                      >
                         <a className="theme-btn style-two ">
                           Read More <i className="fas fa-long-arrow-right" />
                         </a>
@@ -807,7 +757,7 @@ const Index = () => {
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-3s">
+              <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-3s">
                 <BootstrapTooltip
                   title="Learn More about mobile services"
                   arrow
@@ -1991,7 +1941,7 @@ const Index = () => {
       {/* Blog Area end */}
       {/* loader popup dialog box */}
       {/* Contact Form Section Start */}
-      <section className="contact-page-form  rpb-100">
+      <section className="contact-page-form  rpb-100" id="contactus">
         <div className="container">
           <div className="contact-form-wrap form-style-two bg-white wow fadeInUp delay-0-2s">
             <div className="row text-center mb-35 justify-content-center">

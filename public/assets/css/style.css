@@ -6326,7 +6326,7 @@ h6,
   padding: 15px;
 }
 
-.service-two-item:hover {
+.service-two-item22:hover {
   scale: 1.05;
   background-color: rgba(92, 73, 175, 0.489);
   color: black;
@@ -6363,9 +6363,12 @@ h6,
   }
 }
 .service-two-item .icon {
-  font-size: 40px;
+  font-size: 30px;
   max-width: 100px;
   line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-self: center;
   color: var(--secondary-color);
   /* margin: 5px 30px 25px 0; */
 }
@@ -6720,7 +6723,6 @@ h6,
   overflow: hidden;
   border-radius: 20px;
 }
-
 
 .service-item-five:before {
   content: "";

@@ -15,7 +15,7 @@ export const projectSliderActive = {
   autoplay: true,
   prevArrow: <Arrow icon={"fal fa-angle-left"} extraClass={"prev-arrow"} />,
   nextArrow: <Arrow icon={"fal fa-angle-right"} extraClass={"next-arrow"} />,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 10000,
   pauseOnHover: false,
   slidesToScroll: 1,
   slidesToShow: 1,
