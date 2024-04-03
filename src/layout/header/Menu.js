@@ -156,9 +156,9 @@ const MobileMenu = () => {
                 <li>
                   <Link href="Our_Engagement_Model">Engagement Model</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="index3">Our Team</Link>
-                </li>
+                </li> */}
               </ul>
               <div className="dropdown-btn" onClick={() => active("home")}>
                 <span className="fas fa-chevron-down" />
@@ -327,9 +327,9 @@ const DeskTopMenu = () => {
               <li>
                 <Link href="Our_Engagement_Model">Engagement Model</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="index3">Our Team</Link>
-              </li>
+              </li> */}
             </ul>
             <div className="dropdown-btn">
               <span className="fas fa-chevron-down" />

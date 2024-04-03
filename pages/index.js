@@ -42,6 +42,13 @@ import { GrCompliance } from "react-icons/gr";
 import { MdOutlineWorkHistory } from "react-icons/md";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { LuMonitorDot } from "react-icons/lu";
+import { TbBulb } from "react-icons/tb";
+import { SiLinkerd } from "react-icons/si";
+import { LuBrainCircuit } from "react-icons/lu";
+import { RiFocus2Line } from "react-icons/ri";
+import { TbLayersLinked } from "react-icons/tb";
+
+import { SlLike } from "react-icons/sl";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -210,6 +217,10 @@ const Index = () => {
       });
   };
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const settings = projectSliderActive(setCurrentSlide);
+
   return (
     <Layout header={2}>
       <Slider
@@ -223,10 +234,10 @@ const Index = () => {
               <span className="sub-title" style={{ color: "#3E54AC" }}>
                 Welcome to ASK Technology
               </span>
-              <h2 style={{ textTransform: "capitalize", color: "#0079FF" }}>
+              <h2 style={{ textTransform: "capitalize", color: "#0079FF" }} className="text-shadow1 text-gradient-title4">
                 WE BRING SUCCESS TO YOUR GREAT BUSINESS
               </h2>
-              <p>
+              <p> 
                 Revolutionize your operations with Ask Technology's cutting-edge
                 solutions. From ERP tailored for Textile & Garment Industries to
                 Enterprise-level Goods Traders Management, our suite of products
@@ -250,17 +261,7 @@ const Index = () => {
             }}
           />
         </div>
-      </Slider>
-      <div className="slider-arrows">
-        <div className="container rel">
-          <button className="prev-slider slick-arrow" onClick={previous}>
-            <i className="fal fa-angle-left" />
-          </button>
-          <button className="next-slider slick-arrow" onClick={next}>
-            <i className="fal fa-angle-right" />
-          </button>
-        </div>
-      </div>
+      </Slider>     
       {/* <Hero4Slider /> */}
       {/* About Area start */}
       <section className="about-area px-3  pt-150  rpb-100 rel z-1">
@@ -269,10 +270,10 @@ const Index = () => {
             <div className="col-lg-6">
               <div className="about-content rmb-65 wow fadeInLeft delay-0-2s">
                 <div className="section-title mb-30">
-                  <span className="sub-title mb-15 new-font-play">
-                    {/* About Company */}
+                  <span className="sub-title mb-15 ">
+                    ASK TECHNOLOGY
                   </span>
-                  <h3>Empowering Businesses with Innovative Solutions</h3>
+                  <h3 className="text-gradient-title3 ">Empowering Businesses with Innovative Solutions</h3>
                 </div>
                 <p>
                   At Ask Technology, we are more than just an IT services
@@ -363,65 +364,7 @@ const Index = () => {
         </Container>
       </section>
       {/* About Area end */}
-      {/* Partners Area start */}
-      <section className="partners-area px-3  pb-100 pt-150 rmt-30 rpb-70 rel z-1">
-        <div>
-          <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
-            {/* <span className="sub-title mb-15">Global Partners</span> */}
-            <h2 className="new-font-play text-gradient-title2">Our Partners</h2>
-          </div>
-          <div className="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 justify-content-center">
-            <Marquee
-              direction="right"
-              pauseOnHover
-              gradient={100}
-              loop={0}
-              autoFill
-            >
-              <div style={{ padding: 20 }}>
-                <img
-                  src="assets/images/partners/partner1.png"
-                  alt="Partner"
-                  style={{ margin: 20 }}
-                />
-              </div>
-
-              <div style={{ padding: 30 }}>
-                <img
-                  src="assets/images/partners/partner2.png"
-                  alt="Partner"
-                  style={{ margin: 20 }}
-                />
-              </div>
-
-              <div style={{ padding: 30 }}>
-                <img
-                  src="assets/images/partners/partner3.png"
-                  alt="Partner"
-                  style={{ margin: 20 }}
-                />
-              </div>
-
-              <div style={{ padding: 30 }}>
-                <img
-                  src="assets/images/partners/partner4.png"
-                  alt="Partner"
-                  style={{ margin: 20 }}
-                />
-              </div>
-
-              <div style={{ padding: 30 }}>
-                <img
-                  src="assets/images/partners/partner5.png"
-                  alt="Partner"
-                  style={{ margin: 20 }}
-                />
-              </div>
-            </Marquee>
-          </div>
-        </div>
-      </section>
-      {/* Partners Area end */}
+    
       {/* Project Area start */}
       <section
         className="project-area px-3   overflow-hidden bgc-lighter  rpt-100 rel z-1"
@@ -434,12 +377,15 @@ const Index = () => {
             <h2 className="new-font-play">
               PRODUCTS & <span style={{ color: "#9376E0" }}>SERVICES</span>
             </h2>
-          </div>
+          </div>          
 
-          <Slider {...projectSliderActive} className="project-slider-active">
+          <Slider {...settings} className="project-slider-active">
             {/*1,ERP for Textile & Garment Industries - 'TARGET'{" "} */}
             <div className="project-slider-item">
-              <div className="row">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 0 ? 9999 : 1 }}
+              >
                 <div className="col-xl-8 col-md-12  content">
                   <h3>
                     <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
@@ -465,43 +411,45 @@ const Index = () => {
                       <div className="icon">
                         <LiaStreamSolid />
                       </div>
-                      <h6>Streamlined Production</h6>
+                      <h6 className="mb-0">Streamlined Production</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <FaBoxes />
                       </div>
-                      <h6>Real-Time Inventory</h6>
+                      <h6 className="mb-0">Real-Time Inventory</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <TfiExport />
                       </div>
-                      <h6>Effortless Export</h6>
+                      <h6 className="mb-0">Effortless Export</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <GrIntegration />
                       </div>
-                      <h6>Seamless Integration</h6>
+                      <h6 className="mb-0">Seamless Integration</h6>
                     </div>
+                  </div>
 
-                    <div
-                      className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
+                  <div
+                    className="content col-12 mt-3 "
+                    style={{ padding: 0, cursor: "pointer" }}
+                  >
+                    <Link
+                      legacyBehavior
+                      href="/erp-for-textiles-and-garments"
+                      style={{}}
                     >
-                      <Link
-                        legacyBehavior
-                        href="/erp-for-textiles-and-garments"
-                      >
-                        <a className="theme-btn style-two ">
-                          Read More <i className="fas fa-long-arrow-right" />
-                        </a>
-                      </Link>
-                    </div>
+                      <a className="theme-btn style-four ">
+                        Know More
+                        <i className="fas fa-long-arrow-right" />
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
@@ -512,7 +460,10 @@ const Index = () => {
 
             {/* 2. Target SCM - Supply Chain Management */}
             <div className="project-slider-item">
-              <div className="row">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 1 ? 9999 : 1 }}
+              >
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
                   <img src="assets/images/about/mockup.png" alt="Video" />
                 </div>
@@ -541,39 +492,40 @@ const Index = () => {
                       <div className="icon">
                         <FaBoxes />
                       </div>
-                      <h6>Optimized Stock</h6>
+                     <h6 className="mb-0">Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <AiOutlineFileDone />
                       </div>
-                      <h6>Efficient Order Fulfilment</h6>
+                     <h6 className="mb-0">Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <CiShop />
                       </div>
-                      <h6>Collaborative Vendor Sourcing</h6>
+                     <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <MdOutlineMonitorHeart />
                       </div>
-                      <h6>Live Monitoring</h6>
+                     <h6 className="mb-0">Live Monitoring</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer", zIndex:99 }}
+                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
                     >
                       <Link
                         legacyBehavior
                         href="/Target_SCM_Supply_Chain_Managements"
                       >
-                        <a className="theme-btn style-two ">
-                          Read More <i className="fas fa-long-arrow-right" />
+                        <a className="theme-btn style-four ">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
                         </a>
                       </Link>
                     </div>
@@ -584,7 +536,10 @@ const Index = () => {
 
             {/* 3. HRMS - Target HR & Payroll Solutions */}
             <div className="project-slider-item">
-              <div className="row">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 2 ? 9999 : 1 }}
+              >
                 <div className="col-xl-8 col-md-12  content">
                   <h3>
                     <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
@@ -604,43 +559,46 @@ const Index = () => {
                     mobile-responsive dashboards, ensuring that your workforce
                     management is as dynamic as your business
                   </p>
-                 
 
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                      <GrCompliance />
+                        <GrCompliance />
                       </div>
-                      <h6>Regulatory Compliance</h6>
+                     <h6 className="mb-0">Regulatory Compliance</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                      <MdOutlineWorkHistory />
+                        <MdOutlineWorkHistory />
                       </div>
-                      <h6>Automated Payroll</h6>
+                     <h6 className="mb-0">Automated Payroll</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                      <IoPersonCircleOutline />
+                        <IoPersonCircleOutline />
                       </div>
-                      <h6>Self Service Portal</h6>
+                     <h6 className="mb-0">Self Service Portal</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                      <LuMonitorDot />
+                        <LuMonitorDot />
                       </div>
-                      <h6>Book Free Demo</h6>
+                     <h6 className="mb-0">Book Free Demo</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer",zIndex:99 }}
+                      style={{ padding: 0, cursor: "pointer" }}
                     >
-                      <Link legacyBehavior href="/Target_HRMS_HR_and_Payroll_Solutions">
-                        <a className="theme-btn style-two ">
-                          Read More <i className="fas fa-long-arrow-right" />
+                      <Link
+                        legacyBehavior
+                        href="/Target_HRMS_HR_and_Payroll_Solutions"
+                      >
+                        <a className="theme-btn style-four ">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
                         </a>
                       </Link>
                     </div>
@@ -652,9 +610,12 @@ const Index = () => {
               </div>
             </div>
 
-            {/* 2. Target SCM - Supply Chain Management */}
+            {/* 4. Target SCM - Supply Chain Management */}
             <div className="project-slider-item">
-              <div className="row">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 3 ? 9999 : 1 }}
+              >
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
                   <img src="assets/images/about/mockup.png" alt="Video" />
                 </div>
@@ -683,39 +644,40 @@ const Index = () => {
                       <div className="icon">
                         <FaBoxes />
                       </div>
-                      <h6>Optimized Stock</h6>
+                     <h6 className="mb-0">Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <AiOutlineFileDone />
                       </div>
-                      <h6>Efficient Order Fulfilment</h6>
+                     <h6 className="mb-0">Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <CiShop />
                       </div>
-                      <h6>Collaborative Vendor Sourcing</h6>
+                     <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <MdOutlineMonitorHeart />
                       </div>
-                      <h6>Live Monitoring</h6>
+                     <h6 className="mb-0">Live Monitoring</h6>
                     </div>
 
                     <div
                       className="content col-12 mt-3 "
-                      style={{ padding: 0, cursor: "pointer",zIndex:99 }}
+                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
                     >
                       <Link
                         legacyBehavior
                         href="/Target_SCM_Supply_Chain_Managements"
                       >
-                        <a className="theme-btn style-two ">
-                          Read More <i className="fas fa-long-arrow-right" />
+                        <a className="theme-btn style-four ">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
                         </a>
                       </Link>
                     </div>
@@ -739,6 +701,7 @@ const Index = () => {
         </div>
       </section>
       {/* Project Area end */}
+
       {/* Services Area start */}
       <section className="services-area px-3  bgc-gray text-white pt-75 pb-10 rel z-1">
         <Container>
@@ -757,213 +720,680 @@ const Index = () => {
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-3s">
-                <BootstrapTooltip
-                  title="Learn More about mobile services"
-                  arrow
-                  placement="bottom-end"
-                >
-                  <div
-                    className={`${
-                      matchesSmallScreen && "flex-column"
-                    } d-flex   justify-content-start align-items-center gap-4`}
+              <Link href="/mobile-app-solutions">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-3s">
+                  <BootstrapTooltip
+                    title="Learn More about mobile services"
+                    arrow
+                    placement="bottom-end"
                   >
-                    <div className="icon">
-                      <img
-                        src="assets/images/about/mobile-app.png"
-                        className="icon"
-                      />
-                    </div>
-                    <div className="content">
-                      <h4
-                        style={{ fontFamily: "Oswald" }}
-                        className={`${matchesSmallScreen && "text-center"}`}
-                      >
-                        <Link legacyBehavior href="service-details">
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
+                    >
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/mobile-app.png"
+                          className="icon"
+                        />
+                      </div>
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
                           Mobile App Solutions
-                        </Link>
-                      </h4>
-                      <p className={`${matchesSmallScreen && "text-center"}`}>
-                        Unlock the potential of mobile technology with our
-                        bespoke mobile app solutions. From concept to
-                        deployment, we craft intuitive and engaging apps
-                        tailored to your business needs, ensuring seamless user
-                        experiences across iOS and Android platforms
-                      </p>
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Unlock the potential of mobile technology with our
+                          bespoke mobile app solutions. From concept to
+                          deployment, we craft intuitive and engaging apps
+                          tailored to your business needs, ensuring seamless
+                          user experiences across iOS and Android platforms
+                          <br />
+                          <br />
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </BootstrapTooltip>
-              </div>
+                  </BootstrapTooltip>
+                </div>
+              </Link>
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-4s">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
-                  } d-flex   justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    <img src="assets/images/about/erp.png" className="icon" />
-                    {/* <i className="flaticon-networking" /> */}
-                  </div>
-                  <div className="content">
-                    <h4
-                      style={{ fontFamily: "Oswald" }}
-                      className={`${matchesSmallScreen && "text-center"}`}
+              <Link href="/erp-software-services">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-4s">
+                  <BootstrapTooltip
+                    title="Learn More about ERP Software Services"
+                    arrow
+                    placement="bottom-end"
+                  >
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
                     >
-                      <Link legacyBehavior href="service-details">
-                        ERP Software Development
-                      </Link>
-                    </h4>
-                    <p className={`${matchesSmallScreen && "text-center"}`}>
-                      Transform your business operations with our custom ERP
-                      software development services. Tailored to your unique
-                      requirements, our ERP solutions streamline processes,
-                      centralize data, and provide real-time insights,
-                      empowering you to make informed decisions and drive
-                      business growth
-                    </p>
-                  </div>
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/erp.png"
+                          className="icon"
+                        />
+                      </div>
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
+                          ERP Software Development
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Transform your business operations with our custom ERP
+                          software development services. Tailored to your unique
+                          requirements, our ERP solutions streamline processes,
+                          centralize data, and provide real-time insights,
+                          empowering you to make informed decisions and drive
+                          business growth
+                        </p>
+                      </div>
+                    </div>
+                  </BootstrapTooltip>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-4s">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
-                  } d-flex   justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    <img src="assets/images/about/crm.png" className="icon" />
-                    {/* <i className="flaticon-networking" /> */}
-                  </div>
-                  <div className="content">
-                    <h4
-                      style={{ fontFamily: "Oswald" }}
-                      className={`${matchesSmallScreen && "text-center"}`}
+              <Link href="/enterprise-application-services">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-4s">
+                  <BootstrapTooltip
+                    title="Learn More..."
+                    arrow
+                    placement="bottom-end"
+                  >
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
                     >
-                      <Link legacyBehavior href="service-details">
-                        Enterprise Application Development
-                      </Link>
-                    </h4>
-                    <p className={`${matchesSmallScreen && "text-center"}`}>
-                      Empower your business with scalable and robust enterprise
-                      applications that streamline operations and enhance
-                      productivity. Our custom-built solutions are designed to
-                      address your unique business challenges, driving
-                      efficiency and growth
-                    </p>
-                  </div>
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/crm.png"
+                          className="icon"
+                        />
+                      </div>
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
+                          Enterprise Application Development
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Empower your business with scalable and robust
+                          enterprise applications that streamline operations and
+                          enhance productivity. Our custom-built solutions are
+                          designed to address your unique business challenges,
+                          driving efficiency and growth
+                        </p>
+                      </div>
+                    </div>
+                  </BootstrapTooltip>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-6s">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
-                  } d-flex   justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    <img
-                      src="assets/images/about/ecommerce.png"
-                      className="icon"
-                    />
-                    {/* <i className="flaticon-coding" /> */}
-                  </div>
-                  <div className="content">
-                    <h4
-                      style={{ fontFamily: "Oswald" }}
-                      className={`${matchesSmallScreen && "text-center"}`}
+              <Link href="/ecommerce-application-development">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-6s">
+                  <BootstrapTooltip
+                    title="Learn More..."
+                    arrow
+                    placement="bottom-end"
+                  >
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
                     >
-                      <Link legacyBehavior href="service-details">
-                        Ecommerce Application Development
-                      </Link>
-                    </h4>
-                    <p className={`${matchesSmallScreen && "text-center"}`}>
-                      Revolutionize your online presence with our ecommerce
-                      application development services. From user-friendly
-                      interfaces to secure payment gateways, we create dynamic
-                      ecommerce platforms that drive sales and enhance customer
-                      engagement
-                    </p>
-                  </div>
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/ecommerce.png"
+                          className="icon"
+                        />
+                      </div>
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
+                          Ecommerce Application Development
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Revolutionize your online presence with our ecommerce
+                          application development services. From user-friendly
+                          interfaces to secure payment gateways, we create
+                          dynamic ecommerce platforms that drive sales and
+                          enhance customer engagement
+                        </p>
+                      </div>
+                    </div>
+                  </BootstrapTooltip>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-5s">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
-                  } d-flex   justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    {/* <i className="flaticon-logo" /> */}
-                    <img src="assets/images/about/ui.png" className="icon" />
-                  </div>
-
-                  <div className="content">
-                    <h4
-                      style={{ fontFamily: "Oswald" }}
-                      className={`${matchesSmallScreen && "text-center"}`}
+              <Link href="/UI/UX Strategy">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-5s">
+                  <BootstrapTooltip
+                    title="Learn More..."
+                    arrow
+                    placement="bottom-end"
+                  >
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
                     >
-                      <Link legacyBehavior href="service-details">
-                        UI/UX Strategy
-                      </Link>
-                    </h4>
-                    <p className={`${matchesSmallScreen && "text-center"}`}>
-                      Elevate your digital presence with our UI/UX strategy
-                      services. We combine innovative design principles with
-                      user-centric strategies to create intuitive interfaces and
-                      delightful user experiences, ensuring maximum engagement
-                      and retention
-                    </p>
-                  </div>
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/ui.png"
+                          className="icon"
+                        />
+                      </div>
+
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
+                          UI/UX Strategy
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Elevate your digital presence with our UI/UX strategy
+                          services. We combine innovative design principles with
+                          user-centric strategies to create intuitive interfaces
+                          and delightful user experiences, ensuring maximum
+                          engagement and retention
+                          <br />
+                          <br />
+                        </p>
+                      </div>
+                    </div>
+                  </BootstrapTooltip>
                 </div>
-              </div>
+              </Link>
             </div>
 
             <div className="col-xl-6 col-md-6">
-              <div className="service-two-item mx-4 wow fadeInUp delay-0-7s">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
-                  } d-flex   justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    {/* <i className="flaticon-seo" /> */}
-                    <img src="assets/images/about/video.png" className="icon" />
-                  </div>
-                  <div className="content">
-                    <h4
-                      style={{ fontFamily: "Oswald" }}
-                      className={`${matchesSmallScreen && "text-center"}`}
+              <Link href="/digital-marketing-services">
+                <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-7s">
+                  <BootstrapTooltip
+                    title="Learn More..."
+                    arrow
+                    placement="bottom-end"
+                  >
+                    <div
+                      className={`${
+                        matchesSmallScreen && "flex-column"
+                      } d-flex   justify-content-start align-items-center gap-4`}
                     >
-                      <Link legacyBehavior href="service-details">
-                        Digital Marketing
-                      </Link>
-                    </h4>
-                    <p className={`${matchesSmallScreen && "text-center"}`}>
-                      Amplify your online reach and drive growth with our
-                      digital marketing solutions. From SEO and PPC campaigns to
-                      social media management, we help you navigate the digital
-                      landscape and connect with your target audience
-                      effectively, driving traffic, leads, and conversions
-                    </p>
-                  </div>
+                      <div className="icon">
+                        <img
+                          src="assets/images/about/video.png"
+                          className="icon"
+                        />
+                      </div>
+                      <div className="content">
+                        <h4
+                          style={{ fontFamily: "Oswald" }}
+                          className={`${matchesSmallScreen && "text-center"}`}
+                        >
+                          Digital Marketing
+                        </h4>
+                        <p className={`${matchesSmallScreen && "text-center"}`}>
+                          Amplify your online reach and drive growth with our
+                          digital marketing solutions. From SEO and PPC
+                          campaigns to social media management, we help you
+                          navigate the digital landscape and connect with your
+                          target audience effectively, driving traffic, leads,
+                          and conversions
+                        </p>
+                      </div>
+                    </div>
+                  </BootstrapTooltip>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </Container>
       </section>
       {/* Services Area end */}
+        {/* Why Choose Us Area start */}
+        <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+        <Container>
+          <div className="row justify-content-center">
+            <div className="col-xl-8">
+              <div className="section-title text-center mb-45 wow fadeInUp delay-0-2s">
+                <span className="sub-title mb-15 new-font-play">
+                  Why Choose Ask Technology
+                </span>
+                <h5 className="my-4">
+                  At Ask Technology, we understand that the right technology
+                  partner can make all the difference. Here's why we stand out
+                  in the crowded tech landscape
+                </h5>
+              </div>
+            </div>
+          </div>
+          <Tab.Container defaultActiveKey={"wc-tap1"}>
+            <div className="why-choose-tab">
+              <Nav
+                as={"ul"}
+                className="nav nav-pills nav-fill mb-20 rmb-50 wow fadeInUp delay-0-4s"
+              >
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap1"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap1"
+                  >
+                    <TbBulb className="nav-icons" />
+                    <span>Innovation</span>
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap2"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap2"
+                  >
+                    <SiLinkerd className="nav-icons" />
+                    <span>Tailoring</span>
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap3"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap3"
+                  >
+                    <LuBrainCircuit className="nav-icons" />
+                    <span>Expertise</span>
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap4"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap4"
+                  >
+                    <RiFocus2Line className="nav-icons" />
+                    <span>Client-Centric</span>
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap5"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap5"
+                  >
+                    <TbLayersLinked className="nav-icons" />
+                    <span>End-to-End</span>
+                  </Nav.Link>
+                </li>
+
+                <li className="nav-item">
+                  <Nav.Link
+                    as="a"
+                    eventKey={"wc-tap6"}
+                    className="nav-link"
+                    data-bs-toggle="tab"
+                    href="#wc-tap6"
+                  >
+                    <SlLike className="nav-icons" />
+                    <span>Excellence</span>
+                  </Nav.Link>
+                </li>
+              </Nav>
+              <Tab.Content className="tab-content">
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap1">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmb-55">
+                        <img
+                          src="assets/images/about/Deconstructed.png"
+                          alt="Why Choose"
+                          className="why-choose-img "
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          Innovation at the Core
+                        </h3>
+                        <p>
+                          Our commitment to innovation drives everything we do.
+                          From developing cutting-edge solutions to adopting the
+                          latest technologies, we ensure your business stays
+                          ahead in a rapidly evolving digital landscape
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Strategic UI/UX Assessment</li>
+                          <li>
+                            Thorough Contextual Research and 360° Planning
+                          </li>
+                          <li>
+                            Advanced Wireframing &amp; Prototyping Techniques
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap2">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          Tailored Solutions, Every Time
+                        </h3>
+                        <p>
+                          Our approach is personalized to fit your specific
+                          requirements. We delve deep into understanding your
+                          business intricacies to provide tailor-made solutions
+                          that perfectly match your objectives. No cookie-cutter
+                          approaches here – just bespoke strategies for your
+                          success.
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Customized Strategy Development</li>
+                          <li>Thorough Needs Analysis and Consultation</li>
+                          <li>Personalized Product Development</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmt-55">
+                        <img
+                          src="assets/images/about/technology.png"
+                          alt="Why Choose"
+                          className="why-choose-img"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap3">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmb-55">
+                        <img
+                          src="assets/images/about/expert.png"
+                          alt="Why Choose"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          Proven Expertise
+                        </h3>
+                        <p>
+                          With years of experience in IT technology services, we
+                          bring a wealth of expertise to the table. Our team of
+                          skilled professionals is dedicated to delivering
+                          solutions that not only meet but exceed expectations
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Decades of IT Technology Services Experience</li>
+                          <li>In-depth Industry Expertise and Insight</li>
+                          <li>Commitment to Exceeding Client Expectations</li>
+                        </ul>
+
+                        {/* <Link legacyBehavior href="/about">
+                          <a className="theme-btn mt-30">
+                            Learn More <i className="fas fa-long-arrow-right" />
+                          </a>
+                        </Link> */}
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap4">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          Client-Centric Approach
+                        </h3>
+                        <p>
+                          Your success is our priority. We pride ourselves on
+                          our client-centric approach, ensuring open
+                          communication, transparency, and a collaborative
+                          partnership. Your challenges are our challenges, and
+                          your victories are our victories.
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Commitment to Prioritizing Your Success</li>
+                          <li>
+                            Emphasis on Open Communication and Transparency
+                          </li>
+                          <li>Building Collaborative Partnerships</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmt-55">
+                        <img
+                          src="assets/images/about/excellence.png"
+                          alt="Why Choose"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap5">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmb-55">
+                        <img
+                          src="assets/images/about/End-to-End.png"
+                          alt="Why Choose"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          End-to-End Services
+                        </h3>
+                        <p>
+                          From web and mobile app development to ready-to-go ERP
+                          products and technology training, we offer end-to-end
+                          services. This holistic approach ensures that all your
+                          technology needs are met under one roof.
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Comprehensive Web and Mobile App Development</li>
+                          <li>Ready-to-Deploy ERP Solutions</li>
+                          <li>Technology Training and Support</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane className="tab-pane fade" eventKey="wc-tap6">
+                  <div className="row gap-20 align-items-center">
+                    <div className="col-lg-8">
+                      <div className="why-choose-content">
+                        <h3 className="text-gradient-title4">
+                          Commitment to Excellence
+                        </h3>
+                        <p>
+                          Excellence is not just a goal; it's a standard. We are
+                          committed to delivering solutions that not only meet
+                          high-quality benchmarks but set new standards in the
+                          industry. Your success story is our measure of
+                          success.
+                        </p>
+                        <ul className="list-style-one pt-5">
+                          <li>Setting High-Quality Standards</li>
+                          <li>Pioneering Industry-Leading Solutions</li>
+                          <li>Your Success Drives Our Pursuit of Excellence</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                      <div className="why-choose-image rmt-55">
+                        <img
+                          src="assets/images/about/Commitment.png"
+                          alt="Why Choose"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Tab.Pane>
+              </Tab.Content>
+            </div>
+          </Tab.Container>
+        </Container>
+        <div className="why-choose-shapes">
+          <img
+            className="shape one"
+            src="assets/images/about/why-choose-shape1.png"
+            alt="Shape"
+          />
+          <img
+            className="shape two"
+            src="assets/images/about/why-choose-shape2.png"
+            alt="Shape"
+          />
+        </div>
+      </section>
+      {/* Why Choose Us Area end */}
+      
+
+        {/* Partners Area start */}
+        <section className="partners-area pb-100 pt-50 rmt-30 rpb-70 rel z-1">
+        <div>
+          <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
+            {/* <span className="sub-title mb-15">Global Partners</span> */}
+            <h2 className="text-gradient-title2">Our Partners</h2>
+          </div>
+          <div className="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 justify-content-center">
+            <Marquee
+              direction="right"
+              pauseOnHover
+              gradient={100}
+              loop={0}
+              autoFill
+            >
+              <div >
+                <img
+                  src="assets/images/clients/1.png"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+
+              <div >
+                <img
+                  src="assets/images/clients/2.png"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+
+              <div >
+                <img
+                  src="assets/images/clients/3.webp"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+
+              <div >
+                <img
+                  src="assets/images/clients/4.webp"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+
+              <div >
+                <img
+                  src="assets/images/clients/5.jpg"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+              <div >
+                <img
+                  src="assets/images/clients/6.png"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+              <div >
+                <img
+                  src="assets/images/clients/7.jpg"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+              <div >
+                <img
+                  src="assets/images/clients/8.png"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+              <div >
+                <img
+                  src="assets/images/clients/9.jpg"
+                  alt="Partner"
+                  style={{ margin: 20 }}
+                  className="client-logo"
+                />
+              </div>
+            </Marquee>
+          </div>
+        </div>
+      </section>
+      {/* Partners Area end */}
+
       {/* Work Process Area start */}
       <section className="work-process-area px-3  pt-130 pb-100 rpt-100 rpb-70 rel z-1">
         <div className="section-title text-center mb-70 wow fadeInUp delay-0-2s">
@@ -1038,7 +1468,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-      {/* Techveel Area End */}
+      {/* Work Process Area End */}
+
       {/* Techveel Area start */}
       <section className=" about-area-four px-3  pt-25 mb-5 rpt-0 rel z-2">
         <Container>
@@ -1052,12 +1483,22 @@ const Index = () => {
                   />
                   <img
                     className="text"
-                    src="assets/images/about/about-circle-text.png"
+                    src="assets/images/about/about-circle-text4.png"
                     alt="Circle Text"
+                    style={{ mixBlendMode: "screen" }}
                   />
                 </div>
                 <div className="image">
-                  <img src="assets/images/about/about-four.jpg" alt="About" />
+                  <img
+                    src="assets/images/about/techveel.jpg"
+                    alt="About"
+                    style={{
+                      maxWidth: "339px",
+                      height: "362px",
+                      objectFit: "contain",
+                      borderRadius: "20px",
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -1080,22 +1521,6 @@ const Index = () => {
                   </h2>
                   <span className="bg-text">TECHVEEL</span>
                 </div>
-                {/* <Tab.Container defaultActiveKey={"about-tap1"}>
-                  <Nav as={"ul"} className="nav nav-pills nav-fill mb-35">
-                    <li className="nav-item">
-                      <Nav.Link
-                        as={"a"}
-                        className="nav-link"
-                        data-bs-toggle="tab"
-                        href="#about-tap1"
-                        eventKey="about-tap1"
-                      >
-                        Expert Instructors
-                      </Nav.Link>
-                    </li>
-                  </Nav> */}
-                {/* <Tab.Content className="tab-content">
-                    <Tab.Pane className="tab-pane fade" eventKey="about-tap1"> */}
                 <p>
                   Placement services are designed to empower individuals with
                   the skills needed to thrive in the ever-evolving tech
@@ -1139,32 +1564,14 @@ const Index = () => {
                     </p>
                   </li>
                 </ul>
-                {/* <Typography variant="h6" color="#40679E">
-                  Ready to embark on a transformative journey? <br />
-                  Explore our courses and kickstart your tech career
-                </Typography> */}
-
-                {/* <button>
-                  <p>Discover Courses</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button> */}
-
-                <Link legacyBehavior href="/about">
+                <Link
+                  legacyBehavior
+                  href="https://techveel.com/#technology"
+                  passHref
+                >
                   <a
                     className="theme-btn mt-10"
+                    target="_blank"
                     style={{
                       color: "orange",
                       marginRight: 10,
@@ -1175,355 +1582,18 @@ const Index = () => {
                     Discover Courses <i className="fas fa-long-arrow-right" />
                   </a>
                 </Link>
-                <Link legacyBehavior href="/about">
-                  <a className="theme-btn mt-10">
+                <Link legacyBehavior href="https://techveel.com/" passHref>
+                  <a className="theme-btn mt-10" target="_blank">
                     Explore Placements <i className="fas fa-long-arrow-right" />
                   </a>
                 </Link>
-
-                {/* </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container> */}
               </div>
             </div>
           </div>
         </Container>
       </section>
       {/* Techveel Area end */}
-      {/* Why Choose Us Area start */}
-      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
-        <Container>
-          <div className="row justify-content-center">
-            <div className="col-xl-8">
-              <div className="section-title text-center mb-45 wow fadeInUp delay-0-2s">
-                <span className="sub-title mb-15 new-font-play">
-                  Why Choose Ask Technology
-                </span>
-                <h5 className="my-4">
-                  At Ask Technology, we understand that the right technology
-                  partner can make all the difference. Here's why we stand out
-                  in the crowded tech landscape
-                </h5>
-              </div>
-            </div>
-          </div>
-          <Tab.Container defaultActiveKey={"wc-tap1"}>
-            <div className="why-choose-tab">
-              <Nav
-                as={"ul"}
-                className="nav nav-pills nav-fill mb-80 rmb-50 wow fadeInUp delay-0-4s"
-              >
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap1"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap1"
-                  >
-                    <i className="flaticon-creativity" />{" "}
-                    <span>Innovation</span>
-                  </Nav.Link>
-                </li>
 
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap2"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap2"
-                  >
-                    <i className="flaticon-test" /> <span>Tailoring</span>
-                  </Nav.Link>
-                </li>
-
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap3"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap3"
-                  >
-                    <i className="flaticon-creativity" /> <span>Expertise</span>
-                  </Nav.Link>
-                </li>
-
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap4"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap4"
-                  >
-                    <i className="flaticon-support" />{" "}
-                    <span>Client-Centric</span>
-                  </Nav.Link>
-                </li>
-
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap5"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap5"
-                  >
-                    <i className="flaticon-cyber-security-1" />{" "}
-                    <span>End-to-End</span>
-                  </Nav.Link>
-                </li>
-
-                <li className="nav-item">
-                  <Nav.Link
-                    as="a"
-                    eventKey={"wc-tap6"}
-                    className="nav-link"
-                    data-bs-toggle="tab"
-                    href="#wc-tap6"
-                  >
-                    <i className="flaticon-support" /> <span>Excellence</span>
-                  </Nav.Link>
-                </li>
-              </Nav>
-
-              <Tab.Content className="tab-content">
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap1">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmb-55">
-                        <img
-                          src={
-                            "https://ik.imagekit.io/sathishask2024/Deconstructed.gif?updatedAt=1710852540100"
-                          }
-                          // src="assets/images/about/why-choose1.jpg"
-                          alt="Why Choose"
-                          className="why-choose-img "
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3 style={{ fontFamily: "oswald" }}>
-                          Innovation at the Core
-                        </h3>
-                        <p>
-                          Our commitment to innovation drives everything we do.
-                          From developing cutting-edge solutions to adopting the
-                          latest technologies, we ensure your business stays
-                          ahead in a rapidly evolving digital landscape
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Strategic UI/UX Assessment</li>
-                          <li>
-                            Thorough Contextual Research and 360° Planning
-                          </li>
-                          <li>
-                            Advanced Wireframing &amp; Prototyping Techniques
-                          </li>
-                        </ul>
-                        {/* <Link legacyBehavior href="/about">
-                          <a className="theme-btn mt-30">
-                            Learn More <i className="fas fa-long-arrow-right" />
-                          </a>
-                        </Link> */}
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap2">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3 style={{ fontFamily: "oswald" }}>
-                          Tailored Solutions, Every Time
-                        </h3>
-                        <p>
-                          Our approach is personalized to fit your specific
-                          requirements. We delve deep into understanding your
-                          business intricacies to provide tailor-made solutions
-                          that perfectly match your objectives. No cookie-cutter
-                          approaches here – just bespoke strategies for your
-                          success.
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Customized Strategy Development</li>
-                          <li>Thorough Needs Analysis and Consultation</li>
-                          <li>Personalized Product Development</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmt-55">
-                        <img
-                          src="https://ik.imagekit.io/sathishask2024/Visionary%20technology-amico.png?updatedAt=1710852508007"
-                          alt="Why Choose"
-                          className="why-choose-img "
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap3">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmb-55">
-                        <img
-                          src="assets/images/about/why-choose1.jpg"
-                          alt="Why Choose"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3>Proven Expertise</h3>
-                        <p>
-                          With years of experience in IT technology services, we
-                          bring a wealth of expertise to the table. Our team of
-                          skilled professionals is dedicated to delivering
-                          solutions that not only meet but exceed expectations
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Decades of IT Technology Services Experience</li>
-                          <li>In-depth Industry Expertise and Insight</li>
-                          <li>Commitment to Exceeding Client Expectations</li>
-                        </ul>
-
-                        {/* <Link legacyBehavior href="/about">
-                          <a className="theme-btn mt-30">
-                            Learn More <i className="fas fa-long-arrow-right" />
-                          </a>
-                        </Link> */}
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap4">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3>Client-Centric Approach</h3>
-                        <p>
-                          Your success is our priority. We pride ourselves on
-                          our client-centric approach, ensuring open
-                          communication, transparency, and a collaborative
-                          partnership. Your challenges are our challenges, and
-                          your victories are our victories.
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Commitment to Prioritizing Your Success</li>
-                          <li>
-                            Emphasis on Open Communication and Transparency
-                          </li>
-                          <li>Building Collaborative Partnerships</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmt-55">
-                        <img
-                          src="assets/images/about/why-choose1.jpg"
-                          alt="Why Choose"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap5">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmb-55">
-                        <img
-                          src="assets/images/about/why-choose1.jpg"
-                          alt="Why Choose"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3>End-to-End Services</h3>
-                        <p>
-                          From web and mobile app development to ready-to-go ERP
-                          products and technology training, we offer end-to-end
-                          services. This holistic approach ensures that all your
-                          technology needs are met under one roof.
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Comprehensive Web and Mobile App Development</li>
-                          <li>Ready-to-Deploy ERP Solutions</li>
-                          <li>Technology Training and Support</li>
-                        </ul>
-                        {/* <Link legacyBehavior href="/about">
-      <a className="theme-btn mt-30">
-        Learn More <i className="fas fa-long-arrow-right" />
-      </a>
-    </Link> */}
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-
-                <Tab.Pane className="tab-pane fade" eventKey="wc-tap6">
-                  <div className="row gap-90 align-items-center">
-                    <div className="col-lg-6">
-                      <div className="why-choose-content">
-                        <h3>Commitment to Excellence</h3>
-                        <p>
-                          Excellence is not just a goal; it's a standard. We are
-                          committed to delivering solutions that not only meet
-                          high-quality benchmarks but set new standards in the
-                          industry. Your success story is our measure of
-                          success.
-                        </p>
-                        <ul className="list-style-one pt-5">
-                          <li>Setting High-Quality Standards</li>
-                          <li>Pioneering Industry-Leading Solutions</li>
-                          <li>Your Success Drives Our Pursuit of Excellence</li>
-                        </ul>
-                        <Link legacyBehavior href="/about">
-                          <a className="theme-btn mt-30">
-                            Learn More <i className="fas fa-long-arrow-right" />
-                          </a>
-                        </Link>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6">
-                      <div className="why-choose-image rmt-55">
-                        <img
-                          src="assets/images/about/why-choose1.jpg"
-                          alt="Why Choose"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Tab.Pane>
-              </Tab.Content>
-            </div>
-          </Tab.Container>
-        </Container>
-        <div className="why-choose-shapes">
-          <img
-            className="shape one"
-            src="assets/images/about/why-choose-shape1.png"
-            alt="Shape"
-          />
-          <img
-            className="shape two"
-            src="assets/images/about/why-choose-shape2.png"
-            alt="Shape"
-          />
-        </div>
-      </section>
-      {/* Why Choose Us Area end */}
       {/* Statistics Area start */}
       <section className="statistics-area-two px-3  rel z-2 mb-130 rmb-100">
         <Container>
@@ -1563,6 +1633,7 @@ const Index = () => {
                   <p>
                     showcasing our commitment to excellence and client
                     satisfaction
+                    <br/><br/>
                   </p>
                 </div>
               </div>
@@ -1585,9 +1656,9 @@ const Index = () => {
                   >
                     <Counter end={98.9} />
                   </span>
-                  <span className="counter-title">Happy Clients </span>
+                  <span className="counter-title">Happy clients </span>
                   <p>
-                    Clients happiness is our priority, reflected in our
+                    clients happiness is our priority, reflected in our
                     impressive 98.9% satisfaction rate.
                   </p>
                 </div>
@@ -1649,6 +1720,7 @@ const Index = () => {
         </Container>
       </section>
       {/* Statistics Area end */}
+
       {/* Skills Area start */}
       <section className="skills-area px-3 ">
         <Container>
@@ -1723,6 +1795,7 @@ const Index = () => {
         </Container>
       </section>
       {/* Skills Area end */}
+
       {/* Testimonials Area Three Start */}
       <section className="testimonials-three-area px-3  py-130 rpy-100">
         <Container>
@@ -1739,7 +1812,7 @@ const Index = () => {
               <div className="testimonials-three-wrap wow fadeInRight delay-0-2s">
                 <div className="section-title mb-45">
                   <span className="sub-title mb-10">Our Testimonials</span>
-                  <h2>What Our Clients Say About Solutions</h2>
+                  <h2>What Our clients Say About Solutions</h2>
                 </div>
                 <Slider
                   {...testimonialThreeSlider}
@@ -1813,6 +1886,7 @@ const Index = () => {
         </Container>
       </section>
       {/* Testimonials Area Three End */}
+
       {/* Blog Area start */}
       <section className="blog-area pb-50 px-3  mb-30 mt-4 rmb-0 rel z-1">
         <Container style={{ marginTop: "150px" }}>
@@ -1939,7 +2013,7 @@ const Index = () => {
         </Container>
       </section>
       {/* Blog Area end */}
-      {/* loader popup dialog box */}
+      
       {/* Contact Form Section Start */}
       <section className="contact-page-form  rpb-100" id="contactus">
         <div className="container">
@@ -2080,6 +2154,7 @@ const Index = () => {
         </div>
       </section>
       {/* Contact Form Section End */}
+
       <Dialog
         open={openLoader}
         aria-labelledby="alert-dialog-title"

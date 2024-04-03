@@ -1,74 +1,26 @@
+import { Container, Typography } from "@mui/material";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="main-footer bgc-gray footer-white rel z-1">
-      <div className="footer-cta-wrap">
-        <div className="container">
-          <div
-            className="footer-cta-inner bgs-cover"
-            style={{
-              backgroundImage: "url(assets/images/footer/footer-cta-bg.jpg)",
-            }}
-          >
-            <div className="section-title wow fadeInLeft delay-0-2s">
-              <span className="sub-title">Need Any Consultations ?</span>
-              <h2>We’re Ready to Growth IT Business</h2>
-            </div>
-            <Link legacyBehavior href="/contact">
-              <a className="theme-btn style-three wow fadeInRight delay-0-2s">
-                Get Free Quote <i className="fas fa-long-arrow-right" />
-              </a>
-            </Link>
-            <div className="hotline wow fadeInRight delay-0-2s">
-              <i className="fas fa-phone" />
-              <div className="content">
-                <span>Hotline</span>
-                <br />
-                <a href="callto:+000(123)45688">+044 4503 4080</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="row medium-gap">
-          <div className="col-xl-3 col-sm-6">
+    <Container maxWidth="xl">
+      <footer
+        className="main-footer bgc-gray footer-white rel z-1  "
+        style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+      >
+        <div className="row p-50 pb-0 medium-gap">
+          <div className="col-lg-4">
             <div className="footer-widget widget_about wow fadeInUp delay-0-2s">
-              <div className="footer-logo mb-30">
-                <Link legacyBehavior href="/index">
-                  <a>
-                    <img src="assets/images/logos/logo-one.png" alt="Logo" />
-                  </a>
-                </Link>
+              <div className="footer-logo mb-30 d-flex justify-content-center align-items-center">
+                <img src="assets/images/logos/logo-one.png" alt="Logo" className="footer-logo-img" />
               </div>
-              <p style={{color:'white'}}>
-                #36,2nd floor, Railway Border Rd, opposite to
-                Kodambakkam Railway Station, Akbarabad, Kodambakkam, Chennai,
-                Tamil Nadu 600024 .
+              <p style={{ color: "#EEEEEE" }} className="text-center">
+                #36,2nd floor, Railway Border Rd, opposite to Kodambakkam
+                Railway Station, Akbarabad, Kodambakkam, Chennai, Tamil Nadu
+                600024 .
               </p>
-            </div>
-          </div>
-          <div className="col-xl-3 col-sm-6 order-xl-2">
-            <div className="footer-widget widget_newsletter wow fadeInUp delay-0-6s">
-              <h4 className="footer-title">Newsletter</h4>
-              <p>
-                Sed perspiciatis unde omnste natus error voluptatem accusante.
-              </p>
-              <form onSubmit={(e) => e.preventDefault()} action="#">
-                <label htmlFor="email">
-                  <i className="far fa-envelope" />
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="support@gmail.com"
-                  required
-                />
-                <button>Sign Up</button>
-              </form>
-              <h5>Follow Us</h5>
-              <div className="social-style-one">
+              <h5 className="text-center">Follow Us</h5>
+              <div className="social-style-one text-center d-flex justify-content-center align-items-center ">
                 <a href="#">
                   <i className="fab fa-facebook-f" />
                 </a>
@@ -84,120 +36,108 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-6">
+          <div className="col-lg-8">
             <div className="row">
-              <div className="col-md-4 col-6 col-small">
+              <div className="col-lg-4">
                 <div className="footer-widget widget_nav_menu wow fadeInUp delay-0-3s">
                   <h4 className="footer-title">Quick Links</h4>
                   <ul className="list-style-two">
                     <li>
-                      <Link
-                        legacyBehavior
-                        href="about"
-                      >{`Company History`}</Link>
-                    </li>
-                    <li>
-                      <Link legacyBehavior href="about">{`About Company`}</Link>
+                      <Link legacyBehavior href="about-us">{`About Us`}</Link>
                     </li>
                     <li>
                       <Link
                         legacyBehavior
-                        href="services"
-                      >{`Latest Services`}</Link>
+                        href="Our_Engagement_Model"
+                      >{`Engagement Model`}</Link>
                     </li>
                     <li>
                       <Link
                         legacyBehavior
-                        href="project-grid"
-                      >{`Popular Works`}</Link>
+                        href="Industries_we_serve"
+                      >{`Industries`}</Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="contact">{`Contact US`}</Link>
+                    </li>
+                    <li>
+                      <Link legacyBehavior href="Careers">{`Careers`}</Link>
                     </li>
                     <li>
                       <Link
                         legacyBehavior
-                        href="faqs"
-                      >{`Asked Questions`}</Link>
-                    </li>
-                    <li>
-                      <Link
-                        legacyBehavior
-                        href="blog"
-                      >{`Blog &amp; News`}</Link>
-                    </li>
-                    <li>
-                      <Link legacyBehavior href="contact">{`Contact us`}</Link>
+                        href="hire_a_developer"
+                      >{`Hire a Developer`}</Link>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="col-md-4 col-6 col-small">
+              <div className="col-md-4">
                 <div className="footer-widget widget_nav_menu wow fadeInUp delay-0-4s">
                   <h4 className="footer-title">Services</h4>
                   <ul className="list-style-two">
                     <li>
-                      <Link legacyBehavior href="service-details">
+                      <Link legacyBehavior href="mobile-app-solutions">
                         <a>Mobile App Solutions</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="service-details">
-                        <a>Enterprise Application  Development</a>
+                      <Link
+                        legacyBehavior
+                        href="enterprise-application-services"
+                      >
+                        <a>Enterprise Application Development</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="service-details">
+                      <Link
+                        legacyBehavior
+                        href="ecommerce-application-development"
+                      >
                         <a>Ecommerce Application Development</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="service-details">
+                      <Link legacyBehavior href="ui-ux-strategy">
                         <a>UI/UX Strategy</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="service-details">
+                      <Link legacyBehavior href="digital-marketing-services">
                         <a>Digital Marketing</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="service-details">
+                      <Link legacyBehavior href="erp-software-services">
                         <a>ERP Software Development</a>
                       </Link>
-                    </li>                  
+                    </li>
                   </ul>
                 </div>
               </div>
-              <div className="col-md-4 col-6 col-small">
+              <div className="col-md-4 ">
                 <div className="footer-widget widget_nav_menu wow fadeInUp delay-0-5s">
-                  <h4 className="footer-title">Support</h4>
+                  <h4 className="footer-title">Products</h4>
                   <ul className="list-style-two">
                     <li>
-                      <Link legacyBehavior href="/contact">
-                        <a>Start Here</a>
+                      <Link legacyBehavior href="erp-for-textiles-and-garments">
+                        <a>ERP for Textile & Garment Industries</a>
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="about">
-                        Style guide
+                      <Link
+                        legacyBehavior
+                        href="Target_SCM_Supply_Chain_Managements"
+                      >
+                        Target SCM - Supply Chain Management
                       </Link>
                     </li>
                     <li>
-                      <Link legacyBehavior href="404">
-                        <a>404 Not Found</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link legacyBehavior href="contact">
-                        <a>Password Protected</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link legacyBehavior href="contact">
-                        Licenses
-                      </Link>
-                    </li>
-                    <li>
-                      <Link legacyBehavior href="contact">
-                        Changelog
+                      <Link
+                        legacyBehavior
+                        href="Target_HRMS_HR_and_Payroll_Solutions"
+                      >
+                        <a>HRMS - Target HR & Payroll Solutions</a>
                       </Link>
                     </li>
                   </ul>
@@ -206,57 +146,39 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom bgc-black mt-20 pt-20">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-8">
-              <div className="footer-bottom-menu mb-10 wow fadeInRight delay-0-2s">
-                <ul>
-                  <li>
-                    <a href="#">Buy Template</a>
-                  </li>
-                  <li>
-                    <a href="#">Version 1.2</a>
-                  </li>
-                  <li>
-                    <a href="#">Image Licenses</a>
-                  </li>
-                  <li>
-                    <a href="#">Instructions</a>
-                  </li>
-                  <li>
-                    <a href="#">Visit My Templates</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="copyright-text text-lg-end wow fadeInLeft delay-0-2s">
-                <p>© 2023 Jeena. All rights reserved.</p>
-              </div>
-            </div>
-          </div>
+
+        <div className="footer-shapes">
+          <img
+            className="shape one"
+            src="assets/images/footer/footer-bg-weve-shape.png"
+            alt="Shape"
+          />
+          <img
+            className="shape two"
+            src="assets/images/footer/footer-bg-line-shape.png"
+            alt="Shape"
+          />
+          <img
+            className="shape three wow fadeInRight delay-0-8s"
+            src="assets/images/footer/footer-right.png"
+            alt="Shape"
+          />
         </div>
-      </div>
-      <div className="footer-shapes">
-        <img
-          className="shape one"
-          src="assets/images/footer/footer-bg-weve-shape.png"
-          alt="Shape"
-        />
-        <img
-          className="shape two"
-          src="assets/images/footer/footer-bg-line-shape.png"
-          alt="Shape"
-        />
-        <img
-          className="shape three wow fadeInRight delay-0-8s"
-          src="assets/images/footer/footer-right.png"
-          alt="Shape"
-        />
-      </div>
-    </footer>
+        <div className="d-flex justify-content-center align-items-center g">
+          <Typography
+            variant="caption"
+            textTransform="uppercase"
+            textAlign="center"
+            width={"100%"}
+            color="#C9D7DD"
+            mb={3}
+          >
+            © Copyright 2024 by AskTechnology. All Rights Reserved And Designed
+            by Ask Technology
+          </Typography>
+        </div>
+      </footer>
+    </Container>
   );
 };
 export default Footer;

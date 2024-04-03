@@ -9,7 +9,7 @@ const HeaderTop = () => {
             <div className="header-top">
               <ul>
                 <li>
-                  <i className="far fa-envelope" />{" "}
+                  <i className="far fa-envelope" style={{color:'white'}} />{" "}
                   <a
                     href="mailto:support@gmail.com"
                     style={{ color: "white", fontSize: "small" }}
@@ -19,7 +19,7 @@ const HeaderTop = () => {
                 </li>
 
                 <li>
-                  <i className="far fa-phone" />{" "}
+                  <i className="far fa-phone" style={{color:'white'}} />{" "}
                   <a
                     href="callto:+919840899559"
                     style={{ color: "white", fontSize: "small" }}
@@ -29,7 +29,7 @@ const HeaderTop = () => {
                 </li>
 
                 <li>
-                  <i className="far fa-tty" />{" "}
+                  <i className="far fa-tty" style={{color:'white'}} />{" "}
                   <a
                     href="callto:04445034080"
                     style={{ color: "white", fontSize: "small" }}
