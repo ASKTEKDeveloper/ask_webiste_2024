@@ -264,7 +264,7 @@ const Index = () => {
       </Slider>     
       {/* <Hero4Slider /> */}
       {/* About Area start */}
-      <section className="about-area px-3  pt-150  rpb-100 rel z-1">
+      <section className="about-area px-3  py-150  rpb-100 rel z-1">
         <Container>
           <div className="row align-items-center">
             <div className="col-lg-6">
@@ -367,7 +367,7 @@ const Index = () => {
     
       {/* Project Area start */}
       <section
-        className="project-area px-3   overflow-hidden bgc-lighter  rpt-100 rel z-1"
+        className="project-area px-3  overflow-hidden bgc-lighter  rpt-100 rel z-1"
         style={{ paddingTop: 80 }}
         id="products_services"
       >
