@@ -49,6 +49,7 @@ import { RiFocus2Line } from "react-icons/ri";
 import { TbLayersLinked } from "react-icons/tb";
 import { SlLike } from "react-icons/sl";
 import ContactUsForm from "./ContactUsForm";
+import Testimonials from "./Testimonials";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -1799,97 +1800,6 @@ const Index = () => {
       </section>
       {/* Skills Area end */}
 
-      {/* Testimonials Area Three Start */}
-      <section className="testimonials-three-area px-3  py-130 rpy-100">
-        <Container>
-          <div className="row gap-80 align-items-center">
-            <div className="col-xl-7 col-lg-6">
-              <div className="testimonials-three-image rmb-55 wow fadeInLeft delay-0-2s">
-                <img
-                  src="assets/images/testimonials/testimonials-three.png"
-                  alt="Testimonials"
-                />
-              </div>
-            </div>
-            <div className="col-xl-5 col-lg-6">
-              <div className="testimonials-three-wrap wow fadeInRight delay-0-2s">
-                <div className="section-title mb-45">
-                  <span className="sub-title mb-10">Our Testimonials</span>
-                  <h2>What Our clients Say About Solutions</h2>
-                </div>
-                <Slider
-                  {...testimonialThreeSlider}
-                  className="testimonial-three-slider"
-                >
-                  <div className="testimonial-item">
-                    <div className="content">
-                      <div className="testi-header">
-                        <h4>Excellent Works</h4>
-                        <div className="ratting">
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star-half-alt" />
-                        </div>
-                      </div>
-                      <div className="testi-text">
-                        The software we've been using has truly revolutionized
-                        our operations. Its intuitive interface and excellent
-                        customer support have significantly enhanced our
-                        workflow, making it an invaluable asset to our business
-                      </div>
-                      <div className="testi-footer">
-                        <div className="icon">
-                          <i className="flaticon-quotation" />
-                        </div>
-                        <div className="title">
-                          <h4>Sathish Kumar</h4>
-                          <span className="designation">CEO | TECHVEEL</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="content">
-                      <div className="testi-header">
-                        <h4>Excellent Works</h4>
-                        <div className="ratting">
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star" />
-                          <i className="fas fa-star-half-alt" />
-                        </div>
-                      </div>
-                      <div className="testi-text">
-                        This software has exceeded our expectations, offering
-                        seamless integration and exceptional functionality. It
-                        has become an indispensable tool for our daily
-                        operations, greatly enhancing our productivity and
-                        efficiency
-                      </div>
-                      <div className="testi-footer">
-                        <div className="icon">
-                          <i className="flaticon-quotation" />
-                        </div>
-                        <div className="title">
-                          <h4>Harel Manic</h4>
-                          <span className="designation">
-                            CEO | ERP Solutions
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      {/* Testimonials Area Three End */}
-
       {/* Blog Area start */}
       <section className="blog-area pb-50 px-3  mb-30 mt-4 rmb-0 rel z-1">
         <Container style={{ marginTop: "150px" }}>
@@ -2016,6 +1926,9 @@ const Index = () => {
         </Container>
       </section>
       {/* Blog Area end */}
+      {/* Testimonials Area Three Start */}
+      <Testimonials />
+      {/* Testimonials Area Three End */}
       <div id="contactus">
         <ContactUsForm />
       </div>

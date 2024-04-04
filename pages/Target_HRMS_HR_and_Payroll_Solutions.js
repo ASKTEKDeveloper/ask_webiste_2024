@@ -1,13 +1,12 @@
 import Layout from "@/layout";
-import Link from "next/link";
-import { Chip, Container, Divider, Button } from "@mui/material";
+import { Chip, Container, Divider } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
 
 const ProjectGrid = () => {
   return (
     <>
       <Layout>
-        <>         
+        <>
           <section className="project-grid-area rel z-2 py-50 rpy-100">
             <div className="container">
               <div className="row justify-content-center">
@@ -25,6 +24,15 @@ const ProjectGrid = () => {
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                      <div class="button">
+                        <a href="assets/docs/Blogs.docx" download>
+                          Download Brochure
+                        </a>
+                        <b class="top">Click to </b>
+                        <b class="bottom">Document</b>
+                      </div>
                     </div>
                     <p>
                       Say goodbye to HR and payroll complexities with Target
@@ -65,11 +73,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Employee Management
-                      </Link>
-                    </h5>
+                    <h5>Employee Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -80,11 +84,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5 className="text-muted">
-                      <Link legacyBehavior href="service-details">
-                        Attendance Tracking
-                      </Link>
-                    </h5>
+                    <h5 className="text-muted">Attendance Tracking</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -95,11 +95,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5 className="text-muted">
-                      <Link legacyBehavior href="service-details">
-                        Payroll Processing
-                      </Link>
-                    </h5>
+                    <h5 className="text-muted">Payroll Processing</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -110,11 +106,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5 className="text-muted">
-                      <Link legacyBehavior href="service-details">
-                        Benefits Administration
-                      </Link>
-                    </h5>
+                    <h5 className="text-muted">Benefits Administration</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -125,11 +117,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5 className="text-muted">
-                      <Link legacyBehavior href="service-details">
-                        Performance Management
-                      </Link>
-                    </h5>
+                    <h5 className="text-muted">Performance Management</h5>
                   </div>
                 </div>
 
@@ -141,11 +129,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5 className="text-muted">
-                      <Link legacyBehavior href="service-details">
-                        Compliance Management
-                      </Link>
-                    </h5>
+                    <h5 className="text-muted">Compliance Management</h5>
                   </div>
                 </div>
               </div>
@@ -336,11 +320,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Efficiency
-                                    </Link>
-                                  </h4>
+                                  <h4>Efficiency</h4>
                                   <p>
                                     Streamline HR processes, reduce manual
                                     tasks, and improve overall efficiency
@@ -358,11 +338,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Accuracy
-                                    </Link>
-                                  </h4>
+                                  <h4>Accuracy</h4>
                                   <p>
                                     Minimize errors in payroll processing and
                                     compliance management, ensuring accurate and
@@ -381,11 +357,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Employee Satisfaction
-                                    </Link>
-                                  </h4>
+                                  <h4>Employee Satisfaction</h4>
                                   <p>
                                     Provide self-service options for employees,
                                     empowering them to manage their information
@@ -404,11 +376,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Compliance
-                                    </Link>
-                                  </h4>
+                                  <h4>Compliance</h4>
                                   <p>
                                     Ensure compliance with labor laws,
                                     regulations, and industry standards,
@@ -427,11 +395,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Cost Savings
-                                    </Link>
-                                  </h4>
+                                  <h4>Cost Savings</h4>
                                   <p>
                                     Reduce administrative costs associated with
                                     HR and payroll tasks
@@ -449,11 +413,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Insightful Reporting
-                                    </Link>
-                                  </h4>
+                                  <h4>Insightful Reporting</h4>
                                   <p>
                                     Access real-time data and analytics for
                                     informed decision-making and strategic

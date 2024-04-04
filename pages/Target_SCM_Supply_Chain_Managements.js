@@ -1,6 +1,5 @@
 import Layout from "@/layout";
-import { Chip, Container, Divider, Grid } from "@mui/material";
-import Link from "next/link";
+import { Chip, Container, Divider } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
 
 const ProjectGrid = () => {
@@ -25,6 +24,15 @@ const ProjectGrid = () => {
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                      <div class="button">
+                        <a href="assets/docs/Blogs.docx" download>
+                          Download Brochure
+                        </a>
+                        <b class="top">Click to </b>
+                        <b class="bottom">Document</b>
+                      </div>
                     </div>
                     <p>
                       Transform your supply chain with Target SCM, a versatile
@@ -63,11 +71,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Supplier Management
-                      </Link>
-                    </h5>
+                    <h5>Supplier Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -78,11 +82,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Inventory Optimization
-                      </Link>
-                    </h5>
+                    <h5>Inventory Optimization</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -93,11 +93,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Procurement Automation
-                      </Link>
-                    </h5>
+                    <h5>Procurement Automation</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -108,11 +104,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Warehouse Management
-                      </Link>
-                    </h5>
+                    <h5>Warehouse Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-2  col-md-4 col-6 col-small">
@@ -123,11 +115,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Logistics & Distribution
-                      </Link>
-                    </h5>
+                    <h5>Logistics & Distribution</h5>
                   </div>
                 </div>
 
@@ -139,11 +127,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Supplier Collaboration
-                      </Link>
-                    </h5>
+                    <h5>Supplier Collaboration</h5>
                   </div>
                 </div>
               </div>
@@ -330,11 +314,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Cost Reduction
-                                    </Link>
-                                  </h4>
+                                  <h4>Cost Reduction</h4>
                                   <p>
                                     Optimize inventory levels, reduce
                                     procurement costs, and minimize
@@ -353,11 +333,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Improved Efficiency
-                                    </Link>
-                                  </h4>
+                                  <h4>Improved Efficiency</h4>
                                   <p>
                                     Automate manual processes, reduce lead
                                     times, and increase productivity across the
@@ -376,11 +352,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Enhanced Visibility
-                                    </Link>
-                                  </h4>
+                                  <h4>Enhanced Visibility</h4>
                                   <p>
                                     Gain real-time visibility into inventory
                                     levels, order statuses, and transportation
@@ -399,11 +371,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Better Collaboration
-                                    </Link>
-                                  </h4>
+                                  <h4>Better Collaboration</h4>
                                   <p>
                                     Foster collaboration with suppliers and
                                     partners to improve forecasting accuracy and
@@ -422,11 +390,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Compliance
-                                    </Link>
-                                  </h4>
+                                  <h4>Compliance</h4>
                                   <p>
                                     Ensure compliance with regulatory
                                     requirements and internal policies, reducing
@@ -445,11 +409,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Customer Satisfaction
-                                    </Link>
-                                  </h4>
+                                  <h4>Customer Satisfaction</h4>
                                   <p>
                                     Meet customer demand with on-time deliveries
                                     and accurate order fulfillment, leading to

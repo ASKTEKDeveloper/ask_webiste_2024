@@ -1,7 +1,7 @@
 import JeenaHead from "@/src/layout/JeenaHead";
 import Preloader from "@/src/layout/Preloader";
 import "@/styles/globals.css";
-// import "@/styles/buttons.css";
+import "@/styles/buttonStyle.css";
 import { Fragment, useEffect, useState } from "react";
 // import '@/styles/index.css';
 export default function App({ Component, pageProps }) {

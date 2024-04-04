@@ -1,14 +1,12 @@
 import Layout from "@/layout";
 import { Chip, Container, Divider } from "@mui/material";
-import Link from "next/link";
-import { Button } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
 
 const ProjectGrid = () => {
   return (
     <>
       <Layout>
-        <>      
+        <>
           <section className="project-grid-area rel z-2 py-50 rpy-100">
             <div className="container">
               <div className="row justify-content-center">
@@ -24,6 +22,15 @@ const ProjectGrid = () => {
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                      <div class="button">
+                        <a href="assets/docs/Blogs.docx" download>
+                          Download Brochure
+                        </a>
+                        <b class="top">Click to </b>
+                        <b class="bottom">Document</b>
+                      </div>
                     </div>
                     <p>
                       Elevate your textile and garment manufacturing with
@@ -63,11 +70,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Production Planning
-                      </Link>
-                    </h5>
+                    <h5>Production Planning</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -78,11 +81,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Scheduling
-                      </Link>
-                    </h5>
+                    <h5>Scheduling</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -93,11 +92,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Inventory Control
-                      </Link>
-                    </h5>
+                    <h5>Inventory Control</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -108,11 +103,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Order Management
-                      </Link>
-                    </h5>
+                    <h5>Order Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -123,11 +114,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Supplier Management
-                      </Link>
-                    </h5>
+                    <h5>Supplier Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -138,11 +125,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Quality Assurance
-                      </Link>
-                    </h5>
+                    <h5>Quality Assurance</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -153,11 +136,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Financial Management
-                      </Link>
-                    </h5>
+                    <h5>Financial Management</h5>
                   </div>
                 </div>
                 <div className="col-lg-3  col-md-4 col-6 col-small">
@@ -168,11 +147,7 @@ const ProjectGrid = () => {
                         alt="Icon"
                       />
                     </div>
-                    <h5>
-                      <Link legacyBehavior href="service-details">
-                        Reporting & Analytics
-                      </Link>
-                    </h5>
+                    <h5>Reporting & Analytics</h5>
                   </div>
                 </div>
               </div>
@@ -359,11 +334,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Improved Efficiency
-                                    </Link>
-                                  </h4>
+                                  <h4>Improved Efficiency</h4>
                                   <p>
                                     Streamline processes and eliminate manual
                                     tasks to increase operational efficiency
@@ -380,11 +351,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Enhanced Visibility
-                                    </Link>
-                                  </h4>
+                                  <h4>Enhanced Visibility</h4>
                                   <p>
                                     Gain real-time insights into production,
                                     inventory, and financial data for informed
@@ -402,11 +369,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Cost Reduction
-                                    </Link>
-                                  </h4>
+                                  <h4>Cost Reduction</h4>
                                   <p>
                                     Optimize inventory levels, minimize
                                     stockouts, and reduce production downtime to
@@ -424,11 +387,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Increased Customer Satisfaction
-                                    </Link>
-                                  </h4>
+                                  <h4>Increased Customer Satisfaction</h4>
                                   <p>
                                     Deliver products on time and meet quality
                                     standards to enhance customer satisfaction.
@@ -445,11 +404,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Compliance
-                                    </Link>
-                                  </h4>
+                                  <h4>Compliance</h4>
                                   <p>
                                     Ensure compliance with industry regulations
                                     and standards, reducing the risk of
@@ -467,11 +422,7 @@ const ProjectGrid = () => {
                                   />
                                 </div>
                                 <div className="content">
-                                  <h4>
-                                    <Link legacyBehavior href="service-details">
-                                      Scalability
-                                    </Link>
-                                  </h4>
+                                  <h4>Scalability</h4>
                                   <p>
                                     Scale your operations seamlessly as your
                                     business grows, with the flexibility to add

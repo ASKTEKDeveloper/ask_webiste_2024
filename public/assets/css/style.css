@@ -4271,6 +4271,20 @@ h6,
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
 }
+
+.main-menu .navbar-collapse li p {
+  display: block;
+  opacity: 1;
+  font-weight: 600;
+  position: relative;
+  color: var(--heading-color);
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
 @media only screen and (min-width: 376px) {
   .main-menu .navbar-collapse li a {
     font-size: 14px;
@@ -8929,18 +8943,22 @@ h6,
 
 .testi-image-item {
   margin: 3px;
+  margin-right: 20px;
   position: relative;
   padding-bottom: 70px;
 }
 .testi-image-item img {
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
   cursor: pointer;
+  object-fit: contain;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  border-radius: 50%;
-  border: 5px solid transparent;
+  border-radius: 15px;  
+  /* border-radius: 50%; */
+  /* border: 1px solid transparent; */
 }
 .testi-image-item:after {
   position: absolute;

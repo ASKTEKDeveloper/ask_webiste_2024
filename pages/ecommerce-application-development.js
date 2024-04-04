@@ -272,8 +272,8 @@ const Services = () => {
       </section>
       {/* Services Area Two end */}
 
-   {/* Why Choose Us Area start */}
-   <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      {/* Why Choose Us Area start */}
+      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -476,7 +476,7 @@ const Services = () => {
                           <a className="theme-btn mt-30">
                             Learn More <i className="fas fa-long-arrow-right" />
                           </a>
-                        </Link> */}
+                         */}
                       </div>
                     </div>
                   </div>
@@ -599,8 +599,8 @@ const Services = () => {
       </section>
       {/* Why Choose Us Area end */}
 
-        {/* Partners Area start */}
-        <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      {/* Partners Area start */}
+      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -614,7 +614,7 @@ const Services = () => {
               loop={0}
               autoFill
             >
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/1.png"
                   alt="Partner"
@@ -623,7 +623,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/2.png"
                   alt="Partner"
@@ -632,7 +632,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/3.webp"
                   alt="Partner"
@@ -641,7 +641,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/4.webp"
                   alt="Partner"
@@ -650,7 +650,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/5.jpg"
                   alt="Partner"
@@ -658,7 +658,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/6.png"
                   alt="Partner"
@@ -666,7 +666,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/7.jpg"
                   alt="Partner"
@@ -674,7 +674,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/8.png"
                   alt="Partner"
@@ -682,7 +682,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/9.jpg"
                   alt="Partner"
@@ -800,22 +800,6 @@ const Services = () => {
               loop={0}
               autoFill
             >
-              {/* <div className="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
-              <div className="feature-item wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <img
-                    src="assets/images/services/sewing-machine.png"
-                    alt="Icon"
-                    className="industries-icon"
-                  />
-                </div>
-                <h5>
-                  <Link legacyBehavior href="service-details">
-                    Garments
-                  </Link>
-                </h5>
-              </div>
-            </div> */}
               <div className="col-xl-12 p-20 m-10">
                 <div className="feature-item wow fadeInUp delay-0-2s">
                   <div className="icon">
@@ -825,11 +809,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Manufacturing
-                    </Link>
-                  </h5>
+                  <h5>Manufacturing</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -841,11 +821,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      E-commerce
-                    </Link>
-                  </h5>
+                  <h5>E-commerce</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -857,11 +833,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Healthcare
-                    </Link>
-                  </h5>
+                  <h5>Healthcare</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -873,11 +845,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Retail
-                    </Link>
-                  </h5>
+                  <h5>Retail</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -889,11 +857,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Wholesale
-                    </Link>
-                  </h5>
+                  <h5>Wholesale</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -905,11 +869,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Logistics
-                    </Link>
-                  </h5>
+                  <h5>Logistics</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -921,11 +881,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Hospitality
-                    </Link>
-                  </h5>
+                  <h5>Hospitality</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -937,11 +893,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Travel
-                    </Link>
-                  </h5>
+                  <h5>Travel</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -953,11 +905,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Automotive
-                    </Link>
-                  </h5>
+                  <h5>Automotive</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -969,11 +917,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      Financial
-                    </Link>
-                  </h5>
+                  <h5>Financial</h5>
                 </div>
               </div>
               <div className="col-xl-12 p-20 m-10">
@@ -985,11 +929,7 @@ const Services = () => {
                       className="industries-icon"
                     />
                   </div>
-                  <h5>
-                    <Link legacyBehavior href="service-details">
-                      E-Learning
-                    </Link>
-                  </h5>
+                  <h5>E-Learning</h5>
                 </div>
               </div>
             </Marquee>
@@ -1002,7 +942,6 @@ const Services = () => {
       </section>
 
       <ContactUsProduct TypeOF={"s"} initialValue={"EcommerceAppDevelopment"} />
-
     </Layout>
   );
 };
