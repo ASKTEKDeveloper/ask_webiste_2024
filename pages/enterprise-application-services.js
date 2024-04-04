@@ -21,7 +21,29 @@ import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
+import { FaBoxes } from "react-icons/fa";
+import { AiOutlineFileDone } from "react-icons/ai";
+import { FaUserTag } from "react-icons/fa";
+import { CiShop } from "react-icons/ci";
+import { MdOutlineMonitorHeart } from "react-icons/md";
+import { GrCompliance } from "react-icons/gr";
+import { MdOutlineWorkHistory } from "react-icons/md";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { LuMonitorDot } from "react-icons/lu";
+import { TbBulb } from "react-icons/tb";
+import { SiLinkerd } from "react-icons/si";
+import { LuBrainCircuit } from "react-icons/lu";
+import { RiFocus2Line } from "react-icons/ri";
+import { TbLayersLinked } from "react-icons/tb";
+import { SlLike } from "react-icons/sl";
+
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ContactUsProduct from "./ContactUsProduct";
+
 const Services = () => {
+  const theme = useTheme();
+  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = useState(false);
   const [submitted, setsubmitted] = useState(false);
   const router = useRouter();
@@ -101,7 +123,7 @@ const Services = () => {
                 </ul>
 
                 <div className="about-btns py-3">
-                  <Link legacyBehavior href="/about">
+                  <Link legacyBehavior href="#callback">
                     <a className="theme-btn style-three mt-15">
                       Get a Call Back <i className="fas fa-long-arrow-right" />
                     </a>
@@ -130,7 +152,7 @@ const Services = () => {
 
       {/* Services Area Two start */}
       <section className="services-area-two px-3  rel z-2">
-        <Container maxWidth={"xl"}>
+        <Container maxWidth={"lg"}>
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
             <span className="sub-title mb-10">Our Services</span>
             {/* <h2>Mobile App Solutions</h2> */}
@@ -143,7 +165,9 @@ const Services = () => {
                 </div>
                 <div className="content">
                   <h4 className="title text-center">
-                    <span style={{ color: "#7E97A6" }}>Full Stack </span>{" "}
+                    <span style={{ color: "#7E97A6" }}>
+                      Full Stack <br />{" "}
+                    </span>{" "}
                     Development
                   </h4>
                   <p className="text-center">
@@ -152,15 +176,9 @@ const Services = () => {
                     meet your business requirements. From user interface design
                     to database management, we have the expertise to deliver
                     end-to-end solutions that drive business growth..
+                    <br />
+                    <br />
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -171,7 +189,11 @@ const Services = () => {
                 </div>
                 <div className="content">
                   <h4 className="title text-center">
-                    <span style={{ color: "#65B741" }}> ASP.Net </span>{" "}
+                    <span style={{ color: "#65B741" }}>
+                      {" "}
+                      ASP.Net
+                      <br />{" "}
+                    </span>{" "}
                     Development Services
                   </h4>
                   <p className="text-center">
@@ -180,15 +202,9 @@ const Services = () => {
                     development and deployment of enterprise-grade solutions
                     that deliver high performance, security, and scalability,
                     ensuring your business stays ahead of the competition.{" "}
+                    <br />
+                    <br />
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -199,7 +215,9 @@ const Services = () => {
                 </div>
                 <div className="content">
                   <h4 className="title text-center">
-                    <span style={{ color: "#008DDA" }}>Java </span>
+                    <span style={{ color: "#008DDA" }}>
+                      Java <br />
+                    </span>
                     Development Services
                   </h4>
                   <p className="text-center">
@@ -210,14 +228,6 @@ const Services = () => {
                     latest Java technologies to deliver solutions that meet your
                     business objectives.
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -229,7 +239,10 @@ const Services = () => {
                 <div className="content">
                   <h4 className="title text-center">
                     {" "}
-                    <span style={{ color: "#5356FF" }}>PHP </span>
+                    <span style={{ color: "#5356FF" }}>
+                      PHP
+                      <br />{" "}
+                    </span>
                     Development Services
                   </h4>
                   <p className="text-center">
@@ -238,15 +251,9 @@ const Services = () => {
                     enable rapid development and deployment of custom solutions
                     that are tailored to your business requirements, ensuring
                     seamless integration and scalability as your business grows.
+                    <br />
+                    <br />
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -258,7 +265,9 @@ const Services = () => {
                 <div className="content">
                   <h4 className="title text-center">
                     {" "}
-                    <span style={{ color: "#378CE7" }}>Node.js </span>
+                    <span style={{ color: "#378CE7" }}>
+                      Node.js <br />
+                    </span>
                     Development Services
                   </h4>
                   <p className="text-center">
@@ -269,14 +278,6 @@ const Services = () => {
                     performance, empowering your business to stay ahead in
                     today's competitive landscape.
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -288,7 +289,9 @@ const Services = () => {
                 <div className="content">
                   <h4 className="title text-center">
                     {" "}
-                    <span style={{ color: "#5356FF" }}>Ruby on Rails </span>
+                    <span style={{ color: "#5356FF" }}>
+                      Ruby on Rails <br />
+                    </span>
                     Development Services
                   </h4>
                   <p className="text-center">
@@ -297,16 +300,9 @@ const Services = () => {
                     services combine the elegance of Ruby with the power of
                     Rails to deliver robust and maintainable solutions that meet
                     your business needs, ensuring faster time-to-market and
+                    <br />
                     increased productivity.
                   </p>
-                  {/*                 
-                  <ul className="list-style-three">
-                    <li>Paid Marketing</li>
-                    <li>CRO</li>
-                    <li>Content Marketing</li>
-                    <li>Email Marketing</li>
-                    <li>SMO</li>
-                  </ul> */}
                 </div>
               </div>
             </div>
@@ -315,8 +311,8 @@ const Services = () => {
       </section>
       {/* Services Area Two end */}
 
-     {/* Why Choose Us Area start */}
-     <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      {/* Why Choose Us Area start */}
+      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -641,8 +637,8 @@ const Services = () => {
         </div>
       </section>
       {/* Why Choose Us Area end */}
-        {/* Partners Area start */}
-        <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      {/* Partners Area start */}
+      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -656,7 +652,7 @@ const Services = () => {
               loop={0}
               autoFill
             >
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/1.png"
                   alt="Partner"
@@ -665,7 +661,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/2.png"
                   alt="Partner"
@@ -674,7 +670,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/3.webp"
                   alt="Partner"
@@ -683,7 +679,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/4.webp"
                   alt="Partner"
@@ -692,7 +688,7 @@ const Services = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/5.jpg"
                   alt="Partner"
@@ -700,7 +696,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/6.png"
                   alt="Partner"
@@ -708,7 +704,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/7.jpg"
                   alt="Partner"
@@ -716,7 +712,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/8.png"
                   alt="Partner"
@@ -724,7 +720,7 @@ const Services = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/9.jpg"
                   alt="Partner"
@@ -835,29 +831,7 @@ const Services = () => {
         </div>
         <div>
           <div className="row justify-content-center pb-50">
-            <Marquee
-              direction="right"
-              pauseOnHover
-              // gradient={100}
-              loop={0}
-              autoFill
-            >
-              {/* <div className="col-xl-2 col-lg-3 col-md-4 col-6 col-small">
-              <div className="feature-item wow fadeInUp delay-0-2s">
-                <div className="icon">
-                  <img
-                    src="assets/images/services/sewing-machine.png"
-                    alt="Icon"
-                    className="industries-icon"
-                  />
-                </div>
-                <h5>
-                  <Link legacyBehavior href="service-details">
-                    Garments
-                  </Link>
-                </h5>
-              </div>
-            </div> */}
+            <Marquee direction="right" pauseOnHover loop={0} autoFill>
               <div className="col-xl-12 p-20 m-10">
                 <div className="feature-item wow fadeInUp delay-0-2s">
                   <div className="icon">
@@ -1043,413 +1017,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Contact Form Section Start */}
-      <section
-        className="contact-form-area py-50 pb-100 px-3  rpy-100  mb-4 bgs-cover"
-        style={{
-          backgroundImage: "url(assets/images/background/feature-bg.jpg)",
-        }}
-      >
-        <Container>
-          <div className="row gap-100 align-items-center">
-            <div className="col-lg-12 mb-40">
-              <div className="d-flex justify-content-center align-items-center gap-5 contact-info-wrap wow fadeInLeft delay-0-2s">
-                <div className="why-choose-image d-flex justify-content-center align-items-center gap-2 fadeInUp rmb-55">
-                  <img
-                    src="/assets/images/projects/erp/Calling-amico.png"
-                    alt="Why Choose"
-                    style={{ maxWidth: "200px" }}
-                  />
-                </div>
-                <div className="section-title mb-40">
-                  <h2 className="text-gradient-title2">
-                    Request a Call Back Today
-                  </h2>
-                  <span className="sub-title  mb-10 text-gradient-title2">
-                    Explore Our Services
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-12 ">
-              <div className="contact-form shadowbox-2 bg-white p-50 rmb-55 wow fadeInRight delay-0-2s">
-                <Formik
-                  initialValues={{
-                    name: "",
-                    phone_number: "",
-                    company_name: "",
-                    email: "",
-                    city: "",
-                    TypeOfReq: "s",
-                    product: "EnterpriseAppDevelopment",
-                    enquiry_details: "",
-                  }}
-                  validationSchema={Yup.object({
-                    name: Yup.string().required(
-                      "Please provide your full name."
-                    ),
-                    phone_number: Yup.string().required(
-                      "Please enter your phone number."
-                    ),
-                    email: Yup.string()
-                      .email("Please provide a valid email address.")
-                      .required("Email address is required."),
-                    city: Yup.string().required("Please specify your city."),
-                    company_name: Yup.string().required(
-                      "Please specify the name of your company."
-                    ),
-                    enquiry_details: Yup.string().max(
-                      200,
-                      "should not exceed 200 characters."
-                    ),
-                  })}
-                  onSubmit={handleSubmit}
-                >
-                  <Form className="bg-white p-10 m-25">
-                    <Grid container spacing={3}>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="name">
-                          {({ field, form }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              label="Name"
-                              variant="standard"
-                              color="info"
-                              // required
-                              error={form.errors.name && form.touched.name}
-                              helperText={<ErrorMessage name="name" />}
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="phone_number">
-                          {({ field, form }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              label="Phone no"
-                              variant="standard"
-                              // required
-                              error={
-                                form.errors.phone_number &&
-                                form.touched.phone_number
-                              }
-                              helperText={<ErrorMessage name="phone_number" />}
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="company_name">
-                          {({ field, form }) => (
-                            <TextField
-                              // required
-                              {...field}
-                              fullWidth
-                              label="Your Company Name"
-                              variant="standard"
-                              error={
-                                form.errors.company_name &&
-                                form.touched.company_name
-                              }
-                              helperText={<ErrorMessage name="company_name" />}
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="email">
-                          {({ field, form }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              // required
-                              label="Email"
-                              variant="standard"
-                              type="email"
-                              error={form.errors.email && form.touched.email}
-                              helperText={<ErrorMessage name="email" />}
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="city">
-                          {({ field, form }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              label="City"
-                              // required
-                              variant="standard"
-                              error={form.errors.city && form.touched.city}
-                              helperText={<ErrorMessage name="city" />}
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <Field name="product">
-                          {({ field }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              select
-                              label="Products"
-                              variant="standard"
-                            >
-                              <MenuItem value="MobileAppSolutions">
-                                Mobile App Solutions
-                              </MenuItem>
-                              <MenuItem value="EnterpriseAppDevelopment">
-                                Enterprise Application Development
-                              </MenuItem>
-                              <MenuItem value="EcommerceAppDevelopment">
-                                Ecommerce Application Development
-                              </MenuItem>
-                              <MenuItem value="UIUX">UI/UX Strategy</MenuItem>
-                              <MenuItem value="DigitalMarketing">
-                                Digital Marketing
-                              </MenuItem>
-                              <MenuItem value="ERPDevelopment">
-                                ERP Software Development
-                              </MenuItem>
-                            </TextField>
-                          )}
-                        </Field>
-                      </Grid>
-
-                      <Grid item xs={12}>
-                        <Field name="enquiry_details">
-                          {({ field, form }) => (
-                            <TextField
-                              {...field}
-                              fullWidth
-                              multiline
-                              rows={3}
-                              label="Remarks"
-                              variant="standard"
-                              error={
-                                form.errors.enquiry_details &&
-                                form.touched.enquiry_details
-                              }
-                              helperText={
-                                <ErrorMessage name="enquiry_details" />
-                              }
-                            />
-                          )}
-                        </Field>
-                      </Grid>
-                      <Grid
-                        item
-                        xs={12}
-                        className="d-flex justify-content-center align-items-center gap-2"
-                      >
-                        <button type="submit" className="theme-btn style-four">
-                          Request Call Back
-                          <i className="far fa-long-arrow-right" />
-                        </button>
-                      </Grid>
-                    </Grid>
-                  </Form>
-                </Formik>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      {/* Contact Form Section End */}
-      <Dialog open={open} onClose={handleClose} maxWidth={"lg"}>
-        <DialogContent className="bg-white p-0 m-0 ">
-          <div className="form-style-two bg-white">
-            <div className="mb-25 pt-10 p-5 bg-info text-center">
-              <h3 style={{ color: "white", fontFamily: "oswald" }}>
-                Quick Enquiry
-              </h3>
-            </div>
-            <Formik
-              initialValues={{
-                name: "",
-                phone_number: "",
-                company_name: "",
-                email: "",
-                city: "",
-                TypeOfReq: "s",
-                product: "EnterpriseAppDevelopment",
-                enquiry_details: "",
-              }}
-              validationSchema={Yup.object({
-                name: Yup.string().required("Please provide your full name."),
-                phone_number: Yup.string().required(
-                  "Please enter your phone number."
-                ),
-                email: Yup.string()
-                  .email("Please provide a valid email address.")
-                  .required("Email address is required."),
-                city: Yup.string().required("Please specify your city."),
-                company_name: Yup.string().required(
-                  "Please specify the name of your company."
-                ),
-                enquiry_details: Yup.string().max(
-                  200,
-                  "should not exceed 200 characters."
-                ),
-              })}
-              onSubmit={handleSubmit}
-            >
-              <Form className="bg-white p-10 m-25">
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="name">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="Name"
-                          variant="standard"
-                          color="info"
-                          // required
-                          error={form.errors.name && form.touched.name}
-                          helperText={<ErrorMessage name="name" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="phone_number">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="Phone no"
-                          variant="standard"
-                          // required
-                          error={
-                            form.errors.phone_number &&
-                            form.touched.phone_number
-                          }
-                          helperText={<ErrorMessage name="phone_number" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="company_name">
-                      {({ field, form }) => (
-                        <TextField
-                          // required
-                          {...field}
-                          fullWidth
-                          label="Your Company Name"
-                          variant="standard"
-                          error={
-                            form.errors.company_name &&
-                            form.touched.company_name
-                          }
-                          helperText={<ErrorMessage name="company_name" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="email">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          // required
-                          label="Email"
-                          variant="standard"
-                          type="email"
-                          error={form.errors.email && form.touched.email}
-                          helperText={<ErrorMessage name="email" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="city">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="City"
-                          // required
-                          variant="standard"
-                          error={form.errors.city && form.touched.city}
-                          helperText={<ErrorMessage name="city" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="product">
-                      {({ field }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          select
-                          label="Products"
-                          variant="standard"
-                        >
-                          <MenuItem value="MobileAppSolutions">
-                            Mobile App Solutions
-                          </MenuItem>
-                          <MenuItem value="EnterpriseAppDevelopment">
-                            Enterprise Application Development
-                          </MenuItem>
-                          <MenuItem value="EcommerceAppDevelopment">
-                            Ecommerce Application Development
-                          </MenuItem>
-                          <MenuItem value="UIUX">UI/UX Strategy</MenuItem>
-                          <MenuItem value="DigitalMarketing">
-                            Digital Marketing
-                          </MenuItem>
-                          <MenuItem value="ERPDevelopment">
-                            ERP Software Development
-                          </MenuItem>
-                        </TextField>
-                      )}
-                    </Field>
-                  </Grid>
-
-                  <Grid item xs={12}>
-                    <Field name="enquiry_details">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          multiline
-                          rows={3}
-                          label="Remarks"
-                          variant="standard"
-                          error={
-                            form.errors.enquiry_details &&
-                            form.touched.enquiry_details
-                          }
-                          helperText={<ErrorMessage name="enquiry_details" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    className="d-flex justify-content-center align-items-center gap-2"
-                  >
-                    <button type="submit" className="theme-btn style-four">
-                      Request Call Back
-                      <i className="far fa-long-arrow-right" />
-                    </button>
-                  </Grid>
-                </Grid>
-              </Form>
-            </Formik>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <ContactUsProduct TypeOF={"s"} initialValue={"EnterpriseAppDevelopment"} />
     </Layout>
   );
 };

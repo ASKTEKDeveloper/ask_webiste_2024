@@ -47,8 +47,8 @@ import { SiLinkerd } from "react-icons/si";
 import { LuBrainCircuit } from "react-icons/lu";
 import { RiFocus2Line } from "react-icons/ri";
 import { TbLayersLinked } from "react-icons/tb";
-
 import { SlLike } from "react-icons/sl";
+import ContactUsForm from "./ContactUsForm";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -234,10 +234,13 @@ const Index = () => {
               <span className="sub-title" style={{ color: "#3E54AC" }}>
                 Welcome to ASK Technology
               </span>
-              <h2 style={{ textTransform: "capitalize", color: "#0079FF" }} className="text-shadow1 text-gradient-title4">
+              <h2
+                style={{ textTransform: "capitalize", color: "#0079FF" }}
+                className="text-shadow1 text-gradient-title4"
+              >
                 WE BRING SUCCESS TO YOUR GREAT BUSINESS
               </h2>
-              <p> 
+              <p>
                 Revolutionize your operations with Ask Technology's cutting-edge
                 solutions. From ERP tailored for Textile & Garment Industries to
                 Enterprise-level Goods Traders Management, our suite of products
@@ -261,7 +264,7 @@ const Index = () => {
             }}
           />
         </div>
-      </Slider>     
+      </Slider>
       {/* <Hero4Slider /> */}
       {/* About Area start */}
       <section className="about-area px-3  py-150  rpb-100 rel z-1">
@@ -270,10 +273,10 @@ const Index = () => {
             <div className="col-lg-6">
               <div className="about-content rmb-65 wow fadeInLeft delay-0-2s">
                 <div className="section-title mb-30">
-                  <span className="sub-title mb-15 ">
-                    ASK TECHNOLOGY
-                  </span>
-                  <h3 className="text-gradient-title3 ">Empowering Businesses with Innovative Solutions</h3>
+                  <span className="sub-title mb-15 ">ASK TECHNOLOGY</span>
+                  <h3 className="text-gradient-title3 ">
+                    Empowering Businesses with Innovative Solutions
+                  </h3>
                 </div>
                 <p>
                   At Ask Technology, we are more than just an IT services
@@ -364,7 +367,7 @@ const Index = () => {
         </Container>
       </section>
       {/* About Area end */}
-    
+
       {/* Project Area start */}
       <section
         className="project-area px-3  overflow-hidden bgc-lighter  rpt-100 rel z-1"
@@ -377,7 +380,7 @@ const Index = () => {
             <h2 className="new-font-play">
               PRODUCTS & <span style={{ color: "#9376E0" }}>SERVICES</span>
             </h2>
-          </div>          
+          </div>
 
           <Slider {...settings} className="project-slider-active">
             {/*1,ERP for Textile & Garment Industries - 'TARGET'{" "} */}
@@ -492,27 +495,27 @@ const Index = () => {
                       <div className="icon">
                         <FaBoxes />
                       </div>
-                     <h6 className="mb-0">Optimized Stock</h6>
+                      <h6 className="mb-0">Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <AiOutlineFileDone />
                       </div>
-                     <h6 className="mb-0">Efficient Order Fulfilment</h6>
+                      <h6 className="mb-0">Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <CiShop />
                       </div>
-                     <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
+                      <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <MdOutlineMonitorHeart />
                       </div>
-                     <h6 className="mb-0">Live Monitoring</h6>
+                      <h6 className="mb-0">Live Monitoring</h6>
                     </div>
 
                     <div
@@ -565,27 +568,27 @@ const Index = () => {
                       <div className="icon">
                         <GrCompliance />
                       </div>
-                     <h6 className="mb-0">Regulatory Compliance</h6>
+                      <h6 className="mb-0">Regulatory Compliance</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <MdOutlineWorkHistory />
                       </div>
-                     <h6 className="mb-0">Automated Payroll</h6>
+                      <h6 className="mb-0">Automated Payroll</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <IoPersonCircleOutline />
                       </div>
-                     <h6 className="mb-0">Self Service Portal</h6>
+                      <h6 className="mb-0">Self Service Portal</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <LuMonitorDot />
                       </div>
-                     <h6 className="mb-0">Book Free Demo</h6>
+                      <h6 className="mb-0">Book Free Demo</h6>
                     </div>
 
                     <div
@@ -644,27 +647,27 @@ const Index = () => {
                       <div className="icon">
                         <FaBoxes />
                       </div>
-                     <h6 className="mb-0">Optimized Stock</h6>
+                      <h6 className="mb-0">Optimized Stock</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <AiOutlineFileDone />
                       </div>
-                     <h6 className="mb-0">Efficient Order Fulfilment</h6>
+                      <h6 className="mb-0">Efficient Order Fulfilment</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <CiShop />
                       </div>
-                     <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
+                      <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <MdOutlineMonitorHeart />
                       </div>
-                     <h6 className="mb-0">Live Monitoring</h6>
+                      <h6 className="mb-0">Live Monitoring</h6>
                     </div>
 
                     <div
@@ -969,8 +972,8 @@ const Index = () => {
         </Container>
       </section>
       {/* Services Area end */}
-        {/* Why Choose Us Area start */}
-        <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      {/* Why Choose Us Area start */}
+      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -1295,10 +1298,9 @@ const Index = () => {
         </div>
       </section>
       {/* Why Choose Us Area end */}
-      
 
-        {/* Partners Area start */}
-        <section className="partners-area pb-100 pt-50 rmt-30 rpb-70 rel z-1">
+      {/* Partners Area start */}
+      <section className="partners-area pb-100 pt-50 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -1312,7 +1314,7 @@ const Index = () => {
               loop={0}
               autoFill
             >
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/1.png"
                   alt="Partner"
@@ -1321,7 +1323,7 @@ const Index = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/2.png"
                   alt="Partner"
@@ -1330,7 +1332,7 @@ const Index = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/3.webp"
                   alt="Partner"
@@ -1339,7 +1341,7 @@ const Index = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/4.webp"
                   alt="Partner"
@@ -1348,7 +1350,7 @@ const Index = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/5.jpg"
                   alt="Partner"
@@ -1356,7 +1358,7 @@ const Index = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/6.png"
                   alt="Partner"
@@ -1364,7 +1366,7 @@ const Index = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/7.jpg"
                   alt="Partner"
@@ -1372,7 +1374,7 @@ const Index = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/8.png"
                   alt="Partner"
@@ -1380,7 +1382,7 @@ const Index = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/9.jpg"
                   alt="Partner"
@@ -1633,7 +1635,8 @@ const Index = () => {
                   <p>
                     showcasing our commitment to excellence and client
                     satisfaction
-                    <br/><br/>
+                    <br />
+                    <br />
                   </p>
                 </div>
               </div>
@@ -2013,148 +2016,9 @@ const Index = () => {
         </Container>
       </section>
       {/* Blog Area end */}
-      
-      {/* Contact Form Section Start */}
-      <section className="contact-page-form  rpb-100" id="contactus">
-        <div className="container">
-          <div className="contact-form-wrap form-style-two bg-white wow fadeInUp delay-0-2s">
-            <div className="row text-center mb-35 justify-content-center">
-              <div className="col-xl-9 col-lg-11">
-                <div className="section-title mb-25 wow fadeInUp delay-0-2s">
-                  <span className="sub-title mb-15">Get In Touch</span>
-                  <h2>We’re Here to Help You</h2>
-                </div>
-                <p>
-                  Got a project in mind? We’d love to hear about it. Take five
-                  minutes to fill out our project form so that we can get to
-                  know you and understand your project.
-                </p>
-              </div>
-            </div>
-            <Formik
-              initialValues={{
-                name: "",
-                phone_number: "",
-                email: "",
-                subject: "",
-                message: "",
-              }}
-              validationSchema={Yup.object({
-                name: Yup.string().required("Please provide your full name."),
-                subject: Yup.string().required(
-                  "Please provide a subject for your message."
-                ),
-                phone_number: Yup.string().required(
-                  "Please enter your phone number."
-                ),
-                email: Yup.string()
-                  .email("Please provide a valid email address.")
-                  .required("Email address is required."),
-                message: Yup.string()
-                  .max(200, "should not exceed 200 characters.")
-                  .required("Type here, whats on your mind"),
-              })}
-              onSubmit={handleSubmit}
-            >
-              <Form className=" p-10 m-25">
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="name">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="Name"
-                          variant="outlined"
-                          color="info"
-                          error={form.errors.name && form.touched.name}
-                          helperText={<ErrorMessage name="name" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="phone_number">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="Phone no"
-                          variant="outlined"
-                          error={
-                            form.errors.phone_number &&
-                            form.touched.phone_number
-                          }
-                          helperText={<ErrorMessage name="phone_number" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="email">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          // required
-                          label="Email"
-                          variant="outlined"
-                          type="email"
-                          error={form.errors.email && form.touched.email}
-                          helperText={<ErrorMessage name="email" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field name="subject">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          label="Subject"
-                          variant="outlined"
-                          color="info"
-                          // required
-                          error={form.errors.subject && form.touched.subject}
-                          helperText={<ErrorMessage name="subject" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Field name="message">
-                      {({ field, form }) => (
-                        <TextField
-                          {...field}
-                          fullWidth
-                          multiline
-                          rows={3}
-                          label="Type Something..."
-                          variant="outlined"
-                          error={form.errors.message && form.touched.message}
-                          helperText={<ErrorMessage name="message" />}
-                        />
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    className="d-flex justify-content-center align-items-center gap-2"
-                  >
-                    <button type="submit" className="theme-btn style-two">
-                      send message <i className="far fa-long-arrow-right" />
-                    </button>
-                  </Grid>
-                </Grid>
-              </Form>
-            </Formik>
-          </div>
-        </div>
-      </section>
-      {/* Contact Form Section End */}
-
+      <div id="contactus">
+        <ContactUsForm />
+      </div>
       <Dialog
         open={openLoader}
         aria-labelledby="alert-dialog-title"

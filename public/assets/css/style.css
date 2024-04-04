@@ -67,7 +67,7 @@ body {
   --heading-color: #182f84;
   /* --heading-color: #1b1f2e; */
   /* --primary-color: #30f0b6; */
-  --primary-color: #59D5E0;
+  --primary-color: #59d5e0;
   --secondary-color: #674df3;
   --lighter-color: #f7f7f9;
   --border-color: rgba(21, 16, 31, 0.1);
@@ -477,18 +477,36 @@ a.theme-btn:hover i {
 .theme-btn.style-two,
 a.theme-btn.style-two {
   color: white;
-  background: #000046;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   /* background: var(--primary-color); */
   border-radius: 10px;
 }
 .theme-btn.style-two:after,
-a.theme-btn.style-two:after {  
-  background: #0052D4;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+a.theme-btn.style-two:after {
+  background: #0052d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6fb1fc,
+    #4364f7,
+    #0052d4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   /* background: var(--secondary-color); */
 }
@@ -505,12 +523,12 @@ a.theme-btn.style-three {
 .theme-btn.style-three:after,
 a.theme-btn.style-three:after {
   border-radius: 10px;
- 
+
   background: var(--heading-color);
 }
 .theme-btn.style-four,
 a.theme-btn.style-four {
-  color: #387ADF;
+  color: #387adf;
   /* color: var(--heading-color); */
   border-radius: 20px;
   background: transparent;
@@ -6431,8 +6449,10 @@ h6,
   padding: 40px;
   background: white;
   margin-bottom: 30px;
-  -webkit-box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1);
-  box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  /* -webkit-box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1);
+  box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1); */
+  border-radius: 20px;
 }
 @media only screen and (max-width: 375px) {
   .service-item-two {
@@ -11324,11 +11344,10 @@ blockquote .name:before {
   align-items: center;
 }
 
-.footer-logo-img
-{
+.footer-logo-img {
   padding: 15px;
   background-color: white;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
 
 .footer-white {
@@ -11547,9 +11566,14 @@ blockquote .name:before {
   display: none !important;
 }
 
-* {
+html {
   scroll-behavior: smooth !important;
 }
+
+html {
+  transition: scroll-behavior 0.3s ease-in-out;
+}
+
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
@@ -11576,19 +11600,24 @@ input {
   color: #5356ff;
 }
 
-
-.text-shadow1
-{
-  text-shadow: 2px 7px 5px rgba(0,0,0,0.1), 
-    0px -4px 10px rgba(255,255,255,0.1);
-    font-size: 50px;
+.text-shadow1 {
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.1),
+    0px -4px 10px rgba(255, 255, 255, 0.1);
+  font-size: 50px;
 }
 
-.client-logo
-{
+.client-logo {
   max-width: 150px;
   object-fit: contain;
   /* filter: drop-shadow(0.35rem 0.35rem 0.2rem rgba(0, 0, 0, 0.286)); */
-padding-left: 20px;
-padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
+.css-ahcq22-MuiFormLabel-root-MuiInputLabel-root,
+.css-ppuc5h-MuiFormLabel-root-MuiInputLabel-root,
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root,
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input {
+  font-weight: bold;
+  color: #7187ab;
 }

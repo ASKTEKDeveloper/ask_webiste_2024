@@ -2,6 +2,7 @@ import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
 import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
 import Link from "next/link";
+import { Nav, Tab } from "react-bootstrap";
 
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
@@ -13,21 +14,146 @@ import {
   serviceThreeSlider,
   testimonialThreeSlider,
 } from "@/src/sliderProps";
-import { Container } from "@mui/material";
+import {
+  Container,
+  Dialog,
+  Grid,
+  LinearProgress,
+  TextField,
+} from "@mui/material";
+
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Swal from "sweetalert2";
+
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
 
+import { TbBulb } from "react-icons/tb";
+import { SiLinkerd } from "react-icons/si";
+import { LuBrainCircuit } from "react-icons/lu";
+import { RiFocus2Line } from "react-icons/ri";
+import { TbLayersLinked } from "react-icons/tb";
+import { SlLike } from "react-icons/sl";
+
+import axios from "axios";
+import { useState } from "react";
+import ContactUsForm from "./ContactUsForm";
+
 const ServiceDetails = () => {
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [openLoader, setOpenLoader] = useState(false);
 
-  const accordionData = [
-    { id: 1, title: "Why Get Our IT Services ?" },
-    { id: 2, title: "BestTeam Member Provider ?" },
-    { id: 3, title: "Leanr About Our Company ?" },
-    { id: 4, title: "Payment Method ?" },
-  ];
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setOpenLoader(true);
+    try {
+      const response = await axios.post("/api/Contact/ContactUS", values);
+      console.log("Form submitted successfully:", response.data);
+      SendMail(values);
+      SendMail2(values);
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "Error submitting form. Please try again later.",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const SendMail = async (datas) => {
+    setOpenLoader(true);
+    const subjectLine = "New Contact Form Submission: " + datas.subject;
+    const bodyMessage = `
+        <p>Dear Team,</p>
+        <p>A new message has been received from the website contact form:</p>
+        <p><strong>Subject:</strong> ${datas.subject}</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p><strong>Message:</strong></p>
+        <p>${datas.message}</p>
+        <p>Please review the message and respond accordingly.</p>
+        <p>Best regards,</p>
+        <p>ASK TECHNOLOGY</p>
+    `;
+    const approvs = await axios
+      .post("http://103.73.189.37/EmailAPi/api/Mail", {
+        FromMailid: "hr@techveel.com",
+        ToMailid: "sathish.asktech@gmail.com",
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Rose@99559#",
+        Body: bodyMessage,
+        SmtpPort: 587,
+        Filepathattach: "",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          setOpen(false);
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
+
+  const SendMail2 = async (datas) => {
+    setOpenLoader(true);
+    const subjectLine = "Your Message has been Received";
+    const bodyMessageToUser = `
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for contacting us!</p>
+        <p>We have received your message and will get back to you as soon as possible.</p>
+        <p>Here are the details you provided:</p>
+        <p><strong>Subject:</strong> ${datas.subject}</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p><strong>Message:</strong></p>
+        <p>${datas.message}</p>
+        <p>Best regards,</p>
+        <p>Your Website</p>
+    `;
+    const approvs = await axios
+      .post("http://103.73.189.37/EmailAPi/api/Mail", {
+        FromMailid: "hr@techveel.com",
+        ToMailid: `${datas.email}`,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Rose@99559#",
+        Body: bodyMessageToUser,
+        SmtpPort: 587,
+        Filepathattach: "",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          setOpen(false);
+          Swal.fire({
+            title: "Thank you!",
+            text: "Your message has been successfully submitted. We'll review it and respond shortly.",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
+
   return (
     <Layout>
       <PageBanner pageName={"About Us"} />
@@ -113,8 +239,8 @@ const ServiceDetails = () => {
               <div className="about-five-images mt-55 rel z-1 wow fadeInRight delay-0-2s">
                 <img src="assets/images/about/about-five1.jpg" alt="About" />
                 <img src="assets/images/about/about-five2.jpg" alt="About" />
-                <div className="experience-years">
-                  <span className="years">25</span>
+                <div className="experience-years text-white">
+                  <span className="years text-dark">25+</span>
                   <h4>Years Of Experienced IT Solutions</h4>
                 </div>
                 <img
@@ -204,8 +330,8 @@ const ServiceDetails = () => {
         </div>
       </section>
       {/* About Area end */}
-         {/* Partners Area start */}
-         <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      {/* Partners Area start */}
+      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -219,7 +345,7 @@ const ServiceDetails = () => {
               loop={0}
               autoFill
             >
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/1.png"
                   alt="Partner"
@@ -228,7 +354,7 @@ const ServiceDetails = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/2.png"
                   alt="Partner"
@@ -237,7 +363,7 @@ const ServiceDetails = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/3.webp"
                   alt="Partner"
@@ -246,7 +372,7 @@ const ServiceDetails = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/4.webp"
                   alt="Partner"
@@ -255,7 +381,7 @@ const ServiceDetails = () => {
                 />
               </div>
 
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/5.jpg"
                   alt="Partner"
@@ -263,7 +389,7 @@ const ServiceDetails = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/6.png"
                   alt="Partner"
@@ -271,7 +397,7 @@ const ServiceDetails = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/7.jpg"
                   alt="Partner"
@@ -279,7 +405,7 @@ const ServiceDetails = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/8.png"
                   alt="Partner"
@@ -287,7 +413,7 @@ const ServiceDetails = () => {
                   className="client-logo"
                 />
               </div>
-              <div >
+              <div>
                 <img
                   src="assets/images/clients/9.jpg"
                   alt="Partner"
@@ -804,137 +930,17 @@ const ServiceDetails = () => {
       </section>
       {/* Testimonials Area Three End */}
 
-      {/* Contact Form Section Start */}
-      <section
-        className="contact-form-area py-130 px-3  rpy-100  mb-4 bgs-cover"
-        style={{
-          backgroundImage: "url(assets/images/background/contact-form-bg.jpg)",
-        }}
+      <div id="contactus">
+        <ContactUsForm />
+      </div>
+      <Dialog
+        open={openLoader}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        fullWidth
       >
-        <Container>
-          <div className="row gap-100 align-items-center">
-            <div className="col-lg-7">
-              <div className="contact-form bg-white p-80 rmb-55 wow fadeInRight delay-0-2s">
-                <div className="section-title mb-30">
-                  <h3>Get In Touch With Us</h3>
-                </div>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="form-style-one"
-                  action="#"
-                  name="contact-form"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Full name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="emailid"
-                          name="email"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Email"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={3}
-                          placeholder="Message"
-                          required
-                          defaultValue={""}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-xl-12">
-                      <div className="form-group mb-0">
-                        <button
-                          type="submit"
-                          className="theme-btn style-two mt-15 w-100"
-                        >
-                          send message <i className="far fa-long-arrow-right" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div className="col-lg-5">
-              <div className="contact-info-wrap wow fadeInLeft delay-0-2s">
-                <div className="section-title mb-40">
-                  <span className="sub-title mb-10">Need Consultations ?</span>
-                  <h2>Need A Project? We Would Love To Hear From You.</h2>
-                </div>
-                <div className="contact-info-part">
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-map-marked-alt" />
-                    </div>
-                    <div className="content">
-                      <span>Location</span>
-                      <h5>Kodambakkam, Chennai</h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-envelope-open-text" />
-                    </div>
-                    <div className="content">
-                      <span>Email Us</span>
-                      <h5>
-                        <a href="mailto:support@gmail.com">sales@asktek.net</a>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="contact-info-item">
-                    <div className="icon">
-                      <i className="far fa-phone" />
-                    </div>
-                    <div className="content">
-                      <span>Hotline</span>
-                      <h5>
-                        <a href="calto:+04445034080">+044 4503 4080</a>
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-      {/* Contact Form Section End */}
+        <LinearProgress />
+      </Dialog>
     </Layout>
   );
 };
