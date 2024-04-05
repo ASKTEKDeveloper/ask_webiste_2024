@@ -120,16 +120,8 @@ const Careers = () => {
       const response = await axios.post("/api/Careers/CareersForm", values);
       console.log("Form submitted successfully:", response.data);
       SendMail(values);
-      Swal.fire({
-        title: "Thank you!",
-        text: "Your job application has been submitted successfully. We'll review your application and get back to you shortly",
-        icon: "success",
-        confirmButtonText: "Done",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          resetForm();
-        }
-      });
+      SendMail2(values);
+      resetForm();
     } catch (error) {
       console.error("Error submitting form:", error);
       Swal.fire({
@@ -145,15 +137,15 @@ const Careers = () => {
 
   const SendMail = async (datas) => {
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "hr@asktek.net",
         ToMailid: `${datas.email}`,
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: "Application for Job Opportunity at ASK Technology",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
         Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for considering a career opportunity at ASK Technology.</p>
@@ -162,8 +154,8 @@ const Careers = () => {
         <p>If you have any questions or need further information, please feel free to reach out to us.</p>
         <p>Best Regards,</p>
         <p>ASK Technology HR Team</p>
-        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktechnology.com</p>
-        <p><a href="http://www.asktek.net">www.asktechnology.com</a></p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
         SmtpPort: 587,
         Filepathattach: "",
@@ -172,6 +164,48 @@ const Careers = () => {
       .then((res) => {
         if (res.data === "Email Send Succefully") {
           setOpenLoader(false);
+        } else {
+          setOpenLoader(false);
+        }
+      });
+  };
+
+  const SendMail2 = async (datas) => {
+    const approvs = await axios
+      .post("/api/Email/SendMail", {
+        FromMailid: "hr@asktek.net",
+        ToMailid: `${datas.email}`,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: "New Job Application Received",
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Saima@99559#",
+        Body: `
+        <p>Dear HR Team,</p>
+        <p>A new job application has been received from:</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p>Please review the application and proceed with the necessary steps in the recruitment process.</p>
+        <p>Best Regards,</p>
+        <p>ASK Technology HR Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
+        `,
+        SmtpPort: 587,
+        Filepathattach: "",
+        // "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
+      })
+      .then((res) => {
+        if (res.data === "Email Send Succefully") {
+          setOpenLoader(false);
+          Swal.fire({
+            title: "Thank you!",
+            text: "Your job application has been submitted successfully. We'll review your application and get back to you shortly",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
         } else {
           setOpenLoader(false);
         }

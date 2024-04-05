@@ -30,6 +30,7 @@ import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Testimonials from "./Testimonials";
+import HireDevForm from "./HireDevForm";
 
 const icons = [
   "angular.png",
@@ -86,7 +87,7 @@ const Hire_a_developer = () => {
                   />
                   <img
                     src="assets/images/hire/intro2.jpg"
-                    alt="About" 
+                    alt="About"
                     style={{ borderRadius: 20, objectFit: "contain" }}
                   />
                   <img
@@ -503,107 +504,8 @@ const Hire_a_developer = () => {
       </section>
       {/* FAQs Area end */}
       {/* Contact Form Section Start */}
-      <section
-        className="contact-form-area bg-white  pt-50 pb-130 rpy-100"
-        style={{ backgroundColor: "white" }}
-      >
-        <Container component={Paper} elevation={3}>
-          <div className="row bg-white align-items-center">
-            <div className="col-lg-8">
-              <div className=" bg-white p-80 rmb-55 wow fadeInRight delay-0-2s">
-                <div className="section-title mb-30">
-                  <h3>
-                    Reach Out to Us for{" "}
-                    <span className="text-gradient-title2 ">DEVELOPER</span>{" "}
-                    Hiring
-                  </h3>
-                </div>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="form-style-one"
-                  action="#"
-                  name="contact-form"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Full name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="emailid"
-                          name="email"
-                          className="form-control"
-                          defaultValue=""
-                          placeholder="Email"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={3}
-                          placeholder="Message"
-                          required
-                          defaultValue={""}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-xl-12">
-                      <div className="form-group mb-0">
-                        <button
-                          type="submit"
-                          className="theme-btn style-two mt-15 w-100"
-                        >
-                          send message <i className="far fa-long-arrow-right" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            {matchesBigScreen && (
-              <div className="col-lg-4 bg-white">
-                <div className="contact-right-image wow fadeInLeft delay-0-2s">
-                  <img
-                    src="assets/images/background/bg2.jpg"
-                    alt="FAQs"
-                    style={{ mixBlendMode: "multiply" }}
-                  />
-                </div>
-              </div>
-            )}
-          </div>
-        </Container>
-      </section>
+
+      <HireDevForm />
 
       <section className="faq-page-area py-100 rpt-100 rel z-1">
         <Container>

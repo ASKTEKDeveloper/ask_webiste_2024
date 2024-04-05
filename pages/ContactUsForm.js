@@ -48,18 +48,21 @@ const ContactUsForm = () => {
         <p>${datas.message}</p>
         <p>Please review the message and respond accordingly.</p>
         <p>Best regards,</p>
-        <p>ASK TECHNOLOGY</p>
+        <p>Best regards,</p>
+        <p>ASK Technology HR Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
     `;
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
         ToMailid: "sathish.asktech@gmail.com",
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
         Body: bodyMessage,
         SmtpPort: 587,
         Filepathattach: "",
@@ -67,7 +70,6 @@ const ContactUsForm = () => {
       .then((res) => {
         if (res.data === "Email Send Succefully") {
           setOpenLoader(false);
-          setOpen(false);
         } else {
           setOpenLoader(false);
         }
@@ -89,18 +91,20 @@ const ContactUsForm = () => {
         <p><strong>Message:</strong></p>
         <p>${datas.message}</p>
         <p>Best regards,</p>
-        <p>Your Website</p>
+        <p>ASK Technology HR Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
     `;
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
         ToMailid: `${datas.email}`,
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
         Body: bodyMessageToUser,
         SmtpPort: 587,
         Filepathattach: "",
@@ -108,7 +112,7 @@ const ContactUsForm = () => {
       .then((res) => {
         if (res.data === "Email Send Succefully") {
           setOpenLoader(false);
-          setOpen(false);
+
           Swal.fire({
             title: "Thank you!",
             text: "Your message has been successfully submitted. We'll review it and respond shortly.",

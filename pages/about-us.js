@@ -85,15 +85,15 @@ const ServiceDetails = () => {
         <p>ASK TECHNOLOGY</p>
     `;
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
         ToMailid: "sathish.asktech@gmail.com",
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
         Body: bodyMessage,
         SmtpPort: 587,
         Filepathattach: "",
@@ -126,15 +126,15 @@ const ServiceDetails = () => {
         <p>Your Website</p>
     `;
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
         ToMailid: `${datas.email}`,
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
         Body: bodyMessageToUser,
         SmtpPort: 587,
         Filepathattach: "",

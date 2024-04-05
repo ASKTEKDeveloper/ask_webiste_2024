@@ -1,31 +1,18 @@
 import Layout from "@/layout";
-import { TestimonialsSlider2 } from "@/src/components/slider/TestimonialsSlider";
 import { projectSliderActive, sliderTwoActive } from "@/src/sliderProps";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import ProgressBar from "@/src/components/ProgressBar";
-import mockup from "@/public/assets/images/about/mockup.png";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
-import Typography from "@mui/material/Typography";
 import { Nav, Tab } from "react-bootstrap";
-import {
-  mainSliderActive,
-  serviceThreeSlider,
-  testimonialThreeSlider,
-} from "@/src/sliderProps";
 import { Container } from "@mui/material";
-import Hero4Slider from "@/src/components/slider/Hero4Slider";
 import { useRef, useState } from "react";
-
-import { TextField, Dialog, Grid, LinearProgress } from "@mui/material";
+import { Dialog, LinearProgress } from "@mui/material";
 import axios from "axios";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { LiaStreamSolid } from "react-icons/lia";
 import { TfiExport } from "react-icons/tfi";
@@ -35,7 +22,6 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 });
 import { FaBoxes } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
-import { FaUserTag } from "react-icons/fa";
 import { CiShop } from "react-icons/ci";
 import { MdOutlineMonitorHeart } from "react-icons/md";
 import { GrCompliance } from "react-icons/gr";
@@ -50,6 +36,7 @@ import { TbLayersLinked } from "react-icons/tb";
 import { SlLike } from "react-icons/sl";
 import ContactUsForm from "./ContactUsForm";
 import Testimonials from "./Testimonials";
+import BlogList from "./BlogList";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -97,129 +84,10 @@ const PartnerIcon = ({ imageName }) => (
 
 const Index = () => {
   const sliderRef = useRef(null);
-  const [sliderIndex, setSliderIndex] = useState(0);
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [openLoader, setOpenLoader] = useState(false);
-
-  const next = () => {
-    sliderRef.current.slickNext();
-  };
-
-  const previous = () => {
-    sliderRef.current.slickPrev();
-  };
-
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    setOpenLoader(true);
-    try {
-      const response = await axios.post("/api/Contact/ContactUS", values);
-      console.log("Form submitted successfully:", response.data);
-      SendMail(values);
-      SendMail2(values);
-      resetForm();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      Swal.fire({
-        title: "Error!",
-        text: "Error submitting form. Please try again later.",
-        icon: "error",
-        confirmButtonText: "Ok",
-      });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const SendMail = async (datas) => {
-    setOpenLoader(true);
-    const subjectLine = "New Contact Form Submission: " + datas.subject;
-    const bodyMessage = `
-        <p>Dear Team,</p>
-        <p>A new message has been received from the website contact form:</p>
-        <p><strong>Subject:</strong> ${datas.subject}</p>
-        <p><strong>Name:</strong> ${datas.name}</p>
-        <p><strong>Email:</strong> ${datas.email}</p>
-        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
-        <p><strong>Message:</strong></p>
-        <p>${datas.message}</p>
-        <p>Please review the message and respond accordingly.</p>
-        <p>Best regards,</p>
-        <p>ASK TECHNOLOGY</p>
-    `;
-    const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
-        ToMailid: "sathish.asktech@gmail.com",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
-      })
-      .then((res) => {
-        if (res.data === "Email Send Succefully") {
-          setOpenLoader(false);
-          setOpen(false);
-        } else {
-          setOpenLoader(false);
-        }
-      });
-  };
-
-  const SendMail2 = async (datas) => {
-    setOpenLoader(true);
-    const subjectLine = "Your Message has been Received";
-    const bodyMessageToUser = `
-        <p>Dear ${datas.name},</p>
-        <p>Thank you for contacting us!</p>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <p>Here are the details you provided:</p>
-        <p><strong>Subject:</strong> ${datas.subject}</p>
-        <p><strong>Name:</strong> ${datas.name}</p>
-        <p><strong>Email:</strong> ${datas.email}</p>
-        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
-        <p><strong>Message:</strong></p>
-        <p>${datas.message}</p>
-        <p>Best regards,</p>
-        <p>Your Website</p>
-    `;
-    const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
-        Body: bodyMessageToUser,
-        SmtpPort: 587,
-        Filepathattach: "",
-      })
-      .then((res) => {
-        if (res.data === "Email Send Succefully") {
-          setOpenLoader(false);
-          setOpen(false);
-          Swal.fire({
-            title: "Thank you!",
-            text: "Your message has been successfully submitted. We'll review it and respond shortly.",
-            icon: "success",
-            confirmButtonText: "Done",
-          });
-        } else {
-          setOpenLoader(false);
-        }
-      });
-  };
-
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const settings = projectSliderActive(setCurrentSlide);
 
   return (
@@ -1730,7 +1598,7 @@ const Index = () => {
         <Container>
           <div className="row">
             <div className="col-xl-12">
-              <div className="skills-content mt-60 mb-70 rmt-0 rel z-1 wow fadeInLeft delay-0-2s">
+              <div className="skills-content mt-60 rmt-0 rel z-1 wow fadeInLeft delay-0-2s">
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="section-title text-center">
@@ -1800,131 +1668,7 @@ const Index = () => {
       </section>
       {/* Skills Area end */}
 
-      {/* Blog Area start */}
-      <section className="blog-area pb-50 px-3  mb-30 mt-4 rmb-0 rel z-1">
-        <Container style={{ marginTop: "150px" }}>
-          <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
-            <span className="sub-title mb-15">Our Blog &amp; News</span>
-            <h2>Latest Blog, New &amp; Articles</h2>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-xl-4 col-md-6">
-              <div className="blog-item style-two wow fadeInUp delay-0-2s">
-                <div className="image">
-                  <img src="assets/images/blog/blog1.jpg" alt="Blog" />
-                </div>
-                <div className="content">
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Jule 26, 2022</a>
-                    </li>
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Comments (25)</a>
-                    </li>
-                  </ul>
-                  <h4>
-                    <Link legacyBehavior href="blog-details">
-                      Voice Usabilit Consideration Partially Visually Hidden
-                    </Link>
-                  </h4>
-                  <div className="author">
-                    <img src="assets/images/blog/author.jpg" alt="Author" />
-                    <i>Post By </i>
-                    <a href="#">John M. Brecht</a>
-                  </div>
-                  <p>
-                    We denounce righteou indignation and dislike men beguile and
-                    demoralize charms
-                  </p>
-                  <Link legacyBehavior href="/blog-details">
-                    <a className="read-more">
-                      Read More <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="blog-item style-two wow fadeInUp delay-0-4s">
-                <div className="image">
-                  <img src="assets/images/blog/blog2.jpg" alt="Blog" />
-                </div>
-                <div className="content">
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Jule 26, 2022</a>
-                    </li>
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Comments (25)</a>
-                    </li>
-                  </ul>
-                  <h4>
-                    <Link legacyBehavior href="blog-details">
-                      How Create Vanil Java Script Gant Chart Adding Task
-                    </Link>
-                  </h4>
-                  <div className="author">
-                    <img src="assets/images/blog/author.jpg" alt="Author" />
-                    <i>Post By </i>
-                    <a href="#">John M. Brecht</a>
-                  </div>
-                  <p>
-                    We denounce righteou indignation and dislike men beguile and
-                    demoralize charms
-                  </p>
-                  <Link legacyBehavior href="/blog-details">
-                    <a className="read-more">
-                      Read More <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="blog-item style-two wow fadeInUp delay-0-6s">
-                <div className="image">
-                  <img src="assets/images/blog/blog3.jpg" alt="Blog" />
-                </div>
-                <div className="content">
-                  <ul className="blog-meta">
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Jule 26, 2022</a>
-                    </li>
-                    <li>
-                      <i className="far fa-calendar-alt" />{" "}
-                      <a href="#">Comments (25)</a>
-                    </li>
-                  </ul>
-                  <h4>
-                    <Link legacyBehavior href="blog-details">
-                      Smashing Podcast Episode 47 Soueidan Accessibility
-                    </Link>
-                  </h4>
-                  <div className="author">
-                    <img src="assets/images/blog/author.jpg" alt="Author" />
-                    <i>Post By </i>
-                    <a href="#">John M. Brecht</a>
-                  </div>
-                  <p>
-                    We denounce righteou indignation and dislike men beguile and
-                    demoralize charms
-                  </p>
-                  <Link legacyBehavior href="/blog-details">
-                    <a className="read-more">
-                      Read More <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <BlogList />
       {/* Blog Area end */}
       {/* Testimonials Area Three Start */}
       <Testimonials />

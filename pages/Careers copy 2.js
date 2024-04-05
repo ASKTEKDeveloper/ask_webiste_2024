@@ -132,15 +132,15 @@ const Careers = () => {
   const SendMail = async (datas) => {
     setOpenLoader(true);
     const approvs = await axios
-      .post("http://103.73.189.37/EmailAPi/api/Mail", {
-        FromMailid: "hr@techveel.com",
+      .post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
         ToMailid: `${datas.email}`,
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",
         Subject: "Your Certificate from Techveel",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
+        MailPassowrd: "Saima@99559#",
 
         Body: `
         <p>Dear ${datas.name},</p>

@@ -82,16 +82,16 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const SendMailProduct = async (datas) => {
     try {
       const approvs = await axios.post(
-        "http://103.73.189.37/EmailAPi/api/Mail",
+        "/api/Email/SendMail",
         {
-          FromMailid: "hr@techveel.com",
+          FromMailid: "sales@asktek.net",
           ToMailid: datas.email,
           CcMailid: "",
           CcMailid1: "",
           CcMailid2: "",
           Subject: "Your Product Demo Request Confirmation",
           SmtpServer: "us2.smtp.mailhostbox.com",
-          MailPassowrd: "Rose@99559#",
+          MailPassowrd: "Saima@99559#",
           Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for your interest in our <b>${
@@ -119,16 +119,16 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const SendMailService = async (datas) => {
     try {
       const approvs = await axios.post(
-        "http://103.73.189.37/EmailAPi/api/Mail",
+        "/api/Email/SendMail",
         {
-          FromMailid: "hr@techveel.com",
+          FromMailid: "sales@asktek.net",
           ToMailid: datas.email,
           CcMailid: "",
           CcMailid1: "",
           CcMailid2: "",
           Subject: "Your Service Request Confirmation",
           SmtpServer: "us2.smtp.mailhostbox.com",
-          MailPassowrd: "Rose@99559#",
+          MailPassowrd: "Saima@99559#",
           Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for your interest in our <b>${
@@ -140,8 +140,8 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p>Best Regards,</p>
         <p>Best Regards,</p>
         <p>Techveel Team</p>
-        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@techveel.com</p>
-        <p><a href="http://www.techveel.com">www.techveel.com</a></p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
       `,
           SmtpPort: 587,
           Filepathattach: "",
@@ -205,16 +205,16 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
       `;
 
       const approvs = await axios.post(
-        "http://103.73.189.37/EmailAPi/api/Mail",
+        "/api/Email/SendMail",
         {
-          FromMailid: "hr@techveel.com",
+          FromMailid: "sales@asktek.net",
           ToMailid: "sathish.asktech@gmail.com",
           CcMailid: "",
           CcMailid1: "",
           CcMailid2: "",
           Subject: subjectLine,
           SmtpServer: "us2.smtp.mailhostbox.com",
-          MailPassowrd: "Rose@99559#",
+          MailPassowrd: "Saima@99559#",
           Body: bodyMessage,
           SmtpPort: 587,
           Filepathattach: "",
