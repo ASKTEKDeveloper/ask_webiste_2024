@@ -69,44 +69,47 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
           resetForm();
         }
       });
+    
     } catch (error) {
       console.error("Error submitting form:", error);
       setError("Error submitting form. Please try again later.");
     } finally {
-      setOpenLoader(false);
+      setOpenLoader(false); 
       setSubmitting(false);
     }
   };
 
   const SendMailProduct = async (datas) => {
     try {
-      const response = await axios.post("/api/Email/SendMail", {
-        FromMailid: "hr@techveel.com",
-        ToMailid: datas.email,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "Your Product Demo Request Confirmation",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
-        Body: `
-          <p>Dear ${datas.name},</p>
-          <p>Thank you for your interest in our <b>${
-            productsMapping[datas.product] || datas.product
-          }</b> demo!</p>
-          <p>Your request has been received successfully. We're excited to assist you further.</p>
-          <p>Our team will review your request and get back to you shortly to schedule the demo.</p>
-          <p>If you have any immediate questions or concerns, please don't hesitate to contact us.</p>
-          <p>Best Regards,</p>
-          <p>ASK TECHNOLOGY</p>
-          <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
-          <p><a href="http://www.asktek.net">www.asktek.net</a></p>
-        `,
-        SmtpPort: 587,
-        Filepathattach: "",
-      });
-      setOpen(false);
-      console.log("Email sent successfully:", response.data);
+      const approvs = await axios.post(
+        "http://103.73.189.37/EmailAPi/api/Mail",
+        {
+          FromMailid: "hr@techveel.com",
+          ToMailid: datas.email,
+          CcMailid: "",
+          CcMailid1: "",
+          CcMailid2: "",
+          Subject: "Your Product Demo Request Confirmation",
+          SmtpServer: "us2.smtp.mailhostbox.com",
+          MailPassowrd: "Rose@99559#",
+          Body: `
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for your interest in our <b>${
+          productsMapping[datas.product] || datas.product
+        }</b> demo!</p>
+        <p>Your request has been received successfully. We're excited to assist you further.</p>
+        <p>Our team will review your request and get back to you shortly to schedule the demo.</p>
+        <p>If you have any immediate questions or concerns, please don't hesitate to contact us.</p>
+        <p>Best Regards,</p>
+        <p>ASK TECHNOLOGY</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
+      `,
+          SmtpPort: 587,
+          Filepathattach: "",
+        }
+      );
+      setOpen(false);     
     } catch (error) {
       console.error("Error sending product demo email:", error);
       setOpenLoader(false);
@@ -115,16 +118,18 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
 
   const SendMailService = async (datas) => {
     try {
-      const approvs = await axios.post("/api/Email/SendMail", {
-        FromMailid: "hr@techveel.com",
-        ToMailid: datas.email,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "Your Service Request Confirmation",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
-        Body: `
+      const approvs = await axios.post(
+        "http://103.73.189.37/EmailAPi/api/Mail",
+        {
+          FromMailid: "hr@techveel.com",
+          ToMailid: datas.email,
+          CcMailid: "",
+          CcMailid1: "",
+          CcMailid2: "",
+          Subject: "Your Service Request Confirmation",
+          SmtpServer: "us2.smtp.mailhostbox.com",
+          MailPassowrd: "Rose@99559#",
+          Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for your interest in our <b>${
           servicesMapping[datas.product] || datas.product
@@ -138,10 +143,11 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@techveel.com</p>
         <p><a href="http://www.techveel.com">www.techveel.com</a></p>
       `,
-        SmtpPort: 587,
-        Filepathattach: "",
-      });
-      setOpen(false);
+          SmtpPort: 587,
+          Filepathattach: "",
+        }
+      );
+      setOpen(false);      
     } catch (error) {
       console.error("Error sending service request email:", error);
       setOpenLoader(false);
@@ -198,19 +204,22 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
       `;
 
-      const approvs = await axios.post("/api/Email/SendMail", {
-        FromMailid: "hr@techveel.com",
-        ToMailid: "sathish.asktech@gmail.com",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Rose@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
-      });
+      const approvs = await axios.post(
+        "http://103.73.189.37/EmailAPi/api/Mail",
+        {
+          FromMailid: "hr@techveel.com",
+          ToMailid: "sathish.asktech@gmail.com",
+          CcMailid: "",
+          CcMailid1: "",
+          CcMailid2: "",
+          Subject: subjectLine,
+          SmtpServer: "us2.smtp.mailhostbox.com",
+          MailPassowrd: "Rose@99559#",
+          Body: bodyMessage,
+          SmtpPort: 587,
+          Filepathattach: "",
+        }
+      );
     } catch (error) {
       console.error("Error sending internal email:", error);
     }

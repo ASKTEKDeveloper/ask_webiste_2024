@@ -86,7 +86,7 @@ const Hire_a_developer = () => {
                   />
                   <img
                     src="assets/images/hire/intro2.jpg"
-                    alt="About"
+                    alt="About" 
                     style={{ borderRadius: 20, objectFit: "contain" }}
                   />
                   <img
