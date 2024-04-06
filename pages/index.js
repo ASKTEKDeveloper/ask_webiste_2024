@@ -97,7 +97,11 @@ const Index = () => {
         ref={sliderRef}
         className="slider-two-active"
       >
-        <div className="slider-item-two">
+        <div
+          className={`slider-item-two ${
+            matchesSmallScreen ? "pt-100" : "pt-150"
+          }`}
+        >
           <Container>
             <div className="slide-content">
               <span className="sub-title" style={{ color: "#3E54AC" }}>
@@ -124,14 +128,31 @@ const Index = () => {
               </Link>
             </div>
           </Container>
-          <div
-            className="slider-image"
-            style={{
-              backgroundImage: "url(assets/images/home/home3.jpg)",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
+          {!matchesSmallScreen ? (
+            <div className="slider-image pt-1">
+              <img
+                src="assets/images/home/home5.png"
+                alt="Blog"
+                style={{
+                  mixBlendMode: "multiply",
+                  borderTopLeftRadius: 20,
+                  borderBottomLeftRadius: 80,
+                  boxShadow:
+                    "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                }}
+              />
+            </div>
+          ) : (
+            <div
+              className="p-25 slider-image"
+              style={{
+                backgroundImage: "url(assets/images/home/home5.png)",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                mixBlendMode: "multiply",
+              }}
+            />
+          )}
         </div>
       </Slider>
       {/* <Hero4Slider /> */}

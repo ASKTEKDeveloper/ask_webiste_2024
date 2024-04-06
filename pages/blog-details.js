@@ -4,7 +4,7 @@ import Link from "next/link";
 import ContactinBlog from "./ContactinBlog";
 import { useRouter } from "next/router";
 import { Divider, IconButton } from "@mui/material";
-import { blogData } from "@/pages/blogData";
+import { blogData } from "@/src/blogData";
 
 const BlogDetails = () => {
   const router = useRouter();
@@ -16,7 +16,6 @@ const BlogDetails = () => {
     // Handle case when blog data is not found
     return <div>Blog not found</div>;
   }
-
 
   const prevIndex = currentBlogIndex - 1 >= 0 ? currentBlogIndex - 1 : null;
   const nextIndex =
@@ -59,7 +58,7 @@ const BlogDetails = () => {
                 <h4>Summary & Results</h4>
                 <p>{blog.summary}</p>
               </div>
-            
+
               <div className="tag-share pt-25 pb-55 wow fadeInUp delay-0-2s">
                 <div className="item">
                   <h5>Tags</h5>
@@ -72,7 +71,6 @@ const BlogDetails = () => {
                   </div>
                 </div>
               </div>
-            
             </div>
             <div className="col-lg-4 col-md-7 col-sm-9">
               <div className="main-sidebar rmt-75">
@@ -122,10 +120,10 @@ const BlogDetails = () => {
                 </div>
               </div>
             </div>
-            <hr/>
+            <hr />
             <div className="next-prev-post col-12  py-40 wow fadeInUp delay-0-2s">
               {prevIndex !== null && (
-                <div className="post-item">               
+                <div className="post-item">
                   <div className="image">
                     <img
                       src={blogData[prevIndex].image}

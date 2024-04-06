@@ -5546,8 +5546,8 @@ h6,
 .slider-item-two {
   z-index: 1;
   position: relative;
-  padding-top: 130px;
-  padding-bottom: 210px;
+  /* padding-top: 150px; */
+  padding-bottom: 240px;
 }
 .slider-item-two .slide-content {
   position: relative;
@@ -5587,9 +5587,9 @@ h6,
   -o-transition: 1s;
   transition: 1s;
   width: 45%;
-  height: 100%;
+  height: 90%;
   background-size: cover;
-  background-color: var(--heading-color);
+  /* background-color: var(--heading-color); */
   background-position: center center;
 }
 @media only screen and (max-width: 991px) {

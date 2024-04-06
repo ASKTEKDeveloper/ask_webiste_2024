@@ -7,7 +7,7 @@ import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { Container } from "@mui/material";
 import { useRef, useState } from "react";
-import { blogData } from "@/pages/blogData";
+import { blogData } from "@/src/blogData";
 
 const BlogList = () => {
   const theme = useTheme();

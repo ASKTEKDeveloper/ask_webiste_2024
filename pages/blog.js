@@ -1,7 +1,7 @@
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
 import Link from "next/link";
-import { blogData } from "@/pages/blogData";
+import { blogData } from "@/src/blogData";
 import { useRouter } from "next/router";
 import ContactinBlog from "./ContactinBlog";
 
