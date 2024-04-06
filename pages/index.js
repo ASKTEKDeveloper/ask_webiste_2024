@@ -35,8 +35,8 @@ import { RiFocus2Line } from "react-icons/ri";
 import { TbLayersLinked } from "react-icons/tb";
 import { SlLike } from "react-icons/sl";
 import ContactUsForm from "./ContactUsForm";
-import Testimonials from "./Testimonials";
 import BlogList from "./BlogList";
+import Testimonials from "./Testimonials";
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
