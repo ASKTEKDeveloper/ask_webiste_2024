@@ -1,8 +1,152 @@
 import Layout from "@/layout";
-import { Chip, Container, Divider } from "@mui/material";
+import {
+  Chip,
+  Container,
+  Divider,
+  Dialog,
+  DialogContent,
+  TextField,
+  Grid,
+  LinearProgress,
+  Slide,
+} from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
+import React, { useState } from "react";
+import axios from "axios";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import Swal from "sweetalert2";
+
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import CloseIcon from "@mui/icons-material/Close";
 
 const ProjectGrid = () => {
+  const [open, setOpen] = useState(false);
+  const [openLoader, setOpenLoader] = useState(false);
+
+  const theme = useTheme();
+  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleButtonClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const brochuresPath = {
+    ERP: "/assets/docs/ERP.pdf",
+    SCM: "/assets/docs/HRMS.pdf",
+    HRMS: "/assets/docs/HRMS.pdf",
+  };
+
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    setOpenLoader(true);
+    try {
+      const response = await axios.post("/api/Enquiry/ProductEnquiry", values);
+      console.log("Form submitted successfully:", response.data);
+      setOpen(false);
+      SendMailProduct(values);
+      SendMailInternal(values);
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError("Error submitting form. Please try again later.");
+    }
+  };
+
+  const SendMailProduct = async (datas) => {
+    try {
+      const response = await axios.post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
+        ToMailid: datas.email,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: "Thank You for Downloading Our Product Brochure",
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Saima@99559#",
+        Body: `
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for downloading our product brochure!</p>
+        <p>We hope you find the information helpful and informative. 
+        If you have any questions or would like further assistance, feel free to reach out to us.</p>
+        <p>Best regards,</p>
+        <p>ASK TECHNOLOGY</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
+      `,
+        SmtpPort: 587,
+        Filepathattach: "",
+      });
+
+      console.log("Email sent successfully:", response.data);
+    } catch (error) {
+      console.error("Error sending product demo email:", error);
+      setOpenLoader(false);
+    }
+  };
+
+  const SendMailInternal = async (datas) => {
+    try {
+      const subjectLine = "User Downloaded Product Brochure";
+
+      const bodyMessage = `
+<p>Dear Team,</p>
+<p>A user has downloaded our product brochure from our website:</p>
+<p><strong>Name:</strong> ${datas.name}</p>
+<p><strong>Email:</strong> ${datas.email}</p>
+<p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+<p><strong>Company Name:</strong> ${datas.company_name}</p>
+<p><strong>City:</strong> ${datas.city}</p>
+<p>Please take note of this and follow up with the user if necessary.</p>
+<p>Best regards,</p>
+<p>ASK TECHNOLOGY</p>
+<p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
+<p><a href="http://www.asktek.net">www.asktek.net</a></p>
+`;
+      const approvs = await axios.post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
+        ToMailid: "sales@asktek.net",
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Saima@99559#",
+        Body: bodyMessage,
+        SmtpPort: 587,
+        Filepathattach: "",
+      });
+
+      const product = datas.product;
+      const brochurePath = brochuresPath[product];
+      console.log("path", brochuresPath[product]);
+      const link = document.createElement("a");
+      link.href = brochurePath;
+      link.setAttribute("download", `brochure_${product}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setOpenLoader(false);
+      Swal.fire({
+        title: "Thank you!",
+        text: "Your product brochure has been successfully downloaded. If you have any further questions, feel free to reach out to us.",
+        icon: "success",
+        confirmButtonText: "Done",
+      });
+    } catch (error) {
+      console.error("Error sending internal email:", error);
+    }
+  };
+
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="left" ref={ref} {...props} />;
+  });
+
   return (
     <>
       <Layout>
@@ -25,9 +169,16 @@ const ProjectGrid = () => {
                     </div>
                     <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
-                        <a href="assets/docs/Blogs.docx" download>
+                        <a
+                          onClick={handleButtonClick}
+                          style={{ color: "white" }}
+                        >
                           Download Brochure
                         </a>
+                        {/* 
+                        <a href="assets/docs/Blogs.docx" download onClick={handleButtonClick}>
+                          Download Brochure
+                        </a> */}
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
@@ -444,6 +595,176 @@ const ProjectGrid = () => {
           <ContactUsProduct TypeOF={"p"} initialValue={"ERP"} />
           {/* Contact Form Section End */}
         </>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          maxWidth={"xs"}
+          // TransitionComponent={Transition}
+        >
+          <DialogContent className=" p-0 m-0 ">
+            <div className=" align-items-center bg-white">
+              <div className="col-lg-12 pt-50 ">
+                <div
+                  className={`d-flex bg-white justify-content-center ${
+                    matchesSmallScreen && "flex-column-reverse"
+                  }  align-items-centercontact-info-wrap wow fadeInLeft delay-0-2s`}
+                >
+                  <div className={`section-title text-center`}>
+                    <h4
+                      className="text-gradient-title3"
+                      style={{ fontFamily: "oswald" }}
+                    >
+                      Please fill in the below details to download our product
+                      brochure
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12 ">
+                <div className="   rmb-55 wow fadeInRight delay-0-2s">
+                  <Formik
+                    initialValues={{
+                      name: "",
+                      phone_number: "",
+                      company_name: "",
+                      email: "",
+                      city: "",
+                      TypeOfReq: "d",
+                      product: "ERP",
+                      enquiry_details: "",
+                    }}
+                    validationSchema={Yup.object({
+                      name: Yup.string().required(
+                        "Please provide your full name."
+                      ),
+                      phone_number: Yup.string().required(
+                        "Please enter your phone number."
+                      ),
+                      email: Yup.string()
+                        .email("Please provide a valid email address.")
+                        .required("Email address is required."),
+                      city: Yup.string().required("Please specify your city."),
+                      company_name: Yup.string().required(
+                        "Please specify the name of your company."
+                      ),
+                    })}
+                    onSubmit={handleSubmit}
+                  >
+                    <Form className="bg-white p-25 ">
+                      <Grid container spacing={1}>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="name">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                label="Name"
+                                variant="outlined"
+                                color="info"
+                                size="small"
+                                error={form.errors.name && form.touched.name}
+                                helperText={<ErrorMessage name="name" />}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="phone_number">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                label="Phone no"
+                                variant="outlined"
+                                size="small"
+                                error={
+                                  form.errors.phone_number &&
+                                  form.touched.phone_number
+                                }
+                                helperText={
+                                  <ErrorMessage name="phone_number" />
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="company_name">
+                            {({ field, form }) => (
+                              <TextField
+                                size="small"
+                                {...field}
+                                fullWidth
+                                label="Your Company Name"
+                                variant="outlined"
+                                error={
+                                  form.errors.company_name &&
+                                  form.touched.company_name
+                                }
+                                helperText={
+                                  <ErrorMessage name="company_name" />
+                                }
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="email">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                size="small"
+                                label="Email"
+                                variant="outlined"
+                                type="email"
+                                error={form.errors.email && form.touched.email}
+                                helperText={<ErrorMessage name="email" />}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="city">
+                            {({ field, form }) => (
+                              <TextField
+                                {...field}
+                                fullWidth
+                                label="City"
+                                size="small"
+                                variant="outlined"
+                                error={form.errors.city && form.touched.city}
+                                helperText={<ErrorMessage name="city" />}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid
+                          item
+                          xs={12}
+                          className="d-flex justify-content-center mt-25 align-items-center"
+                        >
+                          <button type="submit" className="theme-btn style-two">
+                            Download
+                            <i className="far fa-long-arrow-right" />
+                          </button>
+                        </Grid>
+                      </Grid>
+                    </Form>
+                  </Formik>
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+        <Dialog
+          open={openLoader}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          fullWidth
+        >
+          <LinearProgress />
+        </Dialog>
       </Layout>
     </>
   );

@@ -87,7 +87,7 @@ const ServiceDetails = () => {
     const approvs = await axios
       .post("/api/Email/SendMail", {
         FromMailid: "sales@asktek.net",
-        ToMailid: "sathish.asktech@gmail.com",
+        ToMailid: "sales@asktek.net",
         CcMailid: "",
         CcMailid1: "",
         CcMailid2: "",

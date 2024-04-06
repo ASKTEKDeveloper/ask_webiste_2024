@@ -34,6 +34,10 @@ import { LuBrainCircuit } from "react-icons/lu";
 import { RiFocus2Line } from "react-icons/ri";
 import { TbLayersLinked } from "react-icons/tb";
 import { SlLike } from "react-icons/sl";
+import { LiaLuggageCartSolid } from "react-icons/lia";
+import { CiBoxes } from "react-icons/ci";
+import { LiaShippingFastSolid } from "react-icons/lia";
+import { LuFilePieChart } from "react-icons/lu";
 import ContactUsForm from "./ContactUsForm";
 import BlogList from "./BlogList";
 import Testimonials from "./Testimonials";
@@ -515,49 +519,49 @@ const Index = () => {
                 <div className="col-xl-8 col-md-12  content">
                   <h3>
                     <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
-                      <span style={{ color: "#337357" }}>Target SCM </span> -
-                      Supply Chain Management
+                      <span style={{ color: "#337357" }}>TOMS </span> -
+                      Streamline Your Order and Inventory Management
                     </span>
                     <br />
                     <span style={{ fontSize: "large", color: "#0E21A0" }}>
-                      Powering Your Supply Chain Dynamics
+                      Revolutionizing Your Order and Inventory Management
                     </span>
                   </h3>
                   <p className="my-3">
-                    Transform your supply chain with Target SCM, a versatile
-                    solution applicable across industries. Boost purchase and
-                    distribution processes, and gain real-time visibility into
-                    your supply chain. With online tools for customer purchase
-                    orders and tracking, Target SCM ensures efficiency and
-                    transparency in every link of your supply chain
+                    TOMS streamlines operations, manages orders, tracks
+                    inventory, and ensures seamless supply chain management.
+                    From order processing to inventory replenishment, TOMS
+                    reduces costs and delivers exceptional customer experiences.
+                    Say goodbye to manual processes—choose TOMS for simplified
+                    management
                   </p>
 
                   <div className="row medium-gap m-1 mt-2">
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <FaBoxes />
+                        <LiaLuggageCartSolid />
                       </div>
-                      <h6 className="mb-0">Optimized Stock</h6>
+                      <h6 className="mb-0">Order Processing Efficiency</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <AiOutlineFileDone />
+                        <CiBoxes />
                       </div>
-                      <h6 className="mb-0">Efficient Order Fulfilment</h6>
+                      <h6 className="mb-0">Inventory Optimization</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <CiShop />
+                        <LiaShippingFastSolid />
                       </div>
-                      <h6 className="mb-0">Collaborative Vendor Sourcing</h6>
+                      <h6 className="mb-0">Supply Chain Visibility</h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
-                        <MdOutlineMonitorHeart />
+                        <LuFilePieChart />
                       </div>
-                      <h6 className="mb-0">Live Monitoring</h6>
+                      <h6 className="mb-0">Analytics and Reporting</h6>
                     </div>
 
                     <div
@@ -1190,7 +1194,7 @@ const Index = () => {
       {/* Why Choose Us Area end */}
 
       {/* Partners Area start */}
-      <section className="partners-area pb-100 pt-50 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area pb-50 pt-50 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -1363,7 +1367,7 @@ const Index = () => {
       {/* Work Process Area End */}
 
       {/* Techveel Area start */}
-      <section className=" about-area-four px-3  pt-25 mb-5 rpt-0 rel z-2">
+      <section className=" about-area-four px-3  pt-25 mb-100 rpt-0 rel z-2">
         <Container>
           <div className="row align-items-center">
             <div className="col-xl-6">
@@ -1380,20 +1384,23 @@ const Index = () => {
                     style={{ mixBlendMode: "screen" }}
                   />
                 </div>
-                <div className="image">
-                  <img
-                    src="assets/images/about/techveel.jpg"
-                    alt="About"
-                    style={{
-                      maxWidth: "339px",
-                      height: "362px",
-                      objectFit: "contain",
-                      borderRadius: "20px",
-                    }}
-                  />
-                </div>
+                {!matchesSmallScreen && (
+                  <div className="image">
+                    <img
+                      src="assets/images/about/techveel.jpg"
+                      alt="About"
+                      style={{
+                        maxWidth: "339px",
+                        height: "362px",
+                        objectFit: "contain",
+                        borderRadius: "20px",
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
+
             <div className="col-xl-6 col-lg-10">
               <div className="about-four-content mb-65 rel z-1 wow fadeInLeft delay-0-2s">
                 <div className="section-title mb-50">
@@ -1487,14 +1494,14 @@ const Index = () => {
       {/* Techveel Area end */}
 
       {/* Statistics Area start */}
-      <section className="statistics-area-two px-3  rel z-2 mb-130 rmb-100">
+      <section className="statistics-area-two px-3 py-50  rel z-2 mb-130 rmb-100">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-8">
               <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
                 <span
                   className="sub-title mb-10"
-                  style={{ fontFamily: "oswald" }}
+                  // style={{ fontFamily: "oswald" }}
                 >
                   Learn About Our Company Statistics
                 </span>
@@ -1689,7 +1696,6 @@ const Index = () => {
       </section>
       {/* Skills Area end */}
 
-      <BlogList />
       {/* Blog Area end */}
       {/* Testimonials Area Three Start */}
       <Testimonials />
@@ -1697,6 +1703,8 @@ const Index = () => {
       <div id="contactus">
         <ContactUsForm />
       </div>
+
+      <BlogList />
       <Dialog
         open={openLoader}
         aria-labelledby="alert-dialog-title"
