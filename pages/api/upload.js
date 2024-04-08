@@ -1,38 +1,43 @@
-import fs from 'fs';
-import path from 'path';
-import multiparty from 'multiparty';
+import multer from "multer";
+import path from "path";
 
-const uploadDir = path.join(process.cwd(), 'public', 'uploads');
+const storage = multer.diskStorage({
+  destination: "./public/uploads",
+  filename: (req, file, callback) => {
+    const staticFilename = "uploaded_file"; // Static filename
+    const fileExtension = path.extname(file.originalname);
+    const filename = `${staticFilename}${fileExtension}`;
+    callback(null, filename);
+  },
+});
 
-export default async function uploadHandler(req, res) {
-  if (req.method === 'POST') {
-    const form = new multiparty.Form({ uploadDir });
+const upload = multer({ storage });
 
-    form.parse(req, async (err, fields, files) => {
-      if (err) {
-        console.error('Error parsing form:', err);
-        return res.status(500).json({ error: 'Failed to process upload' });
-      }
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
-      try {
-        // Ensure the uploads directory exists
-        fs.mkdirSync(uploadDir, { recursive: true });
-
-        // Move the uploaded file(s) to the uploads directory
-        const fileKeys = Object.keys(files);
-        fileKeys.forEach((key) => {
-          const file = files[key][0];
-          const filePath = path.join(uploadDir, file.originalFilename);
-          fs.renameSync(file.path, filePath);
-        });
-
-        res.status(200).json({ message: 'File uploaded successfully' });
-      } catch (error) {
-        console.error('Error uploading file:', error);
-        res.status(500).json({ error: 'Failed to upload file' });
-      }
-    });
+export default async function handler(req, res) {
+  if (req.method === "POST") {
+    try {
+      upload.single("file")(req, res, (err) => {
+        if (err) {
+          console.error("Error handling file upload:", err);
+          return res
+            .status(500)
+            .json({ error: "An unexpected error occurred" });
+        }
+        const filePath = `/uploads/${req.file.filename}`;
+        res.status(200).json({ filePath });
+      });
+    } catch (error) {
+      console.error("Error handling file upload:", error);
+      res.status(500).json({ error: "An unexpected error occurred" });
+    }
   } else {
-    res.status(405).json({ error: 'Method Not Allowed' });
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 }
