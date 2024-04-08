@@ -65,10 +65,9 @@ const CareersForm = () => {
       SendMail(values);
       SendMail2(values);
       resetForm();
-      setSelectedFileName('');
-      setSelectedFilePath('');
-      setSelectedFilePhoto('');
-
+      setSelectedFileName("");
+      setSelectedFilePath("");
+      setSelectedFilePhoto("");
     } catch (error) {
       console.error("Error submitting form:", error);
       Swal.fire({
@@ -86,7 +85,7 @@ const CareersForm = () => {
     try {
       const response = await axios.post("/api/Email/SendMail2", {
         from: "hr@asktek.net",
-        to: 'hr@asktek.net',
+        to: "hr@asktek.net",
         subject: "Application for Job Opportunity at ASK Technology",
         text: `
           Dear ${datas.name},
@@ -119,17 +118,12 @@ const CareersForm = () => {
   };
 
   const SendMail2 = async (datas) => {
-    const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "hr@asktek.net",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "New Job Application Received",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
-        Body: `
+    try {
+      const response = await axios.post("/api/Email/SendMail2", {
+        from: "hr@asktek.net",
+        to: "hr@asktek.net",
+        subject: "New Job Application Received",
+        text: `
         <p>Dear HR Team,</p>
         <p>A new job application has been received from:</p>
         <p><strong>Name:</strong> ${datas.name}</p>
@@ -141,23 +135,18 @@ const CareersForm = () => {
         <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
-        SmtpPort: 587,
-        Filepathattach: "",
-        // "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
-      })
-      .then((res) => {
-        if (res.data === "Email Send Succefully") {
-          setOpenLoader(false);
-          Swal.fire({
-            title: "Thank you!",
-            text: "Your job application has been submitted successfully. We'll review your application and get back to you shortly",
-            icon: "success",
-            confirmButtonText: "Done",
-          });
-        } else {
-          setOpenLoader(false);
-        }
+        attachment: selectedFilePath,
       });
+
+      if (response.data.message === "Email sent successfully") {
+        setOpenLoader(false);
+      } else {
+        setOpenLoader(false);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setOpenLoader(false);
+    }
   };
 
   return (
