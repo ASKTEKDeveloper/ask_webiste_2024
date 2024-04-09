@@ -445,8 +445,8 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   HRMS - Target HR & Payroll Solutions
                                 </MenuItem>
                                 <MenuItem value="TOMS">
-                                    TOMS - Target Order Management Solutions
-                                  </MenuItem>
+                                  TOMS - Target Order Management Solutions
+                                </MenuItem>
                               </TextField>
                             )}
                           </Field>
@@ -503,17 +503,21 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     matchesSmallScreen && "flex-column-reverse"
                   }  align-items-center gap-5 contact-info-wrap wow fadeInLeft delay-0-2s`}
                 >
-                  <div className="why-choose-image d-flex justify-content-center align-items-center gap-2 fadeInUp rmb-55">
-                    <img
-                      src={
-                        TypeOF == "s"
-                          ? "/assets/images/projects/erp/Calling-amico.png"
-                          : "/assets/images/projects/erp/Demo-amico.png"
-                      }
-                      alt="Why Choose"
-                      style={{ maxWidth: "100px" }}
-                    />
-                  </div>
+                  {!matchesSmallScreen && (
+                    <>
+                      <div className="why-choose-image d-flex justify-content-center align-items-center gap-2 fadeInUp rmb-55">
+                        <img
+                          src={
+                            TypeOF == "s"
+                              ? "/assets/images/projects/erp/Calling-amico.png"
+                              : "/assets/images/projects/erp/Demo-amico.png"
+                          }
+                          alt="Why Choose"
+                          style={{ maxWidth: "100px" }}
+                        />
+                      </div>
+                    </>
+                  )}
                   <div
                     className={`section-title ${
                       matchesSmallScreen && "text-center"
@@ -576,6 +580,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 label="Name"
                                 variant="standard"
                                 color="info"
+                                size={matchesSmallScreen && "small"}
                                 error={form.errors.name && form.touched.name}
                                 helperText={<ErrorMessage name="name" />}
                               />
@@ -590,7 +595,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 fullWidth
                                 label="Phone no"
                                 variant="standard"
-                                // required
+                                size={matchesSmallScreen && "small"}
                                 error={
                                   form.errors.phone_number &&
                                   form.touched.phone_number
@@ -606,7 +611,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                           <Field name="company_name">
                             {({ field, form }) => (
                               <TextField
-                                // required
+                                size={matchesSmallScreen && "small"}
                                 {...field}
                                 fullWidth
                                 label="Your Company Name"
@@ -628,7 +633,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                               <TextField
                                 {...field}
                                 fullWidth
-                                // required
+                                size={matchesSmallScreen && "small"}
                                 label="Email"
                                 variant="standard"
                                 type="email"
@@ -645,7 +650,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 {...field}
                                 fullWidth
                                 label="City"
-                                // required
+                                size={matchesSmallScreen && "small"}
                                 variant="standard"
                                 error={form.errors.city && form.touched.city}
                                 helperText={<ErrorMessage name="city" />}
@@ -664,6 +669,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   select
                                   label="Services"
                                   variant="standard"
+                                  size={matchesSmallScreen && "small"}
                                 >
                                   <MenuItem value="MobileAppSolutions">
                                     Mobile App Solutions
@@ -695,7 +701,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   {...field}
                                   fullWidth
                                   select
-                                  // required
+                                  size={matchesSmallScreen && "small"}
                                   label="Products"
                                   variant="standard"
                                 >
@@ -726,6 +732,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 multiline
                                 rows={3}
                                 label="Remarks"
+                                size={matchesSmallScreen && "small"}
                                 variant="standard"
                                 error={
                                   form.errors.enquiry_details &&
