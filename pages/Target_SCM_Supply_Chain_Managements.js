@@ -454,14 +454,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-3s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-3s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/costs.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Cost Reduction</h4>
                                   <p>
                                     Optimize inventory levels, reduce
@@ -473,14 +482,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-7s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-3s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/statistics.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Improved Efficiency</h4>
                                   <p>
                                     Automate manual processes, reduce lead
@@ -492,14 +510,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-6s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-3s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/vision.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Enhanced Visibility</h4>
                                   <p>
                                     Gain real-time visibility into inventory
@@ -511,14 +538,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-4s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-3s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/collaboration.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Better Collaboration</h4>
                                   <p>
                                     Foster collaboration with suppliers and
@@ -530,14 +566,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-7s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-7s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/approval.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Compliance</h4>
                                   <p>
                                     Ensure compliance with regulatory
@@ -549,14 +594,23 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                              <div className="benefits-item wow fadeInUp delay-0-5s">
+                              <div
+                                className={`${
+                                  matchesSmallScreen &&
+                                  "d-flex flex-column  justify-content-center align-items-center gap-4"
+                                } benefits-item wow fadeInUp delay-0-5s`}
+                              >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
                                     src="/assets/images/projects/erp/satisfaction.png"
                                     alt="Icon"
                                   />
                                 </div>
-                                <div className="content">
+                                <div
+                                  className={`content ${
+                                    matchesSmallScreen && "text-center"
+                                  }`}
+                                >
                                   <h4>Customer Satisfaction</h4>
                                   <p>
                                     Meet customer demand with on-time deliveries
@@ -579,8 +633,13 @@ const ProjectGrid = () => {
           <ContactUsProduct TypeOF={"p"} initialValue={"SCM"} />
           {/* Contact Form Section End */}
         </>
-        <Dialog open={open} onClose={handleClose} maxWidth={"xs"} TransitionComponent={Transition}
-          keepMounted>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          maxWidth={"xs"}
+          TransitionComponent={Transition}
+          keepMounted
+        >
           <DialogContent className=" p-0 m-0 ">
             <div className=" align-items-center bg-white">
               <div className="col-lg-12 pt-50 ">
