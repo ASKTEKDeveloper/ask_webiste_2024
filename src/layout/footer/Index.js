@@ -134,7 +134,7 @@ const Footer = () => {
                         legacyBehavior
                         href="Target_Order_Management_System"
                       >
-                        <a>Target Order Management System</a>
+                        <a>Target Order Management Solutions</a>
                       </Link>
                     </li>
 

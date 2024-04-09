@@ -112,7 +112,7 @@ const MobileMenu = () => {
               <ul style={activeSubMenu("Project")}>
                 <li>
                   <Link href="Target_Order_Management_System">
-                    Target Order Management System
+                    Target Order Management Solutions
                   </Link>
                 </li>
 
@@ -297,7 +297,7 @@ const DeskTopMenu = () => {
                   href="Target_Order_Management_System"
                   style={{ whiteSpace: "nowrap" }}
                 >
-                  Target Order Management System
+                  Target Order Management Solutions
                 </Link>
               </li>
               <li>
