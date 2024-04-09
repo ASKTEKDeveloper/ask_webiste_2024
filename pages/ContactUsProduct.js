@@ -46,6 +46,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
     ERP: "ERP for Textile & Garment Industries",
     SCM: "Target SCM - Supply Chain Management",
     HRMS: "HRMS - Target HR & Payroll Solutions",
+    TOMS: "TOMS - Target Order Management System",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -443,6 +444,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 <MenuItem value="HRMS">
                                   HRMS - Target HR & Payroll Solutions
                                 </MenuItem>
+                                <MenuItem value="TOMS">
+                                    TOMS - Target Order Management System
+                                  </MenuItem>
                               </TextField>
                             )}
                           </Field>
@@ -703,6 +707,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   </MenuItem>
                                   <MenuItem value="HRMS">
                                     HRMS - Target HR & Payroll Solutions
+                                  </MenuItem>
+                                  <MenuItem value="TOMS">
+                                    TOMS - Target Order Management System
                                   </MenuItem>
                                 </TextField>
                               )}

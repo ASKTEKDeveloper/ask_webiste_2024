@@ -111,6 +111,12 @@ const MobileMenu = () => {
               </a>
               <ul style={activeSubMenu("Project")}>
                 <li>
+                  <Link href="Target_Order_Management_System">
+                    Target Order Management System
+                  </Link>
+                </li>
+
+                <li>
                   <Link href="erp-for-textiles-and-garments">
                     ERP for Textile & Garment Industries{" "}
                   </Link>
@@ -286,6 +292,14 @@ const DeskTopMenu = () => {
           <li className="dropdown">
             <a href="#">Products</a>
             <ul>
+              <li>
+                <Link
+                  href="Target_Order_Management_System"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  Target Order Management System
+                </Link>
+              </li>
               <li>
                 <Link
                   href="erp-for-textiles-and-garments"
