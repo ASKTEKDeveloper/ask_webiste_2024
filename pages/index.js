@@ -570,7 +570,7 @@ const Index = () => {
                     >
                       <Link
                         legacyBehavior
-                        href="/Target_SCM_Supply_Chain_Managements"
+                        href="/Target_Order_Management_System"
                       >
                         <a className="theme-btn style-four ">
                           Know More

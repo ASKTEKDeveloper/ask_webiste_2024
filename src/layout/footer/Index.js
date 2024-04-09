@@ -1,7 +1,13 @@
 import { Container, Typography } from "@mui/material";
 import Link from "next/link";
 
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 const Footer = () => {
+  const theme = useTheme();
+  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Container maxWidth="xl">
       <footer
@@ -12,7 +18,11 @@ const Footer = () => {
           <div className="col-lg-4">
             <div className="footer-widget widget_about wow fadeInUp delay-0-2s">
               <div className="footer-logo mb-30 d-flex justify-content-center align-items-center">
-                <img src="assets/images/logos/logo-one.png" alt="Logo" className="footer-logo-img" />
+                <img
+                  src="assets/images/logos/logo-one.png"
+                  alt="Logo"
+                  className="footer-logo-img"
+                />
               </div>
               <p style={{ color: "#EEEEEE" }} className="text-center">
                 #36,2nd floor, Railway Border Rd, opposite to Kodambakkam
@@ -115,10 +125,19 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col-md-4 ">
+              <div className="col-md-4">
                 <div className="footer-widget widget_nav_menu wow fadeInUp delay-0-5s">
                   <h4 className="footer-title">Products</h4>
                   <ul className="list-style-two">
+                    <li>
+                      <Link
+                        legacyBehavior
+                        href="Target_Order_Management_System"
+                      >
+                        <a>Target Order Management System</a>
+                      </Link>
+                    </li>
+
                     <li>
                       <Link legacyBehavior href="erp-for-textiles-and-garments">
                         <a>ERP for Textile & Garment Industries</a>
@@ -172,9 +191,10 @@ const Footer = () => {
             width={"100%"}
             color="#C9D7DD"
             mb={3}
+            fontSize={matchesSmallScreen && "8px"}
           >
-            © Copyright 2024 by AskTechnology. All Rights Reserved And Designed
-            by Ask Technology
+            © Copyright 2024 by Ask Technology. <br />
+            All Rights Reserved And Designed by Ask Technology
           </Typography>
         </div>
       </footer>
