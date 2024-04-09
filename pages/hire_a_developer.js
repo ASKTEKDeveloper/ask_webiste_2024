@@ -74,7 +74,7 @@ const Hire_a_developer = () => {
   return (
     <Layout>
       {/* <PageBanner pageName={"Hire a Developer"} /> */}
-      <section className="about-area-five pb-80 rpt-100 rpb-65 rel z-1">
+      <section className="about-area-five py-50 rel z-1">
         <Container>
           <div className="row align-items-center gap-100">
             {matchesBigScreen && (
@@ -142,15 +142,14 @@ const Hire_a_developer = () => {
           </div>
         </Container>
       </section>
-      <section className="services-area-six py-100 rpb-70 rel z-1">
+      <section className="services-area-six py-50 rel z-1">
         <div className="container">
           <div className="section-title text-center mb-45">
             <h3 className="text-black-50">Why Hire a Dedicated Developer ? </h3>
           </div>
-
           <div className="row">
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-2s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <BsPersonWorkspace />
                 </div>
@@ -162,7 +161,7 @@ const Hire_a_developer = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-4s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <i className="flaticon-mission" />
                 </div>
@@ -174,7 +173,7 @@ const Hire_a_developer = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-6s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <BsCashCoin />
                 </div>
@@ -186,7 +185,7 @@ const Hire_a_developer = () => {
               </div>
             </div>{" "}
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-6s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <CgDisplayFlex />
                 </div>
@@ -198,7 +197,7 @@ const Hire_a_developer = () => {
               </div>
             </div>{" "}
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-6s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <IoMdCheckmarkCircleOutline />
                 </div>
@@ -210,7 +209,7 @@ const Hire_a_developer = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
-              <div className="service-item-six wow fadeInUp delay-0-6s">
+              <div className="service-item-six wow ">
                 <div className="icon">
                   <RiTeamLine />
                 </div>
@@ -299,7 +298,7 @@ const Hire_a_developer = () => {
       {/* Skills Area end */}
 
       {/* What We Provide Area End */}
-      <section className="services-area-five pt-30 rpt-35  rpb-100 rel z-2">
+      <section className="services-area-five py-50 rel z-2">
         <div className="container-fluid">
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-10">Our Services</span> */}
@@ -479,7 +478,7 @@ const Hire_a_developer = () => {
         </div>
       </section>
 
-      <section className="about-area-five pt-100 rpt-100 rpb-65 rel z-1">
+      <section className="about-area-five pt-50 rel z-1">
         <Container>
           <div className="row align-items-center gap-100">
             <div className="col-lg-12">
@@ -505,9 +504,10 @@ const Hire_a_developer = () => {
       {/* FAQs Area end */}
       {/* Contact Form Section Start */}
 
+      <Container>
       <HireDevForm />
-
-      <section className="faq-page-area py-100 rpt-100 rel z-1">
+      </Container>
+      <section className="faq-page-area py-50 rel z-1">
         <Container>
           <div className="section-title mb-45">
             <h2>Frequently Asked Questions</h2>
@@ -515,7 +515,8 @@ const Hire_a_developer = () => {
           <FaqHire accordions={[1, 2, 3, 4, 5]} />
         </Container>
       </section>
-      <Container>
+
+      <Container className="pb-75">
         <Testimonials />
       </Container>
     </Layout>

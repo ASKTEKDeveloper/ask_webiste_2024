@@ -133,7 +133,7 @@ const HireDevForm = () => {
     <>
       {/* Contact Form Section Start */}
       <section
-        className="contact-form-area bg-white  pt-50 pb-130 rpy-100"
+        className="contact-form-area bg-white  py-50"
         style={{ backgroundColor: "white" }}
       >
         <Container component={Paper} elevation={3}>

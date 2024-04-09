@@ -128,7 +128,7 @@ const ContactUsForm = () => {
   return (
     <>
       {/* Contact Form Section Start */}
-      <section className="contact-page-form  rpb-100" id="contactus">
+      <section className="contact-page-form  " id="contactus">
         <div className="container">
           <div className="contact-form-wrap form-style-two bg-white wow fadeInUp delay-0-2s">
             <div className="row text-center mb-35 justify-content-center">

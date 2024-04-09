@@ -94,7 +94,7 @@ const Services = () => {
       </div>
 
       {/* mobile-services*/}
-      <section className="about-area-two px-3  py-130 rpy-100 rel z-1">
+      <section className="about-area-two px-3  py-100 rpy-100 rel z-1">
         <Container>
           <div className="row align-items-center gap-90">
             <div className="col-lg-6">
@@ -623,7 +623,7 @@ const Services = () => {
       </section>
       {/* Why Choose Us Area end */}
       {/* Partners Area start */}
-      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area   py-50 rmt-30 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}

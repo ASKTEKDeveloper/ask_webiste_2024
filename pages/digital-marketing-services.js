@@ -93,7 +93,7 @@ const Services = () => {
         </Button>
       </div>
       {/* mobile-services*/}
-      <section className="about-area-two px-3  py-130 rpy-100 rel z-1">
+      <section className="about-area-two py-50 rel z-1">
         <Container>
           <div className="row align-items-center gap-90">
             <div className="col-lg-6">
@@ -133,7 +133,7 @@ const Services = () => {
       {/* About Area end */}
 
       {/* Services Area Two start */}
-      <section className="services-area-two px-3  mt-50 rel z-2">
+      <section className="services-area-two py-50 rel z-2">
         <Container maxWidth={"lg"}>
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
             <span className="sub-title mb-10">Our Services</span>
@@ -256,7 +256,7 @@ const Services = () => {
       {/* Services Area Two end */}
 
       {/* Why Choose Us Area start */}
-      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      <section className="why-choose-us-area py-50 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -583,7 +583,7 @@ const Services = () => {
       {/* Why Choose Us Area end */}
 
       {/* Partners Area start */}
-      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area  py-50 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -679,7 +679,7 @@ const Services = () => {
       </section>
       {/* Partners Area end */}
       {/* Work Process Area start */}
-      <section className="work-process-area px-3  pt-130 pb-100 rpt-100 rpb-70 rel z-1">
+      <section className="work-process-area py-50 rel z-1">
         <div className="section-title text-center mb-70 wow fadeInUp delay-0-2s">
           <span className="sub-title mb-15">Working Process</span>
           <h2>Industry Best Practices to the Core</h2>

@@ -159,7 +159,7 @@ const ServiceDetails = () => {
     <Layout>
       <PageBanner pageName={"About Us"} />
       {/* About Area start */}
-      <section className="about-area-three mt-120  px-3  pt-25 rpt-0 pb-100 rpb-65 rel z-1">
+      <section className="about-area-three py-50 rel z-1">
         <Container>
           <div className="row align-items-center gap-100">
             <div className="col-lg-6">
@@ -255,11 +255,11 @@ const ServiceDetails = () => {
 
           <div className="row align-items-center gap-20 mt-100">
             <div className="col-xl-6 col-md-6   pt-25">
-              <div className="mission-vision-item  mx-4delay-0-3s">
+              <div className="mission-vision-item  mx-4 ">
                 <div
                   className={`${
                     matchesSmallScreen && "flex-column"
-                  } d-flex  flex-column  wow fadeInUp  justify-content-start align-items-center gap-4`}
+                  } d-flex  flex-column    justify-content-start align-items-center gap-4`}
                 >
                   <div className="icon">
                     <img
@@ -290,11 +290,11 @@ const ServiceDetails = () => {
               </div>
             </div>
             <div className="col-xl-6 col-md-6   pt-25">
-              <div className="mission-vision-item  mx-4 wow  delay-0-3s">
+              <div className="mission-vision-item  mx-4 ">
                 <div
                   className={`${
                     matchesSmallScreen && "flex-column"
-                  } d-flex  flex-column wow  fadeInUp justify-content-start  align-items-center gap-4`}
+                  } d-flex  flex-column wow   justify-content-start  align-items-center gap-4`}
                 >
                   <div className="icon">
                     <img
@@ -332,7 +332,7 @@ const ServiceDetails = () => {
       </section>
       {/* About Area end */}
       {/* Partners Area start */}
-      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area   py-50 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}
@@ -429,7 +429,7 @@ const ServiceDetails = () => {
       {/* Partners Area end */}
 
       {/* Why Choose Us Area start */}
-      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      <section className="why-choose-us-area py-50 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -756,89 +756,129 @@ const ServiceDetails = () => {
       {/* Why Choose Us Area end */}
 
       {/* Statistics Area start */}
-      <section className="statistics-area-two rel z-2">
-        <>
-          <div
-            className="statistics-inner style-two bgs-cover text-white p-80 pb-20"
-            style={{
-              backgroundImage: "url(assets/images/background/statistics.jpg)",
-            }}
-          >
-            <div className="row align-items-xl-start align-items-center">
-              <div className="col-xl-5 col-lg-6">
-                <div className="statistics-content mb-55 wow fadeInUp delay-0-2s">
-                  <div className="section-title mb-30">
-                    <span className="sub-title mb-15">Company Statistics</span>
-                    <h2 className="mt-3">Learn About Our Comapny Statistics</h2>
-                  </div>
-                  {/* <Link legacyBehavior href="/about">
-                    <a className="read-more">
-                      Learn More <i className="fas fa-long-arrow-right" />
-                    </a>
-                  </Link> */}
+      <section className="statistics-area-two px-3   rel z-2 mb-100 rmb-100">
+        <Container>
+          <div className="row justify-content-center">
+            <div className="col-xl-6 col-lg-8">
+              <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
+                <span className="sub-title mb-10">
+                  Learn About Our Company Statistics
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="row no-gap justify-content-center">
+            <div className="col-xl-6 col-lg-6">
+              <div className="counter-item-two counter-text-wrap wow fadeInUp delay-0-3s">
+                <div className="icon d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/statistics/programming.png"
+                    alt="programming"
+                    style={{ maxWidth: "105px" }}
+                  />
+                  {/* <i className="flaticon-target" /> */}
+                </div>
+                <div className="content">
+                  <span
+                    className="count-text plus"
+                    data-speed={2000}
+                    data-stop={500}
+                  >
+                    <Counter end={500} />
+                  </span>
+                  <span className="counter-title">Projects Delivered</span>
+                  <p>
+                    showcasing our commitment to excellence and client
+                    satisfaction
+                    <br />
+                    <br />
+                  </p>
                 </div>
               </div>
-              <div className="col-xl-7 col-lg-6">
-                <div className="row">
-                  <div className="col-xl-3 col-small col-6">
-                    <div className="counter-item counter-text-wrap wow fadeInDown delay-0-3s">
-                      <i className="flaticon-target" />
-                      <span
-                        className="count-text plus"
-                        data-speed={3000}
-                        data-stop={500}
-                      >
-                        <Counter end={500} />
-                      </span>
-                      <span className="counter-title">Projects Delivered</span>
-                    </div>
-                  </div>
-                  <div className="col-xl-3 col-small col-6">
-                    <div className="counter-item counter-text-wrap wow fadeInUp delay-0-3s">
-                      <i className="flaticon-target-audience" />
-                      <span
-                        className="count-text percent"
-                        data-speed={3000}
-                        data-stop="99"
-                      >
-                        <Counter end={98.9} decimals="1" />
-                      </span>
-                      <span className="counter-title"> Happy Clients</span>
-                    </div>
-                  </div>
-                  <div className="col-xl-3 col-small col-6">
-                    <div className="counter-item counter-text-wrap wow fadeInDown delay-0-3s">
-                      <i className="flaticon-customer-experience" />
-                      <span
-                        className="count-text plus"
-                        data-speed={3000}
-                        data-stop="25"
-                      >
-                        <Counter end={25} decimals="1" />
-                      </span>
-                      <span className="counter-title">Years Experience</span>
-                    </div>
-                  </div>
-                  <div className="col-xl-3 col-small col-6">
-                    <div className="counter-item counter-text-wrap wow fadeInUp delay-0-3s">
-                      <i className="flaticon-medal" />
-                      <span
-                        className="count-text plus"
-                        data-speed={3000}
-                        data-stop={100}
-                      >
-                        <Counter end={100} />
-                      </span>
-                      <span className="counter-title">Engineers</span>
-                    </div>
-                  </div>
+            </div>
+            <div className="col-xl-6 col-lg-6">
+              <div className="counter-item-two counter-text-wrap wow fadeInUp delay-0-7s">
+                <div className="icon d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/statistics/review.png"
+                    alt="review"
+                    style={{ maxWidth: "105px" }}
+                  />
+                  {/* <i className="flaticon-target" /> */}
+                </div>
+                <div className="content">
+                  <span
+                    className="count-text percent"
+                    data-speed={2000}
+                    data-stop={98.9}
+                  >
+                    <Counter end={98.9} />
+                  </span>
+                  <span className="counter-title">Happy clients </span>
+                  <p>
+                    clients happiness is our priority, reflected in our
+                    impressive 98.9% satisfaction rate.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-6 col-lg-6">
+              <div className="counter-item-two counter-text-wrap wow fadeInUp delay-0-5s">
+                <div className="icon d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/statistics/reputation.png"
+                    alt="review"
+                    style={{ maxWidth: "105px" }}
+                  />
+                  {/* <i className="flaticon-target" /> */}
+                </div>
+                <div className="content">
+                  <span
+                    className="count-text plus"
+                    data-speed={2000}
+                    data-stop={25}
+                  >
+                    <Counter end={25} />
+                  </span>
+                  <span className="counter-title">Years of Experience</span>
+                  <p>
+                    and industry expertise, we bring a wealth of experience to
+                    every project
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-6 col-lg-6">
+              <div className="counter-item-two counter-text-wrap wow fadeInUp delay-0-5s">
+                <div className="icon d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/statistics/teamwork.png"
+                    alt="reputation"
+                    style={{ maxWidth: "105px" }}
+                  />
+                  {/* <i className="flaticon-target" /> */}
+                </div>
+                <div className="content">
+                  <span
+                    className="count-text plus"
+                    data-speed={2000}
+                    data-stop={25}
+                  >
+                    <Counter end={100} />
+                  </span>
+                  <span className="counter-title">Engineers </span>
+                  <p>
+                    of our team is dedicated to delivering innovative solutions
+                    and driving success
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </>
+        </Container>
       </section>
       {/* Statistics Area end */}
+
 
       <Testimonials />
 

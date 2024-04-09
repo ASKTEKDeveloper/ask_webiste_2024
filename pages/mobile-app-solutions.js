@@ -20,7 +20,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
-
 import { FaBoxes } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import { FaUserTag } from "react-icons/fa";
@@ -37,7 +36,6 @@ import { RiFocus2Line } from "react-icons/ri";
 import { TbLayersLinked } from "react-icons/tb";
 import { SlLike } from "react-icons/sl";
 import { TfiApple } from "react-icons/tfi";
-
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ContactUsProduct from "./ContactUsProduct";
@@ -96,7 +94,7 @@ const Services = () => {
       </div> */}
 
       {/* mobile-services*/}
-      <section className="about-area-two px-3  py-130 rpy-100 rel z-1">
+      <section className="about-area-two px-3  pt-50 pb-100  rel z-1">
         <Container>
           <div className="row align-items-center gap-90">
             <div className="col-lg-6">
@@ -306,7 +304,7 @@ const Services = () => {
       {/* Services Area Two end */}
 
       {/* Why Choose Us Area start */}
-      <section className="why-choose-us-area px-3  py-130 rpy-100 rel z-1">
+      <section className="why-choose-us-area px-3  py-100 rpy-100 rel z-1">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-8">
@@ -633,7 +631,7 @@ const Services = () => {
       {/* Why Choose Us Area end */}
 
       {/* Partners Area start */}
-      <section className="partners-area   pb-100 pt-150 rmt-30 rpb-70 rel z-1">
+      <section className="partners-area   py-50 rmt-30 rpb-70 rel z-1">
         <div>
           <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
             {/* <span className="sub-title mb-15">Global Partners</span> */}

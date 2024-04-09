@@ -220,7 +220,7 @@ const Careers = () => {
         style={{ maxWidth: "100%" }}
       />
 
-      <section className="project-grid-area rel z-2 py-50 rpy-100">
+      <section className="project-grid-area rel z-2 py-50">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-10">
@@ -238,7 +238,7 @@ const Careers = () => {
         </div>
       </section>
 
-      <section className="services-area-six  rpb-70 rel z-1">
+      <section className="services-area-six  rel z-1">
         <div className="container">
           <div className="section-title text-center mb-45">
             <h3 className="text-black-50">Why Choose Us ?</h3>

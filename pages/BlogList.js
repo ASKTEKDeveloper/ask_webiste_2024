@@ -14,7 +14,7 @@ const BlogList = () => {
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <section className="blog-area-four pt-50 rpt-100 pb-100 rpb-70 rel z-1">
+    <section className="blog-area-four pb-100 rpb-70 rel z-1">
       <Container>
         <div className="row justify-content-between align-items-end mb-30">
           <div className="col-xl-6 col-lg-8">

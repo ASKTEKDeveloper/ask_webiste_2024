@@ -152,7 +152,7 @@ const CareersForm = () => {
   return (
     <>
       <section
-        className="contact-form-area py-50 pb-100 px-3  rpy-100  mb-4 bgs-cover"
+        className="contact-form-area py-50 bgs-cover"
         style={{
           backgroundImage: "url(assets/images/background/feature-bg.jpg)",
         }}

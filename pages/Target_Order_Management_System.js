@@ -152,7 +152,7 @@ const ProjectGrid = () => {
     <>
       <Layout>
         <>
-          <section className="project-grid-area rel z-2 py-50 rpy-100">
+          <section className="project-grid-area rel z-2 pt-50 ">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-10">
@@ -212,65 +212,12 @@ const ProjectGrid = () => {
                   </div>
                 </div>
               </div>
-
-              {/* <div className="row justify-content-center">
-                <div className="section-title text-center mb-10">
-                  <Divider>
-                    <Chip label="Key Features" size="medium" />
-                  </Divider>
-                </div>
-
-                <div className="col-lg-2  col-md-4 col-6 col-small">
-                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInDown delay-0-2s">
-                    <div className="icon icon-size">
-                      <img
-                        src="/assets/images/projects/erp/time-sheet.png"
-                        alt="Icon"
-                      />
-                    </div>
-                    <h5>Order Processing Efficiency</h5>
-                  </div>
-                </div>
-                <div className="col-lg-2  col-md-4 col-6 col-small">
-                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
-                    <div className="icon icon-size">
-                      <img
-                        src="/assets/images/projects/erp/inventory-management.png"
-                        alt="Icon"
-                      />
-                    </div>
-                    <h5>Inventory Optimization</h5>
-                  </div>
-                </div>
-                <div className="col-lg-2  col-md-4 col-6 col-small">
-                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInDown delay-0-2s">
-                    <div className="icon icon-size">
-                      <img
-                        src="/assets/images/projects/erp/businessorder.png"
-                        alt="Icon"
-                      />
-                    </div>
-                    <h5>Supply Chain Visibility</h5>
-                  </div>
-                </div>
-                <div className="col-lg-2  col-md-4 col-6 col-small">
-                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
-                    <div className="icon icon-size">
-                      <img
-                        src="/assets/images/projects/erp/supply-chain.png"
-                        alt="Icon"
-                      />
-                    </div>
-                    <h5>Analytics & Reporting</h5>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </section>
-          <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
+          <section className="service-details-area  ">
             <Container>
-              <div className="row gap-100">
-                <div className="col-lg-12 mt-50 mb-150">
+              <div className="row gap-100 mb-50">
+                <div className="col-lg-12 ">
                   <h4 className="my-4 pb-4 text-center ">
                     Key Features of <span className="text-primary">TOMS</span>
                   </h4>
@@ -367,7 +314,7 @@ const ProjectGrid = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-12">
+                <div className="col-lg-12 pt-100">
                   <div className="service-details-content">
                     <div className="section-title text-center">
                       <Divider>

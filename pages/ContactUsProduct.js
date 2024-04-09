@@ -238,7 +238,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
       {/* Contact Form Section Start */}
       <section
         id="callback"
-        className="contact-form-area py-100 pb-100 px-3  rpy-100  mb-4 bgs-cover"
+        className="contact-form-area  pb-100 px-3  rpy-100  mb-4 bgs-cover"
         style={{
           backgroundImage: "url(assets/images/background/feature-bg.jpg)",
         }}

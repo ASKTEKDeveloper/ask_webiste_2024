@@ -161,11 +161,11 @@ const Index = () => {
       </Slider>
       {/* <Hero4Slider /> */}
       {/* About Area start */}
-      <section className="about-area px-3  py-150  rpb-100 rel z-1">
+      <section className="about-area px-3  py-100  rpb-100 rel z-1">
         <Container>
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <div className="about-content rmb-65 wow fadeInLeft delay-0-2s">
+              <div className="about-content rmb-65 wow  delay-0-2s">
                 <div className="section-title mb-30">
                   <span className="sub-title mb-15 ">ASK TECHNOLOGY</span>
                   <h3 className="text-gradient-title3 ">
@@ -230,13 +230,13 @@ const Index = () => {
               <div className="about-images">
                 <div className="top-part">
                   <img
-                    className="wow fadeInRight delay-0-3s"
+                    className=""
                     src="assets/images/about/image2.jpg"
                     alt="About"
                     style={{ borderRadius: 20 }}
                   />
                   <img
-                    className="wow zoomIn delay-0-5s"
+                    className=""
                     src="assets/images/about/about2.jpg"
                     alt="About"
                     style={{ mixBlendMode: "multiply", borderRadius: 20 }}
@@ -244,12 +244,12 @@ const Index = () => {
                 </div>
                 <div className="bottom-part">
                   <img
-                    className="wow fadeInDown delay-0-5s"
+                    className=""
                     src="assets/images/about/about-dots.png"
                     alt="About"
                   />
                   <img
-                    className="wow fadeInDown delay-0-3s"
+                    className=""
                     src="assets/images/about/image22.jpg"
                     alt="About"
                     style={{ borderRadius: 20 }}
@@ -1291,7 +1291,7 @@ const Index = () => {
       {/* Partners Area end */}
 
       {/* Work Process Area start */}
-      <section className="work-process-area px-3  pt-130 pb-100 rpt-100 rpb-70 rel z-1">
+      <section className="work-process-area px-3  py-100 rpt-100 rpb-70 rel z-1">
         <div className="section-title text-center mb-70 wow fadeInUp delay-0-2s">
           <span className="sub-title mb-15">Working Process</span>
           <h2>Industry Best Practices to the Core</h2>
@@ -1494,18 +1494,14 @@ const Index = () => {
       {/* Techveel Area end */}
 
       {/* Statistics Area start */}
-      <section className="statistics-area-two px-3 py-50  rel z-2 mb-130 rmb-100">
+      <section className="statistics-area-two px-3   rel z-2 mb-100 rmb-100">
         <Container>
           <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-8">
               <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
-                <span
-                  className="sub-title mb-10"
-                  // style={{ fontFamily: "oswald" }}
-                >
+                <span className="sub-title mb-10">
                   Learn About Our Company Statistics
                 </span>
-                {/* <h2>5,000+ Completed Projects in 41+ Countries</h2> */}
               </div>
             </div>
           </div>
