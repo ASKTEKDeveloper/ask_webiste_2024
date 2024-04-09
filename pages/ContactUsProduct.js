@@ -11,13 +11,19 @@ import {
   LinearProgress,
 } from "@mui/material";
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Slide from "@mui/material/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 
 const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const theme = useTheme();
@@ -493,7 +499,13 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         </Container>
       </section>
       {/* Contact Form Section End */}
-      <Dialog open={open} onClose={handleClose} maxWidth={"lg"}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        maxWidth={"lg"}
+        TransitionComponent={Transition}
+        keepMounted
+      >
         <DialogContent className=" p-0 m-0 ">
           <Container>
             <div className="row gap-20 align-items-center   bg-white">

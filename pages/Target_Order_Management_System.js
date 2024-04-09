@@ -10,7 +10,7 @@ import {
   LinearProgress,
 } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -18,6 +18,12 @@ import Swal from "sweetalert2";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
+import Slide from "@mui/material/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
@@ -207,8 +213,6 @@ const ProjectGrid = () => {
                 </div>
               </div>
 
-             
-
               {/* <div className="row justify-content-center">
                 <div className="section-title text-center mb-10">
                   <Divider>
@@ -266,101 +270,102 @@ const ProjectGrid = () => {
           <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
             <Container>
               <div className="row gap-100">
-              <div className="col-lg-12 mt-50 mb-150">
-                <h4 className="my-4 pb-4 text-center ">
-                  Key Features of <span className="text-primary">TOMS</span>
-                </h4>
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div className="feature-item style-two wow fadeInUp delay-0-2s">
-                      <div className="icon">
-                        <img
-                          src="assets/images/services/4.png"
-                          alt="Icon"
-                          className="industries-icon"
-                        />
+                <div className="col-lg-12 mt-50 mb-150">
+                  <h4 className="my-4 pb-4 text-center ">
+                    Key Features of <span className="text-primary">TOMS</span>
+                  </h4>
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="feature-item style-two wow fadeInUp delay-0-2s">
+                        <div className="icon">
+                          <img
+                            src="assets/images/services/4.png"
+                            alt="Icon"
+                            className="industries-icon"
+                          />
+                        </div>
+
+                        <h4>Customer Management</h4>
+
+                        <p>
+                          involves efficiently managing customer information,
+                          including contact details, purchase history, and
+                          preferences, to personalize interactions and enhance
+                          satisfaction. It also entails streamlining
+                          communication and support processes to improve service
+                          delivery.
+                          <br />
+                          <br />
+                        </p>
                       </div>
 
-                      <h4>Customer Management</h4>
-
-                      <p>
-                        involves efficiently managing customer information,
-                        including contact details, purchase history, and
-                        preferences, to personalize interactions and enhance
-                        satisfaction. It also entails streamlining communication
-                        and support processes to improve service delivery.
-                        <br />
-                        <br />
-                      </p>
+                      <div className="feature-item style-two wow fadeInUp delay-0-2s">
+                        <div className="icon">
+                          <img
+                            src="assets/images/services/2.png"
+                            alt="Icon"
+                            className="industries-icon"
+                          />
+                        </div>
+                        <h4>Order and Sales Management</h4>
+                        <p>
+                          involves seamlessly processing orders from various
+                          channels, including online platforms, retail stores,
+                          and phone orders, with automated workflows and order
+                          tracking capabilities. It further encompasses
+                          generating sales orders, managing order statuses, and
+                          tracking order fulfillment to ensure timely delivery
+                          and customer satisfaction.
+                          <br />
+                          <br />
+                        </p>
+                      </div>
                     </div>
+                    <div className="col-sm-6">
+                      <div className="feature-item style-two wow fadeInDown delay-0-2s">
+                        <div className="icon">
+                          <img
+                            src="assets/images/services/3.png"
+                            alt="Icon"
+                            className="industries-icon"
+                          />
+                        </div>
 
-                    <div className="feature-item style-two wow fadeInUp delay-0-2s">
-                      <div className="icon">
-                        <img
-                          src="assets/images/services/2.png"
-                          alt="Icon"
-                          className="industries-icon"
-                        />
+                        <h4> Inventory Management </h4>
+                        <p>
+                          optimizes inventory levels and minimizes stockouts by
+                          accurately forecasting demand, setting reorder points,
+                          and automating inventory replenishment processes. It
+                          also includes tracking inventory movement, monitoring
+                          stock levels in real-time, and streamlining inventory
+                          operations to reduce carrying costs and improve cash
+                          flow.
+                        </p>
                       </div>
-                      <h4>Order and Sales Management</h4>
-                      <p>
-                        involves seamlessly processing orders from various
-                        channels, including online platforms, retail stores, and
-                        phone orders, with automated workflows and order
-                        tracking capabilities. It further encompasses generating
-                        sales orders, managing order statuses, and tracking
-                        order fulfillment to ensure timely delivery and customer
-                        satisfaction.
-                        <br />
-                        <br />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="feature-item style-two wow fadeInDown delay-0-2s">
-                      <div className="icon">
-                        <img
-                          src="assets/images/services/3.png"
-                          alt="Icon"
-                          className="industries-icon"
-                        />
+                      <div className="feature-item style-two wow fadeInDown delay-0-2s">
+                        <div className="icon">
+                          <img
+                            src="assets/images/services/1.png"
+                            alt="Icon"
+                            className="industries-icon"
+                          />
+                        </div>
+
+                        <h4> MIS Reporting</h4>
+
+                        <p>
+                          enables access to comprehensive management information
+                          system (MIS) reporting tools to gain insights into
+                          sales performance, inventory trends, and customer
+                          behavior. It involves generating customizable reports
+                          and dashboards to monitor key performance indicators
+                          (KPIs), identify opportunities for improvement, and
+                          make data-driven business decisions
+                        </p>
                       </div>
-
-                      <h4> Inventory Management </h4>
-                      <p>
-                        optimizes inventory levels and minimizes stockouts by
-                        accurately forecasting demand, setting reorder points,
-                        and automating inventory replenishment processes. It
-                        also includes tracking inventory movement, monitoring
-                        stock levels in real-time, and streamlining inventory
-                        operations to reduce carrying costs and improve cash
-                        flow.
-                      </p>
-                    </div>
-                    <div className="feature-item style-two wow fadeInDown delay-0-2s">
-                      <div className="icon">
-                        <img
-                          src="assets/images/services/1.png"
-                          alt="Icon"
-                          className="industries-icon"
-                        />
-                      </div>
-
-                      <h4> MIS Reporting</h4>
-
-                      <p>
-                        enables access to comprehensive management information
-                        system (MIS) reporting tools to gain insights into sales
-                        performance, inventory trends, and customer behavior. It
-                        involves generating customizable reports and dashboards
-                        to monitor key performance indicators (KPIs), identify
-                        opportunities for improvement, and make data-driven
-                        business decisions
-                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
 
                 <div className="col-lg-12">
                   <div className="service-details-content">
@@ -660,7 +665,13 @@ const ProjectGrid = () => {
           <ContactUsProduct TypeOF={"p"} initialValue={"TOMS"} />
           {/* Contact Form Section End */}
         </>
-        <Dialog open={open} onClose={handleClose} maxWidth={"xs"}>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          maxWidth={"xs"}
+          TransitionComponent={Transition}
+          keepMounted
+        >
           <DialogContent className=" p-0 m-0 ">
             <div className=" align-items-center bg-white">
               <div className="col-lg-12 pt-50 ">

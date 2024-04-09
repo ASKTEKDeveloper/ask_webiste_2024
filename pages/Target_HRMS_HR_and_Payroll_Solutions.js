@@ -10,7 +10,7 @@ import {
   LinearProgress,
 } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -18,6 +18,12 @@ import Swal from "sweetalert2";
 
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
+import Slide from "@mui/material/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
@@ -576,7 +582,8 @@ const ProjectGrid = () => {
           {/* Contact Form Section Start */}
           <ContactUsProduct TypeOF={"p"} initialValue={"HRMS"} />
           {/* Contact Form Section End */}
-          <Dialog open={open} onClose={handleClose} maxWidth={"xs"}>
+          <Dialog open={open} onClose={handleClose} maxWidth={"xs"} TransitionComponent={Transition}
+          keepMounted>
             <DialogContent className=" p-0 m-0 ">
               <div className=" align-items-center bg-white">
                 <div className="col-lg-12 pt-50 ">

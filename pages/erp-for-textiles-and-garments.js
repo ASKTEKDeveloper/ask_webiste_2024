@@ -8,7 +8,6 @@ import {
   TextField,
   Grid,
   LinearProgress,
-  Slide,
 } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
 import React, { useState } from "react";
@@ -20,6 +19,12 @@ import Swal from "sweetalert2";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CloseIcon from "@mui/icons-material/Close";
+
+import Slide from "@mui/material/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
@@ -142,10 +147,6 @@ const ProjectGrid = () => {
       console.error("Error sending internal email:", error);
     }
   };
-
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="left" ref={ref} {...props} />;
-  });
 
   return (
     <>
@@ -599,7 +600,8 @@ const ProjectGrid = () => {
           open={open}
           onClose={handleClose}
           maxWidth={"xs"}
-          // TransitionComponent={Transition}
+          TransitionComponent={Transition}
+          keepMounted
         >
           <DialogContent className=" p-0 m-0 ">
             <div className=" align-items-center bg-white">
