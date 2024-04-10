@@ -47,7 +47,7 @@ const CareersForm = () => {
       setSelectedFilePhoto(file);
       setSelectedFileName(file.name);
       const formData = new FormData();
-      formData.append("file", file); // Ensure the field name matches the server-side expectation
+      formData.append("file", file);
       const response = await axios.post("/api/upload", formData);
       const filePath = response.data.filePath;
       setSelectedFilePath(filePath);
@@ -56,6 +56,29 @@ const CareersForm = () => {
       console.error("Error uploading file:", error);
     }
   };
+
+  // const handleFileChange = async (event) => {
+  //   try {
+  //     const file = event.target.files[0];
+  //     setSelectedFilePhoto(file);
+  //     setSelectedFileName(file.name);
+
+  //     const formData = new FormData();
+  //     formData.append("file", file);
+
+  //     const response = await axios.post("/api/upload", formData, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //     });
+
+  //     const filePath = response.data.filePath;
+  //     setSelectedFilePath(filePath);
+  //     console.log("file path", filePath);
+  //   } catch (error) {
+  //     console.error("Error uploading file:", error);
+  //   }
+  // };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);
@@ -98,6 +121,7 @@ const CareersForm = () => {
         <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
       `,
+        // attachment: "http://103.73.189.37/Tchveellogo/resume.pdf",
         attachment: selectedFilePath,
       });
     } catch (error) {

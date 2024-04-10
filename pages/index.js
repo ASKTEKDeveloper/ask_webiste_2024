@@ -186,6 +186,11 @@ const Index = () => {
                       Connect With US <i className="fas fa-long-arrow-right" />
                     </a>
                   </Link>
+                  <Link legacyBehavior href="about-us">
+                    <a className="theme-btn mt-10">
+                      Read More <i className="fas fa-long-arrow-right" />
+                    </a>
+                  </Link>
                 </div>
                 <div className="row no-gap for-active">
                   <div className="col-sm-6">
@@ -619,41 +624,35 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/mobile-app-solutions">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-3s">
-                  <BootstrapTooltip
-                    title="Learn More about mobile services"
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/mobile-app.png"
-                          className="icon"
-                        />
-                      </div>
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          Mobile App Solutions
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Unlock the potential of mobile technology with our
-                          bespoke mobile app solutions. From concept to
-                          deployment, we craft intuitive and engaging apps
-                          tailored to your business needs, ensuring seamless
-                          user experiences across iOS and Android platforms
-                          <br />
-                          <br />
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img
+                        src="assets/images/about/mobile-app.png"
+                        className="icon"
+                      />
                     </div>
-                  </BootstrapTooltip>
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        Mobile App Solutions
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Unlock the potential of mobile technology with our
+                        bespoke mobile app solutions. From concept to
+                        deployment, we craft intuitive and engaging apps
+                        tailored to your business needs, ensuring seamless user
+                        experiences across iOS and Android platforms
+                        <br />
+                        <br />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -661,40 +660,31 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/erp-software-services">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-4s">
-                  <BootstrapTooltip
-                    title="Learn More about ERP Software Services"
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/erp.png"
-                          className="icon"
-                        />
-                      </div>
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          ERP Software Development
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Transform your business operations with our custom ERP
-                          software development services. Tailored to your unique
-                          requirements, our ERP solutions streamline processes,
-                          centralize data, and provide real-time insights,
-                          empowering you to make informed decisions and drive
-                          business growth
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img src="assets/images/about/erp.png" className="icon" />
                     </div>
-                  </BootstrapTooltip>
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        ERP Software Development
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Transform your business operations with our custom ERP
+                        software development services. Tailored to your unique
+                        requirements, our ERP solutions streamline processes,
+                        centralize data, and provide real-time insights,
+                        empowering you to make informed decisions and drive
+                        business growth
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -702,39 +692,30 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/enterprise-application-services">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-4s">
-                  <BootstrapTooltip
-                    title="Learn More..."
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/crm.png"
-                          className="icon"
-                        />
-                      </div>
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          Enterprise Application Development
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Empower your business with scalable and robust
-                          enterprise applications that streamline operations and
-                          enhance productivity. Our custom-built solutions are
-                          designed to address your unique business challenges,
-                          driving efficiency and growth
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img src="assets/images/about/crm.png" className="icon" />
                     </div>
-                  </BootstrapTooltip>
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        Enterprise Application Development
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Empower your business with scalable and robust
+                        enterprise applications that streamline operations and
+                        enhance productivity. Our custom-built solutions are
+                        designed to address your unique business challenges,
+                        driving efficiency and growth
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -742,39 +723,33 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/ecommerce-application-development">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-6s">
-                  <BootstrapTooltip
-                    title="Learn More..."
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/ecommerce.png"
-                          className="icon"
-                        />
-                      </div>
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          Ecommerce Application Development
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Revolutionize your online presence with our ecommerce
-                          application development services. From user-friendly
-                          interfaces to secure payment gateways, we create
-                          dynamic ecommerce platforms that drive sales and
-                          enhance customer engagement
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img
+                        src="assets/images/about/ecommerce.png"
+                        className="icon"
+                      />
                     </div>
-                  </BootstrapTooltip>
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        Ecommerce Application Development
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Revolutionize your online presence with our ecommerce
+                        application development services. From user-friendly
+                        interfaces to secure payment gateways, we create dynamic
+                        ecommerce platforms that drive sales and enhance
+                        customer engagement
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -782,42 +757,33 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/UI/UX Strategy">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-5s">
-                  <BootstrapTooltip
-                    title="Learn More..."
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/ui.png"
-                          className="icon"
-                        />
-                      </div>
-
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          UI/UX Strategy
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Elevate your digital presence with our UI/UX strategy
-                          services. We combine innovative design principles with
-                          user-centric strategies to create intuitive interfaces
-                          and delightful user experiences, ensuring maximum
-                          engagement and retention
-                          <br />
-                          <br />
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img src="assets/images/about/ui.png" className="icon" />
                     </div>
-                  </BootstrapTooltip>
+
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        UI/UX Strategy
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Elevate your digital presence with our UI/UX strategy
+                        services. We combine innovative design principles with
+                        user-centric strategies to create intuitive interfaces
+                        and delightful user experiences, ensuring maximum
+                        engagement and retention
+                        <br />
+                        <br />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -825,40 +791,33 @@ const Index = () => {
             <div className="col-xl-6 col-md-6">
               <Link href="/digital-marketing-services">
                 <div className="service-two-item service-two-item22 mx-4 wow fadeInUp delay-0-7s">
-                  <BootstrapTooltip
-                    title="Learn More..."
-                    arrow
-                    placement="bottom-end"
+                  <div
+                    className={`${
+                      matchesSmallScreen && "flex-column"
+                    } d-flex   justify-content-start align-items-center gap-4`}
                   >
-                    <div
-                      className={`${
-                        matchesSmallScreen && "flex-column"
-                      } d-flex   justify-content-start align-items-center gap-4`}
-                    >
-                      <div className="icon">
-                        <img
-                          src="assets/images/about/video.png"
-                          className="icon"
-                        />
-                      </div>
-                      <div className="content">
-                        <h4
-                          style={{ fontFamily: "Oswald" }}
-                          className={`${matchesSmallScreen && "text-center"}`}
-                        >
-                          Digital Marketing
-                        </h4>
-                        <p className={`${matchesSmallScreen && "text-center"}`}>
-                          Amplify your online reach and drive growth with our
-                          digital marketing solutions. From SEO and PPC
-                          campaigns to social media management, we help you
-                          navigate the digital landscape and connect with your
-                          target audience effectively, driving traffic, leads,
-                          and conversions
-                        </p>
-                      </div>
+                    <div className="icon">
+                      <img
+                        src="assets/images/about/video.png"
+                        className="icon"
+                      />
                     </div>
-                  </BootstrapTooltip>
+                    <div className="content">
+                      <h4
+                        style={{ fontFamily: "Oswald" }}
+                        className={`${matchesSmallScreen && "text-center"}`}
+                      >
+                        Digital Marketing
+                      </h4>
+                      <p className={`${matchesSmallScreen && "text-center"}`}>
+                        Amplify your online reach and drive growth with our
+                        digital marketing solutions. From SEO and PPC campaigns
+                        to social media management, we help you navigate the
+                        digital landscape and connect with your target audience
+                        effectively, driving traffic, leads, and conversions
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </Link>
             </div>
@@ -1495,7 +1454,7 @@ const Index = () => {
 
       {/* Statistics Area start */}
       <section className="statistics-area-two px-3   rel z-2 mb-100 rmb-100">
-        <Container>
+        <Container maxWidth="lg">
           <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-8">
               <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
@@ -1526,10 +1485,8 @@ const Index = () => {
                   </span>
                   <span className="counter-title">Projects Delivered</span>
                   <p>
-                    showcasing our commitment to excellence and client
-                    satisfaction
-                    <br />
-                    <br />
+                    Showcasing our commitment to excellence, integrity, and
+                    client satisfaction
                   </p>
                 </div>
               </div>

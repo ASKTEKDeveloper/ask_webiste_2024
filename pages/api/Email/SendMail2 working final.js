@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import axios from "axios";
 
+
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -17,16 +18,9 @@ export default async function handler(req, res) {
           pass: "Saima@99559#",
         },
       });
-      
-      // const attachmentUrl = "http://103.73.189.37/Tchveellogo/resume.pdf";
-      // const attachmentResponse = await axios.get(attachmentUrl, {
-      //   responseType: "arraybuffer", // Ensure response is treated as binary
-      // });
 
-      // const attachmentData = Buffer.from(attachmentResponse.data, "binary");
-
-      // // Read the attachment file
-      const attachmentPath = path.join(process.cwd(), "pages/api", attachment);
+      // Read the attachment file
+      const attachmentPath = path.join(process.cwd(), "public", attachment);
       const attachmentData = fs.readFileSync(attachmentPath);
 
       // Get the original file name and extension
@@ -41,7 +35,6 @@ export default async function handler(req, res) {
         to: to,
         subject: subject,
         html: text,
-        // attachments: attachmentData,
         attachments: [{ filename: newFilename, content: attachmentData }],
       };
       const info = await transporter.sendMail(mailOptions);

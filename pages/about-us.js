@@ -757,7 +757,7 @@ const ServiceDetails = () => {
 
       {/* Statistics Area start */}
       <section className="statistics-area-two px-3   rel z-2 mb-100 rmb-100">
-        <Container>
+        <Container maxWidth="lg">
           <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-8">
               <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s">
@@ -788,10 +788,8 @@ const ServiceDetails = () => {
                   </span>
                   <span className="counter-title">Projects Delivered</span>
                   <p>
-                    showcasing our commitment to excellence and client
-                    satisfaction
-                    <br />
-                    <br />
+                    Showcasing our commitment to excellence, integrity, and
+                    client satisfaction
                   </p>
                 </div>
               </div>
@@ -878,7 +876,6 @@ const ServiceDetails = () => {
         </Container>
       </section>
       {/* Statistics Area end */}
-
 
       <Testimonials />
 

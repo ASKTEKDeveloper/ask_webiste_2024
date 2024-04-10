@@ -12,7 +12,7 @@ import path from "path";
 // });
 
 const storage = multer.diskStorage({
-  destination: path.join(process.cwd(), "pages/api", "uploads"),
+  destination: path.join(process.cwd(), "public", "uploads"),
   filename: (req, file, callback) => {
     const staticFilename = "uploaded_file"; // Static filename
     const fileExtension = path.extname(file.originalname);
