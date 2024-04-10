@@ -88,16 +88,16 @@ const CareersForm = () => {
         to: `${datas.email}`,
         subject: "Application for Job Opportunity at ASK Technology",
         text: `
-          Dear ${datas.name},          
-          Thank you for considering a career opportunity at ASK Technology.          
-          We have received your application and appreciate your interest in joining our team.          
-          Our hiring team will review your application thoroughly. If your qualifications match our requirements, we will contact you for further steps in the recruitment process.          
-          If you have any questions or need further information, please feel free to reach out to us.          
-          Best Regards,
-          ASK Technology HR Team
-          📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net
-          www.asktek.net
-        `,
+        <p>Dear ${datas.name},</p>
+        <p>Thank you for considering a career opportunity at ASK Technology.</p>
+        <p>We have received your application and appreciate your interest in joining our team.</p>
+        <p>Our hiring team will review your application thoroughly. If your qualifications match our requirements, we will contact you for further steps in the recruitment process.</p>
+        <p>If you have any questions or need further information, please feel free to reach out to us.</p>
+        <p>Best Regards,</p>
+        <p>ASK Technology HR Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
+      `,
         attachment: selectedFilePath,
       });
     } catch (error) {
@@ -114,15 +114,16 @@ const CareersForm = () => {
           to: "hr@asktek.net",
           subject: "New Job Application Received",
           text: `
-          <p>Dear ${datas.name},</p>
-          <p>Thank you for considering a career opportunity at ASK Technology.</p>
-          <p>We have received your application and appreciate your interest in joining our team.</p>
-          <p>Our hiring team will review your application thoroughly. If your qualifications match our requirements, we will contact you for further steps in the recruitment process.</p>
-          <p>If you have any questions or need further information, please feel free to reach out to us.</p>
-          <p>Best Regards,</p>
-          <p>ASK Technology HR Team</p>
-          <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
-          <p><a href="http://www.asktek.net">www.asktek.net</a></p>
+        <p>Dear HR Team,</p>
+        <p>A new job application has been received from:</p>
+        <p><strong>Name:</strong> ${datas.name}</p>
+        <p><strong>Email:</strong> ${datas.email}</p>
+        <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
+        <p>Please review the application and proceed with the necessary steps in the recruitment process.</p>
+        <p>Best Regards,</p>
+        <p>ASK Technology HR Team</p>
+        <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
+        <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
           attachment: selectedFilePath,
         })

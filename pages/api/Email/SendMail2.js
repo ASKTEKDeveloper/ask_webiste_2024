@@ -32,7 +32,7 @@ export default async function handler(req, res) {
         from: from,
         to: to,
         subject: subject,
-        text: text,
+        html: text,
         attachments: [{ filename: newFilename, content: attachmentData }],
       };
       const info = await transporter.sendMail(mailOptions);
