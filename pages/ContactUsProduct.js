@@ -24,7 +24,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-
 const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -294,16 +293,25 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     enquiry_details: "",
                   }}
                   validationSchema={Yup.object({
-                    name: Yup.string().required(
-                      "Please provide your full name."
-                    ),
+                    name: Yup.string()
+                      .matches(/^[A-Za-z\s]+$/, "enter valid name")
+                      .required("Please provide your full name."),
+
                     phone_number: Yup.string().required(
                       "Please enter your phone number."
                     ),
+
                     email: Yup.string()
-                      .email("Please provide a valid email address.")
+                      .matches(
+                        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                        "Please provide a valid email address"
+                      )
                       .required("Email address is required."),
-                    city: Yup.string().required("Please specify your city."),
+
+                    city: Yup.string()
+                      .matches(/^[A-Za-z\s]+$/, "enter valid city name")
+                      .required("Please specify your city."),
+
                     company_name: Yup.string().required(
                       "Please specify the name of your company."
                     ),
@@ -562,16 +570,25 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                       enquiry_details: "",
                     }}
                     validationSchema={Yup.object({
-                      name: Yup.string().required(
-                        "Please provide your full name."
-                      ),
+                      name: Yup.string()
+                        .matches(/^[A-Za-z\s]+$/, "enter valid name")
+                        .required("Please provide your full name."),
+
                       phone_number: Yup.string().required(
                         "Please enter your phone number."
                       ),
+
                       email: Yup.string()
-                        .email("Please provide a valid email address.")
+                        .matches(
+                          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                          "Please provide a valid email address"
+                        )
                         .required("Email address is required."),
-                      city: Yup.string().required("Please specify your city."),
+
+                      city: Yup.string()
+                        .matches(/^[A-Za-z\s]+$/, "enter valid city name")
+                        .required("Please specify your city."),
+
                       company_name: Yup.string().required(
                         "Please specify the name of your company."
                       ),

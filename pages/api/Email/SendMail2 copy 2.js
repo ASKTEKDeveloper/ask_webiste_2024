@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import fs from "fs";
 import path from "path";
 import axios from "axios";
 
@@ -17,15 +18,19 @@ export default async function handler(req, res) {
         },
       });
 
-      // Download the file from the URL and convert to Buffer
       const attachmentUrl = attachment;
       const attachmentResponse = await axios.get(attachmentUrl, {
-        responseType: "arraybuffer",
+        responseType: "arraybuffer", // Ensure response is treated as binary
       });
+
       const attachmentData = Buffer.from(attachmentResponse.data, "binary");
 
-      // Get the original filename and extension
-      const originalFileName = path.basename(attachmentUrl);
+      // // Read the attachment file
+      // const attachmentPath = path.join(process.cwd(), "pages/api", attachment);
+      // const attachmentData = fs.readFileSync(attachmentPath);
+
+      // Get the original file name and extension
+      const originalFileName = path.basename(attachment);
       const fileExtension = path.extname(originalFileName);
 
       // Generate a new filename
@@ -36,15 +41,9 @@ export default async function handler(req, res) {
         to: to,
         subject: subject,
         html: text,
-        attachments: [
-          {
-            filename: newFilename,
-            content: attachmentData,
-            contentType: `application/${fileExtension.substring(1)}`,
-          },
-        ],
+        attachments: attachmentData,
+        attachments: [{ filename: newFilename, content: attachmentData }],
       };
-
       const info = await transporter.sendMail(mailOptions);
 
       console.log("Message sent: %s", info.messageId);

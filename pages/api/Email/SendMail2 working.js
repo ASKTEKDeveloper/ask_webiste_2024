@@ -35,14 +35,6 @@ export default async function handler(req, res) {
         ],
       };
 
-      // const mailOptions = {
-      //   from: from,
-      //   to: to,
-      //   subject: subject,
-      //   text: text,
-      //   attachments: attachment,
-      // };
-
       const info = await transporter.sendMail(mailOptions);
 
       console.log("Message sent: %s", info.messageId);

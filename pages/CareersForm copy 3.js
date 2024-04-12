@@ -49,6 +49,7 @@ const CareersForm = () => {
   const marksRegex = /^(100(\.00?)?|\d{0,2}(\.\d{1,2})?)$/;
   const pincodeRegex = /^\d{6}$/;
 
+  // save in next js  folder
   const handleFileChange = async (event) => {
     setOpenLoader(true);
     try {
@@ -59,55 +60,21 @@ const CareersForm = () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      axios
-        .post("/api/uploadmulter", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          setOpenLoader(false);
-          let fileName = response.data.path.fileName;
-          const createdPath = `http://103.73.189.37/askcareers/${fileName}`;
-          setSelectedFilePath(createdPath);
-          console.log("createdPath", createdPath);
-        })
-        .catch((error) => {
-          console.error("Error uploading file:", error);
-          setOpenLoader(false);
-        });
+      const response = await axios.post("/api/uploadmulter", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      setOpenLoader(true);
+      let fileName = response.data.path.fileName;
+      const createdPath = `http://103.73.189.37/askcareers/${fileName}`;
+      setSelectedFilePath(createdPath);
+      console.log("createdPath", createdPath);
+      // console.log("File path:", filePath);
     } catch (error) {
-      console.error("Error handling file change:", error);
-      setOpenLoader(false);
+      console.error("Error uploading file:", error);
     }
   };
-
-  // save in next js  folder
-  // const handleFileChange = async (event) => {
-  //   setOpenLoader(true);
-  //   try {
-  //     const file = event.target.files[0];
-  //     setSelectedFilePhoto(file);
-  //     setSelectedFileName(file.name);
-
-  //     const formData = new FormData();
-  //     formData.append("file", file);
-
-  //     const response = await axios.post("/api/uploadmulter", formData, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //     });
-  //     setOpenLoader(true);
-  //     let fileName = response.data.path.fileName;
-  //     const createdPath = `http://103.73.189.37/askcareers/${fileName}`;
-  //     setSelectedFilePath(createdPath);
-  //     console.log("createdPath", createdPath);
-  //     // console.log("File path:", filePath);
-  //   } catch (error) {
-  //     console.error("Error uploading file:", error);
-  //   }
-  // };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);
