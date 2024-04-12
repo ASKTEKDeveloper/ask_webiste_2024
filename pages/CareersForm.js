@@ -41,22 +41,7 @@ const CareersForm = () => {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [selectedFilePath, setSelectedFilePath] = useState("");
 
-  const handleFileChange = async (event) => {
-    try {
-      const file = event.target.files[0];
-      setSelectedFilePhoto(file);
-      setSelectedFileName(file.name);
-      const formData = new FormData();
-      formData.append("file", file);
-      const response = await axios.post("/api/upload", formData);
-      const filePath = response.data.filePath;
-      setSelectedFilePath(filePath);
-      console.log("file path", filePath);
-    } catch (error) {
-      console.error("Error uploading file:", error);
-    }
-  };
-
+  // save in api folder
   // const handleFileChange = async (event) => {
   //   try {
   //     const file = event.target.files[0];
@@ -64,7 +49,7 @@ const CareersForm = () => {
   //     setSelectedFileName(file.name);
 
   //     const formData = new FormData();
-  //     formData.append("file", file);
+  //     formData.append("doc1", file);
 
   //     const response = await axios.post("/api/upload", formData, {
   //       headers: {
@@ -74,11 +59,47 @@ const CareersForm = () => {
 
   //     const filePath = response.data.filePath;
   //     setSelectedFilePath(filePath);
-  //     console.log("file path", filePath);
+  //     console.log("File path:", filePath);
   //   } catch (error) {
-  //     console.error("Error uploading file:", error);
+  //     console.error("Error uploading file in file change :", error);
   //   }
   // };
+
+  // save in next js  folder
+  const handleFileChange = async (event) => {
+    try {
+      const file = event.target.files[0];
+      setSelectedFilePhoto(file);
+      setSelectedFileName(file.name);
+
+      const formData = new FormData();
+      formData.append("doc1", file);
+
+      const res = await axios.post(
+        "http://103.73.189.37/ASKFileSaveAPI/api/AskFileSave",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log(res);
+
+      const response = await axios.post("/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      const filePath = response.data.filePath;
+      setSelectedFilePath(filePath);
+      console.log("File path:", filePath);
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);

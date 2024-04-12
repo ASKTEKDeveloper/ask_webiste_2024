@@ -17,7 +17,7 @@ export default async function handler(req, res) {
           pass: "Saima@99559#",
         },
       });
-      
+
       // const attachmentUrl = "http://103.73.189.37/Tchveellogo/resume.pdf";
       // const attachmentResponse = await axios.get(attachmentUrl, {
       //   responseType: "arraybuffer", // Ensure response is treated as binary
