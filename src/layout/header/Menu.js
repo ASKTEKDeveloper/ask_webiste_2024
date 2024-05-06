@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Accordion, Col, Row } from "react-bootstrap";
-
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { Fragment } from "react";
 import Typography from "@mui/material/Typography";
 import { Paper, Stack } from "@mui/material";
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 const Menu = () => {
   return (
     <Fragment>
@@ -324,7 +326,7 @@ const DeskTopMenu = () => {
                           color="#2C4E80"
                           fontFamily={"Oswald"}
                         >
-                          TOMS
+                          TOMS  <LocalShippingIcon className="iconarrow"/>
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Order Management Solutions
@@ -361,10 +363,10 @@ const DeskTopMenu = () => {
                         spacing={0}
                       >
                         <Typography variant="h5"fontFamily={"Oswald"}>
-                          ERP
+                          {`TERP `} <DoubleArrowIcon  className="iconarrow2"/>
                         </Typography>
                         <Typography variant="caption" color="gray">
-                          for Textile & Garment Industries{" "}
+                          Textile & Garment Industries{" "}
                         </Typography>
                       </Stack>
                     </Col>
@@ -397,7 +399,7 @@ const DeskTopMenu = () => {
                         spacing={0}
                       >
                         <Typography variant="h5"fontFamily={"Oswald"}>
-                          Target SCM
+                          TSCM <LocalShippingIcon  className="iconarrow"/>
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Supply Chain Management
@@ -433,7 +435,7 @@ const DeskTopMenu = () => {
                         spacing={0}
                       >
                         <Typography variant="h5"fontFamily={"Oswald"}>
-                          HRMS
+                          HRMS <LocalShippingIcon  className="iconarrow"/>
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Target HR & Payroll Solutions
