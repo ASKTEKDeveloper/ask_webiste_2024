@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Col, Row } from "react-bootstrap";
 
 import { Fragment } from "react";
+import Typography from "@mui/material/Typography";
+import { Paper, Stack } from "@mui/material";
 const Menu = () => {
   return (
     <Fragment>
@@ -294,34 +296,151 @@ const DeskTopMenu = () => {
             <ul>
               <li>
                 <Link
-                  href="Target_Order_Management_System"
-                  style={{ whiteSpace: "nowrap" }}
+                  href="Target_Order_Management_System"                  
+                  className="product-card-style"
                 >
-                  Target Order Management Solutions
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/toms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="8" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography
+                          variant="h5"
+                          color="#2C4E80"
+                          fontFamily={"Oswald"}
+                        >
+                          TOMS
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Order Management Solutions
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="erp-for-textiles-and-garments"
-                  style={{ whiteSpace: "nowrap" }}
+                  className="product-card-style"
                 >
-                  ERP for Textile & Garment Industries{" "}
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/erp.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                   <Col xs="8" className="d-flex justify-content-start " >
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5"fontFamily={"Oswald"}>
+                          ERP
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          for Textile & Garment Industries{" "}
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
                 </Link>
               </li>
               <li>
                 <Link
                   href="Target_SCM_Supply_Chain_Managements"
-                  style={{ whiteSpace: "nowrap" }}
+                  className="product-card-style"
                 >
-                  Target SCM - Supply Chain Management.
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/scm.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                   <Col xs="8" className="d-flex justify-content-start " >
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5"fontFamily={"Oswald"}>
+                          Target SCM
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Supply Chain Management
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
                 </Link>
               </li>
               <li>
                 <Link
                   href="Target_HRMS_HR_and_Payroll_Solutions"
-                  style={{ whiteSpace: "nowrap" }}
+                  className="product-card-style"
                 >
-                  HRMS - Target HR & Payroll Solutions
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/hrms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                   <Col xs="8" className="d-flex justify-content-start " >
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5"fontFamily={"Oswald"}>
+                          HRMS
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Target HR & Payroll Solutions
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
                 </Link>
               </li>
             </ul>
@@ -355,6 +474,7 @@ const DeskTopMenu = () => {
               <span className="fas fa-chevron-down" />
             </div>
           </li>
+
           <li className="dropdown">
             <Link href="blog">Blogs</Link>
           </li>

@@ -163,7 +163,7 @@ const ProjectGrid = () => {
                     </h5>
                     <div className="image my-50 wow fadeInUp delay-0-2s">
                       <img
-                        src="assets/images/projects/mockup-erp.png"
+                        src="assets/images/projects/erp-mockup.png"
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />

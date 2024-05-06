@@ -4354,11 +4354,29 @@ h6,
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+.product-card-style
+{
+  white-space: nowrap;
+  background-color: "#EEF7FF";  
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+
+.product-card-style:hover
+{
+  scale: 1.03;
+  background-color: #EEF5FF;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+                  
 .main-menu .navbar-collapse li ul {
   position: absolute;
   left: inherit;
-  top: 100%;
-  min-width: 250px;
+  top: 73%;
+  min-width: 350px;
   z-index: 100;
   display: none;
   background: #ffffff;
