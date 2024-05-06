@@ -435,7 +435,7 @@ const DeskTopMenu = () => {
                         spacing={0}
                       >
                         <Typography variant="h5"fontFamily={"Oswald"}>
-                          HRMS <LocalShippingIcon  className="iconarrow"/>
+                          HRMS <DoubleArrowIcon  className="iconarrow"/>
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Target HR & Payroll Solutions

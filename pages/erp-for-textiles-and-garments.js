@@ -310,7 +310,7 @@ const ProjectGrid = () => {
               <div className="row gap-100">
                 <div className="col-lg-12">
                   <div className="service-details-content">
-                    <div className="section-title text-center">
+                    <div className="section-title text-center mb-4">
                       <Divider>
                         <Chip
                           label="Functional Areas"
@@ -320,17 +320,17 @@ const ProjectGrid = () => {
                       </Divider>
                     </div>
 
-                    <div className="row gap-90  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                    <div className="mt-3 row gap-90  justify-content-center align-items-center">
+                      <div className="col-lg-7 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
                           <img
-                            src="assets/images/projects/erp/Manufacturing.png"
+                            src="assets/images/projects/erp/check.png"
                             alt="Why Choose"
                             className="product-features-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-5 fadeInUp">
                         <div className="why-choose-content fadeInUp">
                           <h4>Production Management</h4>
                           <p>
