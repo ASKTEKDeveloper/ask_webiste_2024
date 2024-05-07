@@ -209,20 +209,108 @@ const ProjectGrid = () => {
                 </div>
               </div>
               <div className="row justify-content-center">
-                <div className="section-title text-center ">
+                <div className="section-title text-center mb-10">
                   <Divider>
-                    {/* <Chip label="Key Features" size="medium" /> */}
+                    <Chip label="Key Features" size="medium" />
                   </Divider>
-                </div>              
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/planning-strategy.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Production Planning</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInDown delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/time-sheet.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Scheduling</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/inventory-management.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Inventory Control</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInDown delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/businessorder.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Order Management</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/supply-chain.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Supplier Management</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInDown delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/quality-assurance.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Quality Assurance</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3  wow fadeInUp delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/yearly-report.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Financial Management</h5>
+                  </div>
+                </div>
+                <div className="col-lg-3  col-md-4 col-6 col-small">
+                  <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3  wow fadeInDown delay-0-2s">
+                    <div className="icon icon-size">
+                      <img
+                        src="assets/images/projects/erp/dashboard.png"
+                        alt="Icon"
+                      />
+                    </div>
+                    <h5>Reporting & Analytics</h5>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          <section className="about-area-five  rel z-1 mb-50 ">
+          <section className="about-area-five pt-50 rel z-1 mb-50 ">
         <Container>
           <div className="row align-items-center gap-100">
             <div className="col-lg-12">
-              <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s mb-75">
+              <div className="about-content mt-55 rel z-1 wow fadeInLeft delay-0-2s mb-50">
                 <div className="section-title text-center rmb-40 ">
                   <span className="sub-title mb-15">
                   Functional Flow for 
