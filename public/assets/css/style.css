@@ -4372,29 +4372,37 @@ h6,
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.iconarrow
+.iconarrow, .iconarrow2,.iconarrow3,.iconarrow4
 {
   transition: all 0.5s;
   opacity: 0;
   margin-left: 5px;
 }
 
-.iconarrow2
-{
-  transition: all 0.5s;
-  opacity: 0;
-  margin-left: 5px;
-}
 .product-card-style:hover .iconarrow {
   opacity: 1;
-  margin-left: 125px;
+  margin-left: 131px;
 }
 
 
 .product-card-style:hover .iconarrow2 {
   opacity: 1;
-  margin-left: 132px;
+  margin-left: 65px;
 }
+
+
+
+.product-card-style:hover .iconarrow3 {
+  opacity: 1;
+  margin-left: 54 px;
+}
+    
+
+.product-card-style:hover .iconarrow4 {
+  opacity: 1;
+  margin-left: 46px;
+}
+    
       
                   
 .main-menu .navbar-collapse li ul {
@@ -4430,8 +4438,9 @@ h6,
   }
 }
 .main-menu .navbar-collapse li ul li {
-  width: 100%;
-  padding: 7px 20px;
+  width: 100%;  
+  /* padding: 7px 20px; */
+  padding: 10px 15px;
 }
 @media only screen and (max-width: 991px) {
   .main-menu .navbar-collapse li ul li {

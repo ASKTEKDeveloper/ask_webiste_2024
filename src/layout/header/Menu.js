@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Accordion, Col, Row } from "react-bootstrap";
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { Fragment } from "react";
 import Typography from "@mui/material/Typography";
 import { Paper, Stack } from "@mui/material";
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 const Menu = () => {
   return (
     <Fragment>
@@ -298,7 +298,7 @@ const DeskTopMenu = () => {
             <ul>
               <li>
                 <Link
-                  href="Target_Order_Management_System"                  
+                  href="Target_Order_Management_System"
                   className="product-card-style"
                 >
                   <Row>
@@ -326,7 +326,7 @@ const DeskTopMenu = () => {
                           color="#2C4E80"
                           fontFamily={"Oswald"}
                         >
-                          TOMS  <LocalShippingIcon className="iconarrow"/>
+                          TOMS <LocalShippingIcon className="iconarrow" />
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Order Management Solutions
@@ -355,15 +355,16 @@ const DeskTopMenu = () => {
                         }}
                       />
                     </Col>
-                   <Col xs="8" className="d-flex justify-content-start " >
+                    <Col xs="8" className="d-flex justify-content-start ">
                       <Stack
                         direction="column"
                         justifyContent="center"
                         alignItems="flex-start"
                         spacing={0}
                       >
-                        <Typography variant="h5"fontFamily={"Oswald"}>
-                          {`TERP `} <DoubleArrowIcon  className="iconarrow2"/>
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          {`TARGET - ERP `}{" "}
+                          <DoubleArrowIcon className="iconarrow2" />
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Textile & Garment Industries{" "}
@@ -391,15 +392,16 @@ const DeskTopMenu = () => {
                         }}
                       />
                     </Col>
-                   <Col xs="8" className="d-flex justify-content-start " >
+                    <Col xs="8" className="d-flex justify-content-start ">
                       <Stack
                         direction="column"
                         justifyContent="center"
                         alignItems="flex-start"
                         spacing={0}
                       >
-                        <Typography variant="h5"fontFamily={"Oswald"}>
-                          TSCM <LocalShippingIcon  className="iconarrow"/>
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          TARGET - SCM{" "}
+                          <LocalShippingIcon className="iconarrow3" />
                         </Typography>
                         <Typography variant="caption" color="gray">
                           Supply Chain Management
@@ -427,18 +429,19 @@ const DeskTopMenu = () => {
                         }}
                       />
                     </Col>
-                   <Col xs="8" className="d-flex justify-content-start " >
+                    <Col xs="8" className="d-flex justify-content-start ">
                       <Stack
                         direction="column"
                         justifyContent="center"
                         alignItems="flex-start"
                         spacing={0}
                       >
-                        <Typography variant="h5"fontFamily={"Oswald"}>
-                          HRMS <DoubleArrowIcon  className="iconarrow"/>
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          TARGET - HRMS{" "}
+                          <DoubleArrowIcon className="iconarrow4" />
                         </Typography>
                         <Typography variant="caption" color="gray">
-                          Target HR & Payroll Solutions
+                          HR & Payroll Solutions
                         </Typography>
                       </Stack>
                     </Col>
