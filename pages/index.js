@@ -41,7 +41,6 @@ import { LuFilePieChart } from "react-icons/lu";
 import ContactUsForm from "./ContactUsForm";
 import BlogList from "./BlogList";
 import Testimonials from "./Testimonials";
-import ChatBox from './ChatBox';
 
 const BootstrapTooltip = styled(Tooltip)(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
@@ -87,10 +86,6 @@ const PartnerIcon = ({ imageName }) => (
   </div>
 );
 
-const options = {
-  "How do I reset my password?": "You can reset your password by going to the 'Forgot Password' page and following the instructions.",
-  "How do I update my profile information?": "You can update your profile information by navigating to the 'Settings' page.",
- };
 
 
 const Index = () => {
@@ -1666,7 +1661,7 @@ const Index = () => {
       
 
       <BlogList />
-      {/* <ChatBox options={options} /> */}
+    
       
       <Dialog
         open={openLoader}
