@@ -2,6 +2,7 @@
 
 .main-menu li.dropdown:hover > ul {
   display: block;
+  transition: all 0.5s;
 }
 
 /* Slick slider */

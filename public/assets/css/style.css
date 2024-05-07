@@ -4407,16 +4407,20 @@ h6,
                   
 .main-menu .navbar-collapse li ul {
   position: absolute;
+  transition: all 0.5s;
   left: inherit;
   top: 73%;
   min-width: 350px;
   z-index: 100;
   display: none;
+  border-radius: 15px;
   background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+/*   
   -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05),
     -2px 0px 5px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05),
-    -2px 0px 5px 1px rgba(0, 0, 0, 0.05);
+    -2px 0px 5px 1px rgba(0, 0, 0, 0.05); */
 }
 @media only screen and (max-width: 991px) {
   .main-menu .navbar-collapse li ul {

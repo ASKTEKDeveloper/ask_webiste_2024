@@ -298,6 +298,81 @@ const DeskTopMenu = () => {
             <ul>
               <li>
                 <Link
+                  href="erp-for-textiles-and-garments"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/erp.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="8" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          {`TARGET - ERP `}{" "}
+                          <DoubleArrowIcon className="iconarrow2" />
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Textile & Garment Industries{" "}
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="erp-for-textiles-and-garments"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="4">
+                      <img
+                        src="assets/images/logos/bms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="8" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          {`TARGET - BMS `}{" "}
+                          <DoubleArrowIcon className="iconarrow2" />
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Buying House Management
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   href="Target_Order_Management_System"
                   className="product-card-style"
                 >
@@ -339,43 +414,6 @@ const DeskTopMenu = () => {
 
               <li>
                 <Link
-                  href="erp-for-textiles-and-garments"
-                  className="product-card-style"
-                >
-                  <Row>
-                    <Col xs="4">
-                      <img
-                        src="assets/images/logos/erp.png"
-                        alt="Logo"
-                        title="Logo"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                        }}
-                      />
-                    </Col>
-                    <Col xs="8" className="d-flex justify-content-start ">
-                      <Stack
-                        direction="column"
-                        justifyContent="center"
-                        alignItems="flex-start"
-                        spacing={0}
-                      >
-                        <Typography variant="h5" fontFamily={"Oswald"}>
-                          {`TARGET - ERP `}{" "}
-                          <DoubleArrowIcon className="iconarrow2" />
-                        </Typography>
-                        <Typography variant="caption" color="gray">
-                          Textile & Garment Industries{" "}
-                        </Typography>
-                      </Stack>
-                    </Col>
-                  </Row>
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="Target_SCM_Supply_Chain_Managements"
                   className="product-card-style"
                 >
@@ -411,6 +449,7 @@ const DeskTopMenu = () => {
                   </Row>
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="Target_HRMS_HR_and_Payroll_Solutions"
