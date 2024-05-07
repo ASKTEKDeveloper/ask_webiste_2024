@@ -38,7 +38,7 @@ const Layout = ({ children, header }) => {
         <Footer />
         {/* footer area end */}
         {/* Scroll Top Button */}
-        <ScrollTopButton />
+        {/* <ScrollTopButton /> */}
         <FloatingWhatsApp
           phoneNumber="9566377721"
           accountName="ASK TECH"
