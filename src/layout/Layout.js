@@ -11,10 +11,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import logo from "../../public/assets/images/logos/logo-one.png";
-const customChatboxStyle = {
-  backgroundColor: "lightblue", // Change the background color here
-  // Add more styles as needed
-};
 
 const Layout = ({ children, header }) => {
   useEffect(() => {
@@ -22,7 +18,12 @@ const Layout = ({ children, header }) => {
   }, []);
 
   const customChatboxStyle = {
-    backgroundColor: "lightblue", 
+    backgroundColor: "white",
+  };
+
+  const customButtonStyle = {
+    width: "50px",
+    height: "50px",
   };
 
   return (
@@ -40,10 +41,11 @@ const Layout = ({ children, header }) => {
         {/* Scroll Top Button */}
         {/* <ScrollTopButton /> */}
         <FloatingWhatsApp
-          phoneNumber="9566377721"
+          phoneNumber="9003802269"
           accountName="ASK TECH"
-          avatar="https://ik.imagekit.io/sathishask2024/Untitled%20design.png?updatedAt=1715087838298"
+          avatar="http://103.73.189.37/techveellogo/askwa.png"
           chatboxStyle={customChatboxStyle}
+          buttonStyle={customButtonStyle}
         />
       </div>
     </Fragment>
