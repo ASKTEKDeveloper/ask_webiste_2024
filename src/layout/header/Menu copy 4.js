@@ -295,243 +295,226 @@ const DeskTopMenu = () => {
 
           <li className="dropdown">
             <a href="#">Products</a>
-            <ul className="px-1 mt-1" style={{minWidth:'1000px'}}>
+            <ul>
+              
               <li>
-                <Row>                                  
-                  <Col lg="6">
-                    <Link
-                      href="erp-for-textiles-and-garments"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/erp.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              {`TARGET - ERP `}{" "}
-                              <DoubleArrowIcon className="iconarrow2" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                            Textile & Garment Manufacturing industries
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                               Seamlessly Track Enquiries to Shipments with Our
-                              Integrated Software Solution
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    <Link
-                      href="erp-for-textiles-and-garments"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/bms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              {`TARGET - BMS `}{" "}
-                              <DoubleArrowIcon className="iconarrow2" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                            Buying House Management
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              Enhance Communication and Simplify Vendor
-                              Collaboration with Target BMS{" "}
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    {" "}
-                    <Link
-                      href="Target_Order_Management_System"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/toms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography
-                              variant="h5"
-                              color="#2C4E80"
-                              fontFamily={"Oswald"}
-                            >
-                              TOMS <LocalShippingIcon className="iconarrow" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                            Target Order Management Solution 
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              Your Simple Accounting and Inventory Solution
-                              Tailored for Small to Medium Corporates and
-                              Wholesale Suppliers
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    <Link
-                      href="Target_SCM_Supply_Chain_Managements"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/scm.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                             TCMS
-                              <LocalShippingIcon className="iconarrow3" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                            Target Cargo & Courier Management solution 
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              The Ultimate Solution for Cargo and Courier
-                              Service Providers. Guarantee Timely Deliveries and
-                              Ensure Customer Satisfaction
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    {" "}
-                    <Link
-                      href="Target_HRMS_HR_and_Payroll_Solutions"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/hrms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              TARGET - HRMS
-                              <DoubleArrowIcon className="iconarrow4" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              HR & Payroll Solutions
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              The Top HR Software for Businesses Big and Small.
-                              Easy to Use, All-in-One HR Management and Payroll
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                </Row>
+                <Link
+                  href="erp-for-textiles-and-garments"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="3">
+                      <img
+                        src="assets/images/logos/erp.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="9" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          {`TARGET - ERP `}{" "}
+                          <DoubleArrowIcon className="iconarrow2" />
+                        </Typography>
+                        <Typography variant="subtitle2 " color="gray">
+                          Textile & Garment Industries{" "}
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Seamlessly Track Enquiries to Shipments with Our{" "}
+                          <br />
+                          Integrated Software Solution
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
               </li>
+
+              <li>
+                <Link
+                  href="erp-for-textiles-and-garments"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="3">
+                      <img
+                        src="assets/images/logos/bms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="9" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          {`TARGET - BMS `}{" "}
+                          <DoubleArrowIcon className="iconarrow2" />
+                        </Typography>
+                        <Typography variant="subtitle2" color="gray">
+                          Buying House Management
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Seamlessly Track Enquiries to Shipments with Our{" "}
+                          <br />
+                          Integrated Software Solution
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="Target_Order_Management_System"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="3">
+                      <img
+                        src="assets/images/logos/toms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="9" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography
+                          variant="h5"
+                          color="#2C4E80"
+                          fontFamily={"Oswald"}
+                        >
+                          TOMS <LocalShippingIcon className="iconarrow" />
+                        </Typography>
+                        <Typography variant="subtitle2" color="gray">
+                          Order Management Solutions
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Seamlessly Track Enquiries to Shipments with Our{" "}
+                          <br />
+                          Integrated Software Solution
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="Target_SCM_Supply_Chain_Managements"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="3">
+                      <img
+                        src="assets/images/logos/scm.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="9" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          TARGET - SCM{" "}
+                          <LocalShippingIcon className="iconarrow3" />
+                        </Typography>
+                        <Typography variant="subtitle2" color="gray">
+                          Supply Chain Management
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Seamlessly Track Enquiries to Shipments with Our{" "}
+                          <br />
+                          Integrated Software Solution
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="Target_HRMS_HR_and_Payroll_Solutions"
+                  className="product-card-style"
+                >
+                  <Row>
+                    <Col xs="3">
+                      <img
+                        src="assets/images/logos/hrms.png"
+                        alt="Logo"
+                        title="Logo"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Col>
+                    <Col xs="9" className="d-flex justify-content-start ">
+                      <Stack
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        spacing={0}
+                      >
+                        <Typography variant="h5" fontFamily={"Oswald"}>
+                          TARGET - HRMS{" "}
+                          <DoubleArrowIcon className="iconarrow4" />
+                        </Typography>
+                        <Typography variant="subtitle2" color="gray">
+                          HR & Payroll Solutions
+                        </Typography>
+                        <Typography variant="caption" color="gray">
+                          Seamlessly Track Enquiries to Shipments with Our{" "}
+                          <br />
+                          Integrated Software Solution
+                        </Typography>
+                      </Stack>
+                    </Col>
+                  </Row>
+                </Link>
+              </li>
+
             </ul>
             <div className="dropdown-btn">
               <span className="fas fa-chevron-down" />

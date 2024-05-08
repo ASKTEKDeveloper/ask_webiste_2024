@@ -22,8 +22,8 @@ const Layout = ({ children, header }) => {
   };
 
   const customButtonStyle = {
-    width: "50px",
-    height: "50px",
+    width: "40px",
+    height: "40px",
   };
 
   return (
