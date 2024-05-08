@@ -4374,7 +4374,7 @@ h6,
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.iconarrow, .iconarrow2,.iconarrow3,.iconarrow4
+.iconarrow, .iconarrow2,.iconarrow3,.iconarrow4,.iconarrow5
 {
   transition: all 0.5s;
   opacity: 0;
@@ -4390,7 +4390,13 @@ h6,
 
 .product-card-style:hover .iconarrow2 {
   opacity: 1;
-  margin-left: 210px;
+  margin-left: 205px;
+
+}
+
+.product-card-style:hover .iconarrow5 {
+  opacity: 1;
+  margin-left: 200px;
 
 }
 

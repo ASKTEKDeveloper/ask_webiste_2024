@@ -370,7 +370,7 @@ const DeskTopMenu = () => {
                           >
                             <Typography variant="h5" fontFamily={"Oswald"}>
                               {`TARGET - BMS `}{" "}
-                              <DoubleArrowIcon className="iconarrow2" />
+                              <DoubleArrowIcon className="iconarrow5" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
                             Buying House Management

@@ -11,6 +11,8 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import logo from "../../public/assets/images/logos/logo-one.png";
+import { Triangle } from "react-loader-spinner";
+import { Dialog } from "@mui/material";
 
 const Layout = ({ children, header }) => {
   useEffect(() => {
@@ -47,6 +49,7 @@ const Layout = ({ children, header }) => {
           chatboxStyle={customChatboxStyle}
           buttonStyle={customButtonStyle}
         />
+      
       </div>
     </Fragment>
   );
