@@ -43,7 +43,7 @@ const Layout = ({ children, header }) => {
         <FloatingWhatsApp
           phoneNumber="9003802269"
           accountName="ASK TECH"
-          avatar="http://103.73.189.37/techveellogo/askwa.png"
+          avatar="https://ik.imagekit.io/sathishask2024/Untitled%20design.png?updatedAt=1715087838298"
           chatboxStyle={customChatboxStyle}
           buttonStyle={customButtonStyle}
         />
