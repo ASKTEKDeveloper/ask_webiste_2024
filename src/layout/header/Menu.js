@@ -119,6 +119,11 @@ const MobileMenu = () => {
                     Target Order Management Solutions
                   </Link>
                 </li>
+                <li>
+                  <Link href="buying_house_management">
+                    Target - Buying House Management 
+                  </Link>
+                </li>
 
                 <li>
                   <Link href="erp-for-textiles-and-garments">
@@ -130,6 +135,11 @@ const MobileMenu = () => {
                     Target SCM - Supply Chain Management.
                   </Link>
                 </li>
+                <li>
+                  <Link href="Target_SCM_Supply_Chain_Managements">
+                  Target Cargo and courier Management solution 
+                  </Link>
+                </li>                
                 <li>
                   <Link href="Target_HRMS_HR_and_Payroll_Solutions">
                     HRMS - Target HR & Payroll Solutions
@@ -295,9 +305,9 @@ const DeskTopMenu = () => {
 
           <li className="dropdown">
             <a href="#">Products</a>
-            <ul className="px-1 mt-1" style={{minWidth:'1000px'}}>
+            <ul className="px-1 mt-1" style={{ minWidth: "900px" }}>
               <li>
-                <Row>                                  
+                <Row>
                   <Col lg="6">
                     <Link
                       href="erp-for-textiles-and-garments"
@@ -328,14 +338,14 @@ const DeskTopMenu = () => {
                               <DoubleArrowIcon className="iconarrow2" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                            Textile & Garment Manufacturing industries
+                              Textile & Garment Manufacturing industries
                             </Typography>
                             <Typography
                               variant="caption"
                               color="gray"
                               whiteSpace={"normal"}
                             >
-                               Seamlessly Track Enquiries to Shipments with Our
+                              Seamlessly Track Enquiries to Shipments with Our
                               Integrated Software Solution
                             </Typography>
                           </Stack>
@@ -345,7 +355,7 @@ const DeskTopMenu = () => {
                   </Col>
                   <Col lg="6">
                     <Link
-                      href="erp-for-textiles-and-garments"
+                      href="buying_house_management"
                       className="product-card-style"
                     >
                       <Row>
@@ -373,7 +383,7 @@ const DeskTopMenu = () => {
                               <DoubleArrowIcon className="iconarrow5" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                            Buying House Management
+                              Buying House Management
                             </Typography>
                             <Typography
                               variant="caption"
@@ -422,7 +432,7 @@ const DeskTopMenu = () => {
                               TOMS <LocalShippingIcon className="iconarrow" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                            Target Order Management Solution 
+                              Target Order Management Solution
                             </Typography>
                             <Typography
                               variant="caption"
@@ -438,6 +448,7 @@ const DeskTopMenu = () => {
                       </Row>
                     </Link>
                   </Col>
+
                   <Col lg="6">
                     <Link
                       href="Target_SCM_Supply_Chain_Managements"
@@ -464,26 +475,27 @@ const DeskTopMenu = () => {
                             spacing={0.5}
                           >
                             <Typography variant="h5" fontFamily={"Oswald"}>
-                             TCMS
+                              TSCM
                               <LocalShippingIcon className="iconarrow3" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                            Target Cargo & Courier Management solution 
+                              Target - Supply Chain Management
                             </Typography>
                             <Typography
                               variant="caption"
                               color="gray"
                               whiteSpace={"normal"}
                             >
-                              The Ultimate Solution for Cargo and Courier
-                              Service Providers. Guarantee Timely Deliveries and
-                              Ensure Customer Satisfaction
+                              Elevate Your Supply Chain Management. Enhance
+                              Efficiency and Customer Satisfaction with Timely
+                              Deliveries
                             </Typography>
                           </Stack>
                         </Col>
                       </Row>
                     </Link>
                   </Col>
+
                   <Col lg="6">
                     {" "}
                     <Link
@@ -524,6 +536,52 @@ const DeskTopMenu = () => {
                             >
                               The Top HR Software for Businesses Big and Small.
                               Easy to Use, All-in-One HR Management and Payroll
+                            </Typography>
+                          </Stack>
+                        </Col>
+                      </Row>
+                    </Link>
+                  </Col>
+                  <Col lg="6">
+                    <Link
+                      href="Target_SCM_Supply_Chain_Managements"
+                      className="product-card-style"
+                    >
+                      <Row>
+                        <Col xs="3">
+                          <img
+                            src="assets/images/logos/cms.png"
+                            alt="Logo"
+                            title="Logo"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "contain",
+                            }}
+                          />
+                        </Col>
+                        <Col xs="9" className="d-flex justify-content-start ">
+                          <Stack
+                            direction="column"
+                            justifyContent="center"
+                            alignItems="flex-start"
+                            spacing={0.5}
+                          >
+                            <Typography variant="h5" fontFamily={"Oswald"}>
+                              TCMS
+                              <LocalShippingIcon className="iconarrow3" />
+                            </Typography>
+                            <Typography variant="subtitle2" color="gray">
+                              Target Cargo & Courier Management solution
+                            </Typography>
+                            <Typography
+                              variant="caption"
+                              color="gray"
+                              whiteSpace={"normal"}
+                            >
+                              The Ultimate Solution for Cargo and Courier
+                              Service Providers. Guarantee Timely Deliveries and
+                              Ensure Customer Satisfaction
                             </Typography>
                           </Stack>
                         </Col>

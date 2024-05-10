@@ -6020,6 +6020,11 @@ h6,
   justify-content: center;
   align-items: center;
 }
+.drp-shadow-img
+{
+  filter: drop-shadow(3px 3px 3px #22222280) !important; 
+
+}
 
 .product-features {
   border: 1px solid grey;

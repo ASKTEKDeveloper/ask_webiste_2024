@@ -49,7 +49,6 @@ const Layout = ({ children, header }) => {
           chatboxStyle={customChatboxStyle}
           buttonStyle={customButtonStyle}
         />
-      
       </div>
     </Fragment>
   );
