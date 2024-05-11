@@ -158,7 +158,7 @@ const ProjectGrid = () => {
                 <div className="col-10">
                   <div className="section-title text-center mb-50 wow fadeInUp delay-0-2s ">
                     <h2 className="text-gradient-title3">
-                      Target - Buying House Management Solutions
+                      TBMS
                     </h2>
                     <h5>
                       Enhance Communication and Simplify Vendor Collaboration
@@ -249,6 +249,7 @@ const ProjectGrid = () => {
           <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
             <Container>
               <div className="row gap-100">
+
                 <div className="col-lg-12">
                   <div className="service-details-content">
                     <div className="section-title text-center mb-100 ">
