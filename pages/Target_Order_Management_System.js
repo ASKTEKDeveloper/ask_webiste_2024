@@ -322,6 +322,7 @@ const ProjectGrid = () => {
                       </Divider>
                     </div>
 
+                    {/* Customer Management  */}
                     <div className="row gap-90  justify-content-center align-items-center">
                       <div className="col-lg-4 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
@@ -348,6 +349,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
+                    {/* Order and Sales Management */}
                     <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
                       <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
@@ -374,6 +376,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
+                    {/* Inventory Management */}
                     <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
                       <div className="col-lg-4 fadeInUp">
                         <div className="why-choose-image rmb-55">
@@ -399,6 +402,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
+                    {/* MIS Reporting */}
                     <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
                       <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">

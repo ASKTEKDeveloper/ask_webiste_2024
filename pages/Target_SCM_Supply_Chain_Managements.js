@@ -208,10 +208,10 @@ const ProjectGrid = () => {
               <div className="row justify-content-center">
                 <div className="section-title text-center mb-10">
                   <Divider>
-                    <Chip label="Key Features" size="medium" />
+                    {/* <Chip label="Key Features" size="medium" /> */}
                   </Divider>
                 </div>
-                <div className="col-lg-2  col-md-4 col-6 col-small">
+                {/* <div className="col-lg-2  col-md-4 col-6 col-small">
                   <div className="feature-item d-flex flex-column justify-content-center align-items-center gap-3 wow fadeInUp delay-0-2s">
                     <div className="icon icon-size">
                       <img
@@ -277,10 +277,34 @@ const ProjectGrid = () => {
                     </div>
                     <h5>Supplier Collaboration</h5>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
+
+          {/* Functional Flow */}
+          <section className="about-area-five  rel z-1 mb-25 ">
+            <Container>
+              <div className="row align-items-center gap-100">
+                <div className="col-lg-12">
+                  <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s mb-75">
+                    <div className="section-title text-center rmb-40 ">
+                      <span className="sub-title   mb-15">
+                        Functional Flow for
+                      </span>
+                      <h3 className="text-gradient-title">TARGET SCM</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
+                    <img src="assets/images/flowchart/scm.png" alt="steps" />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
+
           <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
             <Container>
               <div className="row gap-100">

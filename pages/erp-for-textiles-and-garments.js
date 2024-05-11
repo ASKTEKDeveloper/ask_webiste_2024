@@ -213,34 +213,32 @@ const ProjectGrid = () => {
                   <Divider>
                     {/* <Chip label="Key Features" size="medium" /> */}
                   </Divider>
-                </div>              
+                </div>
               </div>
             </div>
           </section>
 
           <section className="about-area-five  rel z-1 mb-50 ">
-        <Container>
-          <div className="row align-items-center gap-100">
-            <div className="col-lg-12">
-              <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s mb-75">
-                <div className="section-title text-center rmb-40 ">
-                  <span className="sub-title mb-15">
-                  Functional Flow for 
-                  </span>
-                  <h3 className="text-gradient-title2">
-                  TARGET ERP
-                  </h3>
+            <Container>
+              <div className="row align-items-center gap-100">
+                <div className="col-lg-12">
+                  <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s mb-75">
+                    <div className="section-title text-center rmb-40 ">
+                      <span className="sub-title mb-15">
+                        Functional Flow for
+                      </span>
+                      <h3 className="text-gradient-title2">TARGET ERP</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
+                    <img src="assets/images/flowchart/erp.png" alt="steps" />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-12">
-              <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
-                <img src="assets/images/flowchart/erp.png" alt="steps" />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+            </Container>
+          </section>
 
           <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
             <Container>
@@ -257,6 +255,104 @@ const ProjectGrid = () => {
                       </Divider>
                     </div>
 
+                    {/* Supply Chain Integration */}
+                    <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
+                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                        <div className="why-choose-content">
+                          <h3>Order Processing </h3>
+                          <p>
+                            Entails seamlessly handling customer orders and
+                            overseeing order fulfillment operations, including
+                            the generation of invoices, packing slips, and
+                            shipping labels
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                        <div className="why-choose-image rmt-55">
+                          <img
+                            src="assets/images/projects/erp/Invoice-amico.png"
+                            alt="Why Choose"
+                            className="product-features-img "
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Order Processing */}
+                    <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
+                      <div className="col-lg-4 fadeInUp">
+                        <div className="why-choose-image rmb-55">
+                          <img
+                            src="assets/images/projects/erp/Logistics-pana.png"
+                            alt="Why Choose"
+                            className="product-features-img"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-lg-8 fadeInUp">
+                        <div className="why-choose-content">
+                          <h3>Supply Chain Integration</h3>
+                          <p>
+                            Facilitates collaboration with suppliers and
+                            distributors by tracking shipments, managing
+                            supplier performance, and optimizing procurement
+                            processes.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Inventory Management */}
+                    <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
+                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                        <div className="why-choose-content">
+                          <h3>Inventory Management</h3>
+                          <p>
+                            Involves optimizing inventory levels through
+                            advanced forecasting techniques to minimize
+                            stockouts, alongside managing multi-location
+                            warehouses and monitoring material movements.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4  fadeInRight order-lg-2 order-sm-1 order-1 ">
+                        <div className="why-choose-image rmt-55">
+                          <img
+                            src="assets/images/projects/erp/inventory.png"
+                            alt="Why Choose"
+                            className="product-features-img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Quality Control */}
+                    <div className="row gap-90   fadeInUp justify-content-center align-items-center">
+                      <div className="col-lg-4 fadeInUp">
+                        <div className="why-choose-image rmb-55">
+                          <img
+                            src="assets/images/projects/erp/Manufacturing.png"
+                            alt="Why Choose"
+                            className="product-features-img"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-lg-8 fadeInUp">
+                        <div className="why-choose-content">
+                          <h3>Quality Control</h3>
+                          <p>
+                            Measures are implemented throughout the production
+                            process, including the capture and analysis of
+                            quality data to enhance product quality and
+                            compliance
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Production Management */}
                     <div className="mt-3 row gap-90  justify-content-center align-items-center">
                       <div className="col-lg-7 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
@@ -282,100 +378,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
-                    <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
-                        <div className="why-choose-content">
-                          <h3>Inventory Management</h3>
-                          <p>
-                            Involves optimizing inventory levels through
-                            advanced forecasting techniques to minimize
-                            stockouts, alongside managing multi-location
-                            warehouses and monitoring material movements.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-4  fadeInRight order-lg-2 order-sm-1 order-1 ">
-                        <div className="why-choose-image rmt-55">
-                          <img
-                            src="assets/images/projects/erp/inventory.png"
-                            alt="Why Choose"
-                            className="product-features-img"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
-                        <div className="why-choose-image rmb-55">
-                          <img
-                            src="assets/images/projects/erp/Invoice-amico.png"
-                            alt="Why Choose"
-                            className="product-features-img"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-8 fadeInUp">
-                        <div className="why-choose-content">
-                          <h3>Order Processing</h3>
-                          <p>
-                            Entails seamlessly handling customer orders and
-                            overseeing order fulfillment operations, including
-                            the generation of invoices, packing slips, and
-                            shipping labels
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
-                        <div className="why-choose-content">
-                          <h3>Supply Chain Integration</h3>
-                          <p>
-                            Facilitates collaboration with suppliers and
-                            distributors by tracking shipments, managing
-                            supplier performance, and optimizing procurement
-                            processes.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
-                        <div className="why-choose-image rmt-55">
-                          <img
-                            src="assets/images/projects/erp/Logistics-pana.png"
-                            alt="Why Choose"
-                            className="product-features-img "
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row gap-90   fadeInUp justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
-                        <div className="why-choose-image rmb-55">
-                          <img
-                            src="assets/images/projects/erp/Manufacturing.png"
-                            alt="Why Choose"
-                            className="product-features-img"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-8 fadeInUp">
-                        <div className="why-choose-content">
-                          <h3>Quality Control</h3>
-                          <p>
-                            Measures are implemented throughout the production
-                            process, including the capture and analysis of
-                            quality data to enhance product quality and
-                            compliance
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
+                    {/* Financial Management */}
                     <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
                       <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
