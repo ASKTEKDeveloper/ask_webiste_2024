@@ -639,8 +639,8 @@ const ProjectGrid = () => {
                                 </h4>
                                 <p>
                                   Ensure compliance with industry regulations
-                                  and standards, reducing the risk of penalties
-                                  and fines.
+                                  and standards, reducing the risk of penalties,
+                                  fines, and litigation.
                                 </p>
                               </div>
                             </div>
