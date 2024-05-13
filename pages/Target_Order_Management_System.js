@@ -214,12 +214,35 @@ const ProjectGrid = () => {
               </div>
             </div>
           </section>
+          {/* Functional Flow */}
+          <section className="about-area-five  rel z-1 mb-25 ">
+            <Container>
+              <div className="row align-items-center gap-100">
+                <div className="col-lg-12">
+                  <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s mb-25">
+                    <div className="section-title text-center rmb-40 ">
+                      <span className="sub-title   mb-15">
+                        Functional Flow for
+                      </span>
+                      <h3 className="text-gradient-title">TOMS</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
+                    <img src="assets/images/flowchart/toms.png" alt="steps" />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
           <section className="service-details-area  ">
             <Container>
               <div className="row gap-100 mb-50">
                 <div className="col-lg-12 ">
                   <h4 className="my-4 pb-4 text-center ">
-                    Key Features of <span className="text-primary">TOMS</span>
+                    Key Features{" "}
+                    {/* Key Features of <span className="text-primary">TOMS</span> */}
                   </h4>
                   <div className="row">
                     <div className="col-sm-6">
