@@ -249,7 +249,6 @@ const ProjectGrid = () => {
           <section className="service-details-area px-3  rpt-100 pb-50 rpb-85">
             <Container>
               <div className="row gap-100">
-                
                 <div className="col-lg-12">
                   <div className="service-details-content">
                     <div className="section-title text-center mb-100 ">
@@ -263,16 +262,17 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="mt-3 row gap-90  justify-content-center align-items-center mt-75 mb-100 ">
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
                           <img
-                            src="assets/images/projects/erp/buyer.png"
+                            src="assets/images/projects/erp/buyerc.png"
                             alt="Why Choose"
                             className="product-features-img "
+                            // style={{    maxHeight: "500px"}}
                           />
                         </div>
                       </div>
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content fadeInUp">
                           <h3>Buyer Costing</h3>
                           <p>
@@ -400,7 +400,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/erp/Financial data-amico.png"
+                            src="assets/images/projects/erp/receipt.png"
                             alt="Why Choose"
                             className="product-features-img "
                           />
@@ -482,7 +482,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
-                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center mb-50" >
+                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center mb-50">
                       <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Outlet Management Dashboard </h3>

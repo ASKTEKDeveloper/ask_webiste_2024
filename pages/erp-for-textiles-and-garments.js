@@ -257,7 +257,7 @@ const ProjectGrid = () => {
 
                     {/* Supply Chain Integration */}
                     <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Order Processing </h3>
                           <p>
@@ -269,29 +269,29 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/erp/Invoice-amico.png"
+                            src="assets/images/projects/erp/orderpp.png"
                             alt="Why Choose"
-                            className="product-features-img "
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
                     </div>
 
                     {/* Order Processing */}
-                    <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                    <div className="row gap-90 fadeInUp  justify-content-center align-items-center mt-75">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="assets/images/projects/erp/Logistics-pana.png"
+                            src="assets/images/projects/erp/ssm.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content">
                           <h3>Supply Chain Integration</h3>
                           <p>
@@ -303,9 +303,10 @@ const ProjectGrid = () => {
                         </div>
                       </div>
                     </div>
+
                     {/* Inventory Management */}
-                    <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                    <div className="row gap-90   fadeInRight justify-content-center  align-items-center mt-75">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Inventory Management</h3>
                           <p>
@@ -317,12 +318,12 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4  fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6  fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/erp/inventory.png"
+                            src="assets/images/projects/erp/im.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -330,7 +331,7 @@ const ProjectGrid = () => {
 
                     {/* Quality Control */}
                     <div className="row gap-90   fadeInUp justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
                             src="assets/images/projects/erp/Manufacturing.png"
@@ -339,7 +340,7 @@ const ProjectGrid = () => {
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content">
                           <h3>Quality Control</h3>
                           <p>
@@ -351,21 +352,11 @@ const ProjectGrid = () => {
                         </div>
                       </div>
                     </div>
-
                     {/* Production Management */}
-                    <div className="mt-3 row gap-90  justify-content-center align-items-center">
-                      <div className="col-lg-7 fadeInUp">
-                        <div className="why-choose-image fadeInUp rmb-55">
-                          <img
-                            src="assets/images/projects/erp/check.png"
-                            alt="Why Choose"
-                            className="product-features-img"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-5 fadeInUp">
-                        <div className="why-choose-content fadeInUp">
-                          <h4>Production Management</h4>
+                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
+                        <div className="why-choose-content">
+                          <h3>Production Management</h3>
                           <p>
                             Aims to optimize efficiency by implementing
                             real-time monitoring and scheduling to streamline
@@ -376,26 +367,57 @@ const ProjectGrid = () => {
                           </p>
                         </div>
                       </div>
+
+                      <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                        <div className="why-choose-image rmt-55">
+                          <img
+                            src="assets/images/projects/erp/ppp.png"
+                            alt="Why Choose"
+                            className="product-features-img "
+                          />
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Financial Management */}
-                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
-                        <div className="why-choose-content">
-                          <h3>Financial Management</h3>
-                          <p>
-                            Automates processes such as invoicing, billing, and
+                    {/* Production Management */}
+                    <div className="mt-3 row gap-90  justify-content-center align-items-center">
+                      <div className="col-lg-6 fadeInUp">
+                        <div className="why-choose-image fadeInUp rmb-55">
+                          <img
+                            src="assets/images/projects/erp/finance.png"
+                            alt="Why Choose"
+                            className="product-features-img"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-lg-6 fadeInUp">
+                        <div className="why-choose-content fadeInUp">
+                        <h3>Financial Management</h3>
+                          <p>  Automates processes such as invoicing, billing, and
                             payment processing, while also generating financial
                             reports like profit and loss statements and balance
-                            sheets
+                            sheets</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Commercial Invoicing */}
+                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
+                        <div className="why-choose-content">
+                          <h3>Commercial Invoicing</h3>
+                          <p>
+                          Generate professional invoices tailored to global
+                            buyers' requirements, ensuring smooth transactions
+                            and financial compliance.
                           </p>
                         </div>
                       </div>
 
-                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/erp/Financial data-amico.png"
+                            src="assets/images/projects/erp/commercial.png"
                             alt="Why Choose"
                             className="product-features-img "
                           />
@@ -543,7 +565,9 @@ const ProjectGrid = () => {
                                 >
                                   <h4>Compliance</h4>
                                   <p>
-                                  Ensure compliance with industry regulations and standards, reducing the risk of penalties, fines, and litigation.
+                                    Ensure compliance with industry regulations
+                                    and standards, reducing the risk of
+                                    penalties, fines, and litigation.
                                   </p>
                                 </div>
                               </div>
