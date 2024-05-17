@@ -420,7 +420,7 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
-                    <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
+                    {/* <div className="row gap-90 fadeInRight  justify-content-center  align-items-center">
                       <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Compliance Management </h3>
@@ -442,7 +442,7 @@ const ProjectGrid = () => {
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="col-xl-12 mt-50 ">
                       <section className="services-area  pt-75 pb-10 rel z-1">

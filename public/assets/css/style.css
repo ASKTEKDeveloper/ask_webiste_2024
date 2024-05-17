@@ -4309,7 +4309,7 @@ h6,
 }
 .main-menu .navbar-collapse li li a {
   text-transform: capitalize;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .main-menu .navbar-collapse li li a:before {
   display: none;
@@ -4358,7 +4358,7 @@ h6,
 
 .product-card-style
 {
-  margin-bottom: 5px ;
+  margin-bottom: 15px ;
   background-color: "#EEF7FF";  
   padding: 10px;
   border-radius: 10px;
