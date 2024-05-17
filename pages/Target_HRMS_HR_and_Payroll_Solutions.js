@@ -164,7 +164,7 @@ const ProjectGrid = () => {
                     </h5>
                     <div className="image my-50 wow fadeInUp delay-0-2s">
                       <img
-                        src="/assets/images/projects/mockup-erp.png"
+                        src="/assets/images/projects/hrms-mockup.png"
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
@@ -299,16 +299,16 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="row gap-90  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
                           <img
-                            src="/assets/images/projects/hrms/Shared workspace-amico.png"
+                            src="/assets/images/projects/hrms/em.png"
                             alt="Why Choose"
                             className="product-features-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content fadeInUp">
                           <h3>Employee Management</h3>
                           <p>
@@ -325,7 +325,7 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Time & Attendance </h3>
                           <p>
@@ -337,10 +337,10 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4  fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6  fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="/assets/images/projects/hrms/Work time-cuate.png"
+                            src="/assets/images/projects/hrms/ta.png"
                             alt="Why Choose"
                             className="product-features-img"
                           />
@@ -349,16 +349,16 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="/assets/images/projects/hrms/Office management-bro.png"
+                            src="/assets/images/projects/hrms/pp.png"
                             alt="Why Choose"
                             className="product-features-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content">
                           <h3>Payroll Processing </h3>
                           <p>
@@ -372,7 +372,7 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Benefits Administration</h3>
                           <p>
@@ -385,10 +385,10 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="/assets/images/projects/hrms/Work time-amico.png"
+                            src="/assets/images/projects/hrms/ba.png"
                             alt="Why Choose"
                             className="product-features-img "
                           />
@@ -397,16 +397,16 @@ const ProjectGrid = () => {
                     </div>
 
                     <div className="row gap-90   fadeInUp justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="/assets/images/projects/hrms/Co-workers-pana.png"
+                            src="/assets/images/projects/hrms/pm.png"
                             alt="Why Choose"
                             className="product-features-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content">
                           <h3>Performance Management</h3>
                           <p>

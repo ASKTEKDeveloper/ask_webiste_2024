@@ -417,7 +417,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/erp/commercial.png"
+                            src="assets/images/projects/erp/ci.png"
                             alt="Why Choose"
                             className="product-features-img "
                           />
