@@ -304,7 +304,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/em.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -342,7 +342,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/ta.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -354,7 +354,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/pp.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -390,7 +390,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/ba.png"
                             alt="Why Choose"
-                            className="product-features-img "
+                            className="product-features-img  "
                           />
                         </div>
                       </div>
@@ -402,7 +402,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/pm.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -438,7 +438,7 @@ const ProjectGrid = () => {
                           <img
                             src="/assets/images/projects/hrms/Typing-pana.png"
                             alt="Why Choose"
-                            className="product-features-img "
+                            className="product-features-img drp-shadow-img "
                           />
                         </div>
                       </div>
