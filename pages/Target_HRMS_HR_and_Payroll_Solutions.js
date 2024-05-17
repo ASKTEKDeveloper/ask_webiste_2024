@@ -370,7 +370,7 @@ const ProjectGrid = () => {
                         </div>
                       </div>
                     </div>
-
+                    {/* Benefits Administration */}
                     <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
                       <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
@@ -460,7 +460,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -472,7 +472,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -487,7 +487,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -499,7 +499,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -515,7 +515,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -527,7 +527,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -543,7 +543,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -555,7 +555,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -571,7 +571,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -583,7 +583,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -598,7 +598,7 @@ const ProjectGrid = () => {
                             </div>
 
                             <div className="col-xl-6 col-md-6">
-                            <div
+                              <div
                                 className={`${
                                   matchesSmallScreen &&
                                   "d-flex flex-column  justify-content-center align-items-center gap-4"
@@ -610,7 +610,7 @@ const ProjectGrid = () => {
                                     alt="Icon"
                                   />
                                 </div>
-                                 <div
+                                <div
                                   className={`content ${
                                     matchesSmallScreen && "text-center"
                                   }`}
@@ -636,8 +636,13 @@ const ProjectGrid = () => {
           {/* Contact Form Section Start */}
           <ContactUsProduct TypeOF={"p"} initialValue={"HRMS"} />
           {/* Contact Form Section End */}
-          <Dialog open={open} onClose={handleClose} maxWidth={"xs"} TransitionComponent={Transition}
-          keepMounted>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            maxWidth={"xs"}
+            TransitionComponent={Transition}
+            keepMounted
+          >
             <DialogContent className=" p-0 m-0 ">
               <div className=" align-items-center bg-white">
                 <div className="col-lg-12 pt-50 ">
@@ -789,7 +794,7 @@ const ProjectGrid = () => {
                               type="submit"
                               className="theme-btn style-two"
                             >
-                              Download 
+                              Download
                               <i className="far fa-long-arrow-right" />
                             </button>
                           </Grid>
