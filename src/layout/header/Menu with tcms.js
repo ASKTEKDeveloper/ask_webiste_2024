@@ -135,11 +135,11 @@ const MobileMenu = () => {
                     Target SCM - Supply Chain Management.
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link href="Target_SCM_Supply_Chain_Managements">
                   Target Cargo and courier Management solution 
                   </Link>
-                </li>                 */}
+                </li>                
                 <li>
                   <Link href="Target_HRMS_HR_and_Payroll_Solutions">
                     HRMS - Target HR & Payroll Solutions
@@ -305,7 +305,7 @@ const DeskTopMenu = () => {
 
           <li className="dropdown">
             <a href="#">Products</a>
-            <ul className="px-1 mt-1" style={{ minWidth: "850px" }}>
+            <ul className="px-1 mt-1" style={{ minWidth: "900px" }}>
               <li>
                 <Row>
                   <Col lg="6">
@@ -338,7 +338,7 @@ const DeskTopMenu = () => {
                               <DoubleArrowIcon className="iconarrow2" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                              Textile & Garment  industries
+                              Textile & Garment Manufacturing industries
                             </Typography>
                             <Typography
                               variant="caption"
@@ -448,6 +448,7 @@ const DeskTopMenu = () => {
                       </Row>
                     </Link>
                   </Col>
+
                   <Col lg="6">
                     <Link
                       href="Target_SCM_Supply_Chain_Managements"

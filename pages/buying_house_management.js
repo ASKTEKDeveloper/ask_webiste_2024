@@ -427,7 +427,7 @@ const ProjectGrid = () => {
                             possible for a better pricing in terms of margin
                             fixing. Target BMS boosts the System in fixing the
                             fabrics and accessories cost with margin through the
-                            timely online biding process.
+                            timely online bidding process.
                           </p>
                         </div>
                       </div>
@@ -617,7 +617,7 @@ const ProjectGrid = () => {
                                     matchesSmallScreen && "text-center"
                                   }`}
                                 >
-                                  <h4>Vendor Registration and Fabric Biding</h4>
+                                  <h4>Vendor Registration and Fabric bidding</h4>
                                   <p>
                                     Streamlined processes for vendor management
                                     and material procurement.

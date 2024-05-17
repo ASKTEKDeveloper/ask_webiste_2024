@@ -319,7 +319,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     ),
                     enquiry_details: Yup.string()
                       .max(200, "should not exceed 200 characters.")
-                      .required("type your requiremnets  here"),
+                      .required("type your requirements  here"),
                   })}
                   onSubmit={handleSubmit}
                 >
@@ -602,7 +602,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                       ),
                       enquiry_details: Yup.string()
                         .max(200, "should not exceed 200 characters.")
-                        .required("type your requiremnets  here"),
+                        .required("type your requirements  here"),
                     })}
                     onSubmit={handleSubmit}
                   >
