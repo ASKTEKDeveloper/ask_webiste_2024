@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Paper, Stack } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+
 const Menu = () => {
   return (
     <Fragment>
@@ -121,7 +122,7 @@ const MobileMenu = () => {
                 </li>
                 <li>
                   <Link href="buying_house_management">
-                    Target - Buying House Management 
+                    Target - Buying House Management
                   </Link>
                 </li>
 
@@ -306,7 +307,7 @@ const DeskTopMenu = () => {
           <li className="dropdown">
             <a href="#">Products</a>
             <ul className="px-1 mt-1" style={{ minWidth: "850px" }}>
-              <li>
+              <li className="product-card-style-img">
                 <Row>
                   <Col lg="6">
                     <Link
@@ -338,7 +339,7 @@ const DeskTopMenu = () => {
                               <DoubleArrowIcon className="iconarrow2" />
                             </Typography>
                             <Typography variant="subtitle2" color="gray">
-                              Textile & Garment  industries
+                              Textile & Garment industries
                             </Typography>
                             <Typography
                               variant="caption"
@@ -539,7 +540,7 @@ const DeskTopMenu = () => {
                         </Col>
                       </Row>
                     </Link>
-                  </Col>
+                  </Col>                 
                   {/* <Col lg="6">
                     <Link
                       href="Target_SCM_Supply_Chain_Managements"

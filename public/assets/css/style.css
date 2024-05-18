@@ -4366,6 +4366,15 @@ h6,
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
+.product-card-style-img
+{
+  background-image: url(../images//projects//target.png);
+  border-radius: 10px;
+  transition: all 0.5s;
+  background-size: 380px;
+  background-repeat: no-repeat;
+  background-position: 463px 268px;  
+}
 
 .product-card-style:hover
 {

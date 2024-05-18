@@ -347,16 +347,16 @@ const ProjectGrid = () => {
 
                     {/* Customer Management  */}
                     <div className="row gap-90  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
                           <img
-                            src="/assets/images/projects/toms/11.png"
+                            src="/assets/images/projects/toms/cm.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content fadeInUp">
                           <h3>Customer Management </h3>
                           <p>
@@ -374,7 +374,7 @@ const ProjectGrid = () => {
 
                     {/* Order and Sales Management */}
                     <div className="row gap-90   fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>Order and Sales Management</h3>
                           <p>
@@ -388,12 +388,12 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4  fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6  fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="/assets/images/projects/toms/22.png"
+                            src="/assets/images/projects/toms/os.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
@@ -401,16 +401,16 @@ const ProjectGrid = () => {
 
                     {/* Inventory Management */}
                     <div className="row gap-90 fadeInUp  justify-content-center align-items-center">
-                      <div className="col-lg-4 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="/assets/images/projects/toms/33.png"
+                            src="/assets/images/projects/toms/ir.png"
                             alt="Why Choose"
-                            className="product-features-img"
+                            className="product-features-img drp-shadow-img"
                           />
                         </div>
                       </div>
-                      <div className="col-lg-8 fadeInUp">
+                      <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content">
                           <h3>Inventory Management</h3>
                           <p>
@@ -427,7 +427,7 @@ const ProjectGrid = () => {
 
                     {/* MIS Reporting */}
                     <div className="row gap-90  fadeInRight justify-content-center  align-items-center">
-                      <div className="col-lg-8 fadeInRight order-lg-1 order-sm-2  order-2">
+                      <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="why-choose-content">
                           <h3>MIS Reporting</h3>
                           <p>
@@ -441,12 +441,12 @@ const ProjectGrid = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 fadeInRight order-lg-2 order-sm-1 order-1 ">
+                      <div className="col-lg-6 fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="/assets/images/projects/toms/44.png"
+                            src="/assets/images/projects/toms/mis.png"
                             alt="Why Choose"
-                            className="product-features-img "
+                            className="product-features-img drp-shadow-img "
                           />
                         </div>
                       </div>
