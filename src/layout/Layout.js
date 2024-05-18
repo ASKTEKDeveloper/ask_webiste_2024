@@ -30,7 +30,7 @@ const Layout = ({ children, header }) => {
 
   return (
     <Fragment>
-      <VideoPopup />
+      {/* <VideoPopup /> */}
       <ImageView />
       <div className="page-wrapper">
         {/* Preloader */}
