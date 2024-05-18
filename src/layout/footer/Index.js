@@ -34,13 +34,19 @@ const Footer = () => {
                 <a href="#">
                   <i className="fab fa-facebook-f" />
                 </a>
-                <a href="#">
-                  <i className="fab fa-twitter" />
+                <a
+                  href="https://www.youtube.com/@asktechnology4871"
+                  target="_blank"
+                >
+                  <i className="fab fa-youtube" />
                 </a>
                 <a href="#">
                   <i className="fab fa-instagram" />
                 </a>
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/company/ask-technology/"
+                  target="_blank"
+                >
                   <i className="fab fa-linkedin-in" />
                 </a>
               </div>
@@ -185,20 +191,20 @@ const Footer = () => {
         </div>
         <div className="d-flex justify-content-center align-items-center text-center">
           <div>
-          <Typography
-            variant="caption"
-            textTransform="uppercase"
-            textAlign="center"
-            width={"100%"}
-            className="text-center"
-            color="#C9D7DD"
-            mb={3}
-            fontSize={matchesSmallScreen && "8px"}
-          >
-            © Copyright 2024 by Ask Technology. <br />
-            All Rights Reserved And Designed by Ask Technology
-          </Typography>
-        </div>
+            <Typography
+              variant="caption"
+              textTransform="uppercase"
+              textAlign="center"
+              width={"100%"}
+              className="text-center"
+              color="#C9D7DD"
+              mb={3}
+              fontSize={matchesSmallScreen && "8px"}
+            >
+              © Copyright 2024 by Ask Technology. <br />
+              All Rights Reserved And Designed by Ask Technology
+            </Typography>
+          </div>
         </div>
       </footer>
     </Container>
