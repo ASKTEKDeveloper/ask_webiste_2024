@@ -170,7 +170,7 @@ const ProjectGrid = () => {
                         style={{ objectFit: "contain", maxWidth: "70%" }}
                       />
                     </div>
-                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                    {/* <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
                         <a
                           onClick={handleButtonClick}
@@ -182,7 +182,7 @@ const ProjectGrid = () => {
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
-                    </div>
+                    </div> */}
                     <p>
                       Transform your supply chain with Target SCM, a versatile
                       solution applicable across industries. Boost purchase and

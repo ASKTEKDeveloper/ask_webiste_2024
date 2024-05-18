@@ -28,6 +28,7 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
     ERP: "/assets/docs/ERP.pdf",
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
+    BMS: "/assets/docs/BMS.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {

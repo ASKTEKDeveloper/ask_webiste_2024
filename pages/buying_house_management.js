@@ -45,6 +45,7 @@ const ProjectGrid = () => {
     ERP: "/assets/docs/ERP.pdf",
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
+    BMS: "/assets/docs/BMS.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -726,7 +727,7 @@ const ProjectGrid = () => {
                       email: "",
                       city: "",
                       TypeOfReq: "d",
-                      product: "ERP",
+                      product: "BMS",
                       enquiry_details: "",
                     }}
                     validationSchema={Yup.object({

@@ -168,22 +168,18 @@ const ProjectGrid = () => {
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
                     </div>
-                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                    {/* <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
                         <a
                           onClick={handleButtonClick}
                           style={{ color: "white" }}
                         >
                           Download Brochure
-                        </a>
-                        {/* 
-                        <a href="assets/docs/Blogs.docx" download onClick={handleButtonClick}>
-                          Download Brochure
-                        </a> */}
+                        </a>                       
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
-                    </div>
+                    </div> */}
                     <p>
                       Elevate your textile and garment manufacturing with
                       TARGET, our comprehensive ERP solution. Tailored for

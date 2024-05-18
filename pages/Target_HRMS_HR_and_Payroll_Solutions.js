@@ -169,7 +169,7 @@ const ProjectGrid = () => {
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
                     </div>
-                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                    {/* <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
                         <a
                           onClick={handleButtonClick}
@@ -181,7 +181,7 @@ const ProjectGrid = () => {
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
-                    </div>
+                    </div> */}
                     <p>
                       Say goodbye to HR and payroll complexities with Target
                       HRMS. Tailored for diverse industries, especially
