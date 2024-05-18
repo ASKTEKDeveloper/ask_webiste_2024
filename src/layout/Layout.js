@@ -43,7 +43,7 @@ const Layout = ({ children, header }) => {
         {/* Scroll Top Button */}
         {/* <ScrollTopButton /> */}
         <FloatingWhatsApp
-          phoneNumber="+919003802269"
+          phoneNumber="+919840899559"
           accountName="ASK TECH"
           avatar="https://ik.imagekit.io/sathishask2024/Untitled%20design.png?updatedAt=1715087838298"
           chatboxStyle={customChatboxStyle}

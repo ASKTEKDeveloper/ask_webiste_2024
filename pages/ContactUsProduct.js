@@ -53,7 +53,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
     HRMS: "HRMS - Target HR & Payroll Solutions",
     TOMS: "TOMS - Target Order Management Solutions",
     // TCMS: "TCMS - Cargo and courier Management Solutions",
-    TBMS: "TBMS - Buying House Management Solutions"
+    TBMS: "TBMS - Buying House Management Solutions",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -466,7 +466,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 <MenuItem value="HRMS">
                                   HRMS - Target HR & Payroll Solutions
                                 </MenuItem>
-                                { /*
+                                {/*
                                 <MenuItem value="TCMS">
                                   Target - Cargo & Courier Management
                                 </MenuItem>
@@ -744,6 +744,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   label="Products"
                                   variant="standard"
                                 >
+                                  <MenuItem value="TBMS" defaultChecked>
+                                    TARGET BMS - Buying house management
+                                  </MenuItem>
                                   <MenuItem value="ERP" defaultChecked>
                                     ERP for Textile & Garment Industries
                                   </MenuItem>

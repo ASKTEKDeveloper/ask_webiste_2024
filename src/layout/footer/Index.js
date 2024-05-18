@@ -143,6 +143,11 @@ const Footer = () => {
                         <a>Target Order Management Solutions</a>
                       </Link>
                     </li>
+                    <li>
+                      <Link legacyBehavior href="buying_house_management">
+                        <a>TARGET BMS - Buying house management</a>
+                      </Link>
+                    </li>
 
                     <li>
                       <Link legacyBehavior href="erp-for-textiles-and-garments">
