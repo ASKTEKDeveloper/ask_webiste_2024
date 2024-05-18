@@ -38,6 +38,13 @@ import { LiaLuggageCartSolid } from "react-icons/lia";
 import { CiBoxes } from "react-icons/ci";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuFilePieChart } from "react-icons/lu";
+
+import { HiBellAlert } from "react-icons/hi2";
+import { CiShoppingTag } from "react-icons/ci";
+import { IoCardOutline } from "react-icons/io5";
+import { TbReport } from "react-icons/tb";
+
+
 import ContactUsForm from "./ContactUsForm";
 import BlogList from "./BlogList";
 import Testimonials from "./Testimonials";
@@ -85,8 +92,6 @@ const PartnerIcon = ({ imageName }) => (
     />
   </div>
 );
-
-
 
 const Index = () => {
   const sliderRef = useRef(null);
@@ -357,7 +362,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
-                  <img src="assets/images/about/mockup.png" alt="Video" />
+                  <img
+                    src="assets/images/projects/erp-mockup.png"
+                    alt="Video"
+                  />
                 </div>
               </div>
             </div>
@@ -369,7 +377,10 @@ const Index = () => {
                 style={{ zIndex: currentSlide === 1 ? 9999 : 1 }}
               >
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
-                  <img src="assets/images/about/mockup.png" alt="Video" />
+                  <img
+                    src="assets/images/projects/scm-mockup.png"
+                    alt="Video"
+                  />
                 </div>
                 <div className="col-xl-8 col-md-12  content">
                   <h3>
@@ -509,19 +520,25 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
-                  <img src="assets/images/about/mockup.png" alt="Video" />
+                  <img
+                    src="assets/images/projects/hrms-mockup.png"
+                    alt="Video"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* 4. Target SCM - Supply Chain Management */}
+            {/* 4. TOMS */}
             <div className="project-slider-item">
               <div
                 className="row"
                 style={{ zIndex: currentSlide === 3 ? 9999 : 1 }}
               >
                 <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
-                  <img src="assets/images/about/mockup.png" alt="Video" />
+                  <img
+                    src="assets/images/projects/mockup-erp.png"
+                    alt="Video"
+                  />
                 </div>
                 <div className="col-xl-8 col-md-12  content">
                   <h3>
@@ -586,6 +603,86 @@ const Index = () => {
                       </Link>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 5. BMS - Target HR & Payroll Solutions */}
+            <div className="project-slider-item">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 2 ? 9999 : 1 }}
+              >
+                <div className="col-xl-8 col-md-12  content">
+                  <h3>
+                    <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
+                      <span style={{ color: "#EE4266" }}>Target BMS </span> -
+                      Buying House Management Solutions
+                    </span>
+                    <br />
+                    <span style={{ fontSize: "large", color: "#0E21A0" }}>
+                      Enhance Communication and Simplify Vendor Collaboration
+                      with Target BMS
+                    </span>
+                  </h3>
+                  <p className="my-3">
+                    TARGET - BMS is a comprehensive business management solution
+                    designed to streamline operations and enhance efficiency
+                    across various aspects of your business. Our product
+                    comprises several modules tailored to address specific needs
+                    within your organization. Each module offers powerful
+                    functionalities to optimize processes and drive growth. From
+                    managing orders to tracking finances, TARGET - BMS empowers
+                    you to take control and achieve success in today's
+                    competitive landscape
+                  </p>
+
+                  <div className="row medium-gap m-1 mt-2">
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <TbReport />
+                      </div>
+                      <h6 className="mb-0">MIS Analysis Reports</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <HiBellAlert />
+                      </div>
+                      <h6 className="mb-0">Email Alerts & Reminders for Advance</h6>
+                    </div>
+                    <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <CiShoppingTag />
+                      </div>
+                      <h6 className="mb-0">Vendor Registration and Fabric Bidding</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <IoCardOutline />
+                      </div>
+                      <h6 className="mb-0">Financial Accounting POS System</h6>
+                    </div>
+
+                    <div
+                      className="content col-12 mt-3 "
+                      style={{ padding: 0, cursor: "pointer" }}
+                    >
+                      <Link legacyBehavior href="/buying_house_management">
+                        <a className="theme-btn style-four ">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/projects/bms-mockup.png"
+                    alt="Video"
+                  />
                 </div>
               </div>
             </div>
@@ -993,7 +1090,7 @@ const Index = () => {
                         <img
                           src="assets/images/about/technology.png"
                           alt="Why Choose"
-                          className="why-choose-img"
+                          // className="why-choose-img"
                         />
                       </div>
                     </div>
@@ -1658,11 +1755,9 @@ const Index = () => {
       <div id="contactus">
         <ContactUsForm />
       </div>
-      
 
       <BlogList />
-    
-      
+
       <Dialog
         open={openLoader}
         aria-labelledby="alert-dialog-title"

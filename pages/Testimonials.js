@@ -46,7 +46,7 @@ const Testimonials = () => {
 
   return (
     <>
-      <section className="testimonials-area pt-100 rpy-100 rel z-1">
+      <section className="testimonials-area pt-100 mb-100 mt-50 rpy-100 rel z-1">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-xl-5 col-lg-6">

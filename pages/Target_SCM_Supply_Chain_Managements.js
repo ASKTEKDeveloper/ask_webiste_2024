@@ -164,9 +164,10 @@ const ProjectGrid = () => {
                     </h5>
                     <div className="image my-50 wow fadeInUp delay-0-2s">
                       <img
-                        src="/assets/images/projects/mockup-erp.png"
+                        src="/assets/images/projects/scm-mockup.png"
                         alt="Service Details"
-                        style={{ objectFit: "contain", maxWidth: "60%" }}
+                        className="drp-shadow-img"
+                        style={{ objectFit: "contain", maxWidth: "70%" }}
                       />
                     </div>
                     <div className="d-flex justify-content-center align-items-center my-50 ">

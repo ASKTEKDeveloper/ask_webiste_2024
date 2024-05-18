@@ -47,13 +47,13 @@ const HeaderTop = () => {
                     <a href="#">
                       <i className="fab fa-facebook-f" />
                     </a>
-                    <a href="#">
-                      <i className="fab fa-twitter" />
+                    <a href="https://www.youtube.com/@asktechnology4871" target="_blank">
+                      <i className="fab fa-youtube" />
                     </a>
                     <a href="#">
                       <i className="fab fa-instagram" />
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/company/ask-technology/" target="_blank">
                       <i className="fab fa-linkedin-in" />
                     </a>
                   </div>

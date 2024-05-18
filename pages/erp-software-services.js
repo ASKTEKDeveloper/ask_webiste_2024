@@ -592,7 +592,7 @@ const Services = () => {
                         <img
                           src="assets/images/about/technology.png"
                           alt="Why Choose"
-                          className="why-choose-img"
+                          // className="why-choose-img"
                         />
                       </div>
                     </div>
