@@ -44,7 +44,6 @@ import { CiShoppingTag } from "react-icons/ci";
 import { IoCardOutline } from "react-icons/io5";
 import { TbReport } from "react-icons/tb";
 
-
 import ContactUsForm from "./ContactUsForm";
 import BlogList from "./BlogList";
 import Testimonials from "./Testimonials";
@@ -282,7 +281,6 @@ const Index = () => {
       >
         <Container>
           <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
-            {/* <span className="sub-title mb-15">Learn Our Project</span> */}
             <h2 className="new-font-play">
               PRODUCTS & <span style={{ color: "#9376E0" }}>SERVICES</span>
             </h2>
@@ -621,20 +619,17 @@ const Index = () => {
                     </span>
                     <br />
                     <span style={{ fontSize: "large", color: "#0E21A0" }}>
-                      Enhance Communication and Simplify Vendor Collaboration
-                      with Target BMS
+                      Streamline Vendor Collaboration with Target BMS
                     </span>
                   </h3>
                   <p className="my-3">
                     TARGET - BMS is a comprehensive business management solution
-                    designed to streamline operations and enhance efficiency
-                    across various aspects of your business. Our product
-                    comprises several modules tailored to address specific needs
-                    within your organization. Each module offers powerful
-                    functionalities to optimize processes and drive growth. From
-                    managing orders to tracking finances, TARGET - BMS empowers
-                    you to take control and achieve success in today's
-                    competitive landscape
+                    designed to streamline operations and enhance efficiency.
+                    Our product includes modules tailored to address specific
+                    organizational needs, offering powerful functionalities to
+                    optimize processes and drive growth. From managing orders to
+                    tracking finances, TARGET - BMS empowers you to succeed in
+                    today’s competitive landscape.
                   </p>
 
                   <div className="row medium-gap m-1 mt-2">
@@ -649,20 +644,24 @@ const Index = () => {
                       <div className="icon">
                         <HiBellAlert />
                       </div>
-                      <h6 className="mb-0">Email Alerts & Reminders for Advance</h6>
+                      <h6 className="mb-0">
+                        Alerts & Reminders for Advance
+                      </h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <CiShoppingTag />
                       </div>
-                      <h6 className="mb-0">Vendor Registration and Fabric Bidding</h6>
+                      <h6 className="mb-0">
+                        Vendor Registration and Fabric Bidding
+                      </h6>
                     </div>
 
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
                         <IoCardOutline />
                       </div>
-                      <h6 className="mb-0">Financial Accounting POS System</h6>
+                      <h6 className="mb-0">Fabric Bidding</h6>
                     </div>
 
                     <div
