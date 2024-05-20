@@ -11,7 +11,7 @@ import {
   LinearProgress,
 } from "@mui/material";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
@@ -33,6 +33,14 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const handleButtonClick = () => {
     setOpen(true);
   };
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setOpen(true);
+    }, [7000]);
+
+  }, []);
 
   const handleClose = () => {
     setOpen(false);
@@ -230,10 +238,10 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <Button
           onClick={handleButtonClick}
           variant="contained"
-          color="warning"
+          color="primary"
           className="sticky-button headShake "
         >
-          Quick Enquiry
+          Book Demo
         </Button>
       </div>
       {/* Contact Form Section Start */}

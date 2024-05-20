@@ -48,6 +48,15 @@ const Services = () => {
   const [submitted, setsubmitted] = useState(false);
   const router = useRouter();
 
+  
+  useEffect(() => {
+
+    setTimeout(() => {
+      setOpen(true);
+    }, [7000]);
+
+  }, []);
+  
   const handleButtonClick = () => {
     setOpen(true);
   };

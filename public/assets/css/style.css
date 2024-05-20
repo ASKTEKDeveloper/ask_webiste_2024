@@ -11568,20 +11568,48 @@ blockquote .name:before {
 .sticky-button-container {
   position: fixed;
   top: 50%;
-  right: -55px;
+  right: -43px;
   transform: translateY(-50%) rotate(360deg); /* Rotate the button */
   z-index: 1000; /* Ensure it's above other content */
 }
 
 .sticky-button {
   /* Your button styles */
-  background-color: #3e00ff;
+  background-color: #FF7F3E;
   color: #ffffff;
   border: none;
   rotate: 360deg;
   border-radius: 5px;
   transform: rotate(-90deg); /* Counter-rotate the text */
   white-space: nowrap; /* Prevent text from wrapping */
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+@-webkit-keyframes glowing {
+  0% { background-color: #FFA62F; -webkit-box-shadow: 0 0 3px #FFA62F; }
+  50% { background-color: #FF7F3E; -webkit-box-shadow: 0 0 40px #FF7F3E; }
+  100% { background-color: #FFA62F; -webkit-box-shadow: 0 0 3px #FFA62F; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #FFA62F; -moz-box-shadow: 0 0 3px #FFA62F; }
+  50% { background-color: #FF7F3E; -moz-box-shadow: 0 0 40px #FF7F3E; }
+  100% { background-color: #FFA62F; -moz-box-shadow: 0 0 3px #FFA62F; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #FFA62F; box-shadow: 0 0 3px #FFA62F; }
+  50% { background-color: #FF7F3E; box-shadow: 0 0 40px #FF7F3E; }
+  100% { background-color: #FFA62F; box-shadow: 0 0 3px #FFA62F; }
+}
+
+@keyframes glowing {
+  0% { background-color: #FFA62F; box-shadow: 0 0 3px #FFA62F; }
+  50% { background-color: #FF7F3E; box-shadow: 0 0 40px #FF7F3E; }
+  100% { background-color: #FFA62F; box-shadow: 0 0 3px #FFA62F; }
 }
 
 .css-1fu2e3p-MuiPaper-root-MuiDialog-paper {
