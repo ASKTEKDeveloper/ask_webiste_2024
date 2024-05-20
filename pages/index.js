@@ -148,8 +148,8 @@ const Index = () => {
                   mixBlendMode: "multiply",
                   borderTopLeftRadius: 20,
                   borderBottomLeftRadius: 80,
-                  boxShadow:
-                    "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                  // boxShadow:
+                  //   "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
                 }}
               />
             </div>
@@ -194,7 +194,7 @@ const Index = () => {
                     </a>
                   </Link>
                   <Link legacyBehavior href="about-us">
-                    <a className="theme-btn mt-10">
+                    <a className="theme-btn mt-15">
                       Read More <i className="fas fa-long-arrow-right" />
                     </a>
                   </Link>
