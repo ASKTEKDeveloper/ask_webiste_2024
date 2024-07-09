@@ -69,7 +69,7 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
         CcMailid2: "",
         Subject: "Your Product Demo Request Confirmation",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: `
           <p>Dear ${datas.name},</p>
           <p>Thank you for your interest in our <b>${datas.product}</b> demo!</p>
@@ -120,7 +120,7 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: bodyMessage,
         SmtpPort: 587,
         Filepathattach: "",

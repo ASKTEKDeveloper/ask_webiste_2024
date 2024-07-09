@@ -72,7 +72,7 @@ const ProjectGrid = () => {
         CcMailid2: "",
         Subject: "Thank You for Downloading Our Product Brochure",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for downloading our product brochure!</p>
@@ -120,7 +120,7 @@ const ProjectGrid = () => {
         CcMailid2: "",
         Subject: subjectLine,
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: bodyMessage,
         SmtpPort: 587,
         Filepathattach: "",

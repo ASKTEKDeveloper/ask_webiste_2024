@@ -145,7 +145,7 @@ const Careers = () => {
         CcMailid2: "",
         Subject: "Application for Job Opportunity at ASK Technology",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for considering a career opportunity at ASK Technology.</p>
@@ -180,7 +180,7 @@ const Careers = () => {
         CcMailid2: "",
         Subject: "New Job Application Received",
         SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Saima@99559#",
+        MailPassowrd: "Ask@99559#",
         Body: `
         <p>Dear HR Team,</p>
         <p>A new job application has been received from:</p>

@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         secure: false,
         auth: {
           user: "hr@asktek.net",
-          pass: "Saima@99559#",
+          pass: "Ask@99559#",
         },
       });
 
