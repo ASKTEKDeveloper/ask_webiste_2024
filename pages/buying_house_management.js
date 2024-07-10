@@ -618,7 +618,9 @@ const ProjectGrid = () => {
                                     matchesSmallScreen && "text-center"
                                   }`}
                                 >
-                                  <h4>Vendor Registration and Fabric bidding</h4>
+                                  <h4>
+                                    Vendor Registration and Fabric bidding
+                                  </h4>
                                   <p>
                                     Streamlined processes for vendor management
                                     and material procurement.
