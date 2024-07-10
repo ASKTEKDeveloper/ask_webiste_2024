@@ -35,11 +35,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   };
 
   useEffect(() => {
-
     setTimeout(() => {
       setOpen(true);
     }, [7000]);
-
   }, []);
 
   const handleClose = () => {
@@ -318,16 +316,20 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                       )
                       .required("Email address is required."),
 
-                    city: Yup.string()
-                      .matches(/^[A-Za-z\s]+$/, "enter valid city name")
-                      .required("Please specify your city."),
+                    city: Yup.string().matches(
+                      /^[A-Za-z\s]+$/,
+                      "enter valid city name"
+                    ),
+                    // .required("Please specify your city."),
 
                     company_name: Yup.string().required(
                       "Please specify the name of your company."
                     ),
-                    enquiry_details: Yup.string()
-                      .max(200, "should not exceed 200 characters.")
-                      .required("type your requirements  here"),
+                    enquiry_details: Yup.string().max(
+                      200,
+                      "should not exceed 200 characters."
+                    ),
+                    // .required("type your requirements  here"),
                   })}
                   onSubmit={handleSubmit}
                 >
@@ -603,16 +605,20 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                         )
                         .required("Email address is required."),
 
-                      city: Yup.string()
-                        .matches(/^[A-Za-z\s]+$/, "enter valid city name")
-                        .required("Please specify your city."),
+                      city: Yup.string().matches(
+                        /^[A-Za-z\s]+$/,
+                        "enter valid city name"
+                      ),
+                      // .required("Please specify your city."),
 
                       company_name: Yup.string().required(
                         "Please specify the name of your company."
                       ),
-                      enquiry_details: Yup.string()
-                        .max(200, "should not exceed 200 characters.")
-                        .required("type your requirements  here"),
+                      enquiry_details: Yup.string().max(
+                        200,
+                        "should not exceed 200 characters."
+                      ),
+                      // .required("type your requirements  here"),
                     })}
                     onSubmit={handleSubmit}
                   >

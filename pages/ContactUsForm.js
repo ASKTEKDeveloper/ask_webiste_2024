@@ -13,8 +13,6 @@ const ContactUsForm = () => {
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [openLoader, setOpenLoader] = useState(false);
 
-  
-
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setOpenLoader(true);
     try {
@@ -159,9 +157,9 @@ const ContactUsForm = () => {
                   .matches(/^[A-Za-z\s]+$/, "enter valid name")
                   .required("Please provide your full name."),
 
-                subject: Yup.string().required(
-                  "Please provide a subject for your message."
-                ),
+                // subject: Yup.string().required(
+                //   "Please provide a subject for your message."
+                // ),
                 phone_number: Yup.string().required(
                   "Please enter your phone number."
                 ),
@@ -173,9 +171,11 @@ const ContactUsForm = () => {
                   )
                   .required("Email address is required."),
 
-                message: Yup.string()
-                  .max(200, "should not exceed 200 characters.")
-                  .required("Type here, whats on your mind"),
+                message: Yup.string().max(
+                  200,
+                  "should not exceed 200 characters."
+                ),
+                // .required("Type here, whats on your mind"),
               })}
               onSubmit={handleSubmit}
             >

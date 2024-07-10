@@ -9,7 +9,7 @@ const HeaderTop = () => {
             <div className="header-top">
               <ul>
                 <li>
-                  <i className="far fa-envelope" style={{color:'white'}} />{" "}
+                  <i className="far fa-envelope" style={{ color: "white" }} />{" "}
                   <a
                     href="mailto:support@gmail.com"
                     style={{ color: "white", fontSize: "small" }}
@@ -19,7 +19,7 @@ const HeaderTop = () => {
                 </li>
 
                 <li>
-                  <i className="far fa-phone" style={{color:'white'}} />{" "}
+                  <i className="far fa-phone" style={{ color: "white" }} />{" "}
                   <a
                     href="callto:+919840899559"
                     style={{ color: "white", fontSize: "small" }}
@@ -29,7 +29,7 @@ const HeaderTop = () => {
                 </li>
 
                 <li>
-                  <i className="far fa-tty" style={{color:'white'}} />{" "}
+                  <i className="far fa-tty" style={{ color: "white" }} />{" "}
                   <a
                     href="callto:04445034080"
                     style={{ color: "white", fontSize: "small" }}
@@ -44,16 +44,28 @@ const HeaderTop = () => {
                 </li> */}
                 <li>
                   <div className="social-style-one">
-                    <a href="#">
+                    <a
+                      href="https://www.facebook.com/people/Target-ByAsktek/pfbid02yS6174HdoPoxyCWDEuxUtfwSP2y2N4qZXQ48qgr66DJuxSpnjLTbBuXXJS3Qt49Cl/?mibextid=ZbWKwL"
+                      target="_blank"
+                    >
                       <i className="fab fa-facebook-f" />
                     </a>
-                    <a href="https://www.youtube.com/@asktechnology4871" target="_blank">
+                    <a
+                      href="https://www.youtube.com/@asktechnology4871"
+                      target="_blank"
+                    >
                       <i className="fab fa-youtube" />
                     </a>
-                    <a href="#">
+                    <a
+                      href="https://www.instagram.com/targetbyasktek/?igsh=MWF5YXE5YW5oano3NA%3D%3D"
+                      target="_blank"
+                    >
                       <i className="fab fa-instagram" />
                     </a>
-                    <a href="https://www.linkedin.com/company/ask-technology/" target="_blank">
+                    <a
+                      href="https://www.linkedin.com/company/askteksolutions/"
+                      target="_blank"
+                    >
                       <i className="fab fa-linkedin-in" />
                     </a>
                   </div>

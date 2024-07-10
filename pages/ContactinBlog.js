@@ -146,18 +146,17 @@ const ContactinBlog = () => {
         }}
         validationSchema={Yup.object({
           name: Yup.string().required("Please provide your full name."),
-          subject: Yup.string().required(
-            "Please provide a subject for your message."
-          ),
+          // subject: Yup.string().required(
+          //   "Please provide a subject for your message."
+          // ),
           phone_number: Yup.string().required(
             "Please enter your phone number."
           ),
           email: Yup.string()
             .email("Please provide a valid email address.")
             .required("Email address is required."),
-          message: Yup.string()
-            .max(200, "should not exceed 200 characters.")
-            .required("Type here, whats on your mind"),
+          message: Yup.string().max(200, "should not exceed 200 characters."),
+          // .required("Type here, whats on your mind"),
         })}
         onSubmit={handleSubmit}
       >

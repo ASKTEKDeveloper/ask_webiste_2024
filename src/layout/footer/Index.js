@@ -31,7 +31,10 @@ const Footer = () => {
               </p>
               <h5 className="text-center">Follow Us</h5>
               <div className="social-style-one text-center d-flex justify-content-center align-items-center ">
-                <a href="#">
+                <a
+                  href="https://www.facebook.com/people/Target-ByAsktek/pfbid02yS6174HdoPoxyCWDEuxUtfwSP2y2N4qZXQ48qgr66DJuxSpnjLTbBuXXJS3Qt49Cl/?mibextid=ZbWKwL"
+                  target="_blank"
+                >
                   <i className="fab fa-facebook-f" />
                 </a>
                 <a
@@ -40,11 +43,11 @@ const Footer = () => {
                 >
                   <i className="fab fa-youtube" />
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/targetbyasktek/?igsh=MWF5YXE5YW5oano3NA%3D%3D"  target="_blank">
                   <i className="fab fa-instagram" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/ask-technology/"
+                  href="https://www.linkedin.com/company/askteksolutions/"
                   target="_blank"
                 >
                   <i className="fab fa-linkedin-in" />
