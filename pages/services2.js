@@ -21,7 +21,7 @@ const Service2 = () => {
               <div className="services-content-three mb-30 rmb-65 wow fadeInUp delay-0-2s">
                 <div className="section-title mb-30">
                   <span className="sub-title mb-15">Amazing Services</span>
-                  <h2>We Provide Best IT Services to Growth you Business</h2>
+                  <h2>We Provide the Best IT Services to Growth you Business</h2>
                 </div>
                 <p>
                   Sed ut perspiciatis unde omnis iste natus sit voluptatem

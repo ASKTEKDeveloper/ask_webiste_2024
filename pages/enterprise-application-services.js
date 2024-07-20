@@ -82,7 +82,7 @@ const Services = () => {
   return (
     <Layout>
       <PageBanner pageName={"Enterprise Applications Development"} />
-      <div className="sticky-button-container">
+      {/* <div className="sticky-button-container">
         <Button
           onClick={handleButtonClick}
           variant="contained"
@@ -91,7 +91,7 @@ const Services = () => {
         >
           Quick Enquiry
         </Button>
-      </div>
+      </div> */}
 
       {/* mobile-services*/}
       <section className="about-area-two px-3  py-100 rpy-100 rel z-1">
@@ -166,7 +166,7 @@ const Services = () => {
                     back-end development, ensuring comprehensive solutions that
                     meet your business requirements. From user interface design
                     to database management, we have the expertise to deliver
-                    end-to-end solutions that drive business growth..
+                    end-to-end solutions that drive business growth.
                     <br />
                     <br />
                   </p>

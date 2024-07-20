@@ -3,7 +3,7 @@ export const blogData = [
     title:
       "Maximizing Efficiency with Custom ERP Solutions for Manufacturing Industries",
     introduction:
-      "In today's fiercely competitive business landscape, manufacturing industries face a multitude of challenges, ranging from fluctuating demand to intricate supply chain management...",
+      "In today's fiercely competitive business landscape, manufacturing industries face a multitude of challenges, ranging from fluctuating demand to intricate supply chain management..",
     points: [
       {
         title: "Understanding Manufacturing Challenges",
@@ -35,7 +35,7 @@ export const blogData = [
   {
     title: "Unveiling the Power of AI in Modern HRMS Solutions",
     introduction:
-      "In the rapidly evolving world of Human Resource Management Systems (HRMS), organizations are increasingly turning to Artificial Intelligence (AI) technology to address the complexities of talent acquisition, employee engagement, and performance management...",
+      "In the rapidly evolving world of Human Resource Management Systems (HRMS), organizations are increasingly turning to Artificial Intelligence (AI) technology to address the complexities of talent acquisition, employee engagement, and performance management..",
     points: [
       {
         title: "The Role of AI in HR Management",
@@ -63,7 +63,7 @@ export const blogData = [
     title:
       "Unlocking Potential: The Benefits of Hiring a Dedicated Full Stack Developer",
     introduction:
-      "In today's fast-paced digital landscape, businesses are constantly seeking ways to innovate and stay ahead of the competition. One effective strategy is to hire dedicated full stack developers who possess the skills and expertise to oversee end-to-end software development projects...",
+      "In today's fast-paced digital landscape, businesses are constantly seeking ways to innovate and stay ahead of the competition. One effective strategy is to hire dedicated full stack developers who possess the skills and expertise to oversee end-to-end software development projects..",
     points: [
       {
         title: "The Role of Full Stack Developers",

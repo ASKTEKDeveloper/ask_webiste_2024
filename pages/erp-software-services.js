@@ -82,7 +82,7 @@ const Services = () => {
   return (
     <Layout>
       <PageBanner pageName={"Enterprise Applications Development"} />
-      <div className="sticky-button-container">
+      {/* <div className="sticky-button-container">
         <Button
           onClick={handleButtonClick}
           variant="contained"
@@ -91,7 +91,7 @@ const Services = () => {
         >
           Quick Enquiry
         </Button>
-      </div>
+      </div> */}
       {/* mobile-services*/}
       <section className="about-area-two pt-75 rel z-1">
         <Container>
@@ -233,7 +233,7 @@ const Services = () => {
                         aspect of your business, our team of experienced
                         developers will work with you to design and build a
                         solution that meets your needs and drives business
-                        growth
+                        growth.
                       </span>
                     </p>
                   </li>
@@ -249,7 +249,7 @@ const Services = () => {
                         deployment and training. We take a systematic approach
                         to ensure a smooth and successful implementation,
                         minimizing disruption to your business operations and
-                        maximizing the benefits of your ERP system
+                        maximizing the benefits of your ERP system.
                       </span>
                     </p>
                   </li>
@@ -414,7 +414,7 @@ const Services = () => {
                     leasing and tenant management, our solution provides a
                     centralized platform to streamline processes, improve
                     collaboration, and drive profitability in your real estate
-                    business..
+                    business.
                     <br />
                     <br />
                   </p>

@@ -79,7 +79,7 @@ const MobileMenu = () => {
                     href="ecommerce-application-development"
                     style={{ whiteSpace: "nowrap" }}
                   >
-                    Ecommerce Application Development
+                    E-Commerce Application Development
                   </Link>
                 </li>
                 <li>
@@ -273,7 +273,7 @@ const DeskTopMenu = () => {
                   href="ecommerce-application-development"
                   style={{ whiteSpace: "nowrap" }}
                 >
-                  Ecommerce Application Development
+                  E-Commerce Application Development
                 </Link>
               </li>
               <li>

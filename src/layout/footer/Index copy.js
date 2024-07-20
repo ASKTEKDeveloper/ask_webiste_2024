@@ -45,7 +45,7 @@ const Footer = () => {
               <p style={{color:'white'}}>
                 #36,2nd floor, Railway Border Rd, opposite to
                 Kodambakkam Railway Station, Akbarabad, Kodambakkam, Chennai,
-                Tamil Nadu 600024 .
+                Tamil Nadu 600024.
               </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
                 <input
                   id="email"
                   type="email"
-                  placeholder="support@gmail.com"
+                  placeholder="sales@asktek.net"
                   required
                 />
                 <button>Sign Up</button>
@@ -145,7 +145,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link legacyBehavior href="service-details">
-                        <a>Ecommerce Application Development</a>
+                        <a>E-Commerce Application Development</a>
                       </Link>
                     </li>
                     <li>

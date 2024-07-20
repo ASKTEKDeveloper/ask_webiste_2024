@@ -81,8 +81,8 @@ const Services = () => {
 
   return (
     <Layout>
-      <PageBanner pageName={"Enterprise Applications Development"} />
-      <div className="sticky-button-container">
+      <PageBanner pageName={"E-commerce  Applications Development"} />
+      {/* <div className="sticky-button-container">
         <Button
           onClick={handleButtonClick}
           variant="contained"
@@ -91,7 +91,7 @@ const Services = () => {
         >
           Quick Enquiry
         </Button>
-      </div>
+      </div> */}
       {/* mobile-services*/}
       <section className="about-area-two px-3  py-100  rel z-1">
         <Container>
@@ -100,18 +100,18 @@ const Services = () => {
               <div className="about-content rel z-1 wow fadeInLeft delay-0-2s">
                 <div className="section-title mb-30">
                   <span className="sub-title mb-15">Our Services</span>
-                  <h2>Ecommerce Application Development</h2>
+                  <h2>E-Commerce Application Development</h2>
                 </div>
                 <p>
-                  Unlock the potential of online retail with our Ecommerce
+                  Unlock the potential of online retail with our E-Commerce
                   Application Development service. From customizing platforms
                   like Magento, Shopify, WooCommerce, and OpenCart to building
                   bespoke solutions tailored to your business needs, we create
-                  seamless and secure ecommerce experiences. Our expertise
+                  seamless and secure e-commerce experiences. Our expertise
                   ensures optimized performance, intuitive user interfaces, and
                   robust features to drive sales, enhance customer engagement,
                   and scale your online business effectively. Trust us to
-                  transform your ecommerce vision into reality and stay ahead in
+                  transform your e-commerce vision into reality and stay ahead in
                   the competitive digital marketplace.
                 </p>
 
@@ -153,10 +153,10 @@ const Services = () => {
                     <span style={{ color: "#7E97A6" }}>Magento </span>{" "}
                   </h4>
                   <p className="text-center">
-                    Harness the power of Magento for your ecommerce store. Our
+                    Harness the power of Magento for your e-commerce store. Our
                     Magento development services cover everything from design
                     customization to module development, ensuring a robust and
-                    scalable ecommerce solution that meets your business needs.
+                    scalable e-commerce solution that meets your business needs.
                   </p>
                 </div>
               </div>
@@ -192,7 +192,7 @@ const Services = () => {
                     <span style={{ color: "#5356FF" }}>WooCommerce </span>
                   </h4>
                   <p className="text-center">
-                    Build a powerful ecommerce website with WooCommerce. Our
+                    Build a powerful e-commerce website with WooCommerce. Our
                     WooCommerce development services include custom theme
                     design, plugin development, and payment gateway integration,
                     helping you create a unique and engaging online store.
@@ -215,7 +215,7 @@ const Services = () => {
                     <br />
                   </h4>
                   <p className="text-center">
-                    Create a feature-rich ecommerce store with OpenCart. Our
+                    Create a feature-rich e-commerce store with OpenCart. Our
                     OpenCart development services cover everything from
                     installation and setup to customization and optimization,
                     ensuring a fast, secure, and user-friendly shopping
@@ -239,8 +239,8 @@ const Services = () => {
                     Management
                   </h4>
                   <p className="text-center">
-                    Let us handle the day-to-day management of your ecommerce
-                    store. Our ecommerce store management services include
+                    Let us handle the day-to-day management of your e-commerce
+                    store. Our e-commerce store management services include
                     product updates, inventory management, order processing, and
                     customer support, allowing you to focus on growing your
                     business.
@@ -259,8 +259,8 @@ const Services = () => {
                     Migration
                   </h4>
                   <p className="text-center">
-                    Seamlessly migrate your ecommerce store to a new platform.
-                    Our ecommerce store migration services ensure a smooth
+                    Seamlessly migrate your e-commerce store to a new platform.
+                    Our e-commerce store migration services ensure a smooth
                     transition with minimal disruption to your business,
                     preserving your data, SEO rankings, and customer experience.
                   </p>

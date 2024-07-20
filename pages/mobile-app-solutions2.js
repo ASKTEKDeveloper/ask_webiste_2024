@@ -21,7 +21,7 @@ const Service2 = () => {
               <div className="services-content-three mb-30 rmb-65 wow fadeInUp delay-0-2s">
                 <div className="section-title mb-30">
                   <span className="sub-title mb-15">Amazing Services</span>
-                  <h2>We Provide Best IT Services to Growth you Business</h2>
+                  <h2>We Provide the Best IT Services to Growth you Business</h2>
                 </div>
                 <p>
                   Sed ut perspiciatis unde omnis iste natus sit voluptatem
@@ -313,16 +313,16 @@ const Service2 = () => {
                   </div>
                   <h4>
                     <Link legacyBehavior href="service-details">
-                      Ecommerce Application Development
+                      E-Commerce Application Development
                     </Link>
                   </h4>
                 </div>
                 <div className="bottom-part">
                   <p>
-                    Revolutionize your online presence with our ecommerce
+                    Revolutionize your online presence with our e-commerce
                     application development services. From user-friendly
                     interfaces to secure payment gateways, we create dynamic
-                    ecommerce platforms that drive sales and enhance customer
+                    e-commerce platforms that drive sales and enhance customer
                     engagement
                   </p>
                   {/* <Link legacyBehavior href="/service-details">
@@ -446,7 +446,7 @@ const Service2 = () => {
                     software development services. Tailored to your unique
                     requirements, our ERP solutions streamline processes,
                     centralize data, and provide real-time insights, empowering
-                    you to make informed decisions and drive business growth
+                    you to make informed decisions and drive business growth.
                   </p>
                   {/* <Link legacyBehavior href="/service-details">
                     <a className="read-more">

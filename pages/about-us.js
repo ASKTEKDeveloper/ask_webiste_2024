@@ -198,7 +198,7 @@ const ServiceDetails = () => {
                         Our IT consulting services encompass strategic planning
                         to align technology initiatives with business
                         objectives, ensuring optimal efficiency and
-                        performance..
+                        performance.
                       </p>
                       {/* <Link legacyBehavior href="/service-details">
                         <a className="read-more">

@@ -179,17 +179,17 @@ const Index = () => {
                   </h3>
                 </div>
                 <p>
-                  At Ask Technology, we are more than just an IT services
-                  company – we are your trusted partner in leveraging technology
+                  At ASK Technology, we are more than just an IT services
+                  company, we are your trusted partner in leveraging technology
                   to drive innovation and growth. With a relentless focus on
                   delivering exceptional solutions tailored to your unique
                   needs, we have established ourselves as a leader in the
-                  industry.
+                  industry
                 </p>
                 <div className="about-btns mb-45">
                   <Link legacyBehavior href="#contactus">
                     <a className="theme-btn style-three mt-15">
-                      Connect With US <i className="fas fa-long-arrow-right" />
+                      Connect With Us <i className="fas fa-long-arrow-right" />
                     </a>
                   </Link>
                   <Link legacyBehavior href="about-us">
@@ -211,8 +211,7 @@ const Index = () => {
                       <p>
                         Our IT consulting services encompass strategic planning
                         to align technology initiatives with business
-                        objectives, ensuring optimal efficiency and
-                        performance..
+                        objectives, ensuring optimal efficiency and performance.
                       </p>
                       <br />
                     </div>
@@ -230,7 +229,7 @@ const Index = () => {
                         Our ERP products, tailored for textile, garment, and
                         rental management industries, streamline operations and
                         catalyze business growth through enhanced efficiency and
-                        productivity
+                        productivity.
                       </p>
                     </div>
                   </div>
@@ -644,9 +643,7 @@ const Index = () => {
                       <div className="icon">
                         <HiBellAlert />
                       </div>
-                      <h6 className="mb-0">
-                        Alerts & Reminders for Advance
-                      </h6>
+                      <h6 className="mb-0">Alerts & Reminders for Advance</h6>
                     </div>
                     <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
                       <div className="icon">
@@ -714,7 +711,7 @@ const Index = () => {
               >
                 <span className="sub-title mb-15">Our Services</span>
                 <h2 style={{ fontFamily: "Oswald", color: "#EEF5FF" }}>
-                  We Provide Best IT Services
+                  We Provide the Best IT Services
                 </h2>
               </div>
             </div>
@@ -837,13 +834,13 @@ const Index = () => {
                         style={{ fontFamily: "Oswald" }}
                         className={`${matchesSmallScreen && "text-center"}`}
                       >
-                        Ecommerce Application Development
+                        E-Commerce Application Development
                       </h4>
                       <p className={`${matchesSmallScreen && "text-center"}`}>
-                        Revolutionize your online presence with our ecommerce
+                        Revolutionize your online presence with our e-commerce
                         application development services. From user-friendly
                         interfaces to secure payment gateways, we create dynamic
-                        ecommerce platforms that drive sales and enhance
+                        e-commerce platforms that drive sales and enhance
                         customer engagement
                       </p>
                     </div>

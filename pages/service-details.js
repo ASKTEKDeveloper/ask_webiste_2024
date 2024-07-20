@@ -44,7 +44,7 @@ const ServiceDetails = () => {
                 </div>
                 <div className="row">
                   <div className="col-md-6 mb-30 wow fadeInRight delay-0-2s">
-                    <h3>We Provide Best IT Services to Growth you Business</h3>
+                    <h3>We Provide the Best IT Services to Growth you Business</h3>
                   </div>
                   <div className="col-md-6 mb-30 wow fadeInLeft delay-0-2s">
                     <ul className="list-style-one">

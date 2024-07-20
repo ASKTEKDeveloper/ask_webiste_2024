@@ -47,7 +47,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const servicesMapping = {
     MobileAppSolutions: "Mobile App Solutions",
     EnterpriseAppDevelopment: "Enterprise Application Development",
-    EcommerceAppDevelopment: "Ecommerce Application Development",
+    EcommerceAppDevelopment: "E-commerce Application Development",
     UIUX: "UI/UX Strategy",
     DigitalMarketing: "Digital Marketing",
     ERPDevelopment: "ERP Software Development",
@@ -436,7 +436,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   Enterprise Application Development
                                 </MenuItem>
                                 <MenuItem value="EcommerceAppDevelopment">
-                                  Ecommerce Application Development
+                                  E-Commerce Application Development
                                 </MenuItem>
                                 <MenuItem value="UIUX">UI/UX Strategy</MenuItem>
                                 <MenuItem value="DigitalMarketing">
@@ -731,7 +731,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                     Enterprise Application Development
                                   </MenuItem>
                                   <MenuItem value="EcommerceAppDevelopment">
-                                    Ecommerce Application Development
+                                    E-Commerce Application Development
                                   </MenuItem>
                                   <MenuItem value="UIUX">
                                     UI/UX Strategy

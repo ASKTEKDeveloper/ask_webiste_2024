@@ -27,7 +27,7 @@ const Footer = () => {
               <p style={{ color: "#EEEEEE" }} className="text-center">
                 #36,2nd floor, Railway Border Rd, opposite to Kodambakkam
                 Railway Station, Akbarabad, Kodambakkam, Chennai, Tamil Nadu
-                600024 .
+                600024.
               </p>
               <h5 className="text-center">Follow Us</h5>
               <div className="social-style-one text-center d-flex justify-content-center align-items-center ">
@@ -43,7 +43,10 @@ const Footer = () => {
                 >
                   <i className="fab fa-youtube" />
                 </a>
-                <a href="https://www.instagram.com/targetbyasktek/?igsh=MWF5YXE5YW5oano3NA%3D%3D"  target="_blank">
+                <a
+                  href="https://www.instagram.com/targetbyasktek/?igsh=MWF5YXE5YW5oano3NA%3D%3D"
+                  target="_blank"
+                >
                   <i className="fab fa-instagram" />
                 </a>
                 <a
@@ -210,7 +213,7 @@ const Footer = () => {
               fontSize={matchesSmallScreen && "8px"}
             >
               © Copyright 2024 by Ask Technology. <br />
-              All Rights Reserved And Designed by Ask Technology
+              All Rights Reserved And Designed by Ask Technology.
             </Typography>
           </div>
         </div>

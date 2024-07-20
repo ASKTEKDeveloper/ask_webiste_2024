@@ -501,7 +501,7 @@ const CareersForm = () => {
               <span className="sub-title mx-10" style={{ color: "blue" }}>
                 {" hr@asktek.net "}
               </span>
-              We're eager to hear from talented individuals like you!"
+              We're eager to hear from talented individuals like you!
             </p>
           </div>
         </Container>

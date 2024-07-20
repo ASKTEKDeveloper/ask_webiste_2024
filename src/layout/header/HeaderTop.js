@@ -11,7 +11,7 @@ const HeaderTop = () => {
                 <li>
                   <i className="far fa-envelope" style={{ color: "white" }} />{" "}
                   <a
-                    href="mailto:support@gmail.com"
+                    href="mailto:sales@asktek.net"
                     style={{ color: "white", fontSize: "small" }}
                   >
                     sales@asktek.net

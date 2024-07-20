@@ -55,9 +55,9 @@ const Contact = () => {
                   <i className="fal fa-clock" />
                 </div>
                 <h4>Working Hour</h4>
-                <b>Monday - Saturday,</b>
-                <span>10:00am - 07:00pm</span>
-                <br />
+                <span>Monday - Saturday</span>
+                {/* <b>Monday - Saturday,</b> */}
+                <span>10:00am - 07:00pm</span>               
                 <br />
               </div>
             </div>

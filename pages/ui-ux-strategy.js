@@ -82,7 +82,7 @@ const Services = () => {
   return (
     <Layout>
       <PageBanner pageName={"UI/UX Strategy"} />
-      <div className="sticky-button-container">
+      {/* <div className="sticky-button-container">
         <Button
           onClick={handleButtonClick}
           variant="contained"
@@ -91,7 +91,7 @@ const Services = () => {
         >
           Quick Enquiry
         </Button>
-      </div>
+      </div> */}
       {/* mobile-services*/}
       <section className="about-area-two px-3  py-50  rel z-1">
         <Container>

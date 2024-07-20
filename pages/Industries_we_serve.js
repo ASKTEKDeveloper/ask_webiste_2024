@@ -204,20 +204,20 @@ const Hire_a_developer = () => {
                     <h4>
                       {" "}
                       <Link legacyBehavior href="#">
-                        Ecommerce
+                        E-Commerce
                       </Link>{" "}
                     </h4>
                   </div>
                   <div className="bottom-part">
                     <p>
-                      Empower ecommerce businesses with scalable and
+                      Empower e-commerce businesses with scalable and
                       feature-rich technology solutions, enabling seamless
                       online transactions, personalized shopping experiences,
                       and enhanced customer engagement.
                     </p>
                   </div>
                 </div>
-                <span className="bg-text">Ecommerce</span>
+                <span className="bg-text">E-Commerce</span>
               </div>
             </div>
             <div className="col-lg-6">
