@@ -61,16 +61,11 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
 
   const SendMailProduct = async (datas) => {
     try {
-      const response = await axios.post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: datas.email,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "Your Product Demo Request Confirmation",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: `
+      const response = await axios.post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: datas.email,
+        subject: "Your Product Demo Request Confirmation",
+        text: `
           <p>Dear ${datas.name},</p>
           <p>Thank you for your interest in our <b>${datas.product}</b> demo!</p>
           <p>Your request has been received successfully. We're excited to assist you further.</p>
@@ -81,8 +76,6 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
           <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
           <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
-        SmtpPort: 587,
-        Filepathattach: "",
       });
 
       console.log("Email sent successfully:", response.data);
@@ -112,19 +105,12 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
       `;
 
-      const approvs = await axios.post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: "sales@asktek.net",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
-      });
+      const approvs = await axios.post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: "sales@asktek.net",
+        subject: subjectLine,
+        text: bodyMessage,
+       });
 
       Swal.fire({
         title: "Thank you!",

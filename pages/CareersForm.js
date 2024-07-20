@@ -498,9 +498,11 @@ const CareersForm = () => {
             <p className="py-50">
               If you don't see a suitable position, feel free to send your
               resume to
+              <a href="mailto:hr@asktek.net">
               <span className="sub-title mx-10" style={{ color: "blue" }}>
                 {" hr@asktek.net "}
               </span>
+              </a>
               We're eager to hear from talented individuals like you!
             </p>
           </div>

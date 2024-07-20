@@ -12,37 +12,16 @@ export default async function handler(req, res) {
         port: 587,
         secure: false,
         auth: {
-          user: "hr@asktek.net",
-          pass: "Saima@99559#",
+          user: "sales@asktek.net",
+          pass: "Ask@99559#",
         },
       });
-
-      // Download the file from the URL and convert to Buffer
-      const attachmentUrl = attachment;
-      const attachmentResponse = await axios.get(attachmentUrl, {
-        responseType: "arraybuffer",
-      });
-      const attachmentData = Buffer.from(attachmentResponse.data, "binary");
-
-      // Get the original filename and extension
-      const originalFileName = path.basename(attachmentUrl);
-      const fileExtension = path.extname(originalFileName);
-
-      // Generate a new filename
-      const newFilename = `Resume${fileExtension}`;
-
+      
       const mailOptions = {
         from: from,
         to: to,
         subject: subject,
         html: text,
-        attachments: [
-          {
-            filename: newFilename,
-            content: attachmentData,
-            contentType: `application/${fileExtension.substring(1)}`,
-          },
-        ],
       };
 
       const info = await transporter.sendMail(mailOptions);

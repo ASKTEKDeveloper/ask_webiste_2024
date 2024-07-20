@@ -64,16 +64,11 @@ const ProjectGrid = () => {
 
   const SendMailProduct = async (datas) => {
     try {
-      const response = await axios.post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: datas.email,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "Thank You for Downloading Our Product Brochure",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: `
+      const response = await axios.post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: datas.email,
+        subject: "Thank You for Downloading Our Product Brochure",
+        text: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for downloading our product brochure!</p>
         <p>We hope you find the information helpful and informative. 
@@ -112,18 +107,11 @@ const ProjectGrid = () => {
 <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
 <p><a href="http://www.asktek.net">www.asktek.net</a></p>
 `;
-      const approvs = await axios.post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: "sales@asktek.net",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
+      const approvs = await axios.post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: "sales@asktek.net",
+        subject: subjectLine,
+        text: bodyMessage,
       });
 
       const product = datas.product;
@@ -388,11 +376,14 @@ const ProjectGrid = () => {
                       </div>
                       <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-content fadeInUp">
-                        <h3>Financial Management</h3>
-                          <p>  Automates processes such as invoicing, billing, and
+                          <h3>Financial Management</h3>
+                          <p>
+                            {" "}
+                            Automates processes such as invoicing, billing, and
                             payment processing, while also generating financial
                             reports like profit and loss statements and balance
-                            sheets</p>
+                            sheets
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -403,7 +394,7 @@ const ProjectGrid = () => {
                         <div className="why-choose-content">
                           <h3>Commercial Invoicing</h3>
                           <p>
-                          Generate professional invoices tailored to global
+                            Generate professional invoices tailored to global
                             buyers' requirements, ensuring smooth transactions
                             and financial compliance.
                           </p>

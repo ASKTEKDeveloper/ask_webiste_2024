@@ -61,18 +61,11 @@ const HireDevForm = () => {
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
     `;
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: "sales@asktek.net",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
+      .post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: "sales@asktek.net",
+        subject: subjectLine,
+        text: bodyMessage,
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -101,18 +94,11 @@ const HireDevForm = () => {
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
     `;
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessageToUser,
-        SmtpPort: 587,
-        Filepathattach: "",
+      .post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: `${datas.email}`,
+        subject: subjectLine,
+        text: bodyMessageToUser,
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -196,6 +182,7 @@ const HireDevForm = () => {
                         <Field name="phone_number">
                           {({ field, form }) => (
                             <TextField
+                              type="number"
                               {...field}
                               fullWidth
                               label="Phone Number"

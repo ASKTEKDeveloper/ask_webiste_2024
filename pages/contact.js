@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="row text-center mb-35 justify-content-center wow fadeInUp delay-0-2s">
             <div className="col-xl-8 col-lg-10">
               <div className="section-title mb-25">
-                <span className="sub-title mb-15">Need any Helps</span>
+                <span className="sub-title mb-15">Need any Help</span>
                 <h2>Contact Informations</h2>
               </div>             
             </div>
@@ -40,7 +40,7 @@ const Contact = () => {
                 <div className="icon">
                   <i className="fal fa-phone-plus" />
                 </div>
-                <h4>Locations</h4>
+                <h4>Call Us</h4>
                 <span>
                   Mobile : <a href="callto:+919840899559">+91 98408 99559</a>
                 </span>

@@ -94,10 +94,15 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
 
   const SendMailProduct = async (datas) => {
     try {
-      const response = await axios.post("/api/Email/SendMail3", {
+      const response = await axios.post("/api/Email/SendMail", {
         from: "sales@asktek.net",
         to: datas.email,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
         subject: "Your Product Demo Request Confirmation",
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Ask@99559#",
         text: `
           <p>Dear ${datas.name},</p>
           <p>Thank you for your interest in our <b>${
@@ -111,6 +116,8 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
           <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ sales@asktek.net</p>
           <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
+        SmtpPort: 587,
+        Filepathattach: "",
       });
       setOpen(false);
       console.log("Email sent successfully:", response.data);
@@ -122,11 +129,16 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
 
   const SendMailService = async (datas) => {
     try {
-      const approvs = await axios.post("/api/Email/SendMail3", {
-        from: "sales@asktek.net",
-        to: datas.email,
-        subject: "Your Service Request Confirmation",
-        text: `
+      const approvs = await axios.post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
+        ToMailid: datas.email,
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: "Your Service Request Confirmation",
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Ask@99559#",
+        Body: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for your interest in our <b>${
           servicesMapping[datas.product] || datas.product
@@ -200,11 +212,18 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
       `;
 
-      const approvs = await axios.post("/api/Email/SendMail3", {
-        from: "sales@asktek.net",
-        to: "sales@asktek.net",
-        subject: subjectLine,
-        text: bodyMessage,
+      const approvs = await axios.post("/api/Email/SendMail", {
+        FromMailid: "sales@asktek.net",
+        ToMailid: "sales@asktek.net",
+        CcMailid: "",
+        CcMailid1: "",
+        CcMailid2: "",
+        Subject: subjectLine,
+        SmtpServer: "us2.smtp.mailhostbox.com",
+        MailPassowrd: "Ask@99559#",
+        Body: bodyMessage,
+        SmtpPort: 587,
+        Filepathattach: "",
       });
     } catch (error) {
       console.error("Error sending internal email:", error);

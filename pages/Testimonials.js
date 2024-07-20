@@ -92,7 +92,7 @@ const Testimonials = () => {
                       customer experiences. Highly recommend!
                     </p>
                     <h6 className=" text-end" style={{ textAlign: "right" }}>
-                      - GRT Jewellery
+                      - GRT Jewellers
                     </h6>
                   </div>
                   <div className="testi-content-item">

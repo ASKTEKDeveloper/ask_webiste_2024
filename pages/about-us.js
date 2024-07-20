@@ -85,18 +85,11 @@ const ServiceDetails = () => {
         <p>ASK TECHNOLOGY</p>
     `;
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: "sales@asktek.net",
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessage,
-        SmtpPort: 587,
-        Filepathattach: "",
+      .post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: "sales@asktek.net",
+        subject: subjectLine,
+        text: bodyMessage,
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -126,18 +119,11 @@ const ServiceDetails = () => {
         <p>Your Website</p>
     `;
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "sales@asktek.net",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: subjectLine,
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: bodyMessageToUser,
-        SmtpPort: 587,
-        Filepathattach: "",
+      .post("/api/Email/SendMail3", {
+        from: "sales@asktek.net",
+        to: `${datas.email}`,
+        subject: subjectLine,
+        text: bodyMessageToUser,
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -197,8 +183,7 @@ const ServiceDetails = () => {
                       <p>
                         Our IT consulting services encompass strategic planning
                         to align technology initiatives with business
-                        objectives, ensuring optimal efficiency and
-                        performance.
+                        objectives, ensuring optimal efficiency and performance.
                       </p>
                       {/* <Link legacyBehavior href="/service-details">
                         <a className="read-more">
@@ -259,41 +244,6 @@ const ServiceDetails = () => {
                 <div
                   className={`${
                     matchesSmallScreen && "flex-column"
-                  } d-flex  flex-column    justify-content-start align-items-center gap-4`}
-                >
-                  <div className="icon">
-                    <img
-                      src="https://ik.imagekit.io/sathishask2024/20943892.jpg?updatedAt=1710941958371"
-                      className="icon"
-                      style={{ objectFit: "contain", mixBlendMode: "multiply" }}
-                    />
-                  </div>
-
-                  <div className="content">
-                    <h2
-                      style={{ fontFamily: "oswald", color: "#637A9F" }}
-                      className="text-center mb-2 pb-3"
-                      // className={`${matchesSmallScreen && "text-center"}`}
-                    >
-                      <span style={{ color: "#1D24CA" }}></span> Our{" "}
-                      <span style={{ color: "#5356FF" }}>Mission</span>
-                    </h2>
-                    <p className="text-center">
-                      At Ask Technology, we empower businesses with
-                      transformative technology solutions, driving efficiency
-                      and growth. Through expertise, innovation, and commitment,
-                      we deliver unparalleled value, enabling clients to thrive
-                      in a rapidly evolving digital landscape.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-6 col-md-6   pt-25">
-              <div className="mission-vision-item  mx-4 ">
-                <div
-                  className={`${
-                    matchesSmallScreen && "flex-column"
                   } d-flex  flex-column wow   justify-content-start  align-items-center gap-4`}
                 >
                   <div className="icon">
@@ -319,6 +269,41 @@ const ServiceDetails = () => {
                       potential. Our vision is to be the leading force driving
                       digital transformation, revolutionizing industries, and
                       shaping the future of business worldwide
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-6 col-md-6   pt-25">
+              <div className="mission-vision-item  mx-4 ">
+                <div
+                  className={`${
+                    matchesSmallScreen && "flex-column"
+                  } d-flex  flex-column    justify-content-start align-items-center gap-4`}
+                >
+                  <div className="icon">
+                    <img
+                      src="https://ik.imagekit.io/sathishask2024/20943892.jpg?updatedAt=1710941958371"
+                      className="icon"
+                      style={{ objectFit: "contain", mixBlendMode: "multiply" }}
+                    />
+                  </div>
+
+                  <div className="content">
+                    <h2
+                      style={{ fontFamily: "oswald", color: "#637A9F" }}
+                      className="text-center mb-2 pb-3"
+                      // className={`${matchesSmallScreen && "text-center"}`}
+                    >
+                      <span style={{ color: "#1D24CA" }}></span> Our{" "}
+                      <span style={{ color: "#5356FF" }}>Mission</span>
+                    </h2>
+                    <p className="text-center">
+                      At Ask Technology, we empower businesses with
+                      transformative technology solutions, driving efficiency
+                      and growth. Through expertise, innovation, and commitment,
+                      we deliver unparalleled value, enabling clients to thrive
+                      in a rapidly evolving digital landscape.
                     </p>
                   </div>
                 </div>

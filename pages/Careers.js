@@ -137,16 +137,11 @@ const Careers = () => {
 
   const SendMail = async (datas) => {
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "hr@asktek.net",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "Application for Job Opportunity at ASK Technology",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: `
+      .post("/api/Email/SendMail3", {
+        from: "hr@asktek.net",
+        to: `${datas.email}`,
+        subject: "Application for Job Opportunity at ASK Technology",
+        text: `
         <p>Dear ${datas.name},</p>
         <p>Thank you for considering a career opportunity at ASK Technology.</p>
         <p>We have received your application and appreciate your interest in joining our team.</p>
@@ -156,10 +151,7 @@ const Careers = () => {
         <p>ASK Technology HR Team</p>
         <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
-        `,
-        SmtpPort: 587,
-        Filepathattach: "",
-        // "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
+        `,        
       })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
@@ -172,16 +164,11 @@ const Careers = () => {
 
   const SendMail2 = async (datas) => {
     const approvs = await axios
-      .post("/api/Email/SendMail", {
-        FromMailid: "hr@asktek.net",
-        ToMailid: `${datas.email}`,
-        CcMailid: "",
-        CcMailid1: "",
-        CcMailid2: "",
-        Subject: "New Job Application Received",
-        SmtpServer: "us2.smtp.mailhostbox.com",
-        MailPassowrd: "Ask@99559#",
-        Body: `
+      .post("/api/Email/SendMail3", {
+        from: "hr@asktek.net",
+        to: `${datas.email}`,
+        subject: "New Job Application Received",
+        text: `
         <p>Dear HR Team,</p>
         <p>A new job application has been received from:</p>
         <p><strong>Name:</strong> ${datas.name}</p>
@@ -193,10 +180,7 @@ const Careers = () => {
         <p>📱 +91-91 98408 99559 | ☎ 044-45034080 | ✉ hr@asktek.net</p>
         <p><a href="http://www.asktek.net">www.asktek.net</a></p>
         `,
-        SmtpPort: 587,
-        Filepathattach: "",
-        // "C:\\inetpub\\wwwroot\\TechVeel_API\\Views\\Participation_Certificate1.pdf",
-      })
+            })
       .then((res) => {
         if (res.data === "Email Send Succefully") {
           setOpenLoader(false);
