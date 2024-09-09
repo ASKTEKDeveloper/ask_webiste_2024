@@ -25,7 +25,7 @@ export async function connectToDatabase() {
 
     // Connect to database
     let pool = await sql.connect(config);
-    console.log("Connected to MSSQL database");
+    // console.log("Connected to MSSQL database");
     return pool;
   } catch (err) {
     console.error("SQL error", err);

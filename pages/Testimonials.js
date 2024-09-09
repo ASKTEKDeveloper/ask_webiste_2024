@@ -25,7 +25,7 @@ const Testimonials = () => {
         headers: { Authorization: tokent, "Content-Type": "application/json" },
       });
       setreviewData(res.data);
-      console.log("Reviews data", res.data);
+      // console.log("Reviews data", res.data);
     } catch (error) {
       console.error("Error fetching courses:", error);
     }
@@ -86,7 +86,8 @@ const Testimonials = () => {
                   {reviewData.map((data, index) => (
                     <div key={index} className="testi-image-item">
                       <img
-                        src={`http://103.73.189.37/ASK_WEB_ADMIN_PANEL_API/api/ClientLogos/${data.LogoFileName}`}
+                        src={`/api/client-logo?logoFileName=${data.LogoFileName}`}
+                        // src={`http://103.73.189.37/ASK_WEB_ADMIN_PANEL_API/api/ClientLogos/${data.LogoFileName}`}
                         alt="Author"
                       />
                     </div>

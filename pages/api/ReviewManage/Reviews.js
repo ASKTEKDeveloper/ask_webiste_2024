@@ -9,7 +9,7 @@ const getAllReview = async () => {
     let pool = await connectToDatabase();
     const sqlQueries = await loadSqlQueries("api/User");
     const GetReviews = await pool.request().query(sqlQueries.getAllReview);
-    console.log("Reviews Fetched: ", GetReviews.recordset);
+    // console.log("Reviews Fetched: ", GetReviews.recordset);
     return GetReviews.recordset;
   } catch (err) {
     console.error("SQL error", err);
