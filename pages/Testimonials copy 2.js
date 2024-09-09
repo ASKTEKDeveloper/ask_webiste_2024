@@ -117,6 +117,7 @@ const Testimonials = () => {
                       - GRT Jewellers
                     </h6>
                   </div>
+
                   <div className="testi-content-item">
                     <p>
                       We've been partnering with Ask Technology for years, and
@@ -129,6 +130,7 @@ const Testimonials = () => {
                       - Vijay Garments
                     </h6>
                   </div>
+                  
                   <div className="testi-content-item">
                     <p>
                       Ask Technology's dedication and professionalism are
