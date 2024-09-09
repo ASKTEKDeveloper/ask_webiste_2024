@@ -83,14 +83,22 @@ const Testimonials = () => {
                   ref={(slider) => setSlider2(slider)}
                   className="testi-image-slider"
                 >
-                  {reviewData.map((data, index) => (
-                    <div key={index} className="testi-image-item">
-                      <img
-                        src={`http://103.73.189.37/ASK_WEB_ADMIN_PANEL_API/api/ClientLogos/${data.LogoFileName}`}
-                        alt="Author"
-                      />
-                    </div>
-                  ))}
+                  <div className="testi-image-item">
+                    <img src="assets/images/clients/1.png" alt="Author" />
+                  </div>
+                  <div className="testi-image-item">
+                    <img src="assets/images/clients/4.webp" alt="Author" />
+                  </div>
+                  <div className="testi-image-item">
+                    <img
+                      src="assets/images/clients/5.jpg"
+                      alt="Author"
+                      className="p-10"
+                    />
+                  </div>
+                  <div className="testi-image-item">
+                    <img src="assets/images/clients/7.jpg" alt="Author" />
+                  </div>
                 </Slider>
                 <Slider
                   {...slider}
@@ -98,14 +106,52 @@ const Testimonials = () => {
                   ref={(slider) => setSlider1(slider)}
                   className="testi-content-slider"
                 >
-                  {reviewData.map((data, index) => (
-                    <div key={index} className="testi-content-item">
-                      <p>{data.Review}</p>
-                      <h6 className=" text-end" style={{ textAlign: "right" }}>
-                        - {data.CompanyName}
-                      </h6>
-                    </div>
-                  ))}
+                  <div className="testi-content-item">
+                    <p>
+                      Working with Ask Technology has been a game-changer for
+                      our business. Their innovative solutions and dedicated
+                      support have helped us streamline operations and enhance
+                      customer experiences. Highly recommend!
+                    </p>
+                    <h6 className=" text-end" style={{ textAlign: "right" }}>
+                      - GRT Jewellers
+                    </h6>
+                  </div>
+                  <div className="testi-content-item">
+                    <p>
+                      We've been partnering with Ask Technology for years, and
+                      they continue to exceed our expectations. Their ERP
+                      solutions have revolutionized our manufacturing processes,
+                      improving efficiency and profitability. Truly a trusted
+                      partner!
+                    </p>
+                    <h6 className=" text-end" style={{ textAlign: "right" }}>
+                      - Vijay Garments
+                    </h6>
+                  </div>
+                  <div className="testi-content-item">
+                    <p>
+                      Ask Technology's dedication and professionalism are
+                      unmatched. Their custom software solutions have
+                      streamlined our procurement processes, saving us time and
+                      resources. Couldn't be happier with the results!
+                    </p>
+                    <h6 className=" text-end" style={{ textAlign: "right" }}>
+                      - Padma Buying House
+                    </h6>
+                  </div>
+                  <div className="testi-content-item">
+                    <p>
+                      Ask Technology has been pivotal in helping us stay ahead
+                      in a competitive market. Their tailored technology
+                      solutions have enhanced our operations and customer
+                      service, driving growth and success. Highly impressed and
+                      satisfied!
+                    </p>
+                    <h6 className=" text-end" style={{ textAlign: "right" }}>
+                      - Prince Jewellers
+                    </h6>
+                  </div>
                 </Slider>
               </div>
             </div>
