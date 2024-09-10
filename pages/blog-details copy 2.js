@@ -8,35 +8,30 @@ import { Dialog, Divider, IconButton, LinearProgress } from "@mui/material";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import axios from "axios";
+// import { blogData } from "@/src/blogData";
 
 const BlogDetails = () => {
   const router = useRouter();
-  const [blogData, setBlogData] = useState([]);
+  const [blogData, setblogData] = useState([]);
   const [openLoader, setOpenLoader] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const token =
+  const tokent =
     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJldmVudGxpc3QiOlt7IlVzZXJJRCI6IjEiLCJMb2dpbkNvZGUiOiIwMSIsIkxvZ2luTmFtZSI6IkFkbWluIiwiRW1haWxJZCI6ImFkbWluQGdtYWlsLmNvbSIsIlVzZXJUeXBlIjoiQURNSU4ifV0sImlhdCI6MTYzODM1NDczMX0.ZW6zEHIXTxfT-QWEzS6-GuY7bRupf2Jc_tp4fXIRabQ";
 
   useEffect(() => {
     getAllBlog();
   }, []);
 
-  // Get all Blogs Request
+  // get all Reviews Request
   const getAllBlog = async () => {
     setOpenLoader(true);
     try {
       const res = await axios.get("/api/BlogsManage/Blogs", {
-        headers: { Authorization: token, "Content-Type": "application/json" },
+        headers: { Authorization: tokent, "Content-Type": "application/json" },
       });
-      setBlogData(res.data);
-      setLoading(false);
+      setblogData(res.data);
+      setOpenLoader(false);
     } catch (error) {
-      console.error("Error fetching blogs:", error);
-      setError("Failed to load blog data.");
-      setLoading(false);
-    } finally {
+      console.error("Error fetching courses:", error);
       setOpenLoader(false);
     }
   };
@@ -44,25 +39,6 @@ const BlogDetails = () => {
   const { id } = router.query;
   const blog = blogData[id];
   const currentBlogIndex = parseInt(id, 10);
-
-  if (loading) {
-    return (
-      <Layout>
-        <Dialog
-          open={openLoader}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-          fullWidth
-        >
-          <LinearProgress />
-        </Dialog>
-      </Layout>
-    );
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
 
   if (!blog) {
     return <div>Blog not found</div>;
@@ -85,7 +61,7 @@ const BlogDetails = () => {
                     <a className="tag">{blog.Category}</a>
                   </Link>
                   <a className="date" href="#">
-                    <i className="far fa-calendar-alt mx-3" />
+                    <i className="far fa-calendar-alt mx-3" />{" "}
                     {moment(blog.CreatedDate).format("LL")}
                   </a>
                 </div>
@@ -98,7 +74,7 @@ const BlogDetails = () => {
                     alt="Blog Single"
                   />
                 </div>
-                <p>{parse(blog.BlogDescription)}</p>
+                <p> {parse(blog.BlogDescription)}</p>
                 <h4>Summary & Results</h4>
                 <p>{blog.Summary}</p>
               </div>
@@ -150,6 +126,7 @@ const BlogDetails = () => {
                               <span className="date">
                                 <i className="far fa-calendar-alt" />
                                 <a href={"#"}>
+                                  {" "}
                                   {moment(blog.CreatedDate).format("LL")}
                                 </a>
                               </span>
@@ -224,6 +201,16 @@ const BlogDetails = () => {
                       >
                         <a>{blogData[nextIndex].BlogTitle}</a>
                       </Link>
+
+                      {/* <Link
+                        legacyBehavior
+                        href={{
+                          pathname: "/blog-details",
+                          query: { id: nextIndex },
+                        }}
+                      >
+                        {blogData[nextIndex].BlogTitle}
+                      </Link> */}
                     </h5>
                     <span className="date">
                       <i className="far fa-calendar-alt" />
@@ -237,8 +224,16 @@ const BlogDetails = () => {
           </div>
         </div>
       </section>
+      {/* loader popup dialog box */}
+      <Dialog
+        open={openLoader}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        fullWidth
+      >
+        <LinearProgress />
+      </Dialog>
     </Layout>
   );
 };
-
 export default BlogDetails;
