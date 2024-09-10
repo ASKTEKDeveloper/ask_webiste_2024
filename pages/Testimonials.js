@@ -15,8 +15,11 @@ const Testimonials = () => {
   useEffect(() => {
     setNav1(slider1);
     setNav2(slider2);
-    getAllReview();
   });
+
+  useEffect(() => {
+    getAllReview();
+  }, []);
 
   // get all Reviews Request
   const getAllReview = async () => {

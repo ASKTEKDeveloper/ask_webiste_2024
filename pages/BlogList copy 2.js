@@ -13,13 +13,15 @@ import axios from "axios";
 
 const BlogList = () => {
   const theme = useTheme();
-  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const tokent =
     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJldmVudGxpc3QiOlt7IlVzZXJJRCI6IjEiLCJMb2dpbkNvZGUiOiIwMSIsIkxvZ2luTmFtZSI6IkFkbWluIiwiRW1haWxJZCI6ImFkbWluQGdtYWlsLmNvbSIsIlVzZXJUeXBlIjoiQURNSU4ifV0sImlhdCI6MTYzODM1NDczMX0.ZW6zEHIXTxfT-QWEzS6-GuY7bRupf2Jc_tp4fXIRabQ";
+
+  const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [blogData, setblogData] = useState([]);
+
   useEffect(() => {
     getAllBlog();
-  }, []);
+  });
 
   // get all Reviews Request
   const getAllBlog = async () => {
@@ -55,18 +57,18 @@ const BlogList = () => {
         </div>
         {blogData.map((data, index) => (
           <div
-            className="blog-item style-four wow fadeInUp delay-0-2s"
+            className="data-item style-four wow fadeInUp delay-0-2s"
             key={index}
           >
             <div className="image">
               <img
                 src={`/api/blog-image?BlogFileName=${data.BlogFileName}`}
                 alt="data"
-                style={{ maxWidth: "250px", objectFit: "contain" }}
+                style={{maxWidth:'250px',objectFit:'contain'}}
               />
             </div>
             <div className="content">
-              <ul className="blog-meta">
+              <ul className="data-meta">
                 <li>
                   <i className="far fa-calendar-alt" />{" "}
                   <a href="#"> {moment(data.CreatedDate).format("LL")} </a>
@@ -76,11 +78,11 @@ const BlogList = () => {
                 <Link
                   legacyBehavior
                   href={{
-                    pathname: "/blog-details",
+                    pathname: "/data-details",
                     query: { id: index },
                   }}
                 >
-                  <a>{data.BlogTitle}</a>
+                  {data.BlogTitle}
                 </Link>
               </h4>
               <div className="author-more">
@@ -89,17 +91,8 @@ const BlogList = () => {
                     {data.Category}
                   </a>
                 </span>
-
+                {/* <Link legacyBehavior href="/data-details"> */}
                 <Link
-                  legacyBehavior
-                  href={{ pathname: "/blog-details", query: { id: index } }}
-                >
-                  <a className="read-more">
-                    Read More <i className="far fa-arrow-right" />
-                  </a>
-                </Link>
-
-                {/* <Link
                   legacyBehavior
                   href={{
                     pathname: "/blog-details",
@@ -109,7 +102,8 @@ const BlogList = () => {
                   <a className="read-more">
                     Read More <i className="far fa-arrow-right" />
                   </a>
-                </Link> */}
+                </Link>
+                {/* </Link> */}
               </div>
             </div>
           </div>

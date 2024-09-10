@@ -2,43 +2,18 @@ import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
 import Link from "next/link";
 import ContactinBlog from "./ContactinBlog";
-import ReactHtmlParser from "react-html-parser";
 import { useRouter } from "next/router";
 import { Divider, IconButton } from "@mui/material";
-import moment from "moment";
-import { useEffect, useState } from "react";
-import axios from "axios";
-// import { blogData } from "@/src/blogData";
+import { blogData } from "@/src/blogData";
 
 const BlogDetails = () => {
   const router = useRouter();
-  const [blogData, setblogData] = useState([]);
-
-  const tokent =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJldmVudGxpc3QiOlt7IlVzZXJJRCI6IjEiLCJMb2dpbkNvZGUiOiIwMSIsIkxvZ2luTmFtZSI6IkFkbWluIiwiRW1haWxJZCI6ImFkbWluQGdtYWlsLmNvbSIsIlVzZXJUeXBlIjoiQURNSU4ifV0sImlhdCI6MTYzODM1NDczMX0.ZW6zEHIXTxfT-QWEzS6-GuY7bRupf2Jc_tp4fXIRabQ";
-
-  useEffect(() => {
-    getAllBlog();
-  }, []);
-
-  // get all Reviews Request
-  const getAllBlog = async () => {
-    try {
-      const res = await axios.get("/api/BlogsManage/Blogs", {
-        headers: { Authorization: tokent, "Content-Type": "application/json" },
-      });
-      setblogData(res.data);
-      // console.log("Reviews data", res.data);
-    } catch (error) {
-      console.error("Error fetching courses:", error);
-    }
-  };
-
   const { id } = router.query;
   const blog = blogData[id];
   const currentBlogIndex = parseInt(id, 10);
 
   if (!blog) {
+    // Handle case when blog data is not found
     return <div>Blog not found</div>;
   }
 
@@ -56,34 +31,43 @@ const BlogDetails = () => {
               <div className="blog-details-content wow fadeInUp delay-0-2s">
                 <div className="blog-meta-two pb-15">
                   <Link legacyBehavior href="#">
-                    <a className="tag">{blog.Category}</a>
+                    <a className="tag">{blog.tags[0]}</a>
                   </Link>
                   <a className="date" href="#">
-                    <i className="far fa-calendar-alt mx-3" />{" "}
-                    {moment(blog.CreatedDate).format("LL")}
+                    <i className="far fa-calendar-alt mx-3" />
+                    {blog.date}
                   </a>
                 </div>
                 <div className="title mb-20">
-                  <h3>{blog.BlogTitle}</h3>
+                  <h3>{blog.title}</h3>
                 </div>
                 <div className="image mb-40">
-                  <img
-                    src={`/api/blog-image?BlogFileName=${blog.BlogFileName}`}
-                    alt="Blog Single"
-                  />
+                  <img src={blog.image} alt="Blog Single" />
                 </div>
-                <p> {ReactHtmlParser(blog.BlogDescription)}</p>
+                <p>{blog.content}</p>
+                <ul className="list-style-one pt-10 pb-40">
+                  {blog.points.map((point, index) => (
+                    <li key={index}>
+                      <div>
+                        {point.title}{" "}
+                        <p style={{ color: "#2f3f51" }}>{point.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
                 <h4>Summary & Results</h4>
-                <p>{blog.Summary}</p>
+                <p>{blog.summary}</p>
               </div>
 
               <div className="tag-share pt-25 pb-55 wow fadeInUp delay-0-2s">
                 <div className="item">
                   <h5>Tags</h5>
                   <div className="tag-coulds">
-                    <Link legacyBehavior href="#">
-                      <a>{blog.Category}</a>
-                    </Link>
+                    {blog.tags.map((tag, index) => (
+                      <Link key={index} legacyBehavior href="#">
+                        {tag}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -99,7 +83,7 @@ const BlogDetails = () => {
                           <li key={index}>
                             <div className="image">
                               <img
-                                src={`/api/blog-image?BlogFileName=${blog.BlogFileName}`}
+                                src={blog.image}
                                 alt="News"
                                 style={{
                                   objectFit: "cover",
@@ -118,15 +102,12 @@ const BlogDetails = () => {
                                     query: { id: index },
                                   }}
                                 >
-                                  <a>{blog.BlogTitle}</a>
+                                  {blog.title}
                                 </Link>
                               </h5>
                               <span className="date">
                                 <i className="far fa-calendar-alt" />
-                                <a href={"#"}>
-                                  {" "}
-                                  {moment(blog.CreatedDate).format("LL")}
-                                </a>
+                                <a href={"#"}> {blog.date}</a>
                               </span>
                             </div>
                           </li>
@@ -145,7 +126,7 @@ const BlogDetails = () => {
                 <div className="post-item">
                   <div className="image">
                     <img
-                      src={`/api/blog-image?BlogFileName=${blogData[prevIndex].BlogFileName}`}
+                      src={blogData[prevIndex].image}
                       alt="Post"
                       style={{
                         objectFit: "cover",
@@ -164,12 +145,12 @@ const BlogDetails = () => {
                           query: { id: prevIndex },
                         }}
                       >
-                        <a>{blogData[prevIndex].BlogTitle}</a>
+                        {blogData[prevIndex].title}
                       </Link>
                     </h5>
                     <span className="date">
                       <i className="far fa-calendar-alt" />
-                      {moment(blogData[prevIndex].CreatedDate).format("LL")}
+                      {blogData[prevIndex].date}
                     </span>
                   </div>
                 </div>
@@ -178,7 +159,7 @@ const BlogDetails = () => {
                 <div className="post-item">
                   <div className="image">
                     <img
-                      src={`/api/blog-image?BlogFileName=${blogData[nextIndex].BlogFileName}`}
+                      src={blogData[nextIndex].image}
                       alt="Post"
                       style={{
                         objectFit: "cover",
@@ -197,22 +178,12 @@ const BlogDetails = () => {
                           query: { id: nextIndex },
                         }}
                       >
-                        <a>{blogData[nextIndex].BlogTitle}</a>
+                        {blogData[nextIndex].title}
                       </Link>
-
-                      {/* <Link
-                        legacyBehavior
-                        href={{
-                          pathname: "/blog-details",
-                          query: { id: nextIndex },
-                        }}
-                      >
-                        {blogData[nextIndex].BlogTitle}
-                      </Link> */}
                     </h5>
                     <span className="date">
                       <i className="far fa-calendar-alt" />
-                      {moment(blogData[nextIndex].CreatedDate).format("LL")}
+                      {blogData[nextIndex].date}
                     </span>
                   </div>
                 </div>
