@@ -2,7 +2,7 @@ import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
 import Link from "next/link";
 import ContactinBlog from "./ContactinBlog";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { useRouter } from "next/router";
 import { Divider, IconButton } from "@mui/material";
 import moment from "moment";
@@ -72,7 +72,7 @@ const BlogDetails = () => {
                     alt="Blog Single"
                   />
                 </div>
-                <p> {ReactHtmlParser(blog.BlogDescription)}</p>
+                <p> {parse(blog.BlogDescription)}</p>
                 <h4>Summary & Results</h4>
                 <p>{blog.Summary}</p>
               </div>
