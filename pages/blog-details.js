@@ -38,9 +38,9 @@ const BlogDetails = () => {
   const blog = blogData[id];
   const currentBlogIndex = parseInt(id, 10);
 
-  if (!blog) {
-    return <div>Blog not found</div>;
-  }
+  // if (!blog) {
+  //   return <div>Blog not found</div>;
+  // }
 
   const prevIndex = currentBlogIndex - 1 >= 0 ? currentBlogIndex - 1 : null;
   const nextIndex =
