@@ -23,7 +23,7 @@ const Index4 = () => {
                 </div>
                 <h4>
                   <Link legacyBehavior href="service-details">
-                    Trusted Partner
+                    <a className="more-btn">Trusted Partner</a>
                   </Link>
                 </h4>
                 <p>With over 20 year of experience 850+ employees flexion</p>

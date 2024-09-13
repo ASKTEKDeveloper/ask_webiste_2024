@@ -24,7 +24,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ContactUsProduct = ({ TypeOF, initialValue }) => {
+const ContactUsGarments = ({ TypeOF, initialValue }) => {
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = useState(false);
@@ -54,15 +54,6 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   };
 
   const productsMapping = {
-    ERP: "ERP for Textile & Garment Industries",
-    SCM: "Target SCM - Supply Chain Management",
-    HRMS: "HRMS - Target HR & Payroll Solutions",
-    TOMS: "TOMS - Target Order Management Solutions",
-    // TCMS: "TCMS - Cargo and courier Management Solutions",
-    TBMS: "TBMS - Buying House Management Solutions",
-  };
-
-  const garmentsMapping = {
     OB: "Operation Bulletin - Production Monitoring and Piece Rate Software",
     SM: "Sampling Module",
     IOG: "Garment Inspection Software",
@@ -271,7 +262,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                   <span className="sub-title  mb-10 text-gradient-title2">
                     {TypeOF == "s"
                       ? "Explore Our Services"
-                      : "Experience Our Products"}
+                      : "Experience Our Garment Solutions"}
                   </span>
                 </div>
               </div>
@@ -450,26 +441,20 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                 label="Products"
                                 variant="standard"
                               >
-                                <MenuItem value="ERP" defaultChecked>
-                                  Target ERP - for Textile & Garment Industries
+                                <MenuItem value="OB" defaultChecked>
+                                  Operation Bulletin - Production Monitoring and
+                                  Piece Rate Software
                                 </MenuItem>
-                                <MenuItem value="TBMS">
-                                  TARGET BMS - Buying house management
+                                <MenuItem value="SM">Sampling Module</MenuItem>
+                                <MenuItem value="IOG">
+                                  Garment Inspection Software
                                 </MenuItem>
-                                <MenuItem value="TOMS">
-                                  TOMS - Target Order Management Solutions
+                                <MenuItem value="GERP">
+                                  Garment ERP Software for Knit and Woven (RMG)
                                 </MenuItem>
-                                <MenuItem value="SCM">
-                                  Target SCM - Supply Chain Management
+                                <MenuItem value="GEA">
+                                  Garment Export Application
                                 </MenuItem>
-                                <MenuItem value="HRMS">
-                                  HRMS - Target HR & Payroll Solutions
-                                </MenuItem>
-                                {/*
-                                <MenuItem value="TCMS">
-                                  Target - Cargo & Courier Management
-                                </MenuItem>
-                            */}
                               </TextField>
                             )}
                           </Field>
@@ -560,7 +545,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     <span className="sub-title  mb-10 text-gradient-title2">
                       {TypeOF == "s"
                         ? "Explore Our Services"
-                        : "Experience Our Products"}
+                        : "Experience Our Garment Solutions"}
                     </span>
                   </div>
                 </div>
@@ -747,20 +732,22 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                                   label="Products"
                                   variant="standard"
                                 >
-                                  <MenuItem value="TBMS" defaultChecked>
-                                    TARGET BMS - Buying house management
+                                  <MenuItem value="OB" defaultChecked>
+                                    Operation Bulletin - Production Monitoring
+                                    and Piece Rate Software
                                   </MenuItem>
-                                  <MenuItem value="ERP" defaultChecked>
-                                    ERP for Textile & Garment Industries
+                                  <MenuItem value="SM">
+                                    Garment Sampling Module
                                   </MenuItem>
-                                  <MenuItem value="SCM">
-                                    Target SCM - Supply Chain Management
+                                  <MenuItem value="IOG">
+                                    Garment Inspection Software
                                   </MenuItem>
-                                  <MenuItem value="HRMS">
-                                    HRMS - Target HR & Payroll Solutions
+                                  <MenuItem value="GERP">
+                                    Garment ERP Software for Knit and Woven
+                                    (RMG)
                                   </MenuItem>
-                                  <MenuItem value="TOMS">
-                                    TOMS - Target Order Management Solutions
+                                  <MenuItem value="GEA">
+                                    Garment Export Application
                                   </MenuItem>
                                 </TextField>
                               )}
@@ -824,4 +811,4 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
     </>
   );
 };
-export default ContactUsProduct;
+export default ContactUsGarments;

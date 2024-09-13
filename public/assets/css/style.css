@@ -6878,6 +6878,10 @@ h6,
 .service-item-five img {
   width: 100%;
 }
+#maxxwid
+{
+  max-width: 500px !important;
+}
 .service-item-five .content {
   z-index: 2;
   width: 100%;
@@ -6922,6 +6926,32 @@ h6,
   margin-bottom: 20px;
   display: inline-block;
   background: var(--secondary-color);
+}
+
+.service-item-five .content .icon2 {
+  color: white;
+  font-size: 55px;
+  line-height: 85px;
+  text-align: center;
+  width: 100px;
+  height: 85px;
+  margin-bottom: 20px;
+  display: inline-block;
+  /* background: var(--secondary-color); */
+}
+
+
+.hovernav:hover{
+color: black !important;
+}
+
+.hovernav2
+{
+  color: black !important;
+}
+
+.hovernav2:hover{
+color: white !important;
 }
 .service-item-five .content h4 {
   font-size: 24px;

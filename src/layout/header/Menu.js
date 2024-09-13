@@ -3,9 +3,15 @@ import { useState } from "react";
 import { Accordion, Col, Row } from "react-bootstrap";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import { Fragment } from "react";
+import Slider from "react-slick";
+import Hero4Slider from "@/src/components/slider/Hero4Slider";
+import { projectThreeActive, servicesFiveActive } from "@/src/sliderProps";
+import ProgressBar from "@/src/components/ProgressBar";
 import Typography from "@mui/material/Typography";
 import { Paper, Stack } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import { CiShoppingCart } from "react-icons/ci";
+import { MdOutlineRealEstateAgent } from "react-icons/md";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 
 const Menu = () => {
@@ -306,293 +312,132 @@ const DeskTopMenu = () => {
 
           <li className="dropdown">
             <a href="#">Products</a>
-            <ul className="px-1 mt-1" style={{ minWidth: "850px" }}>
-              <li className="product-card-style-img">
-                <Row>
-                  <Col lg="6">
-                    <Link
-                      href="erp-for-textiles-and-garments"
-                      className="product-card-style"
+            <ul className="p-0 m-0  " style={{ minWidth: "850px" }}>
+              <li className="product-card-style-imgsw m-0 pl-2">
+                <div
+                  style={{
+                    display: "flex",
+                    direction: "row",
+                    gap: 15,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  className="p-0 m-0  "
+                >
+                  <div
+                    className=" service-item-five industries-grid wow fadeInUp delay-0-2s m-0 p-0"
+                    // style={{ maxHeight: "350px" }}
+                  >
+                    <img
+                      src="assets/images/hire/manufacturing.png"
+                      alt="Services"
+                      style={{ objectFit: "cover" }}
+                    />
+                    <div
+                      className="content"
+                      style={{ maxWidth: "100%", bottom: 0 }}
                     >
-                      <Row>
-                        <Col xs="3">
+                      <div className="icon-title">
+                        <div className="icon2">
                           <img
-                            src="assets/images/logos/erp.png"
-                            alt="Logo"
-                            title="Logo"
+                            src="assets/images/services/garments.png"
+                            alt="Icon"
                             style={{
-                              width: "100%",
-                              height: "100%",
+                              borderRadius: 20,
+                              maxWidth: "110px",
                               objectFit: "contain",
+                              backgroundColor: "none",
                             }}
                           />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
+                        </div>
+                        <h4
+                          style={{
+                            padding: "11px",
+                            borderRadius: "11px",
+                            backgroundColor: "#639c78",
+                            width: "fit-content",
+                          }}
+                        >
+                          {" "}
+                          <Link
+                            legacyBehavior
+                            href="optimize_garment_manufacturing"
                           >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              {`TARGET - ERP `}{" "}
-                              <DoubleArrowIcon className="iconarrow2" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              Textile & Garment industries
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
+                            <a
+                              href="optimize_garment_manufacturing"
+                              className="hovernav"
                             >
-                              Seamlessly Track Enquiries to Shipments with Our
-                              Integrated Software Solution
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    <Link
-                      href="buying_house_management"
-                      className="product-card-style"
+                              Discover Our Garment Solutions
+                            </a>
+                          </Link>{" "}
+                        </h4>
+                        <div className="bottom-parts">
+                          <p style={{ color: "white" }}>
+                            Explore a range of innovative solutions designed to
+                            enhance every aspect of your garment business, from
+                            production to sales.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="bg-text">GARMENTS</span>
+                  </div>
+
+                  <div
+                    className="  industries-grid service-item-five wow fadeInUp delay-0-4s m-0 p-0 "
+                    // style={{ maxHeight: "350px" }}
+                  >
+                    <img
+                      src="assets/images/hire/garmentisnpetion.png"
+                      alt="Services"
+                    />
+                    <div
+                      className="content"
+                      style={{ maxWidth: "100%", bottom: 0 }}
                     >
-                      <Row>
-                        <Col xs="3">
+                      <div className="icon-title">
+                        <div className="icon2">
                           <img
-                            src="assets/images/logos/bms.png"
-                            alt="Logo"
-                            title="Logo"
+                            src="assets/images/services/erp11.png"
+                            alt="Icon"
                             style={{
-                              width: "100%",
-                              height: "100%",
+                              borderRadius: 20,
+                              maxWidth: "80px",
                               objectFit: "contain",
+                              backgroundColor: "none",
                             }}
                           />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              {`TARGET - BMS `}{" "}
-                              <DoubleArrowIcon className="iconarrow5" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              Buying House Management
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              Enhance Communication and Simplify Vendor
-                              Collaboration with Target BMS{" "}
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    {" "}
-                    <Link
-                      href="Target_Order_Management_System"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/toms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography
-                              variant="h5"
-                              color="#2C4E80"
-                              fontFamily={"Oswald"}
-                            >
-                              TOMS <LocalShippingIcon className="iconarrow" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              Target Order Management Solution
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              Your Simple Accounting and Inventory Solution
-                              Tailored for Small to Medium Corporates and
-                              Wholesale Suppliers
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    <Link
-                      href="Target_SCM_Supply_Chain_Managements"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/scm.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              TSCM
-                              <LocalShippingIcon className="iconarrow3" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              Target - Supply Chain Management
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              Elevate Your Supply Chain Management. Enhance
-                              Efficiency and Customer Satisfaction with Timely
-                              Deliveries
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>
-                  <Col lg="6">
-                    {" "}
-                    <Link
-                      href="Target_HRMS_HR_and_Payroll_Solutions"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/hrms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              TARGET - HRMS
-                              <DoubleArrowIcon className="iconarrow4" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              HR & Payroll Solutions
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              The Top HR Software for Businesses Big and Small.
-                              Easy to Use, All-in-One HR Management and Payroll
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col>                 
-                  {/* <Col lg="6">
-                    <Link
-                      href="Target_SCM_Supply_Chain_Managements"
-                      className="product-card-style"
-                    >
-                      <Row>
-                        <Col xs="3">
-                          <img
-                            src="assets/images/logos/cms.png"
-                            alt="Logo"
-                            title="Logo"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </Col>
-                        <Col xs="9" className="d-flex justify-content-start ">
-                          <Stack
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="flex-start"
-                            spacing={0.5}
-                          >
-                            <Typography variant="h5" fontFamily={"Oswald"}>
-                              TCMS
-                              <LocalShippingIcon className="iconarrow3" />
-                            </Typography>
-                            <Typography variant="subtitle2" color="gray">
-                              Target Cargo & Courier Management solution
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="gray"
-                              whiteSpace={"normal"}
-                            >
-                              The Ultimate Solution for Cargo and Courier
-                              Service Providers. Guarantee Timely Deliveries and
-                              Ensure Customer Satisfaction
-                            </Typography>
-                          </Stack>
-                        </Col>
-                      </Row>
-                    </Link>
-                  </Col> */}
-                </Row>
+                        </div>
+                        <h4
+                          className="bg-warning"
+                          style={{
+                            padding: "11px",
+                            borderRadius: "11px",
+                            width: "fit-content",
+                          }}
+                        >
+                          {" "}
+                          <Link legacyBehavior href="#">
+                            <a href="#" className="hovernav2">
+                              Explore Our Production Solutions
+                            </a>
+                          </Link>{" "}
+                        </h4>
+
+                        <div className="bottom-parts">
+                          <p style={{ color: "white" }}>
+                            Discover a variety of tailored solutions for
+                            efficient production management, inventory control,
+                            and supply chain optimization.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="bg-text">PRODUCT</span>
+                  </div>
+                </div>
               </li>
             </ul>
-            <div className="dropdown-btn">
-              <span className="fas fa-chevron-down" />
-            </div>
           </li>
 
           <li className="dropdown">
@@ -612,9 +457,6 @@ const DeskTopMenu = () => {
               <li>
                 <Link href="Our_Engagement_Model">Engagement Model</Link>
               </li>
-              {/* <li>
-                <Link href="index3">Our Team</Link>
-              </li> */}
             </ul>
             <div className="dropdown-btn">
               <span className="fas fa-chevron-down" />

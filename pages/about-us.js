@@ -1,29 +1,12 @@
 import PageBanner from "@/components/PageBanner";
 import Layout from "@/layout";
-import { JeenaAccordion2 } from "@/src/components/JeenaAccordion";
 import Link from "next/link";
 import { Nav, Tab } from "react-bootstrap";
-
 import Marquee from "react-fast-marquee";
-import Slider from "react-slick";
 import dynamic from "next/dynamic";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {
-  mainSliderActive,
-  serviceThreeSlider,
-  testimonialThreeSlider,
-} from "@/src/sliderProps";
-import {
-  Container,
-  Dialog,
-  Grid,
-  LinearProgress,
-  TextField,
-} from "@mui/material";
-
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import { Container, Dialog, LinearProgress } from "@mui/material";
 import Swal from "sweetalert2";
 
 const Counter = dynamic(() => import("@/src/components/Counter"), {
@@ -46,27 +29,6 @@ const ServiceDetails = () => {
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [openLoader, setOpenLoader] = useState(false);
-
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    setOpenLoader(true);
-    try {
-      const response = await axios.post("/api/Contact/ContactUS", values);
-      console.log("Form submitted successfully:", response.data);
-      SendMail(values);
-      SendMail2(values);
-      resetForm();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      Swal.fire({
-        title: "Error!",
-        text: "Error submitting form. Please try again later.",
-        icon: "error",
-        confirmButtonText: "Ok",
-      });
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   const SendMail = async (datas) => {
     setOpenLoader(true);
@@ -316,6 +278,7 @@ const ServiceDetails = () => {
         </div>
       </section>
       {/* About Area end */}
+
       {/* Partners Area start */}
       <section className="partners-area   py-50 rel z-1">
         <div>
