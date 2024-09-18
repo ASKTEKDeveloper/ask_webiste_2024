@@ -266,7 +266,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image fadeInUp rmb-55">
                           <img
-                            src="assets/images/projects/ob/1.png"
+                            src="assets/images/projects/erp/buyerc.png"
                             alt="Why Choose"
                             className="product-features-img "
                           />
@@ -296,7 +296,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInRight order-lg-1 order-sm-2  order-2">
                         <div className="blog-details-content wow fadeInUp delay-0-2s">
                           <div className="title mb-20">
-                            <h3>Time & Study Calculation</h3>
+                            <h3>Time Study</h3>
                           </div>
                           <p>
                             Conduct time studies with ease using Quick OB’s
@@ -314,7 +314,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6  fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image rmt-55">
                           <img
-                            src="assets/images/projects/ob/2.png"
+                            src="assets/images/projects/erp/factory.png"
                             alt="Why Choose"
                             className="product-features-img drp-shadow-img"
                           />
@@ -326,7 +326,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="assets/images/projects/ob/3.png"
+                            src="assets/images/projects/erp/time.png"
                             alt="Why Choose"
                             className="product-features-img drp-shadow-img"
                           />
@@ -369,7 +369,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6   fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image ">
                           <img
-                            src="assets/images/projects/ob/4.png"
+                            src="assets/images/projects/erp/audit.png"
                             alt="Why Choose"
                             className="drp-shadow-img product-features-img "
                           />
@@ -429,11 +429,11 @@ const ProjectGrid = () => {
                       </div>
                     </div>
 
-                    <div className="row gap-90 fadeInUp  mb-100 justify-content-center align-items-center ">
+                    <div className="row gap-90 fadeInUp  mb-100 justify-content-center align-items-center mb-100 ">
                       <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="assets/images/projects/ob/7.png"
+                            src="assets/images/projects/erp/time.png"
                             alt="Why Choose"
                             className="product-features-img drp-shadow-img"
                           />
@@ -458,12 +458,12 @@ const ProjectGrid = () => {
                   </div>
                 </div>
 
-                <div className="col-xl-12  ">
+                <div className="col-xl-12 mt-50 ">
                   <section className="services-area  pt-75 pb-10 rel z-1">
                     <div className="container">
                       <div className="row medium-gap">
                         <div className="col-xl-12">
-                          <div className="section-title mb-60 wow fadeInUp text-center delay-0-2s">
+                          <div className="section-title mb-60 wow fadeInUp delay-0-2s">
                             <span className="sub-title mb-15">
                               Business Benefits
                             </span>
@@ -472,7 +472,6 @@ const ProjectGrid = () => {
                             </h3>
                           </div>
                         </div>
-
                         <div className="section-title text-center mb-50 ">
                           <Divider>
                             <Chip
@@ -492,7 +491,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/1.png"
+                                src="/assets/images/projects/erp/costs.png"
                                 alt="Icon"
                               />
                             </div>
@@ -519,7 +518,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/2.png"
+                                src="/assets/images/projects/erp/statistics.png"
                                 alt="Icon"
                               />
                             </div>
@@ -546,7 +545,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/3.png"
+                                src="/assets/images/projects/erp/vision.png"
                                 alt="Icon"
                               />
                             </div>
@@ -573,7 +572,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/4.png"
+                                src="/assets/images/projects/erp/collaboration.png"
                                 alt="Icon"
                               />
                             </div>
@@ -600,7 +599,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/5.png"
+                                src="/assets/images/projects/erp/approval.png"
                                 alt="Icon"
                               />
                             </div>
@@ -627,7 +626,7 @@ const ProjectGrid = () => {
                           >
                             <div className="icon d-flex justify-content-center align-items-center px-4">
                               <img
-                                src="/assets/images/icons/numbers/6.png"
+                                src="/assets/images/projects/erp/satisfaction.png"
                                 alt="Icon"
                               />
                             </div>
@@ -644,398 +643,366 @@ const ProjectGrid = () => {
                             </div>
                           </div>
                         </div>
-
-                        {/* For Production Line Writers */}
-                        <div className="section-title text-center mb-50 ">
-                          <Divider>
-                            <Chip
-                              label="For Production Line Writers"
-                              size="medium"
-                              color="success"
-                            />
-                          </Divider>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/1.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Digital Line Writing</h4>
-                              <p>
-                                Transform traditional line writing into a
-                                digital process, accessible via mobile devices.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/2.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Simplified Data Entry</h4>
-                              <p>
-                                Combine multiple data points like hours worked,
-                                individual, and line performance into a single
-                                entry.
-                              </p>
-                            </div>
-                          </div>{" "}
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/3.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Real-Time Monitoring</h4>
-                              <p>
-                                Access real-time production targets and employee
-                                efficiency data at any time.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/4.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Customizable Reporting</h4>
-                              <p>
-                                Tailor reports to meet specific operational
-                                needs.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* For Supervisors */}
-                        <div className="section-title text-center mb-50 ">
-                          <Divider>
-                            <Chip
-                              label="For Supervisors"
-                              size="medium"
-                              color="success"
-                            />
-                          </Divider>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/1.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Instant Production Status</h4>
-                              <p>
-                                Track the status of line production in
-                                real-time.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/2.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Performance Monitoring</h4>
-                              <p>
-                                Identify high and low performers easily,
-                                providing insights for improvement.
-                              </p>
-                            </div>
-                          </div>{" "}
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/3.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Detailed Hourly Reports</h4>
-                              <p>
-                                Generate and review hour-wise production reports
-                                effortlessly.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* For Management */}
-                        <div className="section-title text-center mb-50 ">
-                          <Divider>
-                            <Chip
-                              label="For Management"
-                              size="medium"
-                              color="success"
-                            />
-                          </Divider>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/1.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Real-Time Reporting</h4>
-                              <p>
-                                Access comprehensive reports from anywhere,
-                                without relying on intermediaries.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/2.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Transparency and Accountability</h4>
-                              <p>
-                                Promote transparency across all levels of the
-                                organization with real-time data sharing.
-                              </p>
-                            </div>
-                          </div>{" "}
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/3.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Performance Insights</h4>
-                              <p>
-                                Get quick insights into unit-wise, line-wise,
-                                and employee-wise performance.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/4.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Employee Efficiency Tracking</h4>
-                              <p>
-                                Evaluate individual employee efficiency,
-                                assisting with performance reviews and salary
-                                assessments.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/5.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Planned vs. Actual Monitoring</h4>
-                              <p>
-                                Stay on top of production goals and outcomes,
-                                driving continuous improvement.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-xl-6 col-md-6">
-                          <div
-                            className={`${
-                              matchesSmallScreen &&
-                              "d-flex flex-column  justify-content-center align-items-center gap-4"
-                            } benefits-item wow fadeInUp delay-0-3s`}
-                          >
-                            <div className="icon d-flex justify-content-center align-items-center px-4">
-                              <img
-                                src="/assets/images/icons/numbers/6.png"
-                                alt="Icon"
-                              />
-                            </div>
-                            <div
-                              className={`content ${
-                                matchesSmallScreen && "text-center"
-                              }`}
-                            >
-                              <h4>Flexible and Customizable Reports</h4>
-                              <p>
-                                Access style-wise, day-wise, and month-wise
-                                reports tailored to your specific needs.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </section>
                 </div>
               </div>
             </Container>
+          </section>
+          {/* What We Provide Area Start */}
+          <section className="what-we-provide overflow-hidden pb-130 rpy-100 rel z-1">
+            <div className="container">
+              <div className="section-title text-center mb-55 wow fadeInUp delay-0-2s">
+                {/* <span className="sub-title mb-10"> </span> */}
+                <h2>
+                  Application for Reducing Industrial{" "}
+                  <span className="text-success">Engineers' Time </span>
+                </h2>
+              </div>
+              <Slider {...serviceThreeSlider} className="service-three-slider">
+                <div className="service-item-three active wow fadeInUp delay-0-2s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/01.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">01</span>
+                      <div className="icon">
+                        <i className="flaticon-coding-1" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Digitalized Operation Bulletin Planning
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Seamlessly plan operation bulletins with our cloud-based
+                        platform, digitizing the entire process from start to
+                        finish.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/02.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">02</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Accurate SMV Calculation
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Use the built-in time study feature to determine
+                        Standard Minute Value (SMV) accurately, ensuring precise
+                        and consistent results
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-2s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/03.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">03</span>
+                      <div className="icon">
+                        <i className="flaticon-coding-1" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Intelligent Reusability
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Get notified for repeat styles, allowing easy reuse of
+                        operation bulletins and SMV calculations for similar
+                        operations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/04.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">04</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Efficient Production Planning
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Quickly plan machine counts, allocate workers, and
+                        estimate production costs with accurate single-piece
+                        time calculations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-2s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/055.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">05</span>
+                      <div className="icon">
+                        <i className="flaticon-coding-1" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Flexible Scheduling and Adjustments
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Easily adjust plans based on unit capacity, working
+                        days, hours, and overtime requirements to meet
+                        production goals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/05.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">06</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Customizable Reporting Options
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Generate fully customizable reports tailored to your
+                        specific business needs for better decision-making and
+                        tracking.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-2s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/13.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">07</span>
+                      <div className="icon">
+                        <i className="flaticon-coding-1" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Production Efficiency Tracking
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Track production efficiency at both the unit and
+                        employee levels, using detailed time study data to
+                        optimize performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/08.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">08</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Operation Status Monitoring
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Stay updated on the status of your operation bulletins
+                        with real-time tracking and notifications on every
+                        operation
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/09.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">09</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Planned vs. Actual Tracking
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Compare planned production against actual outcomes,
+                        ensuring you stay aligned with production goals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="service-item-three active wow fadeInUp delay-0-4s">
+                  <div className="image">
+                    <img
+                      src="assets/images/projects/ob/10.png"
+                      alt="Service"
+                      style={{
+                        maxWidth: "410px",
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div className="content">
+                    <div className="top-part">
+                      <span className="number">10</span>
+                      <div className="icon">
+                        <i className="flaticon-layers" />
+                      </div>
+                      <h4>
+                        <Link legacyBehavior href="service-details">
+                          Skill Matrix Integration
+                        </Link>
+                      </h4>
+                    </div>
+                    <div className="bottom-part">
+                      <p>
+                        Identify operators based on their skill levels, helping
+                        new industrial engineers find top performers within a
+                        group.
+                        <br />
+                        <br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Slider>
+            </div>
           </section>
 
           {/* Contact Form Section Start */}

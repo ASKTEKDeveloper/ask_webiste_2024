@@ -438,6 +438,9 @@ const DeskTopMenu = () => {
                 </div>
               </li>
             </ul>
+            <div className="dropdown-btn">
+              <span className="fas fa-chevron-down" />
+            </div>
           </li>
 
           <li className="dropdown">
