@@ -21,6 +21,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import CloseIcon from "@mui/icons-material/Close";
 
 import Slide from "@mui/material/Slide";
+import ContactUsGarments from "./ContactUsGarments";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -45,6 +46,7 @@ const ProjectGrid = () => {
     ERP: "/assets/docs/ERP.pdf",
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
+    IOG: "/assets/docs/IOG.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -157,18 +159,18 @@ const ProjectGrid = () => {
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
                     </div>
-                    {/* <div className="d-flex justify-content-center align-items-center my-50 ">
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
                         <a
                           onClick={handleButtonClick}
                           style={{ color: "white" }}
                         >
                           Download Brochure
-                        </a>                       
+                        </a>
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
-                    </div> */}
+                    </div>
                     <p>
                       Inspection On Go is a robust solution designed to
                       streamline garment inspection processes from order
@@ -219,7 +221,7 @@ const ProjectGrid = () => {
                 </div>
                 <div className="col-lg-12">
                   <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
-                    <img src="assets/images/flowchart/erp.png" alt="steps" />
+                    <img src="assets/images/flowchart/iog.png" alt="steps" />
                   </div>
                 </div>
               </div>
@@ -493,7 +495,7 @@ const ProjectGrid = () => {
                               >
                                 <div className="icon d-flex justify-content-center align-items-center px-4">
                                   <img
-                                    src="assets/images/projects/erp/costs.png"
+                                    src="assets/images/projects/erp/eye-care.png"
                                     alt="Icon"
                                   />
                                 </div>
@@ -549,7 +551,7 @@ const ProjectGrid = () => {
             </Container>
           </section>
           {/* Contact Form Section Start */}
-          <ContactUsProduct TypeOF={"p"} initialValue={"ERP"} />
+          <ContactUsGarments TypeOF={"p"} initialValue={"IOG"} />
           {/* Contact Form Section End */}
         </>
         <Dialog
@@ -588,7 +590,7 @@ const ProjectGrid = () => {
                       email: "",
                       city: "",
                       TypeOfReq: "d",
-                      product: "ERP",
+                      product: "IOG",
                       enquiry_details: "",
                     }}
                     validationSchema={Yup.object({

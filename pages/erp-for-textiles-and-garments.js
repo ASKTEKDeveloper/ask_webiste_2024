@@ -21,6 +21,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import CloseIcon from "@mui/icons-material/Close";
 
 import Slide from "@mui/material/Slide";
+import ContactUsGarments from "./ContactUsGarments";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -596,7 +597,7 @@ const ProjectGrid = () => {
             </Container>
           </section>
           {/* Contact Form Section Start */}
-          <ContactUsProduct TypeOF={"p"} initialValue={"ERP"} />
+          <ContactUsGarments TypeOF={"p"} initialValue={"GERP"} />
           {/* Contact Form Section End */}
         </>
         <Dialog

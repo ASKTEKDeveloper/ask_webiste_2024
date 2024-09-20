@@ -59,6 +59,7 @@ const ContactUsGarments = ({ TypeOF, initialValue }) => {
     IOG: "Garment Inspection Software",
     GERP: "Garment ERP Software for Knit and Woven (RMG)",
     GEA: "Garment Export Application",
+    BMS: "Target - Buying House Management Solutions",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {

@@ -315,12 +315,12 @@ const GarmentManufacturing = () => {
 
                     <h4>
                       {" "}
-                      <Link legacyBehavior href="buying_house_management">
+                      <Link legacyBehavior href="garments_sampling_software">
                         Garments Sampling Module
                       </Link>{" "}
                     </h4>
                     <div className="d-flex justify-content-start">
-                      <Link legacyBehavior href="buying_house_management">
+                      <Link legacyBehavior href="garments_sampling_software">
                         <a
                           className="read-more "
                           style={{
@@ -505,12 +505,12 @@ const GarmentManufacturing = () => {
 
                     <h4>
                       {" "}
-                      <Link legacyBehavior href="buying_house_management">
+                      <Link legacyBehavior href="garments_exports_software">
                         Garment Export Application
                       </Link>{" "}
                     </h4>
                     <div className="d-flex justify-content-start">
-                      <Link legacyBehavior href="buying_house_management">
+                      <Link legacyBehavior href="garments_exports_software">
                         <a
                           className="read-more "
                           style={{

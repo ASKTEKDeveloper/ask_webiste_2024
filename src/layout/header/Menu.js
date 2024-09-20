@@ -418,7 +418,10 @@ const DeskTopMenu = () => {
                         >
                           {" "}
                           <Link legacyBehavior href="#">
-                            <a href="#" className="hovernav2">
+                            <a
+                              href="explore_production_solutions"
+                              className="hovernav2"
+                            >
                               Explore Our Production Solutions
                             </a>
                           </Link>{" "}

@@ -57,6 +57,7 @@ const ProjectGrid = () => {
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
     BMS: "/assets/docs/BMS.pdf",
+    OB: "/assets/docs/OB.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -166,7 +167,7 @@ const ProjectGrid = () => {
                     <h5>Planning for Garment Manufacturers</h5>
                     <div className="image my-50 wow fadeInUp delay-0-2s">
                       <img
-                        src="assets/images/projects/bms-mockup.png"
+                        src="assets/images/projects/ob-mockup.png"
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
@@ -226,7 +227,7 @@ const ProjectGrid = () => {
           <section className="about-area-five  rel z-1 mb-25 ">
             <Container>
               <div className="row align-items-center gap-100">
-                <div className="col-lg-12">
+                {/* <div className="col-lg-12">
                   <div className="about-content  rel z-1 wow fadeInLeft delay-0-2s">
                     <div className="section-title text-center rmb-40 ">
                       <span className="sub-title mb-15">
@@ -237,10 +238,10 @@ const ProjectGrid = () => {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-lg-12">
                   <div className="mb-50  d-flex justify-content-center align-items-center gap-2  wow fadeInUp delay-0-2s">
-                    <img src="assets/images/flowchart/bms.png" alt="steps" />
+                    <img src="assets/images/flowchart/ob.png" alt="steps" />
                   </div>
                 </div>
               </div>
@@ -381,7 +382,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6 fadeInUp">
                         <div className="why-choose-image rmb-55">
                           <img
-                            src="assets/images/projects/erp/time.png"
+                            src="assets/images/projects/ob/9.png"
                             alt="Why Choose"
                             className="product-features-img drp-shadow-img"
                           />
@@ -421,7 +422,7 @@ const ProjectGrid = () => {
                       <div className="col-lg-6   fadeInRight order-lg-2 order-sm-1 order-1 ">
                         <div className="why-choose-image ">
                           <img
-                            src="assets/images/projects/erp/audit.png"
+                            src="assets/images/projects/ob/100.png"
                             alt="Why Choose"
                             className="drp-shadow-img product-features-img "
                           />
@@ -1078,7 +1079,7 @@ const ProjectGrid = () => {
                       email: "",
                       city: "",
                       TypeOfReq: "d",
-                      product: "BMS",
+                      product: "OB",
                       enquiry_details: "",
                     }}
                     validationSchema={Yup.object({

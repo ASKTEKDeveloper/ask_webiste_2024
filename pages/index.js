@@ -682,6 +682,313 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            {/* 5. Operation Bulletin */}
+            <div className="project-slider-item">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 1 ? 9999 : 1 }}
+              >
+                <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
+                  <img src="assets/images/projects/ob-mockup.png" alt="Video" />
+                </div>
+                <div className="col-xl-8 col-md-12 content">
+                  <h3>
+                    <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
+                      <span style={{ color: "#87A922" }}>Quick OB </span> -
+                      Operation Bulletin
+                    </span>
+                    <br />
+                    <span style={{ fontSize: "large", color: "#0E21A0" }}>
+                      Streamlining Your Garment Production
+                    </span>
+                  </h3>
+                  <p className="my-3">
+                    Welcome to Ask Technology, where innovation meets experience
+                    in the apparel industry. Quick OB is a cloud-based
+                    application designed to help garment manufacturers
+                    streamline their operation bulletin planning, improve
+                    accuracy, and optimize resource allocation.
+                  </p>
+
+                  <div className="row medium-gap m-1 mt-2">
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <FaBoxes />
+                      </div>
+                      <h6 className="mb-0">Operation Bulletin Planning</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <AiOutlineFileDone />
+                      </div>
+                      <h6 className="mb-0">Accurate SMV Calculation</h6>
+                    </div>
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <CiShop />
+                      </div>
+                      <h6 className="mb-0">Real-Time Production Tracking</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <MdOutlineMonitorHeart />
+                      </div>
+                      <h6 className="mb-0">Comprehensive Reporting</h6>
+                    </div>
+
+                    <div
+                      className="content col-12 mt-3"
+                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
+                    >
+                      <Link legacyBehavior href="/operation_bulletin">
+                        <a className="theme-btn style-four">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 6. Inspection on go */}
+            <div className="project-slider-item">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 2 ? 9999 : 1 }}
+              >
+                <div className="col-xl-8 col-md-12  content">
+                  <h3>
+                    <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
+                      <span style={{ color: "#EE4266" }}>Target </span> -
+                      INSPECTION ON GO
+                    </span>
+                    <br />
+                    <span style={{ fontSize: "large", color: "#0E21A0" }}>
+                      Tailored for Garment Industry Quality
+                    </span>
+                  </h3>
+                  <p className="my-3">
+                    Inspection On Go is a robust solution designed to streamline
+                    garment inspection processes from order creation to quality
+                    checks, optimizing workflow and ensuring transparency at
+                    every stage. It integrates real-time monitoring, offline
+                    capabilities, and mobile accessibility to help manufacturers
+                    and quality assurance teams maintain high standards, even in
+                    remote or disconnected environments.
+                  </p>
+
+                  <div className="row medium-gap m-1 mt-2">
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <GrCompliance />
+                      </div>
+                      <h6 className="mb-0">Buyer Order Management</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <MdOutlineWorkHistory />
+                      </div>
+                      <h6 className="mb-0">Factory Order Insights</h6>
+                    </div>
+                    <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <IoPersonCircleOutline />
+                      </div>
+                      <h6 className="mb-0">Inspection Audits</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0  mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <LuMonitorDot />
+                      </div>
+                      <h6 className="mb-0">Access Control Management</h6>
+                    </div>
+
+                    <div
+                      className="content col-12 mt-3 "
+                      style={{ padding: 0, cursor: "pointer" }}
+                    >
+                      <Link
+                        legacyBehavior
+                        href="/garment_inspection_softwares"
+                      >
+                        <a className="theme-btn style-four ">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/projects/iog-mockup.png"
+                    alt="Video"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 6. TARGET - GARMENTS SAMPLING */}
+            <div className="project-slider-item">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 2 ? 9999 : 1 }}
+              >
+                <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/projects/mockup-sampling.png"
+                    alt="Video"
+                  />
+                </div>
+                <div className="col-xl-8 col-md-12 content">
+                  <h3>
+                    <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
+                      <span style={{ color: "#87A922" }}>TARGET </span> -
+                      GARMENTS SAMPLING
+                    </span>
+                    <br />
+                    <span style={{ fontSize: "large", color: "#0E21A0" }}>
+                      Streamlining the Sampling Process in the Apparel Industry
+                    </span>
+                  </h3>
+                  <p className="my-3">
+                    Managing samples manually in the apparel industry often
+                    leads to inefficiencies, miscommunication, and costly
+                    errors. Our integrated software automates and optimizes the
+                    entire sampling process, providing a seamless connection
+                    with purchasing, inventory, production, and delivery. This
+                    ensures accurate tracking and communication between
+                    departments, minimizing errors and aligning sample
+                    specifications with bulk orders.
+                  </p>
+
+                  <div className="row medium-gap m-1 mt-2">
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <FaBoxes />
+                      </div>
+                      <h6 className="mb-0">Sampling Costing</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <AiOutlineFileDone />
+                      </div>
+                      <h6 className="mb-0">
+                        Sample Order Entry and Assortment
+                      </h6>
+                    </div>
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <CiShop />
+                      </div>
+                      <h6 className="mb-0">Purchase Management</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <MdOutlineMonitorHeart />
+                      </div>
+                      <h6 className="mb-0">Inventory Management</h6>
+                    </div>
+
+                    <div
+                      className="content col-12 mt-3"
+                      style={{ padding: 0, cursor: "pointer", zIndex: 99 }}
+                    >
+                      <Link legacyBehavior href="/garments_sampling_software">
+                        <a className="theme-btn style-four">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 8. Exports */}
+            <div className="project-slider-item">
+              <div
+                className="row"
+                style={{ zIndex: currentSlide === 2 ? 9999 : 1 }}
+              >
+                <div className="col-xl-8 col-md-12 content">
+                  <h3>
+                    <span style={{ fontFamily: "Oswald", color: "#31363F" }}>
+                      <span style={{ color: "#87A922" }}>TARGET </span> -
+                      Garment Export Management Solution
+                    </span>
+                    <br />
+                    <span style={{ fontSize: "large", color: "#0E21A0" }}>
+                      Streamline Your Garment Exports
+                    </span>
+                  </h3>
+                  <p className="my-3">
+                    Our Garment Export Documentation application streamlines the
+                    entire export process, allowing quick creation of essential
+                    documents like invoices and packing lists, ensuring accurate
+                    tracking and compliance.
+                  </p>
+
+                  <div className="row medium-gap m-1 mt-2">
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <TbReport />
+                      </div>
+                      <h6 className="mb-0">Buyer Order Management</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <HiBellAlert />
+                      </div>
+                      <h6 className="mb-0">Pre-Shipment Management</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <CiShoppingTag />
+                      </div>
+                      <h6 className="mb-0">Packing List Management</h6>
+                    </div>
+
+                    <div className="col-xl-6 col-md-6 p-0 m-0 mb-3 d-flex justify-content-start align-items-center gap-3 service-two-item wow fadeInUp delay-0-4s">
+                      <div className="icon">
+                        <IoCardOutline />
+                      </div>
+                      <h6 className="mb-0">Post-Shipment Management</h6>
+                    </div>
+
+                    <div
+                      className="content col-12 mt-3"
+                      style={{ padding: 0, cursor: "pointer" }}
+                    >
+                      <Link legacyBehavior href="/garments_exports_software">
+                        <a className="theme-btn style-four">
+                          Know More
+                          <i className="fas fa-long-arrow-right" />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-md-12 d-flex justify-content-center align-items-center">
+                  <img
+                    src="assets/images/projects/exports-mockup.png"
+                    alt="Garment Export Management"
+                  />
+                </div>
+              </div>
+            </div>
           </Slider>
         </Container>
         <div className="project-shapes">
