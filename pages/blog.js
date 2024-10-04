@@ -28,6 +28,10 @@ const Blog = () => {
     }
   };
 
+  const formatTitleForURL = (title) => {
+    return title.replace(/\s+/g, "_"); // Replace spaces with underscores
+  };
+
   return (
     <Layout>
       <PageBanner pageName={"Blog Standard"} />
@@ -49,12 +53,20 @@ const Blog = () => {
                     </div>
                     <div className="content">
                       <div className="blog-meta-two mb-5">
-                        <Link href={`/blog-details?id=${index}`}>
+                        <Link
+                          href={`/blog-details?id=${index}&title=${formatTitleForURL(
+                            blog.BlogTitle
+                          )}`}
+                        >
                           <span className="tag">{blog.Category}</span>
                         </Link>
                       </div>
                       <h4>
-                        <Link href={`/blog-details?id=${index}`}>
+                        <Link
+                          href={`/blog-details?id=${index}&title=${formatTitleForURL(
+                            blog.BlogTitle
+                          )}`}
+                        >
                           {blog.BlogTitle}
                         </Link>
                       </h4>
@@ -70,7 +82,11 @@ const Blog = () => {
                         </span>
                       </div>
                       <hr />
-                      <Link href={`/blog-details?id=${index}`}>
+                      <Link
+                        href={`/blog-details?id=${index}&title=${formatTitleForURL(
+                          blog.BlogTitle
+                        )}`}
+                      >
                         <span className="read-more">
                           Read More <i className="far fa-arrow-right" />
                         </span>
