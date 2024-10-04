@@ -34,6 +34,9 @@ const BlogList = () => {
     }
   };
 
+  const formatTitleForURL = (title) => {
+    return title.replace(/\s+/g, "_"); // Replace spaces with underscores
+  };
   return (
     <section className="blog-area-four pb-100 rpb-70 rel z-1">
       <Container>
@@ -77,7 +80,10 @@ const BlogList = () => {
                   legacyBehavior
                   href={{
                     pathname: "/blog-details",
-                    query: { id: index },
+                    query: {
+                      id: index,
+                      title: formatTitleForURL(blogData[index].BlogTitle),
+                    },
                   }}
                 >
                   <a>{data.BlogTitle}</a>
@@ -92,24 +98,18 @@ const BlogList = () => {
 
                 <Link
                   legacyBehavior
-                  href={{ pathname: "/blog-details", query: { id: index,titleofblog:"testdata" } }}
-                >
-                  <a className="read-more">
-                    Read More <i className="far fa-arrow-right" />
-                  </a>
-                </Link>
-
-                {/* <Link
-                  legacyBehavior
                   href={{
                     pathname: "/blog-details",
-                    query: { id: index },
+                    query: {
+                      id: index,
+                      title: formatTitleForURL(blogData[index].BlogTitle),
+                    },
                   }}
                 >
                   <a className="read-more">
                     Read More <i className="far fa-arrow-right" />
                   </a>
-                </Link> */}
+                </Link>
               </div>
             </div>
           </div>

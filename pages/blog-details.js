@@ -41,9 +41,13 @@ const BlogDetails = () => {
     }
   };
 
-  const { id } = router.query;
+  const { id, title } = router.query;
   const blog = blogData[id];
   const currentBlogIndex = parseInt(id, 10);
+
+  const formatTitleForURL = (title) => {
+    return title.replace(/\s+/g, "_"); // Replace spaces with underscores
+  };
 
   if (loading) {
     return (
@@ -92,7 +96,7 @@ const BlogDetails = () => {
                 <div className="title mb-20">
                   <h3>{blog.BlogTitle}</h3>
                 </div>
-                <div className="image mb-40">
+                <div className="image mb-40 d-flex justify-content-center align-items-center">
                   <img
                     src={`/api/blog-image?BlogFileName=${blog.BlogFileName}`}
                     alt="Blog Single"
@@ -141,7 +145,12 @@ const BlogDetails = () => {
                                   legacyBehavior
                                   href={{
                                     pathname: "/blog-details",
-                                    query: { id: index },
+                                    query: {
+                                      id: index,
+                                      title: formatTitleForURL(
+                                        blogData[index].BlogTitle
+                                      ),
+                                    },
                                   }}
                                 >
                                   <a>{blog.BlogTitle}</a>
@@ -186,7 +195,12 @@ const BlogDetails = () => {
                         legacyBehavior
                         href={{
                           pathname: "/blog-details",
-                          query: { id: prevIndex },
+                          query: {
+                            id: prevIndex,
+                            title: formatTitleForURL(
+                              blogData[prevIndex].BlogTitle
+                            ),
+                          },
                         }}
                       >
                         <a>{blogData[prevIndex].BlogTitle}</a>
@@ -219,7 +233,12 @@ const BlogDetails = () => {
                         legacyBehavior
                         href={{
                           pathname: "/blog-details",
-                          query: { id: nextIndex },
+                          query: {
+                            id: nextIndex,
+                            title: formatTitleForURL(
+                              blogData[nextIndex].BlogTitle
+                            ),
+                          },
                         }}
                       >
                         <a>{blogData[nextIndex].BlogTitle}</a>
