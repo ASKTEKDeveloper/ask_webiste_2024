@@ -92,7 +92,7 @@ const BlogList = () => {
 
                 <Link
                   legacyBehavior
-                  href={{ pathname: "/blog-details", query: { id: index } }}
+                  href={{ pathname: "/blog-details", query: { id: index,titleofblog:"testdata" } }}
                 >
                   <a className="read-more">
                     Read More <i className="far fa-arrow-right" />
