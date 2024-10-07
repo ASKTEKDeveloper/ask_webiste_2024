@@ -32,6 +32,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { IoSchoolSharp } from "react-icons/io5";
 import { FaShip } from "react-icons/fa6";
 import { MdOutlineFactory } from "react-icons/md";
+import { RiShirtLine } from "react-icons/ri";
+import { GiSewingMachine } from "react-icons/gi";
+
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { CiShoppingCart } from "react-icons/ci";
 
@@ -75,8 +78,11 @@ const Hire_a_developer = () => {
                 />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
-                      <MdOutlineFactory />
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
+                      <GiSewingMachine />
                     </div>
                     <h4>
                       {" "}
@@ -102,8 +108,11 @@ const Hire_a_developer = () => {
                 <img src="assets/images/hire/BMS.jpeg" alt="Services" />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
-                      <MdOutlineHealthAndSafety />
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
+                      <RiShirtLine />
                     </div>
                     <h4>
                       {" "}
@@ -121,7 +130,7 @@ const Hire_a_developer = () => {
                     </p>
                   </div>
                 </div>
-                <span className="bg-text">Healthcare</span>
+                <span className="bg-text">Buying House</span>
               </div>
             </div>
           </div>
@@ -136,7 +145,10 @@ const Hire_a_developer = () => {
                 />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
                       <CiShoppingCart />
                     </div>
                     <h4>
@@ -164,7 +176,10 @@ const Hire_a_developer = () => {
                 <img src="assets/images/hire/supplychain.png" alt="Services" />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
                       <FaShip />
                     </div>
                     <h4>
@@ -198,7 +213,10 @@ const Hire_a_developer = () => {
                 />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
                       <IoSchoolSharp />
                     </div>
                     <h4>
@@ -226,7 +244,10 @@ const Hire_a_developer = () => {
                 <img src="assets/images/hire/realestate.png" alt="Services" />
                 <div className="content">
                   <div className="icon-title">
-                    <div className="icon">
+                    <div
+                      className="icon"
+                      style={{ backgroundColor: "#88D66C", borderRadius: 20 }}
+                    >
                       <MdOutlineRealEstateAgent />
                     </div>
                     <h4>
