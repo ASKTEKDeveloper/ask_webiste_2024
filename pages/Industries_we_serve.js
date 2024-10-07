@@ -123,10 +123,10 @@ const Hire_a_developer = () => {
                   </div>
                   <div className="bottom-part">
                     <p>
-                      Revolutionize healthcare delivery with our customized
-                      software solutions, facilitating seamless patient care,
-                      clinical workflows, and data-driven decision-making for
-                      improved outcomes and patient satisfaction.
+                      Streamline your sourcing process with our expert apparel
+                      buying house services, ensuring quality production, timely
+                      delivery, and innovative solutions tailored to meet your
+                      brand's needs.
                     </p>
                   </div>
                 </div>
