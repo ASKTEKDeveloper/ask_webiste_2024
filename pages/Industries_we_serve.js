@@ -66,68 +66,6 @@ const Hire_a_developer = () => {
           </div>
 
           <div className="row">
-            <div className="col-lg-6 round-2">
-              <div className=" service-item-five industries-grid wow fadeInUp delay-0-2s">
-                <img
-                  src="assets/images/hire/education.png"
-                  alt="Services"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="content">
-                  <div className="icon-title">
-                    <div className="icon">
-                    <IoSchoolSharp />
-                    </div>
-                    <h4>
-                      {" "}
-                      <Link legacyBehavior href="#">
-                        Education
-                      </Link>{" "}
-                    </h4>
-                  </div>
-                  <div className="bottom-part">
-                    <p>
-                      Transform the education sector with our cutting-edge
-                      technology solutions designed to enhance learning
-                      experiences, streamline administrative processes, and
-                      drive student success <br />
-                      <br />
-                    </p>
-                  </div>
-                </div>
-                <span className="bg-text">Education</span>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="  industries-grid service-item-five wow fadeInUp delay-0-4s">
-                <img src="assets/images/hire/supplychain.png" alt="Services" />
-                <div className="content">
-                  <div className="icon-title">
-                    <div className="icon">
-                      <FaShip />
-                    </div>
-                    <h4>
-                      {" "}
-                      <Link legacyBehavior href="#">
-                        Supply Chain
-                      </Link>{" "}
-                    </h4>
-                  </div>
-                  <div className="bottom-part">
-                    <p>
-                      Optimize supply chain operations with our comprehensive
-                      software solutions, enabling efficient inventory
-                      management, streamlined logistics, and enhanced
-                      collaboration across the supply chain network.
-                    </p>
-                  </div>
-                </div>
-                <span className="bg-text">Supply Chain</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
             <div className="col-lg-6">
               <div className=" service-item-five industries-grid wow fadeInUp delay-0-2s">
                 <img
@@ -143,7 +81,7 @@ const Hire_a_developer = () => {
                     <h4>
                       {" "}
                       <Link legacyBehavior href="#">
-                        Manufacturing
+                        Apparel Manufacturing
                       </Link>{" "}
                     </h4>
                   </div>
@@ -161,7 +99,7 @@ const Hire_a_developer = () => {
             </div>
             <div className="col-lg-6">
               <div className="  industries-grid service-item-five wow fadeInUp delay-0-4s">
-                <img src="assets/images/hire/healthcare.png" alt="Services" />
+                <img src="assets/images/hire/BMS.jpeg" alt="Services" />
                 <div className="content">
                   <div className="icon-title">
                     <div className="icon">
@@ -170,7 +108,7 @@ const Hire_a_developer = () => {
                     <h4>
                       {" "}
                       <Link legacyBehavior href="#">
-                        Healthcare
+                        Apparel Buying House
                       </Link>{" "}
                     </h4>
                   </div>
@@ -218,6 +156,69 @@ const Hire_a_developer = () => {
                   </div>
                 </div>
                 <span className="bg-text">E-Commerce</span>
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="  industries-grid service-item-five wow fadeInUp delay-0-4s">
+                <img src="assets/images/hire/supplychain.png" alt="Services" />
+                <div className="content">
+                  <div className="icon-title">
+                    <div className="icon">
+                      <FaShip />
+                    </div>
+                    <h4>
+                      {" "}
+                      <Link legacyBehavior href="#">
+                        Supply Chain
+                      </Link>{" "}
+                    </h4>
+                  </div>
+                  <div className="bottom-part">
+                    <p>
+                      Optimize supply chain operations with our comprehensive
+                      software solutions, enabling efficient inventory
+                      management, streamlined logistics, and enhanced
+                      collaboration across the supply chain network.
+                    </p>
+                  </div>
+                </div>
+                <span className="bg-text">Supply Chain</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-6 round-2">
+              <div className=" service-item-five industries-grid wow fadeInUp delay-0-2s">
+                <img
+                  src="assets/images/hire/education.png"
+                  alt="Services"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="content">
+                  <div className="icon-title">
+                    <div className="icon">
+                      <IoSchoolSharp />
+                    </div>
+                    <h4>
+                      {" "}
+                      <Link legacyBehavior href="#">
+                        Education
+                      </Link>{" "}
+                    </h4>
+                  </div>
+                  <div className="bottom-part">
+                    <p>
+                      Transform the education sector with our cutting-edge
+                      technology solutions designed to enhance learning
+                      experiences, streamline administrative processes, and
+                      drive student success <br />
+                      <br />
+                    </p>
+                  </div>
+                </div>
+                <span className="bg-text">Education</span>
               </div>
             </div>
             <div className="col-lg-6">

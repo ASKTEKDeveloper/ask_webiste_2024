@@ -60,6 +60,56 @@ const MobileMenu = () => {
         >
           <ul className="navigation clearfix">
             <li className="dropdown">
+              <a href="#" onClick={() => active("Project")}>
+                Products
+              </a>
+              <ul style={activeSubMenu("Project")}>
+                <li>
+                  <Link href="Target_Order_Management_System">
+                    Target Order Management Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="buying_house_management">
+                    Target - Buying House Management
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="erp-for-textiles-and-garments">
+                    ERP for Textile & Garment Industries{" "}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="Target_SCM_Supply_Chain_Managements">
+                    Target SCM - Supply Chain Management.
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link href="Target_SCM_Supply_Chain_Managements">
+                  Target Cargo and courier Management solution 
+                  </Link>
+                </li>                 */}
+                <li>
+                  <Link href="Target_HRMS_HR_and_Payroll_Solutions">
+                    HRMS - Target HR & Payroll Solutions
+                  </Link>
+                </li>
+              </ul>
+              <div className="dropdown-btn" onClick={() => active("Project")}>
+                <span className="fas fa-chevron-down" />
+              </div>
+            </li>
+
+            <li className="dropdown">
+              <Link
+                href="Industries_we_serve"
+                onClick={() => active("Careers")}
+              >
+                Industries
+              </Link>
+            </li>
+            <li className="dropdown">
               <a href="#" onClick={() => active("services")}>
                 services
               </a>
@@ -115,57 +165,6 @@ const MobileMenu = () => {
                 <span className="fas fa-chevron-down" />
               </div>
             </li>
-
-            <li className="dropdown">
-              <a href="#" onClick={() => active("Project")}>
-                Products
-              </a>
-              <ul style={activeSubMenu("Project")}>
-                <li>
-                  <Link href="Target_Order_Management_System">
-                    Target Order Management Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="buying_house_management">
-                    Target - Buying House Management
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="erp-for-textiles-and-garments">
-                    ERP for Textile & Garment Industries{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="Target_SCM_Supply_Chain_Managements">
-                    Target SCM - Supply Chain Management.
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link href="Target_SCM_Supply_Chain_Managements">
-                  Target Cargo and courier Management solution 
-                  </Link>
-                </li>                 */}
-                <li>
-                  <Link href="Target_HRMS_HR_and_Payroll_Solutions">
-                    HRMS - Target HR & Payroll Solutions
-                  </Link>
-                </li>
-              </ul>
-              <div className="dropdown-btn" onClick={() => active("Project")}>
-                <span className="fas fa-chevron-down" />
-              </div>
-            </li>
-            <li className="dropdown">
-              <Link
-                href="Industries_we_serve"
-                onClick={() => active("Careers")}
-              >
-                Industries
-              </Link>
-            </li>
-
             <li className="dropdown">
               <Link href="Careers" onClick={() => active("Careers")}>
                 Careers
@@ -255,61 +254,7 @@ const DeskTopMenu = () => {
 
       <div className="navbar-collapse collapse clearfix">
         <ul className="navigation clearfix">
-          <li className="dropdown">
-            <a href="#">services</a>
-            <ul>
-              <li>
-                <Link
-                  href="mobile-app-solutions"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  Mobile App Solutions
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="enterprise-application-services"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  Enterprise Application Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="ecommerce-application-development"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  E-Commerce Application Development
-                </Link>
-              </li>
-              <li>
-                <Link href="ui-ux-strategy" style={{ whiteSpace: "nowrap" }}>
-                  UI/UX Strategy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="digital-marketing-services"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="erp-software-services"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  ERP Software Development
-                </Link>
-              </li>
-            </ul>
-            <div className="dropdown-btn">
-              <span className="fas fa-chevron-down" />
-            </div>
-          </li>
-
+          {/* Products */}
           <li className="dropdown">
             <a href="#">Products</a>
             <ul className="p-0 m-0  " style={{ minWidth: "850px" }}>
@@ -367,15 +312,15 @@ const DeskTopMenu = () => {
                               href="optimize_garment_manufacturing"
                               className="hovernav"
                             >
-                              Discover Our Garment Solutions
+                              Discover Apparel ERP Solution
                             </a>
                           </Link>{" "}
                         </h4>
                         <div className="bottom-parts">
                           <p style={{ color: "white" }}>
-                            Explore a range of innovative solutions designed to
-                            enhance every aspect of your garment business, from
-                            production to sales.
+                            Explore A range of Innovation Solutions Design to
+                            Enhance every aspect of your Apparel Business From
+                            Enquiry to Shipment.
                           </p>
                         </div>
                       </div>
@@ -417,21 +362,24 @@ const DeskTopMenu = () => {
                           }}
                         >
                           {" "}
-                          <Link legacyBehavior href="explore_production_solutions">
+                          <Link
+                            legacyBehavior
+                            href="explore_production_solutions"
+                          >
                             <a
                               href="explore_production_solutions"
                               className="hovernav2"
                             >
-                              Explore Our Production Solutions
+                              Explore Business Management Solution
                             </a>
                           </Link>{" "}
                         </h4>
 
                         <div className="bottom-parts">
                           <p style={{ color: "white" }}>
-                            Discover a variety of tailored solutions for
-                            efficient production management, inventory control,
-                            and supply chain optimization.
+                            Discover a variety of Tailored Solution for
+                            efficient Order Management , Inventory , Supply
+                            Chain and Finance Optimization.
                           </p>
                         </div>
                       </div>
@@ -446,14 +394,73 @@ const DeskTopMenu = () => {
             </div>
           </li>
 
+          {/* Industries */}
           <li className="dropdown">
             <Link href="Industries_we_serve">Industries</Link>
           </li>
 
+          {/* services */}
+          <li className="dropdown">
+            <a href="#">services</a>
+            <ul>
+              <li>
+                <Link
+                  href="mobile-app-solutions"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  Mobile App Solutions
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="enterprise-application-services"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  Enterprise Application Development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="ecommerce-application-development"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  E-Commerce Application Development
+                </Link>
+              </li>
+              <li>
+                <Link href="ui-ux-strategy" style={{ whiteSpace: "nowrap" }}>
+                  UI/UX Strategy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="digital-marketing-services"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  Digital Marketing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="erp-software-services"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  ERP Software Development
+                </Link>
+              </li>
+            </ul>
+            <div className="dropdown-btn">
+              <span className="fas fa-chevron-down" />
+            </div>
+          </li>
+
+          {/* Careers */}
           <li className="dropdown">
             <Link href="Careers">Careers</Link>
           </li>
 
+          {/* Company */}
           <li className="dropdown">
             <a href="#">Company</a>
             <ul>
@@ -469,10 +476,12 @@ const DeskTopMenu = () => {
             </div>
           </li>
 
+          {/* Blogs */}
           <li className="dropdown">
             <Link href="blog">Blogs</Link>
           </li>
 
+          {/* Contact US */}
           <li className="dropdown">
             <Link href="contact">Contact US</Link>
           </li>
