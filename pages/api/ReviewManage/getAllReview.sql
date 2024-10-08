@@ -16,5 +16,7 @@ SELECT
     cr.ModifyedBy
 FROM
     Tbl_client_reviews cr
+where
+    ActiveStatus = 'Y'
 ORDER BY
-    cr.ReviewID DESC;
+    cr.ReviewID DESC

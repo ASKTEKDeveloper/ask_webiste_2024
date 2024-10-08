@@ -16,5 +16,7 @@ SELECT
     b.ModifyedBy
 FROM
     Tbl_Blogs b
+where
+    ActiveStatus = 'Y'
 ORDER BY
-    b.BlogID DESC;
+    b.BlogID DESC
