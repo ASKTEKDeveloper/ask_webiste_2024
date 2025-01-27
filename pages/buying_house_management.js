@@ -8,9 +8,10 @@ import {
   TextField,
   Grid,
   LinearProgress,
+  Autocomplete,
 } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -19,7 +20,7 @@ import Swal from "sweetalert2";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CloseIcon from "@mui/icons-material/Close";
-
+import countryList from "react-select-country-list";
 import Slide from "@mui/material/Slide";
 import ContactUsGarments from "./ContactUsGarments";
 
@@ -30,6 +31,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
   const [openLoader, setOpenLoader] = useState(false);
+  const countryOptions = useMemo(() => countryList().getData(), []);
+
 
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -719,6 +722,7 @@ const ProjectGrid = () => {
                       company_name: "",
                       email: "",
                       city: "",
+                      country:'',
                       TypeOfReq: "d",
                       product: "BMS",
                       enquiry_details: "",
@@ -733,7 +737,8 @@ const ProjectGrid = () => {
                       email: Yup.string()
                         .email("Please provide a valid email address.")
                         .required("Email address is required."),
-                      city: Yup.string().required("Please specify your city."),
+                        city: Yup.string().required("Please specify your city."),
+                        country: Yup.object().required("Please select your country."),
                       company_name: Yup.string().required(
                         "Please specify the name of your company."
                       ),
@@ -825,6 +830,37 @@ const ProjectGrid = () => {
                                 variant="outlined"
                                 error={form.errors.city && form.touched.city}
                                 helperText={<ErrorMessage name="city" />}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="country">
+                            {({ field, form }) => (
+                              <Autocomplete
+                                options={countryOptions || []} 
+                                getOptionLabel={(option) => option.label}
+                                value={field.value || null}
+                                onChange={(event, value) =>
+                                  form.setFieldValue(field.name, value)
+                                }
+                                onBlur={() =>
+                                  form.setFieldTouched(field.name, true)
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    fullWidth
+                                    label="Country"
+                                    size="small"
+                                    variant="outlined"
+                                    error={
+                                      form.errors.country &&
+                                      form.touched.country
+                                    }
+                                    helperText={<ErrorMessage name="country" />}
+                                  />
+                                )}
                               />
                             )}
                           </Field>

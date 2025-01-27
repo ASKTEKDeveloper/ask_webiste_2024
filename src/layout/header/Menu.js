@@ -65,34 +65,13 @@ const MobileMenu = () => {
               </a>
               <ul style={activeSubMenu("Project")}>
                 <li>
-                  <Link href="Target_Order_Management_System">
-                    Target Order Management Solutions
+                  <Link href="optimize_garment_manufacturing">
+                    Discover Apparel ERP Solution
                   </Link>
                 </li>
                 <li>
-                  <Link href="buying_house_management">
-                    Target - Buying House Management
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href="erp-for-textiles-and-garments">
-                    ERP for Textile & Garment Industries{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="Target_SCM_Supply_Chain_Managements">
-                    Target SCM - Supply Chain Management.
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link href="Target_SCM_Supply_Chain_Managements">
-                  Target Cargo and courier Management solution 
-                  </Link>
-                </li>                 */}
-                <li>
-                  <Link href="Target_HRMS_HR_and_Payroll_Solutions">
-                    HRMS - Target HR & Payroll Solutions
+                  <Link href="explore_production_solutions">
+                    Explore Business Management Solution
                   </Link>
                 </li>
               </ul>
