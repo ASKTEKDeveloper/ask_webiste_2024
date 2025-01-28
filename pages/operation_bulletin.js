@@ -117,7 +117,7 @@ const ProjectGrid = () => {
 <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
 <p><strong>Company Name:</strong> ${datas.company_name}</p>
 <p><strong>City:</strong> ${datas.city}</p>
-<p><strong>City:</strong> ${datas.country}</p>
+<p><strong>City:</strong> ${datas.country.label}</p>
 <p>Please take note of this and follow up with the user if necessary.</p>
 <p>Best regards,</p>
 <p>ASK TECHNOLOGY</p>
