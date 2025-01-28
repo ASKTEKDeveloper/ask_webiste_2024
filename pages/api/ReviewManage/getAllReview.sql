@@ -9,6 +9,7 @@ SELECT
     cr.UserName,
     cr.Designation,
     cr.Review,
+    cr.URL,
     cr.ActiveStatus,
     cr.CreatedDate,
     cr.ModifyedDate,

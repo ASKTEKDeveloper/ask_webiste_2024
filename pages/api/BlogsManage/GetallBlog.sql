@@ -9,6 +9,7 @@ SELECT
     b.BlogFileName,
     b.BlogDescription,
     b.Summary,
+    b.URL,
     b.ActiveStatus,
     b.CreatedDate,
     b.ModifyedDate,

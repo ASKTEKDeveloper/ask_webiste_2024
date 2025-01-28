@@ -106,6 +106,7 @@ const ProjectGrid = () => {
 <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
 <p><strong>Company Name:</strong> ${datas.company_name}</p>
 <p><strong>City:</strong> ${datas.city}</p>
+<p><strong>City:</strong> ${datas.country}</p>
 <p>Please take note of this and follow up with the user if necessary.</p>
 <p>Best regards,</p>
 <p>ASK TECHNOLOGY</p>
@@ -684,7 +685,7 @@ const ProjectGrid = () => {
             </Container>
           </section>
           {/* Contact Form Section Start */}
-          <ContactUsGarments TypeOF={"p"} initialValue={"BMS"} />
+         {!open && <ContactUsGarments TypeOF={"p"} initialValue={"BMS"} />}
           {/* Contact Form Section End */}
         </>
         <Dialog

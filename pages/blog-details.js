@@ -102,7 +102,20 @@ const BlogDetails = () => {
                     alt="Blog Single"
                   />
                 </div>
+               
                 <p>{parse(blog.BlogDescription)}</p>
+                {blog.URL && (
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={blog.URL}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                )}
                 <h4>Summary & Results</h4>
                 <p>{blog.Summary}</p>
               </div>
