@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       
       const mailOptions = {
         from: from,
-        to: 'davidraja.askteck@gmail.com',
+        to: to,
         subject: subject,
         html: text,
       };
