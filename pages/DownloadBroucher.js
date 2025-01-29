@@ -97,7 +97,7 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
         <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
         <p><strong>Company Name:</strong> ${datas.company_name}</p>
         <p><strong>City:</strong> ${datas.city}</p>
-        <p><strong>Service :</strong> ${datas.product}</p>
+        <p><strong>Product Name :</strong> ${datas.product}</p>
         <p>Please review the request and respond accordingly.</p>
         <p>Best regards,</p>
         <p>ASK TECHNOLOGY</p>
@@ -158,7 +158,7 @@ const DownloadBroucher = ({ TypeOF, initialValue }) => {
               }}
               validationSchema={Yup.object({
                 name: Yup.string().required("Please provide your full name."),
-                phone_number: Yup.string().required(
+                phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
                   "Please enter your phone number."
                 ),
                 email: Yup.string()

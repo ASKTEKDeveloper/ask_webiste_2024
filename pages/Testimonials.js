@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
+import VideoPopup from "@/src/components/VideoPopup";
 
 const Testimonials = () => {
   const tokent =
@@ -11,6 +12,8 @@ const Testimonials = () => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
   const [reviewData, setreviewData] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [videoURL, setVideoURL] = useState("");
 
   useEffect(() => {
     setNav1(slider1);
@@ -66,7 +69,7 @@ const Testimonials = () => {
     speed: 400,
     arrows: false,
     autoplay: false,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 5000
   };
 
   return (
@@ -108,11 +111,25 @@ const Testimonials = () => {
                       <h6 className=" text-end" style={{ textAlign: "right" }}>
                         - {data.CompanyName}
                       </h6>
+
+                      { data.URL && (
+                        <a
+                          className="theme-btn mt-10"
+                          href={data.URL}
+                          style={{
+                            boxShadow:
+                              "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                          }}
+                        >
+                          Watch Testimonial <i className="fas fa-play" />
+                        </a>
+                      )}
                     </div>
                   ))}
                 </Slider>
               </div>
             </div>
+            {open && <VideoPopup close={setOpen} videoURL={videoURL} />}
             <div className="col-lg-6">
               <div className="testimonial-right-part wow fadeInRight delay-0-2s">
                 <img

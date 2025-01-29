@@ -594,9 +594,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                         .matches(/^[A-Za-z\s]+$/, "enter valid name")
                         .required("Please provide your full name."),
 
-                      phone_number: Yup.string().required(
-                        "Please enter your phone number."
-                      ),
+                      phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
+                  "Please enter your phone number."
+                ),
 
                       email: Yup.string()
                         .matches(

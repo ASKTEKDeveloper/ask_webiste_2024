@@ -106,7 +106,8 @@ const ProjectGrid = () => {
 <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
 <p><strong>Company Name:</strong> ${datas.company_name}</p>
 <p><strong>City:</strong> ${datas.city}</p>
-<p><strong>City:</strong> ${datas.country}</p>
+<p><strong>Country:</strong> ${datas.country.label}</p>
+<p><strong>Product Name:</strong> ${datas.product}</p>
 <p>Please take note of this and follow up with the user if necessary.</p>
 <p>Best regards,</p>
 <p>ASK TECHNOLOGY</p>
@@ -602,9 +603,9 @@ const ProjectGrid = () => {
                       name: Yup.string().required(
                         "Please provide your full name."
                       ),
-                      phone_number: Yup.string().required(
-                        "Please enter your phone number."
-                      ),
+                      phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
+                  "Please enter your phone number."
+                ),
                       email: Yup.string()
                         .email("Please provide a valid email address.")
                         .required("Email address is required."),

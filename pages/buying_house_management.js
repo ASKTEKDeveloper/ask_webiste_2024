@@ -33,7 +33,6 @@ const ProjectGrid = () => {
   const [openLoader, setOpenLoader] = useState(false);
   const countryOptions = useMemo(() => countryList().getData(), []);
 
-
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -106,7 +105,8 @@ const ProjectGrid = () => {
 <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
 <p><strong>Company Name:</strong> ${datas.company_name}</p>
 <p><strong>City:</strong> ${datas.city}</p>
-<p><strong>City:</strong> ${datas.country.label}</p>
+<p><strong>Country:</strong> ${datas.country.label}</p>
+<p><strong>Product Name:</strong> ${datas.product}</p>
 <p>Please take note of this and follow up with the user if necessary.</p>
 <p>Best regards,</p>
 <p>ASK TECHNOLOGY</p>
@@ -685,7 +685,7 @@ const ProjectGrid = () => {
             </Container>
           </section>
           {/* Contact Form Section Start */}
-         {!open && <ContactUsGarments TypeOF={"p"} initialValue={"BMS"} />}
+          {!open && <ContactUsGarments TypeOF={"p"} initialValue={"BMS"} />}
           {/* Contact Form Section End */}
         </>
         <Dialog
@@ -723,7 +723,7 @@ const ProjectGrid = () => {
                       company_name: "",
                       email: "",
                       city: "",
-                      country:'',
+                      country: "",
                       TypeOfReq: "d",
                       product: "BMS",
                       enquiry_details: "",
@@ -732,14 +732,19 @@ const ProjectGrid = () => {
                       name: Yup.string().required(
                         "Please provide your full name."
                       ),
-                      phone_number: Yup.string().required(
-                        "Please enter your phone number."
-                      ),
+                      phone_number: Yup.string()
+                        .matches(
+                          /^\+?[1-9][0-9-]*(?: [0-9-]+)*$/,
+                          "Please enter a valid phone number."
+                        )
+                        .required("Please enter your phone number."),
                       email: Yup.string()
                         .email("Please provide a valid email address.")
                         .required("Email address is required."),
-                        city: Yup.string().required("Please specify your city."),
-                        country: Yup.object().required("Please select your country."),
+                      city: Yup.string().required("Please specify your city."),
+                      country: Yup.object().required(
+                        "Please select your country."
+                      ),
                       company_name: Yup.string().required(
                         "Please specify the name of your company."
                       ),
@@ -839,7 +844,7 @@ const ProjectGrid = () => {
                           <Field name="country">
                             {({ field, form }) => (
                               <Autocomplete
-                                options={countryOptions || []} 
+                                options={countryOptions || []}
                                 getOptionLabel={(option) => option.label}
                                 value={field.value || null}
                                 onChange={(event, value) =>

@@ -622,9 +622,9 @@ const ProjectGrid = () => {
                       name: Yup.string().required(
                         "Please provide your full name."
                       ),
-                      phone_number: Yup.string().required(
-                        "Please enter your phone number."
-                      ),
+                      phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
+                  "Please enter your phone number."
+                ),
                       email: Yup.string()
                         .email("Please provide a valid email address.")
                         .required("Email address is required."),
