@@ -158,9 +158,9 @@ const MobileMenu = () => {
                 <li>
                   <Link href="about-us">About US</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="OurTeam">Our Team</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="Our_Engagement_Model">Engagement Model</Link>
                 </li>
@@ -449,9 +449,9 @@ const DeskTopMenu = () => {
               <li>
                 <Link href="about-us">About US</Link>
               </li>
-              <li>
+              {/* <li>
                   <Link href="OurTeam">Our Team</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="Our_Engagement_Model">Engagement Model</Link>
               </li>
