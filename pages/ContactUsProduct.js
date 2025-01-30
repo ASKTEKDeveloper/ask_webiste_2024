@@ -9,15 +9,17 @@ import {
   TextField,
   MenuItem,
   LinearProgress,
+  Autocomplete,
 } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import countryList from "react-select-country-list";
 import Slide from "@mui/material/Slide";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -29,6 +31,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = useState(false);
   const [openLoader, setOpenLoader] = useState(false);
+  const countryOptions = useMemo(() => countryList().getData(), []);
 
   const handleButtonClick = () => {
     setOpen(true);
@@ -177,6 +180,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
         <p><strong>Company Name:</strong> ${datas.company_name}</p>
         <p><strong>City:</strong> ${datas.city}</p>
+        <p><strong>Country:</strong> ${datas.country.label}</p>
         <p><strong>Service :</strong> ${
           servicesMapping[datas.product] || datas.product
         }</p>
@@ -196,6 +200,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
         <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
         <p><strong>Company Name:</strong> ${datas.company_name}</p>
         <p><strong>City:</strong> ${datas.city}</p>
+        <p><strong>Country:</strong> ${datas.country.label}</p>
         <p><strong>Product:</strong> ${
           productsMapping[datas.product] || datas.product
         }</p>
@@ -285,6 +290,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     company_name: "",
                     email: "",
                     city: "",
+                    country: "",
                     TypeOfReq: TypeOF,
                     product: initialValue,
                     enquiry_details: "",
@@ -308,6 +314,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                     city: Yup.string().matches(
                       /^[A-Za-z\s]+$/,
                       "enter valid city name"
+                    ),
+                    country: Yup.object().required(
+                      "Please select your country."
                     ),
                     // .required("Please specify your city."),
 
@@ -392,7 +401,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                           )}
                         </Field>
                       </Grid>
-                      <Grid item xs={12} sm={6}>
+                      <Grid item xs={12} sm={4}>
                         <Field name="city">
                           {({ field, form }) => (
                             <TextField
@@ -407,8 +416,37 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                           )}
                         </Field>
                       </Grid>
+                      <Grid item xs={12} sm={4}>
+                        <Field name="country">
+                          {({ field, form }) => (
+                            <Autocomplete
+                              options={countryOptions || []}
+                              getOptionLabel={(option) => option.label}
+                              value={field.value || null}
+                              onChange={(event, value) =>
+                                form.setFieldValue(field.name, value)
+                              }
+                              onBlur={() =>
+                                form.setFieldTouched(field.name, true)
+                              }
+                              renderInput={(params) => (
+                                <TextField
+                                  {...params}
+                                  fullWidth
+                                  label="Country"
+                                  variant="standard"
+                                  error={
+                                    form.errors.country && form.touched.country
+                                  }
+                                  helperText={<ErrorMessage name="country" />}
+                                />
+                              )}
+                            />
+                          )}
+                        </Field>
+                      </Grid>
                       {TypeOF == "s" ? (
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={4}>
                           <Field name="product">
                             {({ field }) => (
                               <TextField
@@ -439,7 +477,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                           </Field>
                         </Grid>
                       ) : (
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={4}>
                           <Field name="product">
                             {({ field }) => (
                               <TextField
@@ -574,6 +612,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                       company_name: "",
                       email: "",
                       city: "",
+                      country: "",
                       TypeOfReq: TypeOF,
                       product: initialValue,
                       enquiry_details: "",
@@ -583,9 +622,12 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                         .matches(/^[A-Za-z\s]+$/, "enter valid name")
                         .required("Please provide your full name."),
 
-                      phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
-                  "Please enter your phone number."
-                ),
+                      phone_number: Yup.string()
+                        .matches(
+                          /^\+?[1-9][0-9-]*(?: [0-9-]+)*$/,
+                          "Please enter a valid phone number."
+                        )
+                        .required("Please enter your phone number."),
 
                       email: Yup.string()
                         .matches(
@@ -597,6 +639,9 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                       city: Yup.string().matches(
                         /^[A-Za-z\s]+$/,
                         "enter valid city name"
+                      ),
+                      country: Yup.object().required(
+                        "Please select your country."
                       ),
                       // .required("Please specify your city."),
 
@@ -685,7 +730,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                             )}
                           </Field>
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={4}>
                           <Field name="city">
                             {({ field, form }) => (
                               <TextField
@@ -700,9 +745,39 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                             )}
                           </Field>
                         </Grid>
-
+                        <Grid item xs={12} sm={4}>
+                          <Field name="country">
+                            {({ field, form }) => (
+                              <Autocomplete
+                                options={countryOptions || []}
+                                getOptionLabel={(option) => option.label}
+                                value={field.value || null}
+                                onChange={(event, value) =>
+                                  form.setFieldValue(field.name, value)
+                                }
+                                onBlur={() =>
+                                  form.setFieldTouched(field.name, true)
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    fullWidth
+                                    label="Country"
+                                    variant="standard"
+                                    size={matchesSmallScreen && "small"}
+                                    error={
+                                      form.errors.country &&
+                                      form.touched.country
+                                    }
+                                    helperText={<ErrorMessage name="country" />}
+                                  />
+                                )}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
                         {TypeOF == "s" ? (
-                          <Grid item xs={12} sm={6}>
+                          <Grid item xs={12} sm={4}>
                             <Field name="product">
                               {({ field }) => (
                                 <TextField
@@ -736,7 +811,7 @@ const ContactUsProduct = ({ TypeOF, initialValue }) => {
                             </Field>
                           </Grid>
                         ) : (
-                          <Grid item xs={12} sm={6}>
+                          <Grid item xs={12} sm={4}>
                             <Field name="product">
                               {({ field }) => (
                                 <TextField

@@ -8,9 +8,10 @@ import {
   TextField,
   Grid,
   LinearProgress,
+  Autocomplete,
 } from "@mui/material";
 import ContactUsProduct from "./ContactUsProduct";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -22,6 +23,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import Slide from "@mui/material/Slide";
 import ContactUsGarments from "./ContactUsGarments";
+import countryList from "react-select-country-list";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -30,6 +32,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const ProjectGrid = () => {
   const [open, setOpen] = useState(false);
   const [openLoader, setOpenLoader] = useState(false);
+  const countryOptions = useMemo(() => countryList().getData(), []);
 
   const theme = useTheme();
   const matchesSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
@@ -46,6 +49,7 @@ const ProjectGrid = () => {
     ERP: "/assets/docs/ERP.pdf",
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
+    ERP: "/assets/docs/ERP.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -102,6 +106,8 @@ const ProjectGrid = () => {
 <p><strong>Phone Number:</strong> ${datas.phone_number}</p>
 <p><strong>Company Name:</strong> ${datas.company_name}</p>
 <p><strong>City:</strong> ${datas.city}</p>
+<p><strong>Country:</strong> ${datas.country.label}</p>
+<p><strong>Product Name:</strong> ${datas.product}</p>
 <p>Please take note of this and follow up with the user if necessary.</p>
 <p>Best regards,</p>
 <p>ASK TECHNOLOGY</p>
@@ -159,6 +165,18 @@ const ProjectGrid = () => {
                         alt="Service Details"
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
+                      <div class="button">
+                        <a
+                          onClick={handleButtonClick}
+                          style={{ color: "white" }}
+                        >
+                          Download Brochure
+                        </a>                       
+                        <b class="top">Click to </b>
+                        <b class="bottom">Document</b>
+                      </div>
                     </div>
                     <p>
                       Managing samples manually in the apparel industry often
@@ -577,7 +595,7 @@ const ProjectGrid = () => {
           </section>
 
           {/* Contact Form Section Start */}
-          <ContactUsGarments TypeOF={"p"} initialValue={"SM"} />
+        { !open && <ContactUsGarments TypeOF={"p"} initialValue={"SM"} />}
         </>
         <Dialog
           open={open}
@@ -614,6 +632,7 @@ const ProjectGrid = () => {
                       company_name: "",
                       email: "",
                       city: "",
+                      country:'',
                       TypeOfReq: "d",
                       product: "ERP",
                       enquiry_details: "",
@@ -622,13 +641,17 @@ const ProjectGrid = () => {
                       name: Yup.string().required(
                         "Please provide your full name."
                       ),
-                      phone_number: Yup.string().matches(/^\+?[1-9][0-9-]*(?: [0-9-]+)*$/, "Please enter a valid phone number.").required(
-                  "Please enter your phone number."
-                ),
+                      phone_number: Yup.string()
+                        .matches(
+                          /^\+?[1-9][0-9-]*(?: [0-9-]+)*$/,
+                          "Please enter a valid phone number."
+                        )
+                        .required("Please enter your phone number."),
                       email: Yup.string()
                         .email("Please provide a valid email address.")
                         .required("Email address is required."),
                       city: Yup.string().required("Please specify your city."),
+                      country: Yup.object().required("Please select your country."),
                       company_name: Yup.string().required(
                         "Please specify the name of your company."
                       ),
@@ -720,6 +743,37 @@ const ProjectGrid = () => {
                                 variant="outlined"
                                 error={form.errors.city && form.touched.city}
                                 helperText={<ErrorMessage name="city" />}
+                              />
+                            )}
+                          </Field>
+                        </Grid>
+                        <Grid item xs={12} className="mb-10">
+                          <Field name="country">
+                            {({ field, form }) => (
+                              <Autocomplete
+                                options={countryOptions || []}
+                                getOptionLabel={(option) => option.label}
+                                value={field.value || null}
+                                onChange={(event, value) =>
+                                  form.setFieldValue(field.name, value)
+                                }
+                                onBlur={() =>
+                                  form.setFieldTouched(field.name, true)
+                                }
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    fullWidth
+                                    label="Country"
+                                    size="small"
+                                    variant="outlined"
+                                    error={
+                                      form.errors.country &&
+                                      form.touched.country
+                                    }
+                                    helperText={<ErrorMessage name="country" />}
+                                  />
+                                )}
                               />
                             )}
                           </Field>

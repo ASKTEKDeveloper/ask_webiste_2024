@@ -43,7 +43,7 @@ const OurCEO = () => {
           </div>
           <div className="col-lg-6 align-self-center">
             <div className="about-three-image rel z-1 mb-30 rmb-65 wow fadeInRight delay-0-2s">
-              <img src="assets/images/about/about-three.jpg" alt="About" />
+              <img src="assets/images/salahuddin.svg" alt="About" />
             </div>
           </div>
         </div>

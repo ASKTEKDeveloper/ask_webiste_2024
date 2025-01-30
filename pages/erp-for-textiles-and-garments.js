@@ -49,6 +49,7 @@ const ProjectGrid = () => {
     ERP: "/assets/docs/ERP.pdf",
     SCM: "/assets/docs/HRMS.pdf",
     HRMS: "/assets/docs/HRMS.pdf",
+    ERP: "/assets/docs/ERP.pdf",
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -162,7 +163,7 @@ const ProjectGrid = () => {
                         style={{ objectFit: "contain", maxWidth: "60%" }}
                       />
                     </div>
-                    {/* <div className="d-flex justify-content-center align-items-center my-50 ">
+                    <div className="d-flex justify-content-center align-items-center my-50 ">
                       <div class="button">
                         <a
                           onClick={handleButtonClick}
@@ -173,7 +174,7 @@ const ProjectGrid = () => {
                         <b class="top">Click to </b>
                         <b class="bottom">Document</b>
                       </div>
-                    </div> */}
+                    </div>
                     <p>
                       Elevate your textile and garment manufacturing with
                       TARGET, our comprehensive ERP solution. Tailored for
